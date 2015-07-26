@@ -90,5 +90,5 @@ module.exports = function ( grunt ) {
 		}
 	} );
 	// register task
-	grunt.registerTask( 'default', [ 'sass', 'autoprefixer', 'uglify', 'makepot', 'addtextdomain', 'watch' ] );
+	grunt.registerTask( 'default', [ 'sass', 'autoprefixer', 'uglify', 'makepot', 'watch' ] );
 };

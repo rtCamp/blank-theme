@@ -45,6 +45,7 @@ get_header(); ?>
 		<?php endif; ?>
 
 		</main><!-- #main -->
+		<?php echo paginate_links(); ?>
 	</div><!-- #primary -->
 
 <?php get_sidebar(); ?>

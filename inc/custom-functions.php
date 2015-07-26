@@ -8,7 +8,7 @@ if( ! function_exists( 'blank_theme_copyright_text' ) )
 {
 	function blank_theme_copyright_text()
 	{
-		$default = sprintf( esc_html__( 'Theme: %1$s by %2$s.', 'blank-theme', 'blank-theme' ), 'blank-theme', '<a href="http://automattic.com/" rel="designer">Sayed Taqui</a>' );
+		$default = sprintf( esc_html__( 'Theme: %1$s by %2$s.', 'blank-theme' ), 'blank-theme', '<a href="http://automattic.com/" rel="designer">Sayed Taqui</a>' );
 
 		$copyright_text = get_theme_mod( 'blank_theme_copyright_text' , $default );
 

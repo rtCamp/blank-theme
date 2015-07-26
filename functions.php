@@ -12,6 +12,7 @@ define ( 'BLANK_THEME_CSS_URI'  , BLANK_THEME_TEMP_URI . '/css' );
 define ( 'BLANK_THEME_JS_URI'	, BLANK_THEME_TEMP_URI . '/js' 	);
 define ( 'BLANK_THEME_IMG_URI'  , BLANK_THEME_TEMP_URI . '/images' );
 
+
 if ( ! function_exists( 'blank_theme_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -49,7 +50,7 @@ function blank_theme_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary Menu', 'blank-theme', 'blank-theme' ),
+		'primary' => esc_html__( 'Primary Menu', 'blank-theme' ),
 	) );
 
 	/*
@@ -106,7 +107,7 @@ add_action( 'after_setup_theme', 'blank_theme_content_width', 0 );
  */
 function blank_theme_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'blank-theme', 'blank-theme' ),
+		'name'          => esc_html__( 'Sidebar', 'blank-theme' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
