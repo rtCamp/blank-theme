@@ -40,6 +40,7 @@ class BLANK_THEME_Customizer_Admin extends BLANK_THEME_Customizer {
             Site title & Tagline
       ===============================*/
 
+      //Logo
       $wp_customize->add_setting( 'blank_theme_logo',
          array(
             'default'           => "",
@@ -57,6 +58,7 @@ class BLANK_THEME_Customizer_Admin extends BLANK_THEME_Customizer {
              )
       ));
 
+      //Hide tagline
       $wp_customize->add_setting( 'blank_theme_hide_tagline', array(
           'default' => '',
           'capability' => 'edit_theme_options',
@@ -84,18 +86,17 @@ class BLANK_THEME_Customizer_Admin extends BLANK_THEME_Customizer {
             'title'          => __( 'General', 'blank-theme' ),
         ));
 
+      /*==============================
+                  FAVICON
+      ===============================*/
+
       $wp_customize->add_section( 'blank_theme_favicon_section',
          array(
             'title'       => __( 'Favicon', 'blank-theme' ),
-            'priority'    => 10,
             'capability'  => 'edit_theme_options',
             'description' => __('', 'blank-theme'), //Descriptive tooltip
             'panel'       => 'blank_theme_general_panel'
         ));
-
-      /*==============================
-                  FAVICON
-      ===============================*/
 
       $wp_customize->add_setting( 'blank_theme_favicon',
          array(
@@ -112,6 +113,35 @@ class BLANK_THEME_Customizer_Admin extends BLANK_THEME_Customizer {
                 'settings' => 'blank_theme_favicon',
              )
       ));
+
+      /*==============================
+                SIDEBAR POSITIONS
+      ===============================*/
+
+      $wp_customize->add_section( 'blank_theme_sidebar_position_section',
+         array(
+            'title'       => __( 'Sidebar Position', 'blank-theme' ),
+            'capability'  => 'edit_theme_options',
+            'description' => __('', 'blank-theme'), //Descriptive tooltip
+            'panel'       => 'blank_theme_general_panel'
+        ));
+
+      $wp_customize->add_setting( 'blank_theme_sidebar_position', array(
+          'default' => 'right',
+          'capability' => 'edit_theme_options',
+          'sanitize_callback' => 'blank_theme_sanitize_choices',
+      ));
+
+      $wp_customize->add_control(
+          new WP_Customize_Control(
+          $wp_customize, 'blank_theme_sidebar_position', array(
+              'label'    => __( 'Sidebar Position', 'blank-theme' ),
+              'section'  => 'blank_theme_sidebar_position_section',
+              'settings' => 'blank_theme_sidebar_position',
+              'type'     => 'radio',
+              'choices'  => array( 'left' => __( 'Left' , 'blank-theme' ) , 'right' => __( 'Right' , 'blank-theme' )  )
+          ))
+      );
 
       /*==============================
             Footer Copyright Text

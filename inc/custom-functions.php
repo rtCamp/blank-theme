@@ -43,3 +43,13 @@ if( ! function_exists( 'blank_theme_site_branding' ) )
 		<?php
 	}
 }
+
+if( ! function_exists( 'blank_theme_pagination' ) )
+{
+	function blank_theme_pagination()
+	{
+		echo "<nav class='blank-theme-pagination clearfix' >";
+			echo paginate_links();
+		echo "</nav>";
+	}
+}

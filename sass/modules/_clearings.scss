@@ -1,3 +1,5 @@
+.clearfix:before,
+.clearfix:after,
 .clear:before,
 .clear:after,
 .entry-content:before,
@@ -13,6 +15,7 @@
 	@include clearfix;
 }
 
+.clearfix:after,
 .clear:after,
 .entry-content:after,
 .comment-content:after,

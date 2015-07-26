@@ -23,14 +23,16 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'blank-theme' ); ?></a>
 
 	<header id="masthead" class="site-header row" role="banner">
-		<div class="site-branding">
-			<?php echo blank_theme_site_branding(); ?>
-		</div><!-- .site-branding -->
+		<div class="large-12 column">
+			<div class="site-branding">
+				<?php echo blank_theme_site_branding(); ?>
+			</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'blank-theme' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-		</nav><!-- #site-navigation -->
+			<nav id="site-navigation" class="main-navigation" role="navigation">
+				<a id="primary-nav-button" href="#primary-nav"><?php _e( 'Mobile Menu' , 'blank-theme' ); ?></a>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' , 'container_id' => 'primary-nav', 'depth' => 3 ) ); ?>
+			</nav><!-- #site-navigation -->
+		</div>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content row">

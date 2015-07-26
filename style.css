@@ -2029,6 +2029,8 @@ a:hover, a:active {
   margin-right: auto;
 }
 
+.clearfix:before,
+.clearfix:after,
 .clear:before,
 .clear:after,
 .entry-content:before,
@@ -2045,6 +2047,7 @@ a:hover, a:active {
   display: table;
 }
 
+.clearfix:after,
 .clear:after,
 .entry-content:after,
 .comment-content:after,
@@ -2058,11 +2061,15 @@ a:hover, a:active {
 # Widgets
 --------------------------------------------------------------*/
 .widget {
-  margin: 0 0 1.5em;
+  margin: 0 0 1.875rem;
   /* Make sure select elements fit in widgets. */
 }
 .widget select {
   max-width: 100%;
+}
+
+.widget-sidebar {
+  background: #fff;
 }
 
 /* Search widget. */
@@ -2076,6 +2083,10 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
+.content-area {
+  background: #fff;
+}
+
 .sticky {
   display: block;
 }
