@@ -3,26 +3,13 @@
  * Contains methods for customizing the theme customization screen.
  *
  * @link http://codex.wordpress.org/Theme_Customization_API
- * @since vanguard 1.0
+ * @since blank-theme 1.0
  */
 
 class BLANK_THEME_Customizer_Admin extends BLANK_THEME_Customizer {
 
-  public static $section_priority = array( 2 => '2nd', 3 => '3rd', 4 => '4th', 5 => '5th' );
-
-  public static $default_special_font = "Arizonia";
-
-  public static $default_body_font = "Source Sans Pro";
-
-  public static $theme_default_color = '#deb25e';
-
-  public static $cat_array = array();
-
 	public function __construct()
 	{
-
-    self::$cat_array = self::category_array();
-
 		// Setup the Theme Customizer settings and controls...
 		add_action( 'customize_register' , array( $this , 'register' ) );
 
@@ -44,10 +31,48 @@ class BLANK_THEME_Customizer_Admin extends BLANK_THEME_Customizer {
     *
     * @see add_action('customize_register',$func)
     * @param \WP_Customize_Manager $wp_customize
-    * @since vanguard 1.0
+    * @since blank-theme 1.0
     */
    public static function register ( $wp_customize )
    {
+
+      /*==============================
+            Site title & Tagline
+      ===============================*/
+
+      $wp_customize->add_setting( 'blank_theme_logo',
+         array(
+            'default'           => "",
+            'capability'        => 'edit_theme_options',
+            'sanitize_callback' => 'esc_url_raw',
+         ));
+
+      $wp_customize->add_control(
+            new WP_Customize_Image_Control($wp_customize, 'blank_theme_logo',
+             array(
+                'label'    => __( 'Choose Site Logo', 'blank-theme' ),
+                'section'  => 'title_tagline',
+                'settings' => 'blank_theme_logo',
+                'description' => __( 'Remove logo to display site title.' , 'blank-theme' )
+             )
+      ));
+
+      $wp_customize->add_setting( 'blank_theme_hide_tagline', array(
+          'default' => '',
+          'capability' => 'edit_theme_options',
+          'sanitize_callback' => 'blank_theme_sanitize_checkboxes',
+      ));
+
+      $wp_customize->add_control(
+          new WP_Customize_Control(
+          $wp_customize, 'blank_theme_hide_tagline', array(
+              'label'    => __( 'Hide Tagline', 'blank-theme' ),
+              'section'  => 'title_tagline',
+              'settings' => 'blank_theme_hide_tagline',
+              'type'     => 'checkbox',
+          ))
+      );
+
 
       /************************** GENERAL ***************************/
 
@@ -56,15 +81,15 @@ class BLANK_THEME_Customizer_Admin extends BLANK_THEME_Customizer {
             'priority'       => 10,
             'capability'     => 'edit_theme_options',
             'theme_supports' => '',
-            'title'          => __( 'General', 'vanguard', 'blank-theme' ),
+            'title'          => __( 'General', 'blank-theme' ),
         ));
 
       $wp_customize->add_section( 'blank_theme_favicon_section',
          array(
-            'title'       => __( 'Favicon', 'vanguard', 'blank-theme' ),
+            'title'       => __( 'Favicon', 'blank-theme' ),
             'priority'    => 10,
             'capability'  => 'edit_theme_options',
-            'description' => __('', 'vanguard', 'blank-theme'), //Descriptive tooltip
+            'description' => __('', 'blank-theme'), //Descriptive tooltip
             'panel'       => 'blank_theme_general_panel'
         ));
 
@@ -82,38 +107,9 @@ class BLANK_THEME_Customizer_Admin extends BLANK_THEME_Customizer {
       $wp_customize->add_control(
             new WP_Customize_Image_Control($wp_customize, 'blank_theme_favicon',
              array(
-                'label'    => __( 'Choose Favicon', 'vanguard', 'blank-theme' ),
+                'label'    => __( 'Choose Favicon', 'blank-theme' ),
                 'section'  => 'blank_theme_favicon_section',
                 'settings' => 'blank_theme_favicon',
-             )
-      ));
-
-      /*==============================
-                  LOGO
-      ===============================*/
-
-      $wp_customize->add_section( 'blank_theme_logo_section',
-         array(
-            'title'       => __( 'Site Logo', 'vanguard', 'blank-theme' ),
-            'priority'    => 10,
-            'capability'  => 'edit_theme_options',
-            'description' => __('', 'vanguard', 'blank-theme'), //Descriptive tooltip
-            'panel'       => 'blank_theme_general_panel'
-        ));
-
-      $wp_customize->add_setting( 'blank_theme_logo',
-         array(
-            'default'    => "",
-            'capability' => 'edit_theme_options',
-            'sanitize_callback' => 'esc_url_raw',
-         ));
-
-      $wp_customize->add_control(
-            new WP_Customize_Image_Control($wp_customize, 'blank_theme_logo',
-             array(
-                'label'    => __( 'Choose Site Logo', 'vanguard', 'blank-theme' ),
-                'section'  => 'blank_theme_logo_section',
-                'settings' => 'blank_theme_logo',
              )
       ));
 
@@ -123,15 +119,15 @@ class BLANK_THEME_Customizer_Admin extends BLANK_THEME_Customizer {
 
       $wp_customize->add_section( 'blank_theme_copyright_text_section',
          array(
-            'title'       => __( 'Copyright Text', 'vanguard', 'blank-theme' ),
+            'title'       => __( 'Copyright Text', 'blank-theme' ),
             'capability'  => 'edit_theme_options',
-            'description' => __('Will override the footer copyright text', 'vanguard', 'blank-theme'), //Descriptive tooltip
+            'description' => __('Will override the footer copyright text', 'blank-theme'), //Descriptive tooltip
             'panel'       => 'blank_theme_general_panel'
         ));
 
 
       //SPECIAL FONTS
-      $wp_customize->add_setting( 'blank_theme_footer_copyright',
+      $wp_customize->add_setting( 'blank_theme_copyright_text',
          array(
             'default'           => '',
             'capability'        => 'edit_theme_options',
@@ -139,21 +135,96 @@ class BLANK_THEME_Customizer_Admin extends BLANK_THEME_Customizer {
          ));
 
       $wp_customize->add_control(
-              'blank_theme_footer_copyright',
+              'blank_theme_copyright_text',
              array(
-                'label'    => __( 'Copyright Text', 'vanguard', 'blank-theme' ),
+                'label'    => __( 'Copyright Text', 'blank-theme' ),
                 'section'  => 'blank_theme_copyright_text_section',
-                'settings' => 'blank_theme_footer_copyright',
+                'settings' => 'blank_theme_copyright_text',
                 'type'     => 'text',
              )
       );
+
+      /*==============================
+                SLIDER
+      ===============================*/
+
+      $wp_customize->add_panel( 'blank_theme_pannel', array(
+          'priority'       => 10,
+          'capability'     => 'edit_theme_options',
+          'title'          => __( 'Slider Options', 'blank-theme' ),
+          'description'    => __( 'Add slider', 'blank-theme' ),
+      ) );
+
+      for ( $i=1; $i <= 8; $i++ )
+      {
+        $wp_customize->add_section( 'blank_theme_section_' . $i, array(
+            'priority'       => 10,
+            'capability'     => 'edit_theme_options',
+            'title'          => sprintf( __( 'Slide %s' , 'blank-theme' ), $i ),
+            'description'    => __( 'Add slide', 'blank-theme' ),
+            'panel'          => 'blank_theme_pannel',
+        ) );
+
+        $wp_customize->add_setting( 'blank_theme_slides['.$i.'][title]', array(
+            'default'           => '',
+            'sanitize_callback' => 'sanitize_text_field',
+            'capability'        => 'edit_theme_options',
+        ) );
+
+        $wp_customize->add_control( 'blank_theme_slides['.$i.'][title]', array(
+            'priority' => 10,
+            'section'  => 'blank_theme_section_' . $i,
+            'label'    => __( 'Title', 'blank-theme' ),
+            'settings' => 'blank_theme_slides['.$i.'][title]',
+        ) );
+
+        $wp_customize->add_setting( 'blank_theme_slides['.$i.'][description]', array(
+            'default'           => '',
+            'sanitize_callback' => 'sanitize_text_field',
+            'capability'        => 'edit_theme_options',
+        ) );
+
+        $wp_customize->add_control( 'blank_theme_slides['.$i.'][description]', array(
+            'priority' => 10,
+            'section'  => 'blank_theme_section_' . $i,
+            'label'    => __('Description', 'blank-theme' ),
+            'settings' => 'blank_theme_slides['.$i.'][description]',
+        ) );
+
+        $wp_customize->add_setting( 'blank_theme_slides['.$i.'][link]', array(
+            'default'           => '',
+            'sanitize_callback' => 'esc_url_raw',
+            'capability'        => 'edit_theme_options',
+        ) );
+
+        $wp_customize->add_control( 'blank_theme_slides['.$i.'][link]', array(
+            'priority' => 10,
+            'section'  => 'blank_theme_section_' . $i,
+            'label'    => __( 'Link', 'blank-theme' ),
+            'settings' => 'blank_theme_slides['.$i.'][link]',
+        ) );
+
+        $wp_customize->add_setting( 'blank_theme_slides['.$i.'][image]', array(
+            'default'           => '',
+            'sanitize_callback' => 'esc_url_raw',
+            'capability'        => 'edit_theme_options',
+        ) );
+
+        $wp_customize->add_control( new WP_Customize_Image_Control ( $wp_customize, 'blank_theme_slides['.$i.'][image]', array(
+            'priority' => 10,
+            'section'  => 'blank_theme_section_' . $i,
+            'label'    => __( 'Image', 'blank-theme' ),
+            'settings' => 'blank_theme_slides['.$i.'][image]',
+        ) ) );
+
+      }
 
       //4. We can also change built-in settings by modifying properties. For instance, let's make some stuff use live preview JS...
       $wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
       $wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
       $wp_customize->get_setting( 'background_color' )->transport = 'postMessage';
       $wp_customize->remove_control('header_image');
-      $wp_customize->remove_control('header_textcolor');
+      //$wp_customize->remove_control('header_textcolor');
 
    }
 
@@ -166,13 +237,13 @@ class BLANK_THEME_Customizer_Admin extends BLANK_THEME_Customizer {
     * Used by hook: 'customize_preview_init'
     *
     * @see add_action('customize_preview_init',$func)
-    * @since vanguard 1.0
+    * @since blank-theme 1.0
     */
    public static function live_preview() {
       //To avoid caching during development
       wp_enqueue_script(
            'blank-theme-themecustomizer', // Give the script a unique ID
-           get_template_directory_uri() . BLANK_THEME_ADMIN_FOLDER_PATH . 'customizer/js/customizer-live-preview.js',
+           BLANK_THEME_CUSTOMIZER_JS . '/customizer-live-preview.js',
            array(  'jquery', 'customize-preview' ), // Define dependencies
            '1.0', // Define a version (optional)
            true // Specify whether to put in footer (leave this true)
@@ -183,7 +254,7 @@ class BLANK_THEME_Customizer_Admin extends BLANK_THEME_Customizer {
    {
       wp_enqueue_script(
            'blank-theme-customizer-control-scripts', // Give the script a unique ID
-           get_template_directory_uri() . BLANK_THEME_ADMIN_FOLDER_PATH . 'customizer/js/customizer-control.js',
+           BLANK_THEME_CUSTOMIZER_JS . '/customizer-control.js',
            array(  'jquery' ), // Define dependencies
            '1.0', // Define a version (optional)
            true // Specify whether to put in footer (leave this true)

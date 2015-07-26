@@ -69,7 +69,7 @@ class BLANK_THEME_Customizer
 	 * @param string/array $prefix Optional. Anything that needs to be output before the CSS property
 	 * @param string/array $postfix Optional. Anything that needs to be output after the CSS property
 	 * @return string Returns a single line of CSS with selectors and a property.
-	 * @since vanguard 1.0
+	 * @since blank theme 1.0
 	 */
 
 	public static function generate_css( $selector, $style, $mod_name, $prefix = '', $postfix = '', $default = false, $echo = true )

@@ -1980,7 +1980,7 @@ a:hover, a:active {
 }
 
 /*--------------------------------------------------------------
-# Accessibility
+# Modules
 --------------------------------------------------------------*/
 /* Text meant only for screen readers. */
 .screen-reader-text {
@@ -2011,9 +2011,6 @@ a:hover, a:active {
   /* Above WP toolbar. */
 }
 
-/*--------------------------------------------------------------
-# Alignments
---------------------------------------------------------------*/
 .alignleft {
   display: inline;
   float: left;
@@ -2032,9 +2029,6 @@ a:hover, a:active {
   margin-right: auto;
 }
 
-/*--------------------------------------------------------------
-# Clearings
---------------------------------------------------------------*/
 .clear:before,
 .clear:after,
 .entry-content:before,

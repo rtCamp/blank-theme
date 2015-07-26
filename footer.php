@@ -15,8 +15,7 @@
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'blank-theme', 'blank-theme' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'blank-theme', 'blank-theme' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'blank-theme', 'blank-theme' ), 'blank-theme', '<a href="http://automattic.com/" rel="designer">Sayed Taqui</a>' ); ?>
+			<?php echo blank_theme_copyright_text(); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

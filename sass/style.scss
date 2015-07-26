@@ -84,19 +84,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "navigation/navigation";
 
 /*--------------------------------------------------------------
-# Accessibility
+# Modules
 --------------------------------------------------------------*/
-@import "modules/accessibility";
-
-/*--------------------------------------------------------------
-# Alignments
---------------------------------------------------------------*/
-@import "modules/alignments";
-
-/*--------------------------------------------------------------
-# Clearings
---------------------------------------------------------------*/
-@import "modules/clearings";
+@import "modules/modules";
 
 /*--------------------------------------------------------------
 # Widgets

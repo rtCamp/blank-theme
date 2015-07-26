@@ -12,8 +12,6 @@ define ( 'BLANK_THEME_CSS_URI'  , BLANK_THEME_TEMP_URI . '/css' );
 define ( 'BLANK_THEME_JS_URI'	, BLANK_THEME_TEMP_URI . '/js' 	);
 define ( 'BLANK_THEME_IMG_URI'  , BLANK_THEME_TEMP_URI . '/images' );
 
-
-
 if ( ! function_exists( 'blank_theme_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -83,6 +81,8 @@ function blank_theme_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+
+	add_editor_style();
 }
 endif; // blank_theme_setup
 add_action( 'after_setup_theme', 'blank_theme_setup' );
@@ -148,33 +148,21 @@ function blank_theme_scripts()
 add_action( 'wp_enqueue_scripts', 'blank_theme_scripts' );
 
 
-/**
- * Admin Folder
- */
+/*==============================
+          FILE INCLUDES
+===============================*/
 
-require BLANK_THEME_TEMP_DIR . '/lib/admin/admin.php';
+//Custom Functions
+require BLANK_THEME_TEMP_DIR . '/inc/custom-functions.php';
 
-/**
- * Implement the Custom Header feature.
- */
-require BLANK_THEME_TEMP_DIR . '/inc/custom-header.php';
-
-/**
- * Custom template tags for this theme.
- */
-require BLANK_THEME_TEMP_DIR . '/inc/template-tags.php';
-
-/**
- * Custom functions that act independently of the theme templates.
- */
+//Custom functions that act independently of the theme templates.
 require BLANK_THEME_TEMP_DIR . '/inc/extras.php';
 
-/**
- * Customizer additions.
- */
-require BLANK_THEME_TEMP_DIR . '/inc/customizer.php';
+//Admin Folder
+require BLANK_THEME_TEMP_DIR . '/lib/admin/admin.php';
 
-/**
- * Load Jetpack compatibility file.
- */
+//Custom template tags for this theme.
+require BLANK_THEME_TEMP_DIR . '/inc/template-tags.php';
+
+//Load Jetpack compatibility file.
 require BLANK_THEME_TEMP_DIR . '/inc/jetpack.php';

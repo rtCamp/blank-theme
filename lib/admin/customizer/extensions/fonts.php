@@ -13,9 +13,9 @@ if ( ! function_exists( 'blank_theme_library_get_all_fonts' ) ) :
  * @return array    The fonts in value/label pairs.
  */
 function blank_theme_library_get_all_fonts() {
-	$heading1       = array( 1 => array( 'label' => sprintf( '--- %s ---', __( 'Standard Fonts', 'customizer-library', 'foodmania', 'vanguard', 'blank-theme' ) ) ) );
+	$heading1       = array( 1 => array( 'label' => sprintf( '--- %s ---', __( 'Standard Fonts', 'blank-theme' ) ) ) );
 	$standard_fonts = blank_theme_library_get_standard_fonts();
-	$heading2       = array( 2 => array( 'label' => sprintf( '--- %s ---', __( 'Google Fonts', 'customizer-library', 'foodmania', 'vanguard', 'blank-theme' ) ) ) );
+	$heading2       = array( 2 => array( 'label' => sprintf( '--- %s ---', __( 'Google Fonts', 'blank-theme' ) ) ) );
 	$google_fonts   = blank_theme_library_get_google_fonts();
 
 	/**
@@ -168,15 +168,15 @@ if ( ! function_exists( 'blank_theme_library_get_standard_fonts' ) ) :
 function blank_theme_library_get_standard_fonts() {
 	return array(
 		'serif' => array(
-			'label' => _x( 'Serif', 'font style', 'textdomain', 'foodmania', 'vanguard', 'blank-theme' ),
+			'label' => _x( 'Serif', 'font style', 'blank-theme' ),
 			'stack' => 'Georgia,Times,"Times New Roman",serif'
 		),
 		'sans-serif' => array(
-			'label' => _x( 'Sans Serif', 'font style', 'textdomain', 'foodmania', 'vanguard', 'blank-theme' ),
+			'label' => _x( 'Sans Serif', 'font style', 'blank-theme' ),
 			'stack' => '"Helvetica Neue",Helvetica,Arial,sans-serif'
 		),
 		'monospace' => array(
-			'label' => _x( 'Monospaced', 'font style', 'textdomain', 'foodmania', 'vanguard', 'blank-theme' ),
+			'label' => _x( 'Monospaced', 'font style', 'blank-theme' ),
 			'stack' => 'Monaco,"Lucida Sans Typewriter","Lucida Typewriter","Courier New",Courier,monospace'
 		)
 	);
