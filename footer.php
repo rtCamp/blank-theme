@@ -18,7 +18,7 @@
 		</div>
 		<?php } ?>
 		<div class="site-info large-12 column">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'blank-theme' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'blank-theme' ), 'WordPress' ); ?></a>
+			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'blank-theme' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'blank-theme' ), 'blank theme' ); ?></a>
 			<span class="sep"> | </span>
 			<?php echo blank_theme_copyright_text(); ?>
 		</div><!-- .site-info -->
