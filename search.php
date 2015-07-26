@@ -2,7 +2,7 @@
 /**
  * The template for displaying search results pages.
  *
- * @package glowingocean
+ * @package blanktheme
  */
 
 get_header(); ?>

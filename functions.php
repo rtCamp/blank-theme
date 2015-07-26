@@ -1,8 +1,8 @@
 <?php
 /**
- * glowingocean functions and definitions
+ * blanktheme functions and definitions
  *
- * @package glowingocean
+ * @package blanktheme
  */
 
 define ( 'BLANK_THEME_VERSION'  , '1.0.0' );
@@ -26,7 +26,7 @@ function blank_theme_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on glowingocean, use a find and replace
+	 * If you're building a theme based on blanktheme, use a find and replace
 	 * to change 'blank-theme' to the name of your theme in all the template files
 	 */
 	load_theme_textdomain( 'blank-theme', BLANK_THEME_TEMP_DIR . '/languages' );
@@ -95,7 +95,7 @@ add_action( 'after_setup_theme', 'blank_theme_setup' );
  * @global int $content_width
  */
 function blank_theme_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'blank_theme_content_width', 640 );
+	$content_width = apply_filters( 'blank_theme_content_width', 640 );
 }
 add_action( 'after_setup_theme', 'blank_theme_content_width', 0 );
 

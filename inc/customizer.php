@@ -1,8 +1,8 @@
 <?php
 /**
- * glowingocean Theme Customizer
+ * blanktheme Theme Customizer
  *
- * @package glowingocean
+ * @package blanktheme
  */
 
 /**
