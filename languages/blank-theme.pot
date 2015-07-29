@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Blank Theme 1.0.0\n"
 "Report-Msgid-Bugs-To: http://community.blank-theme.com/c/premium-themes\n"
-"POT-Creation-Date: 2015-07-26 11:21:06+00:00\n"
+"POT-Creation-Date: 2015-07-28 08:25:33+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -67,11 +67,11 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:110
+#: functions.php:111
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:120
+#: functions.php:121
 msgid "Footer"
 msgstr ""
 
@@ -79,7 +79,7 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:32
+#: header.php:31
 msgid "Mobile Menu"
 msgstr ""
 

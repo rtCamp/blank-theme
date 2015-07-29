@@ -28,9 +28,9 @@
 				<?php echo blank_theme_site_branding(); ?>
 			</div><!-- .site-branding -->
 
+			<a id="primary-nav-button" href="#site-navigation"><?php _e( 'Mobile Menu' , 'blank-theme' ); ?></a>
 			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<a id="primary-nav-button" href="#primary-nav"><?php _e( 'Mobile Menu' , 'blank-theme' ); ?></a>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' , 'container_id' => 'primary-nav', 'depth' => 3 ) ); ?>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' , 'depth' => 3 ) ); ?>
 			</nav><!-- #site-navigation -->
 		</div>
 	</header><!-- #masthead -->

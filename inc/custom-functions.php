@@ -23,17 +23,17 @@ if( ! function_exists( 'blank_theme_site_branding' ) )
 		$site_title   = get_bloginfo( 'name' );
 		$site_logo    = get_theme_mod( 'blank_theme_logo' );
 		$hide_tagline = get_theme_mod( 'blank_theme_hide_tagline' );
-		$logo_class   = $site_logo ? ' screen-reader-text' : false;
+		$title_class   = $site_logo ? ' screen-reader-text' : false;
 		$desc_class   = $hide_tagline ? ' screen-reader-text' : false;
 
 		if( $site_logo ){
-			printf( '<img src="%s" alt="%s" >' , esc_url( $site_logo ), __( 'Logo' , 'blank-theme' ) );
+			printf( '<a class="logo-link" href="%s" rel="home"><img src="%s" alt="%s" ></a>' , esc_url( home_url( '/' ) )  , esc_url( $site_logo ), __( 'Logo' , 'blank-theme' ) );
 		}
 
 		if ( is_front_page() && is_home() ){ ?>
-			<h1 class="site-title<?php echo $logo_class; ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo esc_html($site_title); ?></a></h1>
+			<h1 class="site-title<?php echo $title_class; ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo esc_html($site_title); ?></a></h1>
 		<?php } else { ?>
-			<h2 class="site-title<?php echo $logo_class; ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo esc_html($site_title); ?></a></h2>
+			<h2 class="site-title<?php echo $title_class; ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo esc_html($site_title); ?></a></h2>
 		<?php }
 
 		?>

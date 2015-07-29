@@ -2453,12 +2453,12 @@ a:hover, a:active {
   padding-left: 0;
 }
 .main-navigation ul ul {
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   float: left;
   position: absolute;
-  top: 1.5em;
+  top: 2.1875rem;
   left: -999em;
   z-index: 99999;
+  background: #fff;
 }
 .main-navigation ul ul ul {
   left: -999em;
@@ -2481,6 +2481,7 @@ a:hover, a:active {
 .main-navigation a {
   display: block;
   text-decoration: none;
+  padding: 0.625rem;
 }
 
 /* Small menu. */
@@ -2516,6 +2517,32 @@ a:hover, a:active {
   float: right;
   text-align: right;
   width: 50%;
+}
+
+#primary-nav-button {
+  display: inline-block;
+}
+
+/**Sidr**/
+.sidr {
+  width: 280px;
+}
+.sidr ul ul {
+  display: none;
+}
+.sidr .sidr-class-menu-item-has-children > a {
+  overflow: hidden;
+  padding-right: 0;
+}
+.sidr .sidr-class-menu-item-has-children .plus-oc {
+  margin-left: 5px;
+  width: 40px;
+  display: inline-block;
+  background-color: #626262;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  float: right;
 }
 
 /*--------------------------------------------------------------

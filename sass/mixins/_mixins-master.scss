@@ -21,3 +21,29 @@
 @mixin clearfix-after() {
 	clear: both;
 }
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+//Should be used for single ul > li nav
+@mixin navigation-list($padding, $color, $hover-color) {
+	list-style:none;
+	padding:0;
+	margin:0;
+	> li{
+		float:left;
+	}
+	a{
+		display: inline-block;
+		padding:$padding;
+		color: $color;
+		&:hover{
+			color: $hover-color;
+		}
+	}
+}

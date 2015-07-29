@@ -13,19 +13,39 @@
 			   });
 		},
 
-		createMobileMenu : function(){
-
+		createMobileMenu : function()
+		{
 			$('#primary-nav-button').sidr({
 					name: 'sidr-right',
 					side: 'right',
-					source: '#primary-nav'
+					source: '#site-navigation',
+					onOpen : function(){
+						var $els = $('.sidr-class-menu-item-has-children');
+						var $a;
+						$els.each(function(){
+							$a = $(this).find(' > a');
+							if( ! $a.find('span').length ){
+								$a.append("<span class='plus-oc' >+</span>");
+							}
+						});
+					},
 			});
 
-			$('body').on('click', function(){
+			$(document).on( 'click', '.plus-oc', function(e){
+				e.preventDefault();
+				if( $(this).html() == '+' ){
+					$(this).html('-');
+				}else{
+					$(this).html('+');
+				}
+				$(this).closest('li').find( '> ul' ).slideToggle();
+			});
+
+			$('#page').on('click', function(){
 				$.sidr( 'close' , 'sidr-right' );
 			});
 
-			$('#sidr-right, #primary-nav-button').on('click', function(e){
+			$('#primary-nav-button').on('click', function(e){
 				e.stopPropagation();
 			});
 		},

@@ -96,6 +96,7 @@ add_action( 'after_setup_theme', 'blank_theme_setup' );
  * @global int $content_width
  */
 function blank_theme_content_width() {
+	global $content_width;
 	$content_width = apply_filters( 'blank_theme_content_width', 640 );
 }
 add_action( 'after_setup_theme', 'blank_theme_content_width', 0 );
