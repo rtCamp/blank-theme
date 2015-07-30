@@ -33,7 +33,7 @@ module.exports = function ( grunt ) {
 						files: {
 							'style-expanded.css': 'sass/style.scss' // 'destination': 'source'
 						}
-						},
+					  },
 			minify: {
 						options: {
 							style: 'compressed' // nested / compact / compressed / expanded
@@ -41,7 +41,16 @@ module.exports = function ( grunt ) {
 						files: {
 							'style.css': 'sass/style.scss' // 'destination': 'source'
 						}
-			}
+					},
+			editor: {
+						options: {
+							style: 'compressed' // nested / compact / compressed / expanded
+						},
+						files: {
+							'editor-style.css': 'sass/editor-style.scss' // 'destination': 'source'
+						}
+					},
+
 		},
 		// autoprefixer
 		autoprefixer: {

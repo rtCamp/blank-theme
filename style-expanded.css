@@ -2543,6 +2543,8 @@ a:hover, a:active {
   position: relative;
   z-index: 2;
   float: right;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 /*--------------------------------------------------------------
