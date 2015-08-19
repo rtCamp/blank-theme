@@ -28,8 +28,12 @@ if( is_array($slides) ) : ?>
 		<?php endforeach; ?>
 	</ul>
 	<div class="blank-theme-cycle-pager clearfix"></div>
+
+	<?php if( count($slides) ) { ?>
 	<div class="blank-theme-prev"></div>
 	<div class="blank-theme-next"></div>
-</div>
+	<?php } ?>
+
+</div> <!-- #blank-theme-slider -->
 
 <?php endif; ?>
