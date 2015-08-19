@@ -44,9 +44,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Galleries
 --------------------------------------------------------------*/
 
-@import "functions/functions";
-@import "variables-site/variables-site";
-@import "mixins/mixins-master";
+@import "functions";
+@import "variables";
+@import "mixins-master";
 
 /*--------------------------------------------------------------
 # Normalize
@@ -56,7 +56,13 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-@import "typography/typography";
+@import "typography";
+
+/*--------------------------------------------------------------
+# Common Classes
+--------------------------------------------------------------*/
+
+@import "common-classes";
 
 /*--------------------------------------------------------------
 # Typography
@@ -64,44 +70,34 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "vendor/vendor";
 
 /*--------------------------------------------------------------
-# Layout
+# Site Layout
 --------------------------------------------------------------*/
-@import "layout/layout";
+@import "site_layout";
 
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
-@import "elements/elements";
+@import "elements";
 
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
-@import "navigation/navigation";
+@import "menus";
 
 /*--------------------------------------------------------------
-# Modules
+## Posts and pages
 --------------------------------------------------------------*/
-@import "modules/modules";
+@import "posts-and-pages";
 
 /*--------------------------------------------------------------
-# Widgets
+## Comments
 --------------------------------------------------------------*/
-@import "site/secondary/widgets";
-
-/*--------------------------------------------------------------
-# Content
---------------------------------------------------------------*/
-@import "site/site";
+@import "comments";
 
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
 @import "modules/infinite-scroll";
-
-/*--------------------------------------------------------------
-# Media
---------------------------------------------------------------*/
-@import "media/media";
 
 /*--------------------------------------------------------------
 # Media
