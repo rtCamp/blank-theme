@@ -1,4 +1,5 @@
 'use strict';
+
 module.exports = function ( grunt ) {
 
 	// load all grunt tasks matching the `grunt-*` pattern
@@ -10,12 +11,12 @@ module.exports = function ( grunt ) {
 		watch: {
 			sass: {
 				files: [ 'sass/**/*.{scss,sass}' ],
-				tasks: [ 'sass', 'autoprefixer' ]
+				tasks: [ 'sass' ]
 			},
-			js: {
-				files: '<%= uglify.frontend.src %>',
-				tasks: [ 'uglify' ]
-			},
+			// js: {
+			// 	files: '<%= uglify.frontend.src %>',
+			// 	tasks: [ 'uglify' ]
+			// },
 			livereload: {
 				// Here we watch the files the sass task will compile to
 				// These files are sent to the live reload server after sass compiles to them
@@ -26,30 +27,30 @@ module.exports = function ( grunt ) {
 		// Compile Sass to CSS
 		// Ref. https://www.npmjs.com/package/grunt-contrib-sass
 		sass: {
-			expanded: {
-						options: {
-							style: 'expanded' // nested / compact / compressed / expanded
-						},
-						files: {
-							'style-expanded.css': 'sass/style.scss' // 'destination': 'source'
-						}
-					  },
+			// expanded: {
+			// 			options: {
+			// 				style: 'expanded' // nested / compact / compressed / expanded
+			// 			},
+			// 			files: {
+			// 				'style-expanded.css': 'sass/style.scss' // 'destination': 'source'
+			// 			}
+			// 		  },
 			minify: {
 						options: {
-							style: 'compressed' // nested / compact / compressed / expanded
+							style: 'nested' // nested / compact / compressed / expanded
 						},
 						files: {
 							'style.css': 'sass/style.scss' // 'destination': 'source'
 						}
 					},
-			editor: {
-						options: {
-							style: 'compressed' // nested / compact / compressed / expanded
-						},
-						files: {
-							'editor-style.css': 'sass/editor-style.scss' // 'destination': 'source'
-						}
-					},
+			// editor: {
+			// 			options: {
+			// 				style: 'compressed' // nested / compact / compressed / expanded
+			// 			},
+			// 			files: {
+			// 				'editor-style.css': 'sass/editor-style.scss' // 'destination': 'source'
+			// 			}
+			// 		},
 
 		},
 		// autoprefixer
@@ -106,19 +107,7 @@ module.exports = function ( grunt ) {
 						}
 					}
 				},
-		// Add text domain
-		addtextdomain: {
-			target: {
-				files: {
-					src: [
-						'*.php',
-						'**/*.php',
-						'!node_modules/**',
-						'!tests/**'
-					]
-				}
-			}
-		},
+
 		//https://www.npmjs.com/package/grunt-checktextdomain
 		checktextdomain: {
 			options: {
@@ -155,6 +144,6 @@ module.exports = function ( grunt ) {
 	} );
 
 	// register task
-	grunt.registerTask( 'default', [ 'sass', 'autoprefixer', 'uglify', 'checktextdomain', 'makepot', 'watch' ] );
-	//grunt.registerTask( 'default', [ 'sass', 'autoprefixer', 'addtextdomain', 'checktextdomain', 'makepot', 'uglify', 'watch' ] );
+	grunt.registerTask( 'default', [ 'sass', 'autoprefixer' , 'checktextdomain', 'makepot', 'watch' ] );
+	//grunt.registerTask( 'default', [ 'sass', 'autoprefixer', 'checktextdomain', 'makepot', 'uglify', 'watch' ] );
 };

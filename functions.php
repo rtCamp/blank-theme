@@ -11,6 +11,7 @@ define ( 'BLANK_THEME_TEMP_DIR' , get_template_directory() );
 define ( 'BLANK_THEME_CSS_URI'  , BLANK_THEME_TEMP_URI . '/css' );
 define ( 'BLANK_THEME_JS_URI'	, BLANK_THEME_TEMP_URI . '/js' 	);
 define ( 'BLANK_THEME_IMG_URI'  , BLANK_THEME_TEMP_URI . '/images' );
+define ( 'BLANK_THEME_IS_DEV'   , true );
 
 
 if ( ! function_exists( 'blank_theme_setup' ) ) :
@@ -83,7 +84,7 @@ function blank_theme_setup() {
 		'default-image' => '',
 	) ) );
 
-	add_editor_style();
+	add_editor_style( array( 'editor-style.css', blank_theme_main_font_url() ) );
 }
 endif; // blank_theme_setup
 add_action( 'after_setup_theme', 'blank_theme_setup' );
@@ -138,7 +139,7 @@ function blank_theme_scripts()
 	          GOOGLE FONTS
 	===============================*/
 
-	//wp_enqueue_style( 'google-font-opensanscondensed', 'http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' );
+	//wp_enqueue_style( 'google-font-opensanscondensed', blank_theme_main_font_url() );
 
 	/*==============================
 	          STYLES
@@ -150,8 +151,15 @@ function blank_theme_scripts()
 	          SCRIPTS
 	===============================*/
 
-	wp_register_script( 'blank_theme_main', BLANK_THEME_JS_URI . '/main.min.js' , array( 'jquery' ), BLANK_THEME_VERSION , true );
-	wp_enqueue_script( 'blank_theme_main' );
+	$main_js = BLANK_THEME_IS_DEV ? 'main.js' : 'main.min.js';
+
+	wp_register_script( 'blank-theme-sidr', BLANK_THEME_JS_URI . '/vendor/jquery.sidr.js' , array( 'jquery' ), BLANK_THEME_VERSION , true );
+	wp_register_script( 'blank-theme-cycle2', BLANK_THEME_JS_URI . '/vendor/jquery.cycle2.js' , array( 'jquery' ), BLANK_THEME_VERSION , true );
+	wp_register_script( 'blank-theme-main', BLANK_THEME_JS_URI . '/' . $main_js , array( 'jquery', 'blank-theme-sidr', 'blank-theme-cycle2' ), BLANK_THEME_VERSION , true );
+
+
+	wp_enqueue_script( 'blank-theme-main' );
+
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
