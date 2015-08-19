@@ -56,36 +56,36 @@
 		Clearing
 ---------------------------*/
 
-.clearfix:before,
-.clearfix:after,
-.clear:before,
-.clear:after,
-.entry-content:before,
-.entry-content:after,
-.comment-content:before,
-.comment-content:after,
-.site-header:before,
-.site-header:after,
-.site-content:before,
-.site-content:after,
-.site-footer:before,
-.site-footer:after {
-	@include clearfix;
+.comment-content , .clearfix {
+	@extend %clearfix
 }
 
-.clearfix:after,
-.clear:after,
-.entry-content:after,
-.comment-content:after,
-.site-header:after,
-.site-content:after,
-.site-footer:after {
-	@include clearfix-after;
+// Clear Both
+.clear-both {
+	clear: both;
 }
+
+// Clear None
+.clear-none {
+	clear: none;
+}
+
+// Clear Left
+.clear-left {
+	clear: left;
+}
+
+// Clear Right
+.clear-right {
+	clear: right;
+}
+
 
 /*---------------------------
 		Others
 ---------------------------*/
 
-
+.hide {
+	display: none;
+}
 

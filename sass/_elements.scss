@@ -44,13 +44,6 @@ blockquote, q {
 	}
 }
 
-hr {
-	background-color: $color__background-hr;
-	border: 0;
-	height: 1px;
-	margin-bottom: 1.5em;
-}
-
 img {
 	height: auto; /* Make sure images are scaled correctly. */
 	max-width: 100%; /* Adhere to container width. */
@@ -96,9 +89,10 @@ dd {
 	margin: 0 1.5em 1.5em;
 }
 
-table {
-	margin: 0 0 1.5em;
-	width: 100%;
+ul{
+	list-style:none;
+	margin: 0;
+	padding: 0;
 }
 
 /*---------------------------
@@ -119,6 +113,7 @@ input[type="submit"] {
 	line-height: 1;
 	padding: .6em 1em .4em;
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+	font-family: $font__main;
 
 	&:hover {
 		border-color: $color__border-button-hover;
@@ -146,6 +141,8 @@ textarea {
 	color: $color__text-input;
 	border: 1px solid $color__border-input;
 	border-radius: 3px;
+	font-family: $font__main;
+	line-height: $font__line-height-body;
 
 	&:focus {
 		color: $color__text-input-focus;
@@ -160,7 +157,18 @@ input[type="search"] {
 	padding: 3px;
 }
 
+select{
+	color: $color__text-main;
+	font-family: $font__main;
+	@include font-size(1);
+	line-height: $font__line-height-body;
+}
+
 textarea {
 	padding-left: 3px;
 	width: 100%;
+	color: $color__text-main;
+	font-family: $font__main;
+	@include font-size(1);
+	line-height: $font__line-height-body;
 }

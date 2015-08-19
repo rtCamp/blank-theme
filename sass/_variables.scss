@@ -10,14 +10,22 @@ $font__line-height-pre: 1.6;
 
 //rem base
 $font__rem-base: 16px;
-$font__base-font-size: 25px;
+$font__base-font-size: 16px;
 $font__base-line-height: 30px;
+
+// Heading sizes
+$font__size-h1: 24px;
+$font__size-h2: 22px;
+$font__size-h3: 18px;
+$font__size-h4: 16px;
+$font__size-h5: 12px;
+$font__size-h6: 10px;
 
 /*---------------------------
 		Colors
 ---------------------------*/
 
-$color__primary : red;
+$color__primary : #444;
 $color__secondary : blue;
 
 $color__background-body: #fff;
@@ -40,6 +48,9 @@ $color__border-button-focus: #aaa #bbb #bbb;
 $color__border-input: #ccc;
 $color__border-abbr: #666;
 $color__border-line: #ccc;
+
+$color__border-light: #ddd;
+$color__border-button: #ccc #ccc #bbb;
 
 
 /*---------------------------
@@ -65,7 +76,7 @@ $column-gutter: rem-calc(25);
 
 
 /*---------------------------
-		Media Query
+	Foundation Media Query
 ---------------------------*/
 
 // Here we define the lower and upper bounds for each media size
@@ -95,3 +106,5 @@ $large-only: "#{$screen} and (min-width:#{lower-bound($large-range)}) and (max-w
 
 $size__site-main: 100%;
 $size__site-sidebar: 25%;
+$gutter : rem-calc(30);
+

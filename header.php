@@ -22,17 +22,17 @@
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'blank-theme' ); ?></a>
 
-	<header id="masthead" class="site-header row" role="banner">
-		<div class="large-12 column">
-			<div class="site-branding">
-				<?php echo blank_theme_site_branding(); ?>
-			</div><!-- .site-branding -->
+	<header id="masthead" class="site-header clearfix row" role="banner">
+		<div class="site-branding">
+			<?php echo blank_theme_site_branding(); ?>
+		</div><!-- .site-branding -->
 
-			<a id="primary-nav-button" href="#site-navigation"><?php _e( 'Mobile Menu' , 'blank-theme' ); ?></a>
-			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' , 'depth' => 3 ) ); ?>
-			</nav><!-- #site-navigation -->
-		</div>
+		<a id="primary-nav-button" href="#site-navigation"><?php _e( 'Mobile Menu' , 'blank-theme' ); ?></a>
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' , 'depth' => 3 ) ); ?>
+		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
+
+	<?php get_template_part( 'template-parts/slider' ); ?>
 
 	<div id="content" class="site-content row">
