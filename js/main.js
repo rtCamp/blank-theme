@@ -41,12 +41,10 @@
 				$(this).closest('li').find( '> ul' ).slideToggle();
 			});
 
-			$('#page').on('click', function(){
-				$.sidr( 'close' , 'sidr-right' );
-			});
-
-			$('#primary-nav-button').on('click', function(e){
-				e.stopPropagation();
+			$(document).on( 'click' , function(){
+				if (!$(event.target).closest('#sidr-right').length) {
+				   $.sidr( 'close' , 'sidr-right' );
+				 }
 			});
 		},
 
