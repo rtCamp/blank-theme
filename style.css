@@ -1842,6 +1842,8 @@ figure {
   font-size: 15px;
   background: #333;
   color: #fff;
+  -webkit-box-shadow: inset 0 0 5px 5px #222;
+  -moz-box-shadow: inset 0 0 5px 5px #222;
   box-shadow: inset 0 0 5px 5px #222; }
 
 .sidr .sidr-inner {
@@ -1873,7 +1875,11 @@ figure {
   line-height: 24px;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #4d4d4d), color-stop(100%, #1a1a1a));
   background-image: -webkit-linear-gradient(#4d4d4d, #1a1a1a);
+  background-image: -moz-linear-gradient(#4d4d4d, #1a1a1a);
+  background-image: -o-linear-gradient(#4d4d4d, #1a1a1a);
   background-image: linear-gradient(#4d4d4d, #1a1a1a);
+  -webkit-box-shadow: 0 5px 5px 3px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 5px 3px rgba(0, 0, 0, 0.2);
   box-shadow: 0 5px 5px 3px rgba(0, 0, 0, 0.2); }
 
 .sidr p {
@@ -1913,6 +1919,8 @@ figure {
 .sidr ul li.active > span,
 .sidr ul li.sidr-class-active > a,
 .sidr ul li.sidr-class-active > span {
+  -webkit-box-shadow: inset 0 0 15px 3px #222;
+  -moz-box-shadow: inset 0 0 15px 3px #222;
   box-shadow: inset 0 0 15px 3px #222; }
 
 .sidr ul li a,
@@ -1945,6 +1953,8 @@ figure {
 .sidr ul li ul li.active > span,
 .sidr ul li ul li.sidr-class-active > a,
 .sidr ul li ul li.sidr-class-active > span {
+  -webkit-box-shadow: inset 0 0 15px 3px #222;
+  -moz-box-shadow: inset 0 0 15px 3px #222;
   box-shadow: inset 0 0 15px 3px #222; }
 
 .sidr ul li ul li a,
@@ -1973,8 +1983,14 @@ figure {
   width: 100%;
   font-size: 13px;
   padding: 5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0 0 10px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
   border-radius: 2px;
   border: none;
   background: rgba(0, 0, 0, 0.1);
@@ -2169,40 +2185,111 @@ textarea {
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
+/*==============================
+          Main Menu
+===============================*/
+/* HEADER MENU */
 .main-navigation {
-  clear: both;
-  display: block;
-  float: left;
   width: 100%; }
   .main-navigation ul {
-    display: none;
-    list-style: none;
     margin: 0;
-    padding-left: 0; }
-    .main-navigation ul ul {
-      float: left;
-      position: absolute;
-      top: 2.1875rem;
-      left: -999em;
-      z-index: 99999;
-      background: #fff; }
-      .main-navigation ul ul ul {
-        left: -999em;
-        top: 0; }
-      .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
-        left: 100%; }
-      .main-navigation ul ul a {
-        width: 200px; }
-    .main-navigation ul li:hover > ul,
-    .main-navigation ul li.focus > ul {
-      left: auto; }
+    padding: 0;
+    list-style: none; }
+    .main-navigation ul .children li:hover .children {
+      opacity: 1;
+      left: 200px;
+      visibility: visible; }
   .main-navigation li {
     float: left;
-    position: relative; }
+    position: relative;
+    border-right: 1px solid #ccc; }
+    .main-navigation li:hover .children {
+      opacity: 1;
+      visibility: visible; }
+      .main-navigation li:hover .children li {
+        margin-top: 0;
+        opacity: 1; }
+      .main-navigation li:hover .children li:hover > a {
+        color: #fff; }
+      .main-navigation li:hover .children a {
+        color: rgba(255, 255, 255, 0.6);
+        -moz-transition: color 0.1s ease-out;
+        -webkit-transition: color 0.1s ease-out;
+        -o-transition: color 0.1s ease-out;
+        transition: color 0.1s ease-out; }
+      .main-navigation li:hover .children a:hover {
+        color: white;
+        -moz-transition: color 0.3s ease-out;
+        -webkit-transition: color 0.3s ease-out;
+        -o-transition: color 0.3s ease-out;
+        transition: color 0.3s ease-out; }
+    .main-navigation li .children .children {
+      float: left;
+      position: absolute;
+      left: 150px;
+      top: 0px;
+      background: #222;
+      opacity: 0;
+      visibility: hidden;
+      -moz-transition: opacity 0.2s 0.01s ease-in-out, left 0.2s 0.1s ease-out, visibility 0.1s 0.1s linear;
+      -webkit-transition: opacity 0.2s 0.01s ease-in-out, left 0.2s 0.1s ease-out, visibility 0.1s 0.1s linear;
+      -o-transition: opacity 0.2s 0.01s ease-in-out, left 0.2s 0.1s ease-out, visibility 0.1s 0.1s linear;
+      transition: opacity 0.2s 0.01s ease-in-out, left 0.2s 0.1s ease-out, visibility 0.1s 0.1s linear; }
   .main-navigation a {
-    display: block;
+    font-size: 14px;
+    padding: 10px 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #444;
+    font-weight: 700;
     text-decoration: none;
-    padding: 0.625rem; }
+    display: block; }
+  .main-navigation .children {
+    float: left;
+    position: absolute;
+    left: 0px;
+    top: 47px;
+    z-index: 9;
+    background: #222;
+    opacity: 0;
+    visibility: hidden;
+    -moz-transition: opacity 0.2s 0.1s ease-out, visibility 0.1s 0.1s linear;
+    -webkit-transition: opacity 0.3s ease-out, visibility 0.1s 0.1s linear;
+    -o-transition: opacity 0.3s ease-out, visibility 0.1s 0.1s linear;
+    transition: opacity 0.3s ease-out, visibility 0.1s 0.1s linear; }
+    .main-navigation .children li {
+      border: none;
+      border-bottom: 1px solid #ccc;
+      clear: both;
+      margin-top: -15px;
+      width: 200px;
+      -moz-transition: opacity 0.1s 0.15s ease-out, margin 0.3s 0.1s ease-out;
+      -webkit-transition: opacity 0.1s 0.15s ease-out, margin 0.3s 0.1s ease-out;
+      -o-transition: opacity 0.15s 0.15s ease-out, margin 0.3s 0.1s ease-out;
+      transition: opacity 0.15s 0.15s ease-out, margin 0.3s 0.1s ease-out; }
+    .main-navigation .children .children li {
+      border: none;
+      border-bottom: 1px solid #ccc;
+      border-left: 1px solid #ccc;
+      clear: both;
+      opacity: 1; }
+    .main-navigation .children a {
+      line-height: 1.5;
+      background: #222;
+      font-size: 13px; }
+  .main-navigation .current_page_item > a,
+  .main-navigation .current-menu-item > a,
+  .main-navigation .current_page_ancestor > a {
+    color: #fff; }
+  .main-navigation .page_item_has_children:after {
+    content: "\f140";
+    font-family: dashicons;
+    position: absolute;
+    right: 3px;
+    top: 10px;
+    color: #fff; }
+  .main-navigation .page_item_has_children .page_item_has_children:after {
+    top: 5px; }
 
 /* Small menu. */
 .menu-toggle,
