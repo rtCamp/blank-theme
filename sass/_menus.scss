@@ -123,7 +123,7 @@
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a {
-		color: #fff;
+		color: #000;
 	}
 
 	.page_item_has_children:after{
@@ -281,4 +281,10 @@
 			padding-right: 10px;
 		}
 	}
+}
+
+
+.mm-menu .mm-search input{
+	border-radius: 30px;
+	text-indent: 10px;
 }
