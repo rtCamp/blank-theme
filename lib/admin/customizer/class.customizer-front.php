@@ -10,26 +10,7 @@ class BLANK_THEME_Customizer_Front extends BLANK_THEME_Customizer_Admin
 	public function __construct()
 	{
 		// Output custom CSS to live site
-		add_action( 'wp_head' , array( $this , 'header_output' ) );
 		add_action( 'wp_enqueue_scripts' , array( $this, 'enqueue_font' ) );
-	}
-
-	/**
-	 * This will output the custom WordPress settings to the live theme's WP head.
-	 */
-	public function header_output() {
-		do_action( 'blank_theme_customizer_header_output' );
-		$favicon = get_theme_mod( 'blank_theme_favicon' );
-
-	   if( $favicon ) { ?>
-	   <link rel="shortcut icon" href="<?php echo esc_url($favicon); ?>" />
-	   <?php } ?>
-
-	   <!--Customizer CSS-->
-	   <style type="text/css"><?php self::custom_css(); ?></style>
-	   <!--/Customizer CSS-->
-
-	   <?php
 	}
 
 	public function enqueue_font()

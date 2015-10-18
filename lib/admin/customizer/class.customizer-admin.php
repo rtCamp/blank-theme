@@ -87,34 +87,6 @@ class BLANK_THEME_Customizer_Admin extends BLANK_THEME_Customizer {
         ));
 
       /*==============================
-                  FAVICON
-      ===============================*/
-
-      $wp_customize->add_section( 'blank_theme_favicon_section',
-         array(
-            'title'       => __( 'Favicon', 'blank-theme' ),
-            'capability'  => 'edit_theme_options',
-            'description' => __('', 'blank-theme'), //Descriptive tooltip
-            'panel'       => 'blank_theme_general_panel'
-        ));
-
-      $wp_customize->add_setting( 'blank_theme_favicon',
-         array(
-            'default'    => "",
-            'capability' => 'edit_theme_options',
-            'sanitize_callback' => 'esc_url_raw',
-         ));
-
-      $wp_customize->add_control(
-            new WP_Customize_Image_Control($wp_customize, 'blank_theme_favicon',
-             array(
-                'label'    => __( 'Choose Favicon', 'blank-theme' ),
-                'section'  => 'blank_theme_favicon_section',
-                'settings' => 'blank_theme_favicon',
-             )
-      ));
-
-      /*==============================
                 SIDEBAR POSITIONS
       ===============================*/
 
