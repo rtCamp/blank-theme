@@ -1,4 +1,4 @@
-=== blanktheme ===
+=== Blank Theme ===
 
 Contributors: automattic
 Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
@@ -9,7 +9,7 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A starter theme called blanktheme, or underscores.
+A starter theme called Blank Theme, or underscores.
 
 == Description ==
 
@@ -25,7 +25,7 @@ Blank is a custom theme blank created from underscore theme.
 
 = Does this theme support any plugins? =
 
-blanktheme includes support for Infinite Scroll in Jetpack.
+Blank Theme includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 

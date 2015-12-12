@@ -3,7 +3,7 @@ Theme Name: Blank Theme
 Theme URI: http://underscores.me/
 Author: Sayed Taqui
 Author URI: http://underscore-me.com/
-Description: Description
+Description: Blank Theme is a responsive multipurpose theme.
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -466,12 +466,6 @@ hr {
   box-sizing: content-box;
   /* Address differences between Firefox and other browsers. Source- normalize.css */
   height: 1px; }
-
-/**
- * Address margin not present in IE 8/9 and Safari. [normalize.css]
- */
-figure {
-  margin: 1rem 1.625rem; }
 
 /*--------------------------------------------------------------
 # Common Classes
@@ -3628,6 +3622,10 @@ img {
   max-width: 100%;
   /* Adhere to container width. */ }
 
+figure {
+  margin: 1rem 1.625rem;
+  max-width: 100%; }
+
 /* Default Links */
 a {
   color: royalblue;
@@ -3736,12 +3734,11 @@ select {
   line-height: 1.5; }
 
 textarea {
-  padding-left: 3px;
-  width: 100%;
-  color: #404040;
-  font-family: sans-serif;
-  font-size: 0.0625rem;
-  line-height: 1.5; }
+  max-width: 100%;
+  line-height: 1.5;
+  outline: 0;
+  background: #fafafa;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1) inset; }
 
 /*--------------------------------------------------------------
 # Site Layout
@@ -3752,108 +3749,40 @@ textarea {
 /*==============================
           Main Menu
 ===============================*/
-/* HEADER MENU */
 .main-navigation {
+  clear: both;
+  display: block;
+  float: left;
   width: 100%; }
   .main-navigation ul {
+    display: none;
+    list-style: none;
     margin: 0;
-    padding: 0;
-    list-style: none; }
-    .main-navigation ul .children li:hover .children {
-      opacity: 1;
-      left: 200px;
-      visibility: visible; }
-  .main-navigation li {
-    float: left;
-    position: relative;
-    border-right: 1px solid #ccc; }
-    .main-navigation li:hover .children {
-      opacity: 1;
-      visibility: visible; }
-      .main-navigation li:hover .children li {
-        margin-top: 0;
-        opacity: 1; }
-      .main-navigation li:hover .children li:hover > a {
-        color: #fff; }
-      .main-navigation li:hover .children a {
-        color: rgba(255, 255, 255, 0.6);
-        -moz-transition: color 0.1s ease-out;
-        -webkit-transition: color 0.1s ease-out;
-        -o-transition: color 0.1s ease-out;
-        transition: color 0.1s ease-out; }
-      .main-navigation li:hover .children a:hover {
-        color: white;
-        -moz-transition: color 0.3s ease-out;
-        -webkit-transition: color 0.3s ease-out;
-        -o-transition: color 0.3s ease-out;
-        transition: color 0.3s ease-out; }
-    .main-navigation li .children .children {
+    padding-left: 0; }
+    .main-navigation ul ul {
       float: left;
       position: absolute;
-      left: 150px;
-      top: 0px;
-      background: #222;
-      opacity: 0;
-      visibility: hidden;
-      -moz-transition: opacity 0.2s 0.01s ease-in-out, left 0.2s 0.1s ease-out, visibility 0.1s 0.1s linear;
-      -webkit-transition: opacity 0.2s 0.01s ease-in-out, left 0.2s 0.1s ease-out, visibility 0.1s 0.1s linear;
-      -o-transition: opacity 0.2s 0.01s ease-in-out, left 0.2s 0.1s ease-out, visibility 0.1s 0.1s linear;
-      transition: opacity 0.2s 0.01s ease-in-out, left 0.2s 0.1s ease-out, visibility 0.1s 0.1s linear; }
-  .main-navigation a {
-    font-size: 14px;
-    padding: 10px 20px;
-    text-align: center;
-    text-transform: uppercase;
-    color: #444;
-    font-weight: 700;
-    text-decoration: none;
-    display: block; }
-  .main-navigation .children {
+      top: 2.1875rem;
+      left: -999em;
+      z-index: 99999;
+      background: #fff; }
+      .main-navigation ul ul ul {
+        left: -999em;
+        top: 0; }
+      .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
+        left: 100%; }
+      .main-navigation ul ul a {
+        width: 200px; }
+    .main-navigation ul li:hover > ul,
+    .main-navigation ul li.focus > ul {
+      left: auto; }
+  .main-navigation li {
     float: left;
-    position: absolute;
-    left: 0px;
-    top: 47px;
-    z-index: 9;
-    background: #222;
-    opacity: 0;
-    visibility: hidden;
-    -moz-transition: opacity 0.2s 0.1s ease-out, visibility 0.1s 0.1s linear;
-    -webkit-transition: opacity 0.3s ease-out, visibility 0.1s 0.1s linear;
-    -o-transition: opacity 0.3s ease-out, visibility 0.1s 0.1s linear;
-    transition: opacity 0.3s ease-out, visibility 0.1s 0.1s linear; }
-    .main-navigation .children li {
-      border: none;
-      border-bottom: 1px solid #ccc;
-      clear: both;
-      margin-top: -15px;
-      width: 200px;
-      -moz-transition: opacity 0.1s 0.15s ease-out, margin 0.3s 0.1s ease-out;
-      -webkit-transition: opacity 0.1s 0.15s ease-out, margin 0.3s 0.1s ease-out;
-      -o-transition: opacity 0.15s 0.15s ease-out, margin 0.3s 0.1s ease-out;
-      transition: opacity 0.15s 0.15s ease-out, margin 0.3s 0.1s ease-out; }
-    .main-navigation .children .children li {
-      border: none;
-      border-bottom: 1px solid #ccc;
-      border-left: 1px solid #ccc;
-      clear: both;
-      opacity: 1; }
-    .main-navigation .children a {
-      line-height: 1.5;
-      background: #222;
-      font-size: 13px; }
-  .main-navigation .current_page_item > a,
-  .main-navigation .current-menu-item > a,
-  .main-navigation .current_page_ancestor > a {
-    color: #000; }
-  .main-navigation .page_item_has_children:after {
-    content: "\f140";
-    font-family: dashicons;
-    position: absolute;
-    right: 3px;
-    top: 10px;
-    color: #fff; }
-  .main-navigation .page_item_has_children .page_item_has_children:after {
-    top: 5px; }
+    position: relative; }
+  .main-navigation a {
+    display: block;
+    text-decoration: none;
+    padding: 0.625rem; }
 
 /* Small menu. */
 .menu-toggle,
@@ -3887,25 +3816,6 @@ textarea {
   display: inline-block; }
 
 /**Sidr**/
-.sidr {
-  width: 280px; }
-  .sidr ul ul {
-    display: none; }
-  .sidr .sidr-class-menu-item-has-children > a {
-    overflow: hidden;
-    padding-right: 0; }
-  .sidr .sidr-class-menu-item-has-children .plus-oc {
-    margin-left: 5px;
-    width: 40px;
-    display: inline-block;
-    background-color: #626262;
-    text-align: center;
-    position: relative;
-    z-index: 2;
-    float: right;
-    padding-left: 10px;
-    padding-right: 10px; }
-
 .mm-menu .mm-search input {
   border-radius: 30px;
   text-indent: 10px; }

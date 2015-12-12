@@ -4,12 +4,12 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package blanktheme
+ * @package Blank Theme
  */
 
 get_header(); ?>
 
-	<div id="primary" class="content-area large-8 column">
+	<div id="primary" class="<?php blank_theme_primary_classes(); ?>">
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
@@ -48,5 +48,6 @@ get_header(); ?>
 
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+<?php
+get_sidebar();
+get_footer();

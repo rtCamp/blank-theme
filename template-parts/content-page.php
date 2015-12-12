@@ -2,7 +2,7 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package blanktheme
+ * @package Blank Theme
  */
 
 ?>
@@ -13,8 +13,8 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content clearfix">
-		<?php the_content(); ?>
-		<?php
+		<?php the_content();
+
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'blank-theme' ),
 				'after'  => '</div>',

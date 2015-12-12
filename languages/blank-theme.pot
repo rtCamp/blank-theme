@@ -4,14 +4,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Blank Theme 1.0.0\n"
 "Report-Msgid-Bugs-To: http://community.blank-theme.com/c/premium-themes\n"
-"POT-Creation-Date: 2015-10-17 06:22:20+00:00\n"
+"POT-Creation-Date: 2015-12-12 13:52:07+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Company <support@blank-theme.com>\n"
 "Language-Team: Team <support@blank-theme.com>\n"
-"X-Generator: grunt-wp-i18n 0.5.2\n"
+"X-Generator: grunt-wp-i18n 0.5.3\n"
 "X-Poedit-KeywordsList: "
 "__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
 "attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
@@ -95,7 +95,7 @@ msgstr ""
 msgid "Read More"
 msgstr ""
 
-#: inc/extras.php:52
+#: inc/extras.php:118
 msgid "Page %s"
 msgstr ""
 
@@ -198,64 +198,56 @@ msgid "General"
 msgstr ""
 
 #: lib/admin/customizer/class.customizer-admin.php:95
-msgid "Favicon"
-msgstr ""
-
-#: lib/admin/customizer/class.customizer-admin.php:111
-msgid "Choose Favicon"
-msgstr ""
-
-#: lib/admin/customizer/class.customizer-admin.php:123
-#: lib/admin/customizer/class.customizer-admin.php:138
+#: lib/admin/customizer/class.customizer-admin.php:110
 msgid "Sidebar Position"
 msgstr ""
 
-#: lib/admin/customizer/class.customizer-admin.php:142
+#: lib/admin/customizer/class.customizer-admin.php:114
 msgid "Left"
 msgstr ""
 
-#: lib/admin/customizer/class.customizer-admin.php:142
+#: lib/admin/customizer/class.customizer-admin.php:114
 msgid "Right"
 msgstr ""
 
-#: lib/admin/customizer/class.customizer-admin.php:152
-#: lib/admin/customizer/class.customizer-admin.php:170
+#: lib/admin/customizer/class.customizer-admin.php:124
+#: lib/admin/customizer/class.customizer-admin.php:142
 msgid "Copyright Text"
 msgstr ""
 
-#: lib/admin/customizer/class.customizer-admin.php:154
+#: lib/admin/customizer/class.customizer-admin.php:126
 msgid "Will override the footer copyright text"
 msgstr ""
 
-#: lib/admin/customizer/class.customizer-admin.php:184
+#: lib/admin/customizer/class.customizer-admin.php:156
 msgid "Slider Options"
 msgstr ""
 
-#: lib/admin/customizer/class.customizer-admin.php:185
+#: lib/admin/customizer/class.customizer-admin.php:157
 msgid "Add slider"
 msgstr ""
 
-#: lib/admin/customizer/class.customizer-admin.php:193
+#: lib/admin/customizer/class.customizer-admin.php:165
 msgid "Slide %s"
 msgstr ""
 
-#: lib/admin/customizer/class.customizer-admin.php:194
+#: lib/admin/customizer/class.customizer-admin.php:166
 msgid "Add slide"
 msgstr ""
 
-#: lib/admin/customizer/class.customizer-admin.php:207
+#: lib/admin/customizer/class.customizer-admin.php:179
 msgid "Title"
 msgstr ""
 
-#. Description of the plugin/theme
+#: lib/admin/customizer/class.customizer-admin.php:192
 msgid "Description"
 msgstr ""
 
-#: lib/admin/customizer/class.customizer-admin.php:233
+#: lib/admin/customizer/class.customizer-admin.php:205
 msgid "Link"
 msgstr ""
 
-#: lib/admin/customizer/class.customizer-admin.php:246
+#: lib/admin/customizer/class.customizer-admin.php:218
 msgid "Image"
 msgstr ""
 
@@ -311,6 +303,10 @@ msgstr ""
 
 #. Theme URI of the plugin/theme
 msgid "http://underscores.me/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Blank Theme is a responsive multipurpose theme."
 msgstr ""
 
 #. Author of the plugin/theme

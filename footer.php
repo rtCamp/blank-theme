@@ -4,7 +4,7 @@
  *
  * Contains the closing of the #content div and all content after
  *
- * @package blanktheme
+ * @package Blank Theme
  */
 
 ?>
@@ -18,9 +18,9 @@
 		</div>
 		<?php } ?>
 		<div class="site-info large-12 column">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'blank-theme' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'blank-theme' ), 'blank theme' ); ?></a>
+			<span class="blank-theme-copyright-text"><?php echo blank_theme_copyright_text(); ?></span>
 			<span class="sep"> | </span>
-			<?php echo blank_theme_copyright_text(); ?>
+			<a class="blank-theme-author-footer" href="<?php echo esc_url( __( 'http://underscore-me.com/', 'blank-theme' ) ); ?>" target="_blank" >Blank Theme</a>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

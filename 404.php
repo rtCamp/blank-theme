@@ -2,12 +2,12 @@
 /**
  * The template for displaying 404 pages (not found).
  *
- * @package blanktheme
+ * @package Blank Theme
  */
 
 get_header(); ?>
 
-	<div id="primary" class="content-area large-8 column">
+	<div id="primary" class="<?php blank_theme_primary_classes(); ?>">
 		<main id="main" class="site-main" role="main">
 
 			<section class="error-404 not-found">
@@ -34,4 +34,4 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_footer(); ?>
+<?php get_footer();

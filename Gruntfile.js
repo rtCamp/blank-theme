@@ -69,7 +69,7 @@ module.exports = function ( grunt ) {
 		// Uglify Ref. https://npmjs.org/package/grunt-contrib-uglify
 		uglify: {
 			options: {
-				banner: '/*! \n * blank_theme v6 JavaScript Library \n * @package blank_theme \n */',
+				banner: '/*! \n * blank_theme v6 JavaScript Library \n * @package Blank Theme \n */',
 				sourceMap: 'js/main.js.map',
 				sourceMappingURL: 'main.js.map',
 				sourceMapPrefix: 2

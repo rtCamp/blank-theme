@@ -1,8 +1,52 @@
 <?php
 /**
  *  Contains custom functions used for the theme
- *  @package blanktheme
+ *
+ *  @package Blank Theme
  */
+
+/**
+ * Adds Foundation classes to #primary section of all templates
+ * @return string classes
+ */
+
+if( ! function_exists( 'blank_theme_primary_classes' ) )
+{
+	function blank_theme_primary_classes( $more_classes = false, $override_foundation_classes = false )
+	{
+		$sidebar_postion = get_theme_mod( 'blank_theme_sidebar_position' );
+
+		$foundation_classes = $override_foundation_classes ? $override_foundation_classes : 'large-8 medium-12 small-12 column';
+
+		if( $sidebar_postion === 'left' ){
+			$foundation_classes .= 	' blank-theme-right';
+		}
+		else if( $sidebar_postion === 'no_sidebar' ){
+			$foundation_classes = 'large-12 medium-12 small-12 column';
+		}
+
+		echo apply_filters( 'blank_theme_primary_classes' , "blank-theme-primary {$foundation_classes} {$more_classes} clearfix" , $more_classes, $foundation_classes );
+	}
+}
+
+/**
+ * Adds Foundation classes to #primary seciton of all templates
+ * @return string classes
+ */
+
+if( ! function_exists( 'blank_theme_secondary_classes' ) )
+{
+	function blank_theme_secondary_classes( $more_classes = false, $override_foundation_classes = false )
+	{
+		//Override will be useful in page-templates
+		$sidebar_postion = get_theme_mod( 'blank_theme_sidebar_position' );
+		$foundation_classes = $override_foundation_classes ? $override_foundation_classes : 'large-4 medium-12 small-12 column';
+		$foundation_classes .= $sidebar_postion == 'left' ? ' blank-theme-left' : false;
+
+		echo apply_filters( 'blank_theme_secondary_classes' , "blank-theme-secondary widget-area {$foundation_classes} {$more_classes} clearfix" , $more_classes, $foundation_classes );
+	}
+}
+
 
 if( ! function_exists( 'blank_theme_main_font_url' ) )
 {
@@ -28,7 +72,9 @@ if( ! function_exists( 'blank_theme_copyright_text' ) )
 {
 	function blank_theme_copyright_text()
 	{
-		$default = sprintf( esc_html__( 'Theme: %1$s by %2$s.', 'blank-theme' ), 'blank-theme', '<a href="http://automattic.com/" rel="designer">Sayed Taqui</a>' );
+		$theme_uri = 'http://underscore-me.com/';
+
+		$default = sprintf( esc_html__( '%1$s by %2$s.', 'blank-theme' ), 'Blank Theme', '<a href="" rel="designer">Sayed Taqui</a>' );
 
 		$copyright_text = get_theme_mod( 'blank_theme_copyright_text' , $default );
 

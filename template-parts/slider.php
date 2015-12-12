@@ -1,7 +1,7 @@
 <?php
 /**
  *  Used for showing the slider
- *  @package blanktheme
+ *  @package Blank Theme
  */
 
 $slides = get_theme_mod( 'blank_theme_slides' );

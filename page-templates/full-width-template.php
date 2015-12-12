@@ -4,12 +4,12 @@
  *
  * Used for showing full width tempalte
  *
- * @package blanktheme
+ * @package Blank Theme
  */
 
 get_header(); ?>
 
-	<div id="primary" class="content-area large-12 column">
+	<div id="primary" class="<?php blank_theme_primary_classes( 'blank-theme-full-page', 'large-12 medium-12 small-12 column' ); ?>">
 		<main id="main" class="site-main" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -28,4 +28,5 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_footer(); ?>
+<?php
+get_footer();

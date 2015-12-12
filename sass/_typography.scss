@@ -176,11 +176,3 @@ hr {
 	height: 1px;
 	@extend %vertical-rhythm;
 }
-
-/**
- * Address margin not present in IE 8/9 and Safari. [normalize.css]
- */
-
-figure {
-	margin: rem-calc(16 26);
-}

@@ -1,8 +1,8 @@
 <?php
 /**
- * blanktheme functions and definitions
+ * Blank Theme functions and definitions
  *
- * @package blanktheme
+ * @package Blank Theme
  */
 
 define ( 'BLANK_THEME_VERSION'  , '1.0.0' );
@@ -26,7 +26,7 @@ function blank_theme_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on blanktheme, use a find and replace
+	 * If you're building a theme based on Blank Theme, use a find and replace
 	 * to change 'blank-theme' to the name of your theme in all the template files
 	 */
 	load_theme_textdomain( 'blank-theme', BLANK_THEME_TEMP_DIR . '/languages' );

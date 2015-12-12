@@ -49,6 +49,10 @@ img {
 	max-width: 100%; /* Adhere to container width. */
 }
 
+figure{
+	margin: rem-calc(16 26);
+	max-width: 100%;
+}
 
 /* Default Links */
 a {
@@ -165,10 +169,9 @@ select{
 }
 
 textarea {
-	padding-left: 3px;
-	width: 100%;
-	color: $color__text-main;
-	font-family: $font__main;
-	@include font-size(1);
+	max-width: 100%;
 	line-height: $font__line-height-body;
+	outline: 0;
+	background: #fafafa;
+	box-shadow: 1px 1px 5px rgba(0,0,0,0.1) inset;
 }
