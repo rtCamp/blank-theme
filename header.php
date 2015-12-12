@@ -22,13 +22,13 @@
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'blank-theme' ); ?></a>
 
-	<header id="masthead" class="site-header clearfix row" role="banner">
+	<header id="masthead" class="site-header row-container" role="banner">
 		<div class="site-branding">
 			<?php echo blank_theme_site_branding(); ?>
 		</div><!-- .site-branding -->
 
-		<a id="primary-nav-button" href="#site-navigation"><?php _e( 'Mobile Menu' , 'blank-theme' ); ?></a>
-		<nav id="site-navigation" class="main-navigation" role="navigation">
+		<a id="primary-nav-button" class="blank-theme-mobile-nav-button" href="#site-navigation"><?php _e( 'Mobile Menu' , 'blank-theme' ); ?></a>
+		<nav id="site-navigation" class="blank-theme-main-navigation" role="navigation">
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' , 'depth' => 3 ) ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->

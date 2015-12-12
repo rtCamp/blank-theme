@@ -7,67 +7,88 @@
  * @package Blank Theme
  */
 
-if ( ! function_exists( 'blank_theme_posted_on' ) ) :
-/**
- * Prints HTML with meta information for the current post-date/time and author.
- */
-function blank_theme_posted_on() {
-	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+if( ! function_exists( 'blank_theme_posted_on' ) )
+{
+	function blank_theme_posted_on()
+	{
+		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+
+		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+		}
+
+		$time_string = sprintf( $time_string,
+			esc_attr( get_the_date( 'c' ) ),
+			esc_html( get_the_date() ),
+			esc_attr( get_the_modified_date( 'c' ) ),
+			esc_html( get_the_modified_date() )
+		);
+
+		$posted_on = sprintf(
+			esc_html_x( '%s', 'post date', 'blank-theme' ),
+			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+		);
+
+		return $posted_on;
 	}
-
-	$time_string = sprintf( $time_string,
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
-		esc_attr( get_the_modified_date( 'c' ) ),
-		esc_html( get_the_modified_date() )
-	);
-
-	$posted_on = sprintf(
-		esc_html_x( 'Posted on %s', 'post date', 'blank-theme' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-	);
-
-	$byline = sprintf(
-		esc_html_x( 'by %s', 'post author', 'blank-theme' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-	);
-
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
-
 }
-endif;
 
 if ( ! function_exists( 'blank_theme_entry_footer' ) ) :
 /**
  * Prints HTML with meta information for the categories, tags and comments.
  */
-function blank_theme_entry_footer() {
+function blank_theme_entry_footer()
+{
+	$posted_on = blank_theme_posted_on();
+	$allowed_meta = get_theme_mod( 'blank_theme_manage_meta', array( 'author', 'date', 'comment' ) );
+
+	$byline = sprintf(
+		esc_html_x( '%s', 'post author', 'blank-theme' ),
+		'<span class="author vcard">
+			<a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a>
+		 </span>'
+	);
+
+	$cat_links = false;
+	$tags_list = false;
+
 	// Hide category and tag text for pages.
 	if ( 'post' == get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'blank-theme' ) );
 		if ( $categories_list && blank_theme_categorized_blog() ) {
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'blank-theme' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			$cat_links = sprintf( esc_html__( '%1$s', 'blank-theme' ) , $categories_list ); // WPCS: XSS OK.
 		}
 
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'blank-theme' ) );
-		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'blank-theme' ) . '</span>', $tags_list ); // WPCS: XSS OK.
-		}
+		$tags_list = get_the_tag_list( '<ul class="blank-theme-tags"><li>','</li><li>','</li></ul>' );
 	}
 
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		comments_popup_link( esc_html__( 'Leave a comment', 'blank-theme' ), esc_html__( '1 Comment', 'blank-theme' ), esc_html__( '% Comments', 'blank-theme' ) );
+	if( in_array( 'author', $allowed_meta ) ){
+		echo "<span class='byline blank-theme-meta-item blank-theme-icon-user'>{$byline}</span>";
+	}
+
+	if( in_array( 'date', $allowed_meta ) ){
+		echo "<span class='posted-on blank-theme-meta-item blank-theme-icon-calendar'>{$posted_on}</span>";
+	}
+
+	if( $cat_links && in_array( 'categories', $allowed_meta ) ){
+		echo "<span class='cat-links blank-theme-meta-item blank-theme-icon-category'>{$cat_links}</span>";
+	}
+	if( $tags_list && in_array( 'tags', $allowed_meta ) ){
+		echo "<span class='tag-links blank-theme-meta-item blank-theme-icon-tags'>{$tags_list}</span>";
+	}
+
+	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) && in_array( 'comment', $allowed_meta ) ) {
+		echo '<span class="comments-link blank-theme-meta-item blank-theme-icon-comment">';
+			comments_popup_link( esc_html__( 'Leave a comment', 'blank-theme' ), esc_html__( 'Comment (1)', 'blank-theme' ), esc_html__( 'Comments (%)', 'blank-theme' ) );
 		echo '</span>';
 	}
 
-	edit_post_link( esc_html__( 'Edit', 'blank-theme' ), '<span class="edit-link">', '</span>' );
+	edit_post_link( esc_html__( 'Edit', 'blank-theme' ), '<i class="edit-link">', '</i>' );
 }
 endif;
+
 
 /**
  * Returns true if a blog has more than 1 category.

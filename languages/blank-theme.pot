@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Blank Theme 1.0.0\n"
 "Report-Msgid-Bugs-To: http://community.blank-theme.com/c/premium-themes\n"
-"POT-Creation-Date: 2015-12-12 13:52:07+00:00\n"
+"POT-Creation-Date: 2015-12-12 18:31:02+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -39,28 +39,102 @@ msgstr ""
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
-#: comments.php:38 comments.php:59
+#: admin/customizer/class.customizer-admin.php:54
+msgid "Choose Site Logo"
+msgstr ""
+
+#: admin/customizer/class.customizer-admin.php:57
+msgid "Remove logo to display site title."
+msgstr ""
+
+#: admin/customizer/class.customizer-admin.php:71
+msgid "Hide Tagline"
+msgstr ""
+
+#: admin/customizer/class.customizer-admin.php:86
+msgid "General"
+msgstr ""
+
+#: admin/customizer/class.customizer-admin.php:95
+#: admin/customizer/class.customizer-admin.php:110
+msgid "Sidebar Position"
+msgstr ""
+
+#: admin/customizer/class.customizer-admin.php:114
+msgid "Left"
+msgstr ""
+
+#: admin/customizer/class.customizer-admin.php:114
+msgid "Right"
+msgstr ""
+
+#: admin/customizer/class.customizer-admin.php:124
+#: admin/customizer/class.customizer-admin.php:142
+msgid "Copyright Text"
+msgstr ""
+
+#: admin/customizer/class.customizer-admin.php:126
+msgid "Will override the footer copyright text"
+msgstr ""
+
+#: admin/customizer/class.customizer-admin.php:156
+msgid "Slider Options"
+msgstr ""
+
+#: admin/customizer/class.customizer-admin.php:157
+msgid "Add slider"
+msgstr ""
+
+#: admin/customizer/class.customizer-admin.php:165
+msgid "Slide %s"
+msgstr ""
+
+#: admin/customizer/class.customizer-admin.php:166
+msgid "Add slide"
+msgstr ""
+
+#: admin/customizer/class.customizer-admin.php:179
+msgid "Title"
+msgstr ""
+
+#: admin/customizer/class.customizer-admin.php:192
+msgid "Description"
+msgstr ""
+
+#: admin/customizer/class.customizer-admin.php:205
+msgid "Link"
+msgstr ""
+
+#: admin/customizer/class.customizer-admin.php:218
+msgid "Image"
+msgstr ""
+
+#: admin/customizer/extensions/fonts.php:16
+msgid "Standard Fonts"
+msgstr ""
+
+#: admin/customizer/extensions/fonts.php:18
+msgid "Google Fonts"
+msgstr ""
+
+#: comments.php:40 comments.php:61
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:41 comments.php:62
+#: comments.php:43 comments.php:64
 msgid "Older Comments"
 msgstr ""
 
-#: comments.php:42 comments.php:63
+#: comments.php:44 comments.php:65
 msgid "Newer Comments"
 msgstr ""
 
-#: comments.php:75
+#: comments.php:78
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:21
-msgid "https://wordpress.org/"
-msgstr ""
-
-#: footer.php:21
-msgid "Proudly powered by %s"
+#. Author URI of the plugin/theme
+msgid "http://underscore-me.com/"
 msgstr ""
 
 #: functions.php:54
@@ -83,201 +157,119 @@ msgstr ""
 msgid "Mobile Menu"
 msgstr ""
 
-#: inc/custom-functions.php:31
-msgid "Theme: %1$s by %2$s."
+#: inc/custom-functions.php:77
+msgid "%1$s by %2$s."
 msgstr ""
 
-#: inc/custom-functions.php:50
+#: inc/custom-functions.php:96
 msgid "Logo"
 msgstr ""
 
-#: inc/custom-functions.php:82
+#: inc/extras.php:108
+msgid "Home"
+msgstr ""
+
+#: inc/extras.php:132
+msgid "Author Archive"
+msgstr ""
+
+#: inc/extras.php:136
+msgid "Blog Archive"
+msgstr ""
+
+#: inc/extras.php:140
+msgid "Search Archive"
+msgstr ""
+
+#: inc/extras.php:158
+msgid "Decrease Font Size"
+msgstr ""
+
+#: inc/extras.php:159
+msgid "Increase Font Size"
+msgstr ""
+
+#: inc/extras.php:180
+msgid "About "
+msgstr ""
+
+#: inc/extras.php:183
+msgid "View all posts by "
+msgstr ""
+
+#: inc/extras.php:209
+msgid " Previous"
+msgstr ""
+
+#: inc/extras.php:224
+msgid " Next"
+msgstr ""
+
+#: inc/extras.php:259
 msgid "Read More"
 msgstr ""
 
-#: inc/extras.php:118
-msgid "Page %s"
-msgstr ""
-
-#: inc/template-tags.php:23
-msgid "Posts navigation"
-msgstr ""
-
-#: inc/template-tags.php:27
-msgid "Older posts"
-msgstr ""
-
-#: inc/template-tags.php:31
-msgid "Newer posts"
-msgstr ""
-
-#: inc/template-tags.php:56
-msgid "Post navigation"
-msgstr ""
-
-#: inc/template-tags.php:108 inc/template-tags.php:114
+#: inc/template-tags.php:58
 #. translators: used between list items, there is a space after the comma
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:110
-msgid "Posted in %1$s"
+#: inc/template-tags.php:60
+msgid "%1$s"
 msgstr ""
 
-#: inc/template-tags.php:116
-msgid "Tagged %1$s"
-msgstr ""
-
-#: inc/template-tags.php:122
+#: inc/template-tags.php:84
+#. translators: used between list items, there is a space after the comma
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/template-tags.php:122
-msgid "1 Comment"
+#: inc/template-tags.php:84
+msgid "Comment (1)"
 msgstr ""
 
-#: inc/template-tags.php:122
-msgid "% Comments"
+#: inc/template-tags.php:84
+msgid "Comments (%)"
 msgstr ""
 
-#: inc/template-tags.php:126 template-parts/content-page.php:26
+#: inc/template-tags.php:88 template-parts/content-page.php:26
 msgid "Edit"
-msgstr ""
-
-#: inc/template-tags.php:143
-msgid "Category: %s"
-msgstr ""
-
-#: inc/template-tags.php:145
-msgid "Tag: %s"
-msgstr ""
-
-#: inc/template-tags.php:147
-msgid "Author: %s"
-msgstr ""
-
-#: inc/template-tags.php:149
-msgid "Year: %s"
-msgstr ""
-
-#: inc/template-tags.php:151
-msgid "Month: %s"
-msgstr ""
-
-#: inc/template-tags.php:153
-msgid "Day: %s"
-msgstr ""
-
-#: inc/template-tags.php:175
-msgid "Archives: %s"
-msgstr ""
-
-#: inc/template-tags.php:179
-#. translators: 1: Taxonomy singular name, 2: Current taxonomy term
-msgid "%1$s: %2$s"
-msgstr ""
-
-#: inc/template-tags.php:181
-msgid "Archives"
-msgstr ""
-
-#: lib/admin/customizer/class.customizer-admin.php:54
-msgid "Choose Site Logo"
-msgstr ""
-
-#: lib/admin/customizer/class.customizer-admin.php:57
-msgid "Remove logo to display site title."
-msgstr ""
-
-#: lib/admin/customizer/class.customizer-admin.php:71
-msgid "Hide Tagline"
-msgstr ""
-
-#: lib/admin/customizer/class.customizer-admin.php:86
-msgid "General"
-msgstr ""
-
-#: lib/admin/customizer/class.customizer-admin.php:95
-#: lib/admin/customizer/class.customizer-admin.php:110
-msgid "Sidebar Position"
-msgstr ""
-
-#: lib/admin/customizer/class.customizer-admin.php:114
-msgid "Left"
-msgstr ""
-
-#: lib/admin/customizer/class.customizer-admin.php:114
-msgid "Right"
-msgstr ""
-
-#: lib/admin/customizer/class.customizer-admin.php:124
-#: lib/admin/customizer/class.customizer-admin.php:142
-msgid "Copyright Text"
-msgstr ""
-
-#: lib/admin/customizer/class.customizer-admin.php:126
-msgid "Will override the footer copyright text"
-msgstr ""
-
-#: lib/admin/customizer/class.customizer-admin.php:156
-msgid "Slider Options"
-msgstr ""
-
-#: lib/admin/customizer/class.customizer-admin.php:157
-msgid "Add slider"
-msgstr ""
-
-#: lib/admin/customizer/class.customizer-admin.php:165
-msgid "Slide %s"
-msgstr ""
-
-#: lib/admin/customizer/class.customizer-admin.php:166
-msgid "Add slide"
-msgstr ""
-
-#: lib/admin/customizer/class.customizer-admin.php:179
-msgid "Title"
-msgstr ""
-
-#: lib/admin/customizer/class.customizer-admin.php:192
-msgid "Description"
-msgstr ""
-
-#: lib/admin/customizer/class.customizer-admin.php:205
-msgid "Link"
-msgstr ""
-
-#: lib/admin/customizer/class.customizer-admin.php:218
-msgid "Image"
-msgstr ""
-
-#: lib/admin/customizer/extensions/fonts.php:16
-msgid "Standard Fonts"
-msgstr ""
-
-#: lib/admin/customizer/extensions/fonts.php:18
-msgid "Google Fonts"
 msgstr ""
 
 #: search.php:16
 msgid "Search Results for: %s"
 msgstr ""
 
+#: searchform.php:3
+msgid "Search For :"
+msgstr ""
+
+#: searchform.php:4
+msgid "Search..."
+msgstr ""
+
+#: searchform.php:4
+msgid "Search for:"
+msgstr ""
+
+#: searchform.php:6
+msgid "Search"
+msgstr ""
+
 #: template-parts/content-none.php:14
 msgid "Nothing Found"
 msgstr ""
 
-#: template-parts/content-none.php:20
+#: template-parts/content-none.php:21
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: template-parts/content-none.php:24
+#: template-parts/content-none.php:25
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: template-parts/content-none.php:29
+#: template-parts/content-none.php:31
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
@@ -313,102 +305,38 @@ msgstr ""
 msgid "Sayed Taqui"
 msgstr ""
 
-#. Author URI of the plugin/theme
-msgid "http://underscore-me.com/"
-msgstr ""
-
 #. Template Name of the plugin/theme
 msgid "Full Width Template"
 msgstr ""
 
-#: comments.php:29
+#: admin/customizer/extensions/fonts.php:171
+msgctxt "font style"
+msgid "Serif"
+msgstr ""
+
+#: admin/customizer/extensions/fonts.php:175
+msgctxt "font style"
+msgid "Sans Serif"
+msgstr ""
+
+#: admin/customizer/extensions/fonts.php:179
+msgctxt "font style"
+msgid "Monospaced"
+msgstr ""
+
+#: comments.php:31
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/template-tags.php:86
+#: inc/template-tags.php:28
 msgctxt "post date"
-msgid "Posted on %s"
+msgid "%s"
 msgstr ""
 
-#: inc/template-tags.php:91
+#: inc/template-tags.php:46
 msgctxt "post author"
-msgid "by %s"
-msgstr ""
-
-#: inc/template-tags.php:149
-msgctxt "yearly archives date format"
-msgid "Y"
-msgstr ""
-
-#: inc/template-tags.php:151
-msgctxt "monthly archives date format"
-msgid "F Y"
-msgstr ""
-
-#: inc/template-tags.php:153
-msgctxt "daily archives date format"
-msgid "F j, Y"
-msgstr ""
-
-#: inc/template-tags.php:156
-msgctxt "post format archive title"
-msgid "Asides"
-msgstr ""
-
-#: inc/template-tags.php:158
-msgctxt "post format archive title"
-msgid "Galleries"
-msgstr ""
-
-#: inc/template-tags.php:160
-msgctxt "post format archive title"
-msgid "Images"
-msgstr ""
-
-#: inc/template-tags.php:162
-msgctxt "post format archive title"
-msgid "Videos"
-msgstr ""
-
-#: inc/template-tags.php:164
-msgctxt "post format archive title"
-msgid "Quotes"
-msgstr ""
-
-#: inc/template-tags.php:166
-msgctxt "post format archive title"
-msgid "Links"
-msgstr ""
-
-#: inc/template-tags.php:168
-msgctxt "post format archive title"
-msgid "Statuses"
-msgstr ""
-
-#: inc/template-tags.php:170
-msgctxt "post format archive title"
-msgid "Audio"
-msgstr ""
-
-#: inc/template-tags.php:172
-msgctxt "post format archive title"
-msgid "Chats"
-msgstr ""
-
-#: lib/admin/customizer/extensions/fonts.php:171
-msgctxt "font style"
-msgid "Serif"
-msgstr ""
-
-#: lib/admin/customizer/extensions/fonts.php:175
-msgctxt "font style"
-msgid "Sans Serif"
-msgstr ""
-
-#: lib/admin/customizer/extensions/fonts.php:179
-msgctxt "font style"
-msgid "Monospaced"
+msgid "%s"
 msgstr ""

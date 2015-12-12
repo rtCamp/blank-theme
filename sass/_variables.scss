@@ -28,7 +28,7 @@ $font__size-h6: 10px;
 $color__primary : #444;
 $color__secondary : blue;
 
-$color__background-body: #fff;
+$color__background-body: #fafaf4;
 $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
 $color__background-button: #e6e6e6;
@@ -51,7 +51,6 @@ $color__border-line: #ccc;
 
 $color__border-light: #ddd;
 $color__border-button: #ccc #ccc #bbb;
-
 
 /*---------------------------
 	 Foundation Grid
@@ -79,10 +78,17 @@ $column-gutter: rem-calc(25);
 	Foundation Media Query
 ---------------------------*/
 
+$medium-start-point : 641px;
+$large-start-point : 1025px;
+
+$small-end-point : 640px;
+$medium-end-point : 1024px;
+$large-end-point : 1920px;
+
 // Here we define the lower and upper bounds for each media size
-$small-range: (0, 640px);
-$medium-range: (641px, 1024px);
-$large-range: (1025px, 1920px);
+$small-range: (0, $small-end-point );
+$medium-range: ( $medium-start-point , $medium-end-point );
+$large-range: ( $large-start-point , $large-end-point );
 
 // Media Queries
 $screen: "only screen";

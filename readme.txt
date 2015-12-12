@@ -1,25 +1,56 @@
 === Blank Theme ===
 
-Contributors: automattic
+Contributors: Sayed Taqui
 Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
 
 Requires at least: 4.0
-Tested up to: 4.2.2
+Tested up to: 4.4
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A starter theme called Blank Theme, or underscores.
+Blank Theme is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Blank Theme is distributed under the terms of the GNU GPL v2 or later.
 
 == Description ==
 
-Blank is a custom theme blank created from underscore theme.
+Blank Theme is a responsive multipurpose theme.
 
 == Installation ==
 
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
 2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
+
+
+~~~~~~~~~~~~~~~~
+Resources
+~~~~~~~~~~~~~~~~~
+Blank Theme is built with the following resources:
+
+Cycle2 http://jquery.malsup.com/cycle2/
+License: The Cycle2 plugin is dual licensed under the MIT and GPL licenses.
+Contributing author : Mike Alsup (https://github.com/malsup)
+Copyright: Copyright © 2012-2016 M. Alsup.
+
+Mmenu https://github.com/BeSite/jQuery.mmenu
+License: The jQuery.mmenu plugin is dual licensed under the MIT license:
+Contributing author : BeSite (https://github.com/BeSite)
+Copyright: Copyright © 2012-2016 M. BeSite.
+
+HTML5 Shiv - https://github.com/aFarkas/html5shiv
+License: MIT/GPL2 Licensed
+Copyright: @afarkas @jdalton @jon_neal @rem
+
+/*Images*/
+
+Key.jpg and Statue.jpg images - http://pixabay.com/en/key-metal-home-security-wedding-96233/ & http://pixabay.com/en/statue-bronze-umbrella-woman-fig-5998/
+License: Free to use under public domain
+Copyright: Images are not copyright protected
+
+Animated gif images - http://preloaders.net
+License: Free to use under public domain
+Copyright: Images are not copyright protected
 
 == Frequently Asked Questions ==
 
@@ -36,3 +67,5 @@ Blank Theme includes support for Infinite Scroll in Jetpack.
 
 * Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2015 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
+
+

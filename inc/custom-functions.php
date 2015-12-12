@@ -16,7 +16,7 @@ if( ! function_exists( 'blank_theme_primary_classes' ) )
 	{
 		$sidebar_postion = get_theme_mod( 'blank_theme_sidebar_position' );
 
-		$foundation_classes = $override_foundation_classes ? $override_foundation_classes : 'large-8 medium-12 small-12 column';
+		$foundation_classes = $override_foundation_classes ? $override_foundation_classes : 'large-8 medium-8 small-12 column';
 
 		if( $sidebar_postion === 'left' ){
 			$foundation_classes .= 	' blank-theme-right';
@@ -40,7 +40,7 @@ if( ! function_exists( 'blank_theme_secondary_classes' ) )
 	{
 		//Override will be useful in page-templates
 		$sidebar_postion = get_theme_mod( 'blank_theme_sidebar_position' );
-		$foundation_classes = $override_foundation_classes ? $override_foundation_classes : 'large-4 medium-12 small-12 column';
+		$foundation_classes = $override_foundation_classes ? $override_foundation_classes : 'large-4 medium-4 small-12 column';
 		$foundation_classes .= $sidebar_postion == 'left' ? ' blank-theme-left' : false;
 
 		echo apply_filters( 'blank_theme_secondary_classes' , "blank-theme-secondary widget-area {$foundation_classes} {$more_classes} clearfix" , $more_classes, $foundation_classes );
@@ -74,7 +74,7 @@ if( ! function_exists( 'blank_theme_copyright_text' ) )
 	{
 		$theme_uri = 'http://underscore-me.com/';
 
-		$default = sprintf( esc_html__( '%1$s by %2$s.', 'blank-theme' ), 'Blank Theme', '<a href="" rel="designer">Sayed Taqui</a>' );
+		$default = sprintf( esc_html__( '%1$s by %2$s', 'blank-theme' ), 'Blank Theme', '<a href="" rel="designer">Sayed Taqui</a>' );
 
 		$copyright_text = get_theme_mod( 'blank_theme_copyright_text' , $default );
 
@@ -120,13 +120,88 @@ if( ! function_exists( 'blank_theme_pagination' ) )
 	}
 }
 
-if( ! function_exists( 'blank_theme_readmore_text' ) )
+/**
+ * Creates Ad spots
+ */
+if( ! function_exists( 'blank_theme_create_ad_spot' ) )
 {
-	function blank_theme_readmore_text()
+	function blank_theme_create_ad_spot( $position , $add_row = false )
 	{
-	  	global $post;
-		return sprintf( '<a class="moretag" href="%s">%s</a>' , get_permalink($post->ID) , __( 'Read More' , 'blank-theme' ) );
+		$ad_spots = get_theme_mod( 'blank_theme_ad_spots' );
+
+		if( empty( $ad_spots ) ) return;
+
+		$ad_code = isset( $ad_spots[$position] ) && $ad_spots[$position] ? trim($ad_spots[$position]) : false;
+
+		if( ! $ad_code ) return;
+
+		ob_start();
+
+		if( $add_row ) echo "<div class='row blank-theme-ad-spot-row' >";
+			echo "<div class='blank-theme-ad-spot blank-theme-ad-spot-{$position}' ><div class='inner-wrapper' >{$ad_code}</div></div>";
+		if( $add_row ) echo "</div>";
 	}
 }
 
-add_filter('excerpt_more', 'blank_theme_readmore_text');
+/**
+ * Creates custom thumbnail for the theme.
+ * If thumbnail is not found, we can find the first attachment.
+ */
+if( ! function_exists('blank_theme_thumbnail') )
+{
+	function blank_theme_thumbnail( $size = 'thumbnail' , $before = false , $after = false, $show_attachment = false )
+	{
+		global $post;
+
+	    $size = $size ? $size : 'thumbnail';
+
+	    $extra_classes = "";
+
+	    $is_individual_post = is_single() || is_page();
+
+	    //if it is not lising.
+	    if( $is_individual_post ){
+	    	$extra_classes .= 'blank-theme-single-page-featured';
+	    }
+	    else{ // if its listing.
+	    	$size = get_theme_mod( 'blank_theme_list_thumbnail_width' , 'thumbnail' );
+	    	$show_full = get_theme_mod( 'blank_theme_content_or_excerpt' , 'excerpt' ) === 'full' ? true : false ;
+	    	if( $show_full ) return ;
+	    }
+
+	    $attr = array( 'class' => "attachment-{$size} blank-theme-featured-image {$extra_classes}" );
+
+	    if ( has_post_thumbnail() ) {
+	    	echo $before;
+	        	the_post_thumbnail( $size , $attr );
+	        echo $after;
+	    }
+	    else
+	    {
+	        $attachments = get_children( array(
+				'post_parent'    => get_the_ID(),
+				'post_status'    => 'inherit',
+				'post_type'      => 'attachment',
+				'post_mime_type' => 'image',
+				'order'          => 'ASC',
+				'orderby'        => 'menu_order ID',
+				'numberposts'    => 1
+	            )
+	        );
+
+	        if( ! empty( $attachments ) )
+	        {
+		        if( $show_attachment || ! $is_individual_post )
+		        {
+        			foreach ( $attachments as $thumb_id => $attachment ) {
+        				echo $before;
+        			    	echo wp_get_attachment_image($thumb_id, $size, false, $attr );
+        			    echo $after;
+        			}
+        		}
+	        }
+
+	    }
+
+	} //function ends
+}

@@ -40,8 +40,6 @@ get_header(); ?>
 
 			endwhile;
 
-			blank_theme_pagination();
-
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );
@@ -49,6 +47,9 @@ get_header(); ?>
 		endif; ?>
 
 		</main><!-- #main -->
+
+		<?php blank_theme_pagination(); ?>
+
 	</div><!-- #primary -->
 
 <?php

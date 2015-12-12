@@ -1,11 +1,6 @@
-/**
- *  Contains Media Queries for sizes between 1440 - 1025
- */
 
-@media only screen and ( max-width: 1100px ){
-
-}
-
-@media only screen and ( min-width:rem-calc(1025) ) and (max-width:rem-calc(1125)){
-
+@media only screen and ( min-width : $large-start-point ) {
+	.blank-theme-mobile-nav-button{
+		display: none;
+	}
 }

@@ -1,4 +1,4 @@
-/*!
+/*
 Theme Name: Blank Theme
 Theme URI: http://underscores.me/
 Author: Sayed Taqui
@@ -8,7 +8,7 @@ Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: blank-theme
-Tags:
+Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -64,6 +64,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 --------------------------------------------------------------*/
 
 @import "common-classes";
+@import "animations";
 
 /*--------------------------------------------------------------
 # Typography

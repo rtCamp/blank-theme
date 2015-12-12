@@ -1,7 +1,16 @@
-/**
- *  Contains Media Queries for sizes between 640-200
- */
 
-@media only screen and (max-width: rem-calc(450)){
+
+@media only screen and ( max-width: $small-end-point ){
+
+	//Fix of admin bar due to mmenu
+	html.mm-blocking{
+		margin-top: 0!Important;
+		#wpadminbar{
+			z-index: -1;
+		}
+		.logged-in.admin-bar{
+			margin-top: 46px;
+		}
+	}
 
 }

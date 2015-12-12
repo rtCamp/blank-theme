@@ -69,7 +69,7 @@ module.exports = function ( grunt ) {
 		// Uglify Ref. https://npmjs.org/package/grunt-contrib-uglify
 		uglify: {
 			options: {
-				banner: '/*! \n * blank_theme v6 JavaScript Library \n * @package Blank Theme \n */',
+				banner: '/*! \n * blank_theme JavaScript Library \n * @package Blank Theme \n */',
 				sourceMap: 'js/main.js.map',
 				sourceMappingURL: 'main.js.map',
 				sourceMapPrefix: 2
@@ -77,7 +77,7 @@ module.exports = function ( grunt ) {
 			frontend: {
 				src: [
 					'js/vendor/jquery.cycle2.js',
-					'js/vendor/jquery.sidr.js',
+					'js/vendor/jquery.mmenu.min.all.js',
 					'js/main.js'
 				],
 				dest: 'js/main.min.js'

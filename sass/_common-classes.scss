@@ -89,3 +89,8 @@
 	display: none;
 }
 
+.row-container{
+	@extend .row;
+	padding-left: $gutter/2;
+	padding-right: $gutter/2;
+}

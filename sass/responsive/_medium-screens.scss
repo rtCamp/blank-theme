@@ -1,8 +1,6 @@
-/**
- *  Contains Media Queries for sizes between 1024 - 641
- */
 
-@media only screen and ( max-width: 912px )
+
+@media only screen and ( min-width: $medium-start-point ) and ( max-width: $medium-end-point )
 {
 
 }

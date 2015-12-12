@@ -68,7 +68,7 @@ a {
 ---------------------------*/
 
 ul, ol {
-	margin: 0 0 1.5em 3em;
+	margin: 0 0 1.5rem 3rem;
 }
 
 ul {
@@ -82,7 +82,7 @@ ol {
 li > ul,
 li > ol {
 	margin-bottom: 0;
-	margin-left: 1.5em;
+	margin-left: 1.5rem;
 }
 
 dt {
@@ -90,7 +90,7 @@ dt {
 }
 
 dd {
-	margin: 0 1.5em 1.5em;
+	margin: 0 1.5rem 1.5rem;
 }
 
 ul{
@@ -113,9 +113,8 @@ input[type="submit"] {
 	background: $color__background-button;
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
 	color: rgba(0, 0, 0, .8);
-	@include font-size(0.75);
 	line-height: 1;
-	padding: .6em 1em .4em;
+	padding: .6rem 1rem .4rem;
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 	font-family: $font__main;
 
