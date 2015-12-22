@@ -39,7 +39,7 @@ function blank_theme_license_page() {
 	$status 	= get_option( BLANK_THEME_PRO_PREFIX . '_license_key_status' );
 	?>
 	<div class="wrap">
-		<h2><?php _e('Theme License Options', 'blank-theme-lite'); ?></h2>
+		<h2><?php _e('Theme License Options', 'blank-theme'); ?></h2>
 		<form method="post" action="options.php">
 
 			<?php settings_fields( BLANK_THEME_PRO_PREFIX . '_license'); ?>
@@ -48,26 +48,26 @@ function blank_theme_license_page() {
 				<tbody>
 					<tr valign="top">
 						<th scope="row" valign="top">
-							<?php _e('License Key' , 'blank-theme-lite' ); ?>
+							<?php _e('License Key' , 'blank-theme' ); ?>
 						</th>
 						<td>
 							<input id="<?php echo BLANK_THEME_PRO_PREFIX; ?>_license_key" name="<?php echo BLANK_THEME_PRO_PREFIX; ?>_license_key" type="text" class="regular-text" value="<?php echo esc_attr( $license ); ?>" />
-							<label class="description" for="<?php echo BLANK_THEME_PRO_PREFIX; ?> _license_key"><?php _e('Enter your license key', 'blank-theme-lite'); ?></label>
+							<label class="description" for="<?php echo BLANK_THEME_PRO_PREFIX; ?> _license_key"><?php _e('Enter your license key', 'blank-theme'); ?></label>
 						</td>
 					</tr>
 					<?php if( false !== $license ) { ?>
 						<tr valign="top">
 							<th scope="row" valign="top">
-								<?php _e('Activate License', 'blank-theme-lite'); ?>
+								<?php _e('Activate License', 'blank-theme'); ?>
 							</th>
 							<td>
 								<?php if( $status !== false && $status == 'valid' ) { ?>
-									<span style="color:green;"><?php _e('active', 'blank-theme-lite'); ?></span>
+									<span style="color:green;"><?php _e('active', 'blank-theme'); ?></span>
 									<?php wp_nonce_field( 'edd_sample_nonce', 'edd_sample_nonce' ); ?>
-									<input type="submit" class="button-secondary" name="edd_theme_license_deactivate" value="<?php _e('Deactivate License', 'blank-theme-lite'); ?>"/>
+									<input type="submit" class="button-secondary" name="edd_theme_license_deactivate" value="<?php _e('Deactivate License', 'blank-theme'); ?>"/>
 								<?php } else {
 									wp_nonce_field( 'edd_sample_nonce', 'edd_sample_nonce' ); ?>
-									<input type="submit" class="button-secondary" name="edd_theme_license_activate" value="<?php _e('Activate License', 'blank-theme-lite'); ?>"/>
+									<input type="submit" class="button-secondary" name="edd_theme_license_activate" value="<?php _e('Activate License', 'blank-theme'); ?>"/>
 								<?php } ?>
 							</td>
 						</tr>

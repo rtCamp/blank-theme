@@ -20,6 +20,7 @@ nb-configuration.xml
 npm-debug.log
 node_modules
 .DS_Store
+**/.DS_Store
 Thumbs.db
 sftp-config.json
 *.sublime-project
