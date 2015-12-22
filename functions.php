@@ -5,7 +5,9 @@
  * @package Blank Theme
  */
 
-if( ! defined( 'BLANK_THEME_VERSION' ) ) define ( 'BLANK_THEME_VERSION'  , '1.0.0' );
+$blank_theme = wp_get_theme();
+
+if( ! defined( 'BLANK_THEME_VERSION' ) ) define ( 'BLANK_THEME_VERSION'  , $blank_theme->Version );
 if( ! defined( 'BLANK_THEME_TEMP_URI' ) ) define ( 'BLANK_THEME_TEMP_URI' , get_template_directory_uri() );
 if( ! defined( 'BLANK_THEME_TEMP_DIR' ) ) define ( 'BLANK_THEME_TEMP_DIR' , get_template_directory() );
 if( ! defined( 'BLANK_THEME_CSS_URI' ) ) define ( 'BLANK_THEME_CSS_URI'  , BLANK_THEME_TEMP_URI . '/css' );
@@ -13,6 +15,7 @@ if( ! defined( 'BLANK_THEME_JS_URI' ) ) define ( 'BLANK_THEME_JS_URI'	, BLANK_TH
 if( ! defined( 'BLANK_THEME_IMG_URI' ) ) define ( 'BLANK_THEME_IMG_URI'  , BLANK_THEME_TEMP_URI . '/images' );
 if( ! defined( 'BLANK_THEME_IS_DEV' ) ) define ( 'BLANK_THEME_IS_DEV'   , true );
 
+do_action( 'blank_theme_before' );
 
 if ( ! function_exists( 'blank_theme_setup' ) ) :
 /**
@@ -85,6 +88,8 @@ function blank_theme_setup() {
 	) ) );
 
 	add_editor_style( array( 'editor-style.css', blank_theme_main_font_url() ) );
+
+	do_action( 'blank_theme_after_setup_theme' );
 }
 endif; // blank_theme_setup
 add_action( 'after_setup_theme', 'blank_theme_setup' );
@@ -184,3 +189,5 @@ foreach ( $blank_theme_depedencies as $path ) {
 		include $filename;
 	}
 }
+
+do_action( 'blank_theme_after' );

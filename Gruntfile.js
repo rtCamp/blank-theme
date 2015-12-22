@@ -10,7 +10,7 @@ module.exports = function ( grunt ) {
 		// watch for changes and trigger sass, jshint, uglify and livereload
 		watch: {
 			sass: {
-				files: [ 'sass/**/*.{scss,sass}' ],
+				files: [ 'sass/**/*.{scss,sass}', 'pro/**/*.{scss,sass}' ],
 				tasks: [ 'sass' ]
 			},
 			// js: {
@@ -27,14 +27,15 @@ module.exports = function ( grunt ) {
 		// Compile Sass to CSS
 		// Ref. https://www.npmjs.com/package/grunt-contrib-sass
 		sass: {
-			// expanded: {
-			// 			options: {
-			// 				style: 'expanded' // nested / compact / compressed / expanded
-			// 			},
-			// 			files: {
-			// 				'style-expanded.css': 'sass/style.scss' // 'destination': 'source'
-			// 			}
-			// 		  },
+			expanded: {
+						options: {
+							style: 'expanded' // nested / compact / compressed / expanded
+						},
+						files: {
+							'style-expanded.css': 'sass/style.scss', // 'destination': 'source'
+							'pro/pro.css': 'pro/sass/pro.scss'
+						}
+					  },
 			minify: {
 						options: {
 							style: 'nested' // nested / compact / compressed / expanded
