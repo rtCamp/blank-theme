@@ -560,12 +560,10 @@ hr {
 @keyframes fadeInLeft {
   0% {
     opacity: 0;
-    -webkit-transform: translateX(-20px);
-            transform: translateX(-20px); }
+    transform: translateX(-20px); }
   100% {
     opacity: 1;
-    -webkit-transform: translateX(0);
-            transform: translateX(0); } }
+    transform: translateX(0); } }
 .fadeInLeft {
   -webkit-animation-name: fadeInLeft;
   animation-name: fadeInLeft; }
@@ -588,12 +586,10 @@ hr {
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    -webkit-transform: translateY(20px);
-            transform: translateY(20px); }
+    transform: translateY(20px); }
   100% {
     opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0); } }
+    transform: translateY(0); } }
 .fadeInUp {
   -webkit-animation-name: fadeInUp;
   animation-name: fadeInUp; }
@@ -611,6 +607,103 @@ hr {
 .fadeIn {
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn; }
+
+/*--------------------------------------------------------------
+# Wordpress Classes
+--------------------------------------------------------------*/
+/* Aside */
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title {
+  display: none; }
+
+/*--------------------------------------------------------------
+## Media
+--------------------------------------------------------------*/
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+  border: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0; }
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+  max-width: 100%; }
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+.wp-caption {
+  margin-bottom: 1.5rem;
+  max-width: 100%; }
+  .wp-caption img[class*="wp-image-"] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+  .wp-caption .wp-caption-text {
+    margin: 0.8075rem 0; }
+
+.wp-caption-text {
+  text-align: center; }
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+.gallery {
+  margin-bottom: 1.5rem; }
+
+.gallery-item {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: 100%; }
+  .gallery-columns-2 .gallery-item {
+    max-width: 50%; }
+  .gallery-columns-3 .gallery-item {
+    max-width: 33.33%; }
+  .gallery-columns-4 .gallery-item {
+    max-width: 25%; }
+  .gallery-columns-5 .gallery-item {
+    max-width: 20%; }
+  .gallery-columns-6 .gallery-item {
+    max-width: 16.66%; }
+  .gallery-columns-7 .gallery-item {
+    max-width: 14.28%; }
+  .gallery-columns-8 .gallery-item {
+    max-width: 12.5%; }
+  .gallery-columns-9 .gallery-item {
+    max-width: 11.11%; }
+
+.gallery-caption {
+  display: block; }
+
+/*---------------------------
+		Infinite Scroll
+---------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation,
+.infinite-scroll.neverending .site-footer {
+  /* Theme Footer (when set to scrolling) */
+  display: none; }
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+  display: block; }
+
+/*---------------------------
+		Other
+---------------------------*/
+#tinymce.mce-content-body {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  padding: 15px !important; }
+
+.site-content {
+  word-wrap: break-word; }
 
 /*--------------------------------------------------------------
 # Typography
@@ -1930,19 +2023,28 @@ hr {
 
 .mm-panel {
   -webkit-transition: -webkit-transform 0.4s ease;
+  -moz-transition: -moz-transform 0.4s ease;
+  -ms-transition: -ms-transform 0.4s ease;
+  -o-transition: -o-transform 0.4s ease;
   transition: transform 0.4s ease;
   -webkit-transform: translate3d(100%, 0, 0);
+  -moz-transform: translate3d(100%, 0, 0);
   -ms-transform: translate3d(100%, 0, 0);
+  -o-transform: translate3d(100%, 0, 0);
   transform: translate3d(100%, 0, 0); }
 
 .mm-panel.mm-opened {
   -webkit-transform: translate3d(0%, 0, 0);
+  -moz-transform: translate3d(0%, 0, 0);
   -ms-transform: translate3d(0%, 0, 0);
+  -o-transform: translate3d(0%, 0, 0);
   transform: translate3d(0%, 0, 0); }
 
 .mm-panel.mm-subopened {
   -webkit-transform: translate3d(-30%, 0, 0);
+  -moz-transform: translate3d(-30%, 0, 0);
   -ms-transform: translate3d(-30%, 0, 0);
+  -o-transform: translate3d(-30%, 0, 0);
   transform: translate3d(-30%, 0, 0); }
 
 .mm-panel.mm-highest {
@@ -1973,7 +2075,9 @@ hr {
 
 .mm-vertical .mm-panel {
   -webkit-transform: none !important;
+  -moz-transform: none !important;
   -ms-transform: none !important;
+  -o-transform: none !important;
   transform: none !important; }
 
 .mm-vertical .mm-listview .mm-panel,
@@ -2002,7 +2106,9 @@ li.mm-vertical.mm-opened > .mm-panel {
 .mm-vertical .mm-listview > li.mm-opened > .mm-next:after,
 .mm-listview > li.mm-vertical.mm-opened > .mm-next:after {
   -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
   transform: rotate(45deg); }
 
 .mm-navbar {
@@ -2186,7 +2292,9 @@ li.mm-vertical.mm-opened > .mm-panel {
   top: 0;
   bottom: 0;
   -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
   transform: rotate(-45deg); }
 
 .mm-prev:before {
@@ -2245,6 +2353,7 @@ li.mm-vertical.mm-opened > .mm-panel {
 
 .mm-slideout {
   -webkit-transition: -webkit-transform 0.4s ease;
+  -ms-transition: -ms-transform 0.4s ease;
   transition: transform 0.4s ease; }
 
 html.mm-opened {
@@ -2287,18 +2396,24 @@ html.mm-blocking #mm-blocker {
 
 html.mm-opening .mm-slideout {
   -webkit-transform: translate(80%, 0);
+  -moz-transform: translate(80%, 0);
   -ms-transform: translate(80%, 0);
+  -o-transform: translate(80%, 0);
   transform: translate(80%, 0); }
 
 @media all and (max-width: 175px) {
   html.mm-opening .mm-slideout {
     -webkit-transform: translate(140px, 0);
+    -moz-transform: translate(140px, 0);
     -ms-transform: translate(140px, 0);
+    -o-transform: translate(140px, 0);
     transform: translate(140px, 0); } }
 @media all and (min-width: 550px) {
   html.mm-opening .mm-slideout {
     -webkit-transform: translate(440px, 0);
+    -moz-transform: translate(440px, 0);
     -ms-transform: translate(440px, 0);
+    -o-transform: translate(440px, 0);
     transform: translate(440px, 0); } }
 /*
 	jQuery.mmenu autoHeight addon CSS
@@ -2363,7 +2478,9 @@ em.mm-counter + a.mm-fullsubopen {
 
 .mm-divider.mm-opened a.mm-next:after {
   -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
   transform: rotate(45deg); }
 
 .mm-collapsed:not(.mm-uncollapsed) {
@@ -2378,7 +2495,9 @@ em.mm-counter + a.mm-fullsubopen {
   right: 0;
   z-index: 2;
   -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0); }
 
 .mm-fixeddivider:after {
@@ -2397,6 +2516,9 @@ em.mm-counter + a.mm-fullsubopen {
 html.mm-opened.mm-dragging .mm-menu,
 html.mm-opened.mm-dragging .mm-slideout {
   -webkit-transition-duration: 0s;
+  -moz-transition-duration: 0s;
+  -ms-transition-duration: 0s;
+  -o-transition-duration: 0s;
   transition-duration: 0s; }
 
 /*
@@ -2404,6 +2526,9 @@ html.mm-opened.mm-dragging .mm-slideout {
 */
 .mm-iconpanel .mm-panel {
   -webkit-transition-property: -webkit-transform, left;
+  -moz-transition-property: -moz-transform, left;
+  -ms-transition-property: -ms-transform, left;
+  -o-transition-property: -o-transform, left;
   transition-property: transform, left; }
 
 .mm-iconpanel .mm-panel.mm-opened {
@@ -2414,7 +2539,9 @@ html.mm-opened.mm-dragging .mm-slideout {
   overflow-y: hidden;
   left: -40px;
   -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0); }
 
 .mm-iconpanel .mm-panel.mm-iconpanel-0 {
@@ -2443,6 +2570,9 @@ html.mm-opened.mm-dragging .mm-slideout {
   opacity: 0;
   display: block;
   -webkit-transition: opacity 0.4s ease;
+  -moz-transition: opacity 0.4s ease;
+  -ms-transition: opacity 0.4s ease;
+  -o-transition: opacity 0.4s ease;
   transition: opacity 0.4s ease; }
 
 .mm-subopened .mm-subblocker {
@@ -2462,7 +2592,9 @@ html.mm-opened.mm-dragging .mm-slideout {
   padding: 0;
   z-index: 3;
   -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0); }
 
 .mm-navbar-bottom {
@@ -2667,9 +2799,14 @@ li.mm-nosubresults > a.mm-next + span {
   right: -100px;
   z-index: 3;
   -webkit-transition: right 0.4s ease;
+  -moz-transition: right 0.4s ease;
+  -ms-transition: right 0.4s ease;
+  -o-transition: right 0.4s ease;
   transition: right 0.4s ease;
   -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0); }
 
 .mm-indexer a {
@@ -2737,7 +2874,9 @@ label.mm-check:before {
   margin: 25% 0 0 20%;
   opacity: 0.1;
   -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
   transform: rotate(-45deg); }
 
 input.mm-check:checked ~ label.mm-check:before {
@@ -2820,61 +2959,90 @@ em.mm-counter + a.mm-next + label.mm-check + span {
 */
 .mm-menu.mm-effect-menu-zoom {
   -webkit-transition: -webkit-transform 0.4s ease;
+  -moz-transition: -moz-transform 0.4s ease;
+  -ms-transition: -ms-transform 0.4s ease;
+  -o-transition: -o-transform 0.4s ease;
   transition: transform 0.4s ease; }
 
 html.mm-opened .mm-menu.mm-effect-menu-zoom {
   -webkit-transform: scale(0.7, 0.7) translate3d(-30%, 0, 0);
+  -moz-transform: scale(0.7, 0.7) translate3d(-30%, 0, 0);
   -ms-transform: scale(0.7, 0.7) translate3d(-30%, 0, 0);
+  -o-transform: scale(0.7, 0.7) translate3d(-30%, 0, 0);
   transform: scale(0.7, 0.7) translate3d(-30%, 0, 0);
   -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
   -ms-transform-origin: left center;
+  -o-transform-origin: left center;
   transform-origin: left center; }
 
 html.mm-opening .mm-menu.mm-effect-menu-zoom {
   -webkit-transform: scale(1, 1) translate3d(0%, 0, 0);
+  -moz-transform: scale(1, 1) translate3d(0%, 0, 0);
   -ms-transform: scale(1, 1) translate3d(0%, 0, 0);
+  -o-transform: scale(1, 1) translate3d(0%, 0, 0);
   transform: scale(1, 1) translate3d(0%, 0, 0); }
 
 html.mm-right.mm-opened .mm-menu.mm-effect-menu-zoom {
   -webkit-transform: scale(0.7, 0.7) translate3d(30%, 0, 0);
+  -moz-transform: scale(0.7, 0.7) translate3d(30%, 0, 0);
   -ms-transform: scale(0.7, 0.7) translate3d(30%, 0, 0);
+  -o-transform: scale(0.7, 0.7) translate3d(30%, 0, 0);
   transform: scale(0.7, 0.7) translate3d(30%, 0, 0);
   -webkit-transform-origin: right center;
+  -moz-transform-origin: right center;
   -ms-transform-origin: right center;
+  -o-transform-origin: right center;
   transform-origin: right center; }
 
 html.mm-right.mm-opening .mm-menu.mm-effect-menu-zoom {
   -webkit-transform: scale(1, 1) translate3d(0%, 0, 0);
+  -moz-transform: scale(1, 1) translate3d(0%, 0, 0);
   -ms-transform: scale(1, 1) translate3d(0%, 0, 0);
+  -o-transform: scale(1, 1) translate3d(0%, 0, 0);
   transform: scale(1, 1) translate3d(0%, 0, 0); }
 
 .mm-menu.mm-effect-menu-slide {
   -webkit-transition: -webkit-transform 0.4s ease;
+  -moz-transition: -moz-transform 0.4s ease;
+  -ms-transition: -ms-transform 0.4s ease;
+  -o-transition: -o-transform 0.4s ease;
   transition: transform 0.4s ease; }
 
 html.mm-opened .mm-menu.mm-effect-menu-slide {
   -webkit-transform: translate3d(-30%, 0, 0);
+  -moz-transform: translate3d(-30%, 0, 0);
   -ms-transform: translate3d(-30%, 0, 0);
+  -o-transform: translate3d(-30%, 0, 0);
   transform: translate3d(-30%, 0, 0); }
 
 html.mm-opening .mm-menu.mm-effect-menu-slide {
   -webkit-transform: translate3d(0%, 0, 0);
+  -moz-transform: translate3d(0%, 0, 0);
   -ms-transform: translate3d(0%, 0, 0);
+  -o-transform: translate3d(0%, 0, 0);
   transform: translate3d(0%, 0, 0); }
 
 html.mm-right.mm-opened .mm-menu.mm-effect-menu-slide {
   -webkit-transform: translate3d(30%, 0, 0);
+  -moz-transform: translate3d(30%, 0, 0);
   -ms-transform: translate3d(30%, 0, 0);
+  -o-transform: translate3d(30%, 0, 0);
   transform: translate3d(30%, 0, 0); }
 
 html.mm-right.mm-opening .mm-menu.mm-effect-menu-slide {
   -webkit-transform: translate3d(0%, 0, 0);
+  -moz-transform: translate3d(0%, 0, 0);
   -ms-transform: translate3d(0%, 0, 0);
+  -o-transform: translate3d(0%, 0, 0);
   transform: translate3d(0%, 0, 0); }
 
 .mm-menu.mm-effect-menu-fade {
   opacity: 0;
   -webkit-transition: opacity 0.4s ease;
+  -moz-transition: opacity 0.4s ease;
+  -ms-transition: opacity 0.4s ease;
+  -o-transition: opacity 0.4s ease;
   transition: opacity 0.4s ease; }
 
 html.mm-opening .mm-menu.mm-effect-menu-fade {
@@ -2882,113 +3050,183 @@ html.mm-opening .mm-menu.mm-effect-menu-fade {
 
 .mm-menu.mm-effect-panels-zoom .mm-panel {
   -webkit-transform: scale(1.5, 1.5) translate3d(100%, 0, 0);
+  -moz-transform: scale(1.5, 1.5) translate3d(100%, 0, 0);
   -ms-transform: scale(1.5, 1.5) translate3d(100%, 0, 0);
+  -o-transform: scale(1.5, 1.5) translate3d(100%, 0, 0);
   transform: scale(1.5, 1.5) translate3d(100%, 0, 0);
   -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
   -ms-transform-origin: left center;
+  -o-transform-origin: left center;
   transform-origin: left center; }
 
 .mm-menu.mm-effect-panels-zoom .mm-panel.mm-opened {
   -webkit-transform: scale(1, 1) translate3d(0%, 0, 0);
+  -moz-transform: scale(1, 1) translate3d(0%, 0, 0);
   -ms-transform: scale(1, 1) translate3d(0%, 0, 0);
+  -o-transform: scale(1, 1) translate3d(0%, 0, 0);
   transform: scale(1, 1) translate3d(0%, 0, 0); }
 
 .mm-menu.mm-effect-panels-zoom .mm-panel.mm-opened.mm-subopened {
   -webkit-transform: scale(0.7, 0.7) translate3d(-30%, 0, 0);
+  -moz-transform: scale(0.7, 0.7) translate3d(-30%, 0, 0);
   -ms-transform: scale(0.7, 0.7) translate3d(-30%, 0, 0);
+  -o-transform: scale(0.7, 0.7) translate3d(-30%, 0, 0);
   transform: scale(0.7, 0.7) translate3d(-30%, 0, 0); }
 
 .mm-menu.mm-effect-panels-slide-0 .mm-panel.mm-subopened {
   -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0); }
 
 .mm-menu.mm-effect-panels-slide-100 .mm-panel.mm-subopened {
   -webkit-transform: translate3d(-100%, 0, 0);
+  -moz-transform: translate3d(-100%, 0, 0);
   -ms-transform: translate3d(-100%, 0, 0);
+  -o-transform: translate3d(-100%, 0, 0);
   transform: translate3d(-100%, 0, 0); }
 
 .mm-menu[class*="mm-effect-listitems-"] .mm-listview > li {
   -webkit-transition: none 0.4s ease;
+  -moz-transition: none 0.4s ease;
+  -ms-transition: none 0.4s ease;
+  -o-transition: none 0.4s ease;
   transition: none 0.4s ease; }
 
 .mm-menu[class*="mm-effect-listitems-"] .mm-listview > li:nth-child(1) {
   -webkit-transition-delay: 50ms;
+  -moz-transition-delay: 50ms;
+  -ms-transition-delay: 50ms;
+  -o-transition-delay: 50ms;
   transition-delay: 50ms; }
 
 .mm-menu[class*="mm-effect-listitems-"] .mm-listview > li:nth-child(2) {
   -webkit-transition-delay: 100ms;
+  -moz-transition-delay: 100ms;
+  -ms-transition-delay: 100ms;
+  -o-transition-delay: 100ms;
   transition-delay: 100ms; }
 
 .mm-menu[class*="mm-effect-listitems-"] .mm-listview > li:nth-child(3) {
   -webkit-transition-delay: 150ms;
+  -moz-transition-delay: 150ms;
+  -ms-transition-delay: 150ms;
+  -o-transition-delay: 150ms;
   transition-delay: 150ms; }
 
 .mm-menu[class*="mm-effect-listitems-"] .mm-listview > li:nth-child(4) {
   -webkit-transition-delay: 200ms;
+  -moz-transition-delay: 200ms;
+  -ms-transition-delay: 200ms;
+  -o-transition-delay: 200ms;
   transition-delay: 200ms; }
 
 .mm-menu[class*="mm-effect-listitems-"] .mm-listview > li:nth-child(5) {
   -webkit-transition-delay: 250ms;
+  -moz-transition-delay: 250ms;
+  -ms-transition-delay: 250ms;
+  -o-transition-delay: 250ms;
   transition-delay: 250ms; }
 
 .mm-menu[class*="mm-effect-listitems-"] .mm-listview > li:nth-child(6) {
   -webkit-transition-delay: 300ms;
+  -moz-transition-delay: 300ms;
+  -ms-transition-delay: 300ms;
+  -o-transition-delay: 300ms;
   transition-delay: 300ms; }
 
 .mm-menu[class*="mm-effect-listitems-"] .mm-listview > li:nth-child(7) {
   -webkit-transition-delay: 350ms;
+  -moz-transition-delay: 350ms;
+  -ms-transition-delay: 350ms;
+  -o-transition-delay: 350ms;
   transition-delay: 350ms; }
 
 .mm-menu[class*="mm-effect-listitems-"] .mm-listview > li:nth-child(8) {
   -webkit-transition-delay: 400ms;
+  -moz-transition-delay: 400ms;
+  -ms-transition-delay: 400ms;
+  -o-transition-delay: 400ms;
   transition-delay: 400ms; }
 
 .mm-menu[class*="mm-effect-listitems-"] .mm-listview > li:nth-child(9) {
   -webkit-transition-delay: 450ms;
+  -moz-transition-delay: 450ms;
+  -ms-transition-delay: 450ms;
+  -o-transition-delay: 450ms;
   transition-delay: 450ms; }
 
 .mm-menu[class*="mm-effect-listitems-"] .mm-listview > li:nth-child(10) {
   -webkit-transition-delay: 500ms;
+  -moz-transition-delay: 500ms;
+  -ms-transition-delay: 500ms;
+  -o-transition-delay: 500ms;
   transition-delay: 500ms; }
 
 .mm-menu[class*="mm-effect-listitems-"] .mm-listview > li:nth-child(11) {
   -webkit-transition-delay: 550ms;
+  -moz-transition-delay: 550ms;
+  -ms-transition-delay: 550ms;
+  -o-transition-delay: 550ms;
   transition-delay: 550ms; }
 
 .mm-menu[class*="mm-effect-listitems-"] .mm-listview > li:nth-child(12) {
   -webkit-transition-delay: 600ms;
+  -moz-transition-delay: 600ms;
+  -ms-transition-delay: 600ms;
+  -o-transition-delay: 600ms;
   transition-delay: 600ms; }
 
 .mm-menu[class*="mm-effect-listitems-"] .mm-listview > li:nth-child(13) {
   -webkit-transition-delay: 650ms;
+  -moz-transition-delay: 650ms;
+  -ms-transition-delay: 650ms;
+  -o-transition-delay: 650ms;
   transition-delay: 650ms; }
 
 .mm-menu[class*="mm-effect-listitems-"] .mm-listview > li:nth-child(14) {
   -webkit-transition-delay: 700ms;
+  -moz-transition-delay: 700ms;
+  -ms-transition-delay: 700ms;
+  -o-transition-delay: 700ms;
   transition-delay: 700ms; }
 
 .mm-menu[class*="mm-effect-listitems-"] .mm-listview > li:nth-child(15) {
   -webkit-transition-delay: 750ms;
+  -moz-transition-delay: 750ms;
+  -ms-transition-delay: 750ms;
+  -o-transition-delay: 750ms;
   transition-delay: 750ms; }
 
 .mm-menu.mm-effect-listitems-slide .mm-listview > li {
   -webkit-transform: translate3d(50%, 0, 0);
+  -moz-transform: translate3d(50%, 0, 0);
   -ms-transform: translate3d(50%, 0, 0);
+  -o-transform: translate3d(50%, 0, 0);
   transform: translate3d(50%, 0, 0);
   opacity: 0;
   -webkit-transition-property: -webkit-transform, opacity;
+  -moz-transition-property: -moz-transform, opacity;
+  -ms-transition-property: -ms-transform, opacity;
+  -o-transition-property: -o-transform, opacity;
   transition-property: transform, opacity; }
 
 html.mm-opening .mm-menu.mm-effect-listitems-slide .mm-panel.mm-opened .mm-listview > li {
   -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
   opacity: 1; }
 
 .mm-menu.mm-effect-listitems-fade .mm-listview > li {
   opacity: 0;
   -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -ms-transition-property: opacity;
+  -o-transition-property: opacity;
   transition-property: opacity; }
 
 html.mm-opening .mm-menu.mm-effect-listitems-fade .mm-panel.mm-opened .mm-listview > li {
@@ -2998,6 +3236,9 @@ html.mm-opening .mm-menu.mm-effect-listitems-fade .mm-panel.mm-opened .mm-listvi
   opacity: 0;
   top: -25%;
   -webkit-transition-property: opacity, top;
+  -moz-transition-property: opacity, top;
+  -ms-transition-property: opacity, top;
+  -o-transition-property: opacity, top;
   transition-property: opacity, top; }
 
 html.mm-opening .mm-menu.mm-effect-listitems-drop .mm-panel.mm-opened .mm-listview > li {
@@ -3014,33 +3255,45 @@ html.mm-opening .mm-menu.mm-effect-listitems-drop .mm-panel.mm-opened .mm-listvi
 
 html.mm-opening.mm-fullscreen .mm-slideout {
   -webkit-transform: translate(100%, 0);
+  -moz-transform: translate(100%, 0);
   -ms-transform: translate(100%, 0);
+  -o-transform: translate(100%, 0);
   transform: translate(100%, 0); }
 
 @media all and (max-width: 140px) {
   html.mm-opening.mm-fullscreen .mm-slideout {
     -webkit-transform: translate(140px, 0);
+    -moz-transform: translate(140px, 0);
     -ms-transform: translate(140px, 0);
+    -o-transform: translate(140px, 0);
     transform: translate(140px, 0); } }
 @media all and (min-width: 10000px) {
   html.mm-opening.mm-fullscreen .mm-slideout {
     -webkit-transform: translate(10000px, 0);
+    -moz-transform: translate(10000px, 0);
     -ms-transform: translate(10000px, 0);
+    -o-transform: translate(10000px, 0);
     transform: translate(10000px, 0); } }
 html.mm-right.mm-opening.mm-fullscreen .mm-slideout {
   -webkit-transform: translate(-100%, 0);
+  -moz-transform: translate(-100%, 0);
   -ms-transform: translate(-100%, 0);
+  -o-transform: translate(-100%, 0);
   transform: translate(-100%, 0); }
 
 @media all and (max-width: 140px) {
   html.mm-right.mm-opening.mm-fullscreen .mm-slideout {
     -webkit-transform: translate(-140px, 0);
+    -moz-transform: translate(-140px, 0);
     -ms-transform: translate(-140px, 0);
+    -o-transform: translate(-140px, 0);
     transform: translate(-140px, 0); } }
 @media all and (min-width: 10000px) {
   html.mm-right.mm-opening.mm-fullscreen .mm-slideout {
     -webkit-transform: translate(-10000px, 0);
+    -moz-transform: translate(-10000px, 0);
     -ms-transform: translate(-10000px, 0);
+    -o-transform: translate(-10000px, 0);
     transform: translate(-10000px, 0); } }
 .mm-menu.mm-fullscreen.mm-top, .mm-menu.mm-fullscreen.mm-bottom {
   height: 100%;
@@ -3070,8 +3323,7 @@ html.mm-pagedim #mm-blocker, html.mm-pagedim-white #mm-blocker, html.mm-pagedim-
 
 html.mm-pagedim.mm-opening #mm-blocker, html.mm-pagedim-white.mm-opening #mm-blocker, html.mm-pagedim-black.mm-opening #mm-blocker {
   opacity: 0.3;
-  -webkit-transition: opacity 0.4s ease 0.4s;
-          transition: opacity 0.4s ease 0.4s; }
+  transition: opacity 0.4s ease 0.4s; }
 
 html.mm-pagedim #mm-blocker {
   background: inherit; }
@@ -3125,25 +3377,33 @@ html.mm-pagedim-black #mm-blocker {
 
 html.mm-right.mm-opening .mm-slideout {
   -webkit-transform: translate(-80%, 0);
+  -moz-transform: translate(-80%, 0);
   -ms-transform: translate(-80%, 0);
+  -o-transform: translate(-80%, 0);
   transform: translate(-80%, 0); }
 
 @media all and (max-width: 175px) {
   html.mm-right.mm-opening .mm-slideout {
     -webkit-transform: translate(-140px, 0);
+    -moz-transform: translate(-140px, 0);
     -ms-transform: translate(-140px, 0);
+    -o-transform: translate(-140px, 0);
     transform: translate(-140px, 0); } }
 @media all and (min-width: 550px) {
   html.mm-right.mm-opening .mm-slideout {
     -webkit-transform: translate(-440px, 0);
+    -moz-transform: translate(-440px, 0);
     -ms-transform: translate(-440px, 0);
+    -o-transform: translate(-440px, 0);
     transform: translate(-440px, 0); } }
 /*
 	jQuery.mmenu z-position extension CSS
 */
 html.mm-front .mm-slideout {
   -webkit-transform: none !important;
+  -moz-transform: none !important;
   -ms-transform: none !important;
+  -o-transform: none !important;
   transform: none !important;
   z-index: 0 !important; }
 
@@ -3152,29 +3412,40 @@ html.mm-front .mm-slideout {
 
 .mm-menu.mm-front, .mm-menu.mm-next {
   -webkit-transition: -webkit-transform 0.4s ease;
+  -ms-transition: -ms-transform 0.4s ease;
   transition: transform 0.4s ease;
   -webkit-transform: translate3d(-100%, 0, 0);
+  -moz-transform: translate3d(-100%, 0, 0);
   -ms-transform: translate3d(-100%, 0, 0);
+  -o-transform: translate3d(-100%, 0, 0);
   transform: translate3d(-100%, 0, 0); }
 
 .mm-menu.mm-front.mm-right, .mm-menu.mm-next.mm-right {
   -webkit-transform: translate3d(100%, 0, 0);
+  -moz-transform: translate3d(100%, 0, 0);
   -ms-transform: translate3d(100%, 0, 0);
+  -o-transform: translate3d(100%, 0, 0);
   transform: translate3d(100%, 0, 0); }
 
 .mm-menu.mm-top {
   -webkit-transform: translate3d(0, -100%, 0);
+  -moz-transform: translate3d(0, -100%, 0);
   -ms-transform: translate3d(0, -100%, 0);
+  -o-transform: translate3d(0, -100%, 0);
   transform: translate3d(0, -100%, 0); }
 
 .mm-menu.mm-bottom {
   -webkit-transform: translate3d(0, 100%, 0);
+  -moz-transform: translate3d(0, 100%, 0);
   -ms-transform: translate3d(0, 100%, 0);
+  -o-transform: translate3d(0, 100%, 0);
   transform: translate3d(0, 100%, 0); }
 
 html.mm-opening .mm-menu.mm-front, html.mm-opening .mm-menu.mm-next {
   -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0); }
 
 .mm-menu.mm-top, .mm-menu.mm-bottom {
