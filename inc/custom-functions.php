@@ -205,3 +205,25 @@ if( ! function_exists('blank_theme_thumbnail') )
 
 	} //function ends
 }
+
+/**
+ * Created out of frustration to check isset each time getting value from array
+ */
+if( ! function_exists( 'blank_theme_isset' ) )
+{
+	function blank_theme_isset( $array, $key1, $key2 = false, $key3 = false, $key4 = false )
+	{
+		if( $key4 ){
+			return isset( $array[$key1][$key2][$key3][$key4] ) ? $array[$key1][$key2][$key3][$key4] : false;
+		}
+		if( $key3 ){
+			return isset( $array[$key1][$key2][$key3] ) ? $array[$key1][$key2][$key3] : false;
+		}
+		if( $key2 ){
+			return isset( $array[$key1][$key2] ) ? $array[$key1][$key2] : false;
+		}
+		if( $key1 ){
+			return isset( $array[$key1] ) ? $array[$key1] : false;
+		}
+	}
+}
