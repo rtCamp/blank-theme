@@ -5,7 +5,7 @@ Blank Theme is a custom blank theme created with underscore theme, which include
 
 Last Synced with underscore theme : Dec 12, 2015
 
-What more does it have more?
+What more does it have?
 ---------------
 
 1) WordPress Customizer is already setup with some basic customizer settings.
@@ -16,7 +16,7 @@ What more does it have more?
 
 4) Removed some unnecessary saas files and folder which are shipped with underscore theme.
 
-5) Css fixes in underscore and helpful css classes.
+5) Css fixes, in underscore and helpful css classes.
 
 6) Some helpful php functions.
 
