@@ -155,8 +155,8 @@ if( ! function_exists( 'blank_theme_font_resizer' ) )
     {
         ?>
             <div class="blank-theme-font-resizer">
-                <a href="#" class="blank-theme-minus" data-type="minus" title="<?php _e( 'Decrease Font Size' , 'blank-theme' ); ?>">[A-]</a>
-                <a href="#" class="blank-theme-plus" data-type="plus" title="<?php _e( 'Increase Font Size' , 'blank-theme' ); ?>">[A+]</a>
+                <a href="#" class="blank-theme-minus" data-type="minus" title="<?php esc_attr_e( 'Decrease Font Size' , 'blank-theme' ); ?>">[A-]</a>
+                <a href="#" class="blank-theme-plus" data-type="plus" title="<?php esc_attr_e( 'Increase Font Size' , 'blank-theme' ); ?>">[A+]</a>
             </div>
         <?php
     }
@@ -177,10 +177,10 @@ if( ! function_exists( 'blank_theme_author_profile' ) )
                 <?php echo get_avatar( get_the_author_meta('email'), '100' ); ?>
             </figure>
             <div class="blank-theme-ap-info">
-                <h3 class="blank-theme-ap-title"><?php _e('About ', 'blank-theme'); the_author_posts_link(); ?></h3>
+                <h3 class="blank-theme-ap-title"><?php esc_html_e('About ', 'blank-theme'); the_author_posts_link(); ?></h3>
                 <p class="blank-theme-ap-description"><?php the_author_meta('description'); ?></p>
                 <span class="blank-theme-ap-viewall">
-                    <?php _e('View all posts by ', 'blank-theme'). the_author_posts_link(); ?><span class="blank-theme-ap-icon blank-theme-icon-right-pointer"></span>
+                    <?php esc_html_e('View all posts by ', 'blank-theme'). the_author_posts_link(); ?><span class="blank-theme-ap-icon blank-theme-icon-right-pointer"></span>
                 </span>
             </div>
         </div>
@@ -206,7 +206,7 @@ if( ! function_exists( 'blank_theme_post_thumbnail_navigation' ) )
                 <?php
                 $link = get_permalink( $prev_post->ID );
                 $title = get_the_title( $prev_post->ID );
-                $previous = sprintf( '<span class="blank-theme-nav-link"><span class="blank-theme-pn-icon blank-theme-icon-left-nav"></span> %s</span>' , __( ' Previous' , 'blank-theme' ) );
+                $previous = sprintf( '<span class="blank-theme-nav-link"><span class="blank-theme-pn-icon blank-theme-icon-left-nav"></span> %s</span>' , esc_html__( ' Previous' , 'blank-theme' ) );
                 $thumbnail_class = has_post_thumbnail( $prev_post->ID ) ? 'blank-theme-pn-has-thumb' : false;
                 printf( "<a class='blank-theme-thumb-link %s' href='%s'>%s %s</a>", $thumbnail_class , $link, get_the_post_thumbnail( $prev_post->ID, 'thumbnail' ) , $previous );
                 printf( "<h4 class='blank-theme-pn-title' ><a href='%s'>%s</a></h4>" , $link, $title );
@@ -221,7 +221,7 @@ if( ! function_exists( 'blank_theme_post_thumbnail_navigation' ) )
                 <?php
                 $link = get_permalink( $next_post->ID );
                 $title = get_the_title( $next_post->ID );
-                $next = sprintf( '<span class="blank-theme-nav-link">%s <span class="blank-theme-pn-icon blank-theme-icon-right-nav"></span></span>' , __( ' Next' , 'blank-theme' ) );
+                $next = sprintf( '<span class="blank-theme-nav-link">%s <span class="blank-theme-pn-icon blank-theme-icon-right-nav"></span></span>' , esc_html__( ' Next' , 'blank-theme' ) );
                 $thumbnail_class = has_post_thumbnail( $next_post->ID ) ? 'blank-theme-pn-has-thumb' : false;
                 printf( "<a class='blank-theme-thumb-link %s' href='%s'>%s %s</a>", $thumbnail_class , $link, get_the_post_thumbnail( $next_post->ID, 'thumbnail' ) , $next );
                 printf( "<h4 class='blank-theme-pn-title'><a href='%s'>%s</a></h4>" , $link, $title );

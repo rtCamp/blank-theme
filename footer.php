@@ -20,7 +20,7 @@
 		<div class="site-info large-12 column">
 			<span class="blank-theme-copyright-text"><?php echo blank_theme_copyright_text(); ?></span>
 			<span class="sep"> | </span>
-			<a class="blank-theme-author-footer" href="<?php echo esc_url( __( 'http://underscore-me.com/', 'blank-theme' ) ); ?>" target="_blank" >Blank Theme</a>
+			<a class="blank-theme-author-footer" href="<?php echo esc_url( 'http://underscore-me.com/' ); ?>" target="_blank" >Blank Theme</a>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

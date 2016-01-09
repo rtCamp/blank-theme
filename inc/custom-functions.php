@@ -227,3 +227,24 @@ if( ! function_exists( 'blank_theme_isset' ) )
 		}
 	}
 }
+
+
+if( ! function_exists( 'blank_theme_get_template_part' ) )
+{
+	/**
+	 * Its an extension to WordPress get_template_part function.
+ 	 * It can be used when you need to call a template and all pass variables to it.
+	 * @param  string $slug file slug like you use in get_template_part
+	 * @param  array  $params pass an array of variables you want to use in array keys,
+	 * and they will be available in your template part
+	 */
+	function blank_theme_get_template_part( $slug , $params = array() )
+	{
+		if ( ! empty( $params ) ) {
+			foreach ( $params as $k => $param ) {
+				set_query_var( $k, $param );
+			}
+		}
+		get_template_part( $slug );
+	}
+}
