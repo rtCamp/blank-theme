@@ -21,7 +21,7 @@ module.exports = function ( grunt ) {
 				// Here we watch the files the sass task will compile to
 				// These files are sent to the live reload server after sass compiles to them
 				options: { livereload: true },
-				files: [ '*.php', '*.css' ]
+				files: [ '*.php', '*.css', '*.js' ]
 			}
 		},
 		// Compile Sass to CSS
