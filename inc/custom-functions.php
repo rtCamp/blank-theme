@@ -164,7 +164,7 @@ if( ! function_exists('blank_theme_thumbnail') )
 	    	$extra_classes .= 'blank-theme-single-page-featured';
 	    }
 	    else{ // if its listing.
-	    	$size = get_theme_mod( 'blank_theme_list_thumbnail_width' , 'thumbnail' );
+	    	$size = get_theme_mod( 'blank_theme_list_thumbnail_width' , $size );
 	    	$show_full = get_theme_mod( 'blank_theme_content_or_excerpt' , 'excerpt' ) === 'full' ? true : false ;
 	    	if( $show_full ) return ;
 	    }

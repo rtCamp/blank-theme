@@ -25,8 +25,9 @@ $font__size-h6: 10px;
 		Colors
 ---------------------------*/
 
-$color__primary : #444;
-$color__secondary : blue;
+$color__primary: #444;
+$color__secondary: blue;
+$color__theme: red;
 
 $color__background-body: #fafaf4;
 $color__background-screen: #f1f1f1;
@@ -38,8 +39,8 @@ $color__background-ins: #fff9c0;
 $color__text-screen: #21759b;
 $color__text-input: #666;
 $color__text-input-focus: #111;
-$color__link: royalblue;
-$color__link-hover: midnightblue;
+$color__link: $color__primary;
+$color__link-hover: $color__theme;
 $color__text-main: #404040;
 
 $color__border-button: #ccc #ccc #bbb;
@@ -73,22 +74,21 @@ $last-child-float: $opposite-direction;
 
 $column-gutter: rem-calc(25);
 
-
 /*---------------------------
 	Foundation Media Query
 ---------------------------*/
 
-$medium-start-point : 641px;
-$large-start-point : 1025px;
+$medium-start-point: 641px;
+$large-start-point: 1025px;
 
-$small-end-point : 640px;
-$medium-end-point : 1024px;
-$large-end-point : 1920px;
+$small-end-point: 640px;
+$medium-end-point: 1024px;
+$large-end-point: 1920px;
 
 // Here we define the lower and upper bounds for each media size
-$small-range: (0, $small-end-point );
-$medium-range: ( $medium-start-point , $medium-end-point );
-$large-range: ( $large-start-point , $large-end-point );
+$small-range: 0, $small-end-point;
+$medium-range: $medium-start-point, $medium-end-point;
+$large-range: $large-start-point, $large-end-point;
 
 // Media Queries
 $screen: "only screen";
@@ -105,12 +105,10 @@ $medium-only: "#{$screen} and (min-width:#{lower-bound($medium-range)}) and (max
 $large-up: "#{$screen} and (min-width:#{lower-bound($large-range)})";
 $large-only: "#{$screen} and (min-width:#{lower-bound($large-range)}) and (max-width:#{upper-bound($large-range)})";
 
-
 /*---------------------------
 		Site Layout
 ---------------------------*/
 
 $size__site-main: 100%;
 $size__site-sidebar: 25%;
-$gutter : rem-calc(30);
-
+$gutter: rem-calc(30);

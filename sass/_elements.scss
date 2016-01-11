@@ -1,14 +1,21 @@
 html {
-	box-sizing: border-box;
-	-ms-text-size-adjust: 100%; /* [5] */
-	-webkit-text-size-adjust: 100%; /* [5] */
-	color: $color__primary; /* [additional] */
+    box-sizing: border-box;
+    -ms-text-size-adjust: 100%;
+
+    /* [5] */
+    -webkit-text-size-adjust: 100%;
+
+    /* [5] */
+    color: $color__primary;
+
+    /* [additional] */
 }
 
 *,
 *:before,
-*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-	box-sizing: inherit;
+*:after {
+    /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+    box-sizing: inherit;
 }
 
 /**
@@ -21,46 +28,67 @@ html {
  */
 
 body {
-	background: $color__background-body; /* [1] */
-	background-size: 100% auto;
-	margin: 0; /* [2] */
-	font-family: $font__main;
+    background: $color__background-body;
 
-	@include font-size($line-height: true); /* [3] */ /* [4] */
+    /* [1] */
+    background-size: 100% auto;
+    margin: 0;
 
-	// WP Editor
-	&.mce-content-body {
-		font-family: inherit;
-		margin: 15px;
-	}
+    /* [2] */
+    font-family: $font__main;
+
+    @include font-size($line-height: true);
+
+    /* [3] */
+
+    /* [4] */
+
+    // WP Editor
+    &.mce-content-body {
+        font-family: inherit;
+        margin: 15px;
+    }
 }
 
 blockquote, q {
-	quotes: "" "";
+    quotes: "" "";
 
-	&:before,
-	&:after {
-		content: "";
-	}
+    &:before,
+    &:after {
+        content: "";
+    }
 }
 
 img {
-	height: auto; /* Make sure images are scaled correctly. */
-	max-width: 100%; /* Adhere to container width. */
+    height: auto;
+
+    /* Make sure images are scaled correctly. */
+    max-width: 100%;
+
+    /* Adhere to container width. */
 }
 
-figure{
-	margin: rem-calc(16 26);
-	max-width: 100%;
+figure {
+    margin: rem-calc(16 26);
+    max-width: 100%;
 }
 
 /* Default Links */
 a {
     // Self, Active & Visited
-    & { color: $color__link; outline: 0; text-decoration: none; }
+    & {
+        color: $color__link;
+        outline: 0;
+        text-decoration: none;
+    }
+
+    transition: 0.3s;
 
     // Hover
-    &:hover { color: $color__link; outline: 0; text-decoration: underline; }
+    &:hover {
+        color: $color__link-hover;
+        outline: 0;
+    }
 }
 
 /*---------------------------
@@ -68,35 +96,35 @@ a {
 ---------------------------*/
 
 ul, ol {
-	margin: 0 0 1.5rem 3rem;
+    margin: 0 0 1.5rem 3rem;
 }
 
 ul {
-	list-style: disc;
+    list-style: disc;
 }
 
 ol {
-	list-style: decimal;
+    list-style: decimal;
 }
 
 li > ul,
 li > ol {
-	margin-bottom: 0;
-	margin-left: 1.5rem;
+    margin-bottom: 0;
+    margin-left: 1.5rem;
 }
 
 dt {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 dd {
-	margin: 0 1.5rem 1.5rem;
+    margin: 0 1.5rem 1.5rem;
 }
 
-ul{
-	list-style:none;
-	margin: 0;
-	padding: 0;
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 /*---------------------------
@@ -107,29 +135,28 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
-	border-color: $color__border-button;
-	border-radius: 3px;
-	background: $color__background-button;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-	color: rgba(0, 0, 0, .8);
-	line-height: 1;
-	padding: .6rem 1rem .4rem;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
-	font-family: $font__main;
+    border: 1px solid;
+    border-color: $color__border-button;
+    border-radius: 3px;
+    background: $color__background-button;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
+    color: rgba(0, 0, 0, 0.8);
+    line-height: 1;
+    padding: .6rem 1rem .4rem;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+    font-family: $font__main;
 
-	&:hover {
-		border-color: $color__border-button-hover;
-		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
-	}
+    &:hover {
+        border-color: $color__border-button-hover;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
+    }
 
-	&:active,
-	&:focus {
-		border-color: $color__border-button-focus;
-		box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
-	}
+    &:active,
+    &:focus {
+        border-color: $color__border-button-focus;
+        box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
+    }
 }
-
 
 /*---------------------------
 		Fields
@@ -141,15 +168,15 @@ input[type="url"],
 input[type="password"],
 input[type="search"],
 textarea {
-	color: $color__text-input;
-	border: 1px solid $color__border-input;
-	border-radius: 3px;
-	font-family: $font__main;
-	line-height: $font__line-height-body;
+    color: $color__text-input;
+    border: 1px solid $color__border-input;
+    border-radius: 3px;
+    font-family: $font__main;
+    line-height: $font__line-height-body;
 
-	&:focus {
-		color: $color__text-input-focus;
-	}
+    &:focus {
+        color: $color__text-input-focus;
+    }
 }
 
 input[type="text"],
@@ -157,20 +184,22 @@ input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"] {
-	padding: 3px;
+    padding: 3px;
 }
 
-select{
-	color: $color__text-main;
-	font-family: $font__main;
-	@include font-size(1);
-	line-height: $font__line-height-body;
+select {
+    color: $color__text-main;
+    font-family: $font__main;
+
+    @include font-size(1);
+
+    line-height: $font__line-height-body;
 }
 
 textarea {
-	max-width: 100%;
-	line-height: $font__line-height-body;
-	outline: 0;
-	background: #fafafa;
-	box-shadow: 1px 1px 5px rgba(0,0,0,0.1) inset;
+    max-width: 100%;
+    line-height: $font__line-height-body;
+    outline: 0;
+    background: #fafafa;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1) inset;
 }
