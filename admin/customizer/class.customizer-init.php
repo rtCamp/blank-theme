@@ -1,152 +1,79 @@
 <?php
-
 /**
- * Contains Custom functions for Customizer.
+ * Contains methods for customizing the theme customization screen.
+ *
+ * @link http://codex.wordpress.org/Theme_Customization_API
+ * @since blank-theme 1.0
  */
 
-class BLANK_THEME_Customizer
+if( ! class_exists( 'BLANK_THEME_Customizer' ) )
 {
-	public static function pages_array()
-	{
-		$args = array(
-			'posts_per_page' => 100,
-			'offset'        => 0,
-			'post_type'     => 'page',
-			'post_status'   => 'publish'
-		);
+  class BLANK_THEME_Customizer {
 
-		$query = new WP_Query( apply_filters( 'blank_theme_customizer_list_pages', $args ) );
+  	public function __construct()
+  	{
+  		// Setup the Theme Customizer settings and controls...
+  		add_action( 'customize_register' , array( $this , 'register' ) );
 
-		$posts = $query->posts;
+  		// Enqueue live preview javascript in Theme Customizer admin screen
+  		add_action( 'customize_preview_init' , array( $this , 'live_preview' ) );
 
-		$pages_array = array();
+      add_action( 'customize_controls_enqueue_scripts', array( $this , 'load_customizer_controls_scripts' )  );
 
-		if( is_array($posts) ){
-			foreach ($posts as $post ) {
-				$pages_array[$post->ID] = $post->post_title;
-			}
-		}
+  	}
 
-		return $pages_array;
+     /**
+      * This hooks into 'customize_register' (available as of WP 3.4) and allows
+      * you to add new sections and controls to the Theme Customize screen.
+      *
+      * Note: To enable instant preview, we have to actually write a bit of custom
+      * javascript. See live_preview() for more.
+      *
+      * @see add_action('customize_register',$func)
+      * @param \WP_Customize_Manager $wp_customize
+      * @since blank-theme 1.0
+      */
+     public static function register ( $wp_customize )
+     {
+        $file_path = BLANK_THEME_CUSTOMIZER_DIR . '/customizer-settings.php';
 
-	}
+        if( file_exists( $file_path ) ) include_once $file_path;
+     }
 
-	public static function category_array()
-	{
-		$args = array(
-			'posts_per_page' => 100,
-			'child_of'       => 0,
-			'orderby'        => 'name',
-			'order'          => 'ASC',
-			'hide_empty'     => 1,
-			'hierarchical'   => 1,
-			'taxonomy'       => 'category',
-			'pad_counts'     => false
-		);
+     /**
+      * This outputs the javascript needed to automate the live settings preview.
+      * Also keep in mind that this function isn't necessary unless your settings
+      * are using 'transport'=>'postMessage' instead of the default 'transport'
+      * => 'refresh'
+      *
+      * Used by hook: 'customize_preview_init'
+      *
+      * @see add_action('customize_preview_init',$func)
+      * @since blank-theme 1.0
+      */
+     public static function live_preview()
+     {
+        wp_enqueue_script( 'blank-theme-themecustomizer',
+             BLANK_THEME_CUSTOMIZER_JS . '/customizer-live-preview.js',
+             array(  'jquery', 'customize-preview' ),
+             '1.0',
+             true
+        );
+     }
 
-		$categories = get_categories( apply_filters( 'blank_theme_customizer_list_categories', $args ) );
+     public function load_customizer_controls_scripts()
+     {
+        wp_enqueue_script(
+             'blank-theme-customizer-control-scripts',
+             BLANK_THEME_CUSTOMIZER_JS . '/customizer-control.js',
+             array(  'jquery' ),
+             '1.0',
+             true
+        );
 
-		$cat_array = array( '0' => "--------" );
+     }
 
-		if( is_array($categories) ){
-			foreach ( $categories as $category ) {
-				$cat_array[$category->term_id] = $category->cat_name;
-			}
-		}
-
-		return $cat_array;
-
-	}
-
-	/**
-	 * This will generate a line of CSS for use in header output. If the setting
-	 * ($mod_name) has no defined value, the CSS will not be output.
-	 *
-	 * @uses get_theme_mod()
-	 * @param string $selector CSS selector
-	 * @param string/array $style The name of the CSS *property* to modify
-	 * @param string/array $mod_name The name of the 'theme_mod' option to fetch
-	 * @param string/array $prefix Optional. Anything that needs to be output before the CSS property
-	 * @param string/array $postfix Optional. Anything that needs to be output after the CSS property
-	 * @return string Returns a single line of CSS with selectors and a property.
-	 * @since blank theme 1.0
-	 */
-
-	public static function generate_css( $selector, $style, $mod_name, $prefix = '', $postfix = '', $default = false, $echo = true )
-	{
-	      $return = '';
-
-	      $selector = is_array( $selector) ? join( ',' , $selector ) : $selector;
-
-			if( is_array( $style ) && is_array($mod_name) ){
-				$return .= $selector . '{';
-				foreach ($style as $key => $property ) {
-					$mod = is_array( $default ) ? get_theme_mod($mod_name[$key], $default[$key]) : get_theme_mod($mod_name[$key], $default) ;
-					$this_prefix  = is_array($prefix)  ? $prefix[$key]  : $prefix;
-					$this_postfix = is_array($postfix) ? $postfix[$key] : $postfix;
-					$return .= ( isset($mod) && ! empty( $mod ) ) ?
-							   sprintf( '%s:%s;', $property , $this_prefix.$mod.$this_postfix ) :
-							   false;
-				}
-				$return .= "}";
-			}
-			else
-			{
-				$mod = get_theme_mod($mod_name, $default );
-				   $return = ( isset($mod) && ! empty( $mod ) ) ?
-				   			  sprintf('%s { %s:%s; }', $selector, $style, $prefix.$mod.$postfix) :
-				   			  false;
-			}
-
-			if( $echo ){
-				echo $return;
-			}
-	  		else{
-	  			return $return;
-	  		}
-	}
-
+  }
 }
 
-
-
-
-if( ! function_exists( 'blank_theme_sanitize_choices' ) )
-{
-	/**
-	 * Used for sanitizing radio or select options in customizer
-	 * @param  mixed $input  user input
-	 * @param  mixed $setting choices provied to the user.
-	 * @return mixed  output after sanitization
-	 */
-	function blank_theme_sanitize_choices( $input, $setting ) {
-	  global $wp_customize;
-
-	  $control = $wp_customize->get_control( $setting->id );
-
-	  if ( array_key_exists( $input, $control->choices ) ) {
-	    return $input;
-	  } else {
-	    return $setting->default;
-	  }
-	}
-}
-
-if( ! function_exists( 'blank_theme_sanitize_checkboxes' ) )
-{
-	/**
-	 * Sanitizes checkbox for customizer
-	 * @return int either 1 or 0
-	 */
-	function blank_theme_sanitize_checkboxes( $input ){
-		if ( $input == 1 ) {
-		      return 1;
-		  } else {
-		      return '';
-		  }
-	}
-}
-
-function blank_theme_allow_all( $input ){
-	return $input;
-}
+new BLANK_THEME_Customizer();
