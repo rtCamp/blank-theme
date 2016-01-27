@@ -298,3 +298,22 @@ function blank_theme_load_pro()
     }
 }
 add_action( 'blank_theme_after' , 'blank_theme_load_pro' );
+
+/**
+ * Adds no js class in html
+ */
+function blank_theme_javascript_detection_class($output) {
+    return $output . ' class="no-js"';
+}
+add_filter( 'language_attributes', 'blank_theme_javascript_detection_class' );
+
+/**
+ * Adds no js script
+ */
+function blank_theme_javascript_detection() {
+    if ( has_filter( 'language_attributes', 'blank_theme_javascript_detection_class' ) ) {
+        echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
+    }
+}
+add_action( 'wp_head', 'blank_theme_javascript_detection', 0 );
+
