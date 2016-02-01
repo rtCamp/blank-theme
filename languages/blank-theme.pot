@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Blank Theme 1.0.0\n"
 "Report-Msgid-Bugs-To: http://community.blank-theme.com/c/premium-themes\n"
-"POT-Creation-Date: 2016-02-01 18:37:08+00:00\n"
+"POT-Creation-Date: 2016-02-01 19:12:29+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -743,23 +743,23 @@ msgstr ""
 msgid "Increase Font Size"
 msgstr ""
 
-#: inc/extras.php:180
+#: inc/extras.php:179
 msgid "About "
 msgstr ""
 
-#: inc/extras.php:183
+#: inc/extras.php:182
 msgid "View all posts by "
 msgstr ""
 
-#: inc/extras.php:209
+#: inc/extras.php:208
 msgid " Previous"
 msgstr ""
 
-#: inc/extras.php:224
+#: inc/extras.php:223
 msgid " Next"
 msgstr ""
 
-#: inc/extras.php:259
+#: inc/extras.php:258
 msgid "Read More"
 msgstr ""
 

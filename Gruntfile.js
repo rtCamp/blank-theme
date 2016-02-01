@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = function ( grunt ) {
 
 	// load all grunt tasks matching the `grunt-*` pattern
