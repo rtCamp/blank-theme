@@ -52,13 +52,13 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 		Colors
 ---------------------------*/
 /*---------------------------
+	 Single Colors
+---------------------------*/
+/*---------------------------
 	 Foundation Grid
 ---------------------------*/
 /*---------------------------
 	Foundation Media Query
----------------------------*/
-/*---------------------------
-		Site Layout
 ---------------------------*/
 /**
  * Micro clearfix, as per: http://cssmojo.com/latest_new_clearfix_so_far/
@@ -3381,11 +3381,11 @@ img {
   height: auto;
   /* Make sure images are scaled correctly. */
   max-width: 100%;
+  vertical-align: middle;
   /* Adhere to container width. */
 }
 
 figure {
-  margin: 1rem 1.625rem;
   max-width: 100%;
 }
 
@@ -3661,9 +3661,6 @@ textarea {
 
 .hentry {
   margin: 0 0 1.5rem;
-}
-.hentry figure {
-  margin: 0;
 }
 
 .byline,

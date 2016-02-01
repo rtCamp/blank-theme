@@ -64,12 +64,12 @@ img {
 
     /* Make sure images are scaled correctly. */
     max-width: 100%;
+    vertical-align: middle;
 
     /* Adhere to container width. */
 }
 
 figure {
-    margin: rem-calc(16 26);
     max-width: 100%;
 }
 

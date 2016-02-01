@@ -54,25 +54,20 @@ $color__border-light: #ddd;
 $color__border-button: #ccc #ccc #bbb;
 
 /*---------------------------
+	 Single Colors
+---------------------------*/
+
+$black: #000000;
+$white: #FFFFFF;
+
+/*---------------------------
 	 Foundation Grid
 ---------------------------*/
 
-$include-html-classes: true;
-
-$include-html-grid-classes: true;
-$include-xl-html-grid-classes: false;
-
-// We use these to control text direction settings
-$text-direction: ltr;
-$default-float: left;
-$opposite-direction: right;
-
 $row-width: rem-calc(1300);
+$column-gutter: rem-calc(30);
 $total-columns: 12;
-
-$last-child-float: $opposite-direction;
-
-$column-gutter: rem-calc(25);
+$gutter: $column-gutter;
 
 /*---------------------------
 	Foundation Media Query
@@ -84,10 +79,3 @@ $small-end-point: 640px;
 $medium-end-point: 1024px;
 $large-end-point: 1920px;
 
-/*---------------------------
-		Site Layout
----------------------------*/
-
-$size__site-main: 100%;
-$size__site-sidebar: 25%;
-$gutter: rem-calc(30);
