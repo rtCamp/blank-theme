@@ -7,7 +7,7 @@ if ( ! function_exists( 'kirki_autoload_classes' ) ) {
 	 */
 	function kirki_autoload_classes( $class_name ) {
 		$paths = array();
-		if ( 0 === stripos( $class_name, 'Kirki' ) ) {
+		if ( 0 === stripos( $class_name, 'blank-theme' ) ) {
 
 			$replacements = array(
 				'Controls',

@@ -73,7 +73,7 @@ foreach ( $files as $file ) {
 	}
 }
 
-if ( ! function_exists( 'Kirki' ) ) {
+if ( ! function_exists( 'blank-theme' ) ) {
 	/**
 	 * Returns the Kirki object
 	 */
@@ -155,6 +155,6 @@ Kirki::add_config( '' );
  * Once you add that line, you'll see a new theme in your dashboard called "Kirki Demo".
  * Activate that theme to test all controls.
  */
-if ( defined( 'KIRKI_DEMO' ) && KIRKI_DEMO && file_exists( dirname( __FILE__ ) . '/demo-theme/style.css' ) ) {
+if ( defined( 'blank-theme' ) && KIRKI_DEMO && file_exists( dirname( __FILE__ ) . '/demo-theme/style.css' ) ) {
 	register_theme_directory( dirname( __FILE__ ) );
 }

@@ -3,7 +3,7 @@
 /**
  * Do not allow directly accessing this file.
  */
-if ( ! class_exists( 'Kirki' ) ) {
+if ( ! class_exists( 'blank-theme' ) ) {
 	die( 'File can\'t be accessed directly' );
 }
 /**

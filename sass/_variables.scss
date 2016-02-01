@@ -80,30 +80,9 @@ $column-gutter: rem-calc(25);
 
 $medium-start-point: 641px;
 $large-start-point: 1025px;
-
 $small-end-point: 640px;
 $medium-end-point: 1024px;
 $large-end-point: 1920px;
-
-// Here we define the lower and upper bounds for each media size
-$small-range: 0, $small-end-point;
-$medium-range: $medium-start-point, $medium-end-point;
-$large-range: $large-start-point, $large-end-point;
-
-// Media Queries
-$screen: "only screen";
-
-$landscape: "#{$screen} and (orientation: landscape)";
-$portrait: "#{$screen} and (orientation: portrait)";
-
-$small-up: $screen;
-$small-only: "#{$screen} and (max-width: #{upper-bound($small-range)})";
-
-$medium-up: "#{$screen} and (min-width:#{lower-bound($medium-range)})";
-$medium-only: "#{$screen} and (min-width:#{lower-bound($medium-range)}) and (max-width:#{upper-bound($medium-range)})";
-
-$large-up: "#{$screen} and (min-width:#{lower-bound($large-range)})";
-$large-only: "#{$screen} and (min-width:#{lower-bound($large-range)}) and (max-width:#{upper-bound($large-range)})";
 
 /*---------------------------
 		Site Layout

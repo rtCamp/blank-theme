@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Early exit if the class already exists
-if ( class_exists( 'Kirki' ) ) {
+if ( class_exists( 'blank-theme' ) ) {
 	return;
 }
 

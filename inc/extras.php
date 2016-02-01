@@ -162,7 +162,6 @@ if( ! function_exists( 'blank_theme_font_resizer' ) )
     }
 }
 
-
 /**
  * Creates Author Profile
  */
