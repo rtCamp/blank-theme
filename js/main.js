@@ -17,6 +17,12 @@ jQuery(function($){
 
 		},
 
+		createSlider : function(){
+			$('#blank-theme-slider').slick({
+
+			});
+		},
+
 		fixAdminBar : function(){
 			//mmenu sometimes wrapes adminbar inside its div.
 			if( $('div.mm-page').length && $('div.mm-page').find('#wpadminbar').length ){

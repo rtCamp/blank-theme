@@ -9,7 +9,6 @@ $slides = get_theme_mod( 'blank_theme_slides' );
 if( is_array($slides) && ( is_home() || is_front_page() ) ) : ?>
 
 <div id="blank-theme-slider" class="blank-theme-slider clearfix">
-	<ul class="blank-theme-slides cycle-slideshow clearfix" data-cycle-slides="li" data-cycle-prev=".blank-theme-prev" data-cycle-next=".blank-theme-next" data-cycle-log="false" data-cycle-fx="fade" data-cycle-pager=".blank-theme-cycle-pager" data-cycle-loader="true" data-cycle-pause-on-hover="true">
 
 		<?php foreach( $slides as $slide ) :
 			$link        = isset( $slide['link'] ) ? $slide['link'] : false;
@@ -17,7 +16,7 @@ if( is_array($slides) && ( is_home() || is_front_page() ) ) : ?>
 			$description = isset( $slide['description']) ? sprintf( '<p class="slide-description"><a href="%s">%s</a></p>', esc_url( $link ) , esc_html( $slide['description'] ) ) : false;
 			$image       = isset( $slide['image'] ) ? sprintf( '<img src="%s" alt="%s">' , esc_url( $slide['image'] ), __( 'Slide Image' , 'blank-theme' ) ) : false;
 		 ?>
-		<li class="blank-theme-slide">
+		<div class="blank-theme-slide">
 			<?php echo $image; ?>
 			<?php if( $title || $description ){ ?>
 			<div class="blank-theme-slide-content">
@@ -26,10 +25,10 @@ if( is_array($slides) && ( is_home() || is_front_page() ) ) : ?>
 				</div>
 			</div>
 			<?php } ?>
-		</li>
+		</div>
 		<?php endforeach; ?>
-	</ul>
-	<div class="blank-theme-cycle-pager clearfix"></div>
+
+	<div class="blank-theme-slider-pager clearfix"></div>
 
 	<?php if( count($slides) ) { ?>
 	<div class="blank-theme-prev"></div>
