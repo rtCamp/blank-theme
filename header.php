@@ -33,6 +33,4 @@
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
-	<?php get_template_part( 'template-parts/slider' ); ?>
-
 	<div id="content" class="site-content row">
