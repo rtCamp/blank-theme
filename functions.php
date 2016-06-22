@@ -37,6 +37,11 @@ function blank_theme_setup() {
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
+	/**
+	 * Enable support for custom logo.
+	 */
+	add_theme_support( 'custom-logo', array( 'header-text' => array( 'site-title', 'site-description' ) ) );
+
 	/*
 	 * Let WordPress manage the document title.
 	 * By adding theme support, we declare that this theme does not use a
@@ -79,6 +84,10 @@ function blank_theme_setup() {
 		'video',
 		'quote',
 		'link',
+		'gallery',
+		'status',
+		'audio',
+		'chat',
 	) );
 
 	// Set up the WordPress core custom background feature.
@@ -88,6 +97,9 @@ function blank_theme_setup() {
 	) ) );
 
 	add_editor_style( array( 'editor-style.css', blank_theme_main_font_url() ) );
+
+	// Indicate widget sidebars can use selective refresh in the Customizer.
+	add_theme_support( 'customize-selective-refresh-widgets' );
 
 	do_action( 'blank_theme_after_setup_theme' );
 }

@@ -84,17 +84,19 @@ if( ! function_exists( 'blank_theme_copyright_text' ) )
 
 if( ! function_exists( 'blank_theme_site_branding' ) )
 {
-	function blank_theme_site_branding()
-	{
+	function blank_theme_site_branding() {
+		$site_title = $site_logo = '';
+
+		if ( function_exists( 'the_custom_logo' ) ) {
+			$site_logo = get_custom_logo();
+		}
+
 		$site_title   = get_bloginfo( 'name' );
-		$site_logo    = get_theme_mod( 'blank_theme_logo' );
 		$hide_tagline = get_theme_mod( 'blank_theme_hide_tagline' );
 		$title_class  = $site_logo ? ' screen-reader-text' : false;
 		$desc_class   = $hide_tagline ? ' screen-reader-text' : false;
 
-		if( $site_logo ){
-			printf( '<a class="logo-link" href="%s" rel="home"><img src="%s" alt="%s" ></a>' , esc_url( home_url( '/' ) )  , esc_url( $site_logo ), __( 'Logo' , 'blank-theme' ) );
-		}
+		echo $site_logo;
 
 		if ( is_front_page() && is_home() ){ ?>
 			<h1 class="site-title<?php echo $title_class; ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo esc_html($site_title); ?></a></h1>
@@ -247,4 +249,37 @@ if( ! function_exists( 'blank_theme_get_template_part' ) )
 		}
 		get_template_part( $slug );
 	}
+}
+
+if ( !function_exists( 'db' ) ) {
+
+    /**
+     * Function for Debuging
+     *
+     * @param type $val
+     * @param type $exit
+     */
+    function db( $val, $exit = null, $method = 'pre' ) {
+
+
+        if ( isset( $_REQUEST['db'] ) && ! empty( $_REQUEST['db'] ) ) {
+
+        	if ( 'pre' == $method ) {
+
+        		echo '<pre>';
+	            print_r( $val );
+	            echo '</pre>';
+
+        	} else if ( $method ) {
+
+	            var_dump( $val );
+
+        	}
+
+            if ( $exit ) {
+                exit;
+            }
+        }
+    }
+
 }
