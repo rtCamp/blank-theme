@@ -72,9 +72,9 @@ if( ! function_exists( 'blank_theme_copyright_text' ) )
 {
 	function blank_theme_copyright_text()
 	{
-		$theme_uri = 'http://underscore-me.com/';
+		$theme_uri = 'https://rtcamp.com/';
 
-		$default = sprintf( esc_html__( '%1$s by %2$s', 'blank-theme' ), 'Blank Theme', '<a href="" rel="designer">Sayed Taqui</a>' );
+		$default = sprintf( esc_html__( '%1$s by %2$s', 'blank-theme' ), 'Blank Theme', '<a href="" rel="designer">rtCamp</a>' );
 
 		$copyright_text = get_theme_mod( 'blank_theme_copyright_text' , $default );
 
