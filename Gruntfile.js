@@ -30,8 +30,7 @@ module.exports = function ( grunt ) {
 							style: 'expanded' // nested / compact / compressed / expanded
 						},
 						files: {
-							'style-expanded.css': 'sass/style.scss', // 'destination': 'source'
-							'pro/pro.css': 'pro/sass/pro.scss'
+							'style-expanded.css': 'sass/style.scss' // 'destination': 'source'
 						}
 					  },
 			minify: {
