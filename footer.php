@@ -12,11 +12,13 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
+
 		<?php if ( is_active_sidebar( 'sidebar-2' ) ){ ?>
-		<div class="rtp-footer-widgets-left row">
+		<aside class="rtp-footer-widgets row">
 			<?php dynamic_sidebar( 'sidebar-2' ); ?>
-		</div>
+		</aside>
 		<?php } ?>
+
 		<div class="site-info row-container">
 			<span class="blank-theme-copyright-text"><?php echo blank_theme_copyright_text(); ?></span>
 			<span class="sep"> | </span>
