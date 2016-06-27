@@ -129,20 +129,20 @@ function blank_theme_widgets_init() {
 		'name'          => esc_html__( 'Sidebar', 'blank-theme' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
-		'before_widget' => '<section id="%1$s" class="widget widget-sidebar large-12 medium-12 column %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_widget' => '<div id="%1$s" class="widget widget-sidebar large-12 column %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer', 'blank-theme' ),
 		'id'            => 'sidebar-2',
 		'description'   => '',
-		'before_widget' => '<section id="%1$s" class="widget widget-footer large-3 column %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_widget' => '<div id="%1$s" class="widget widget-footer column %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
 	) );
 }
 add_action( 'widgets_init', 'blank_theme_widgets_init' );
