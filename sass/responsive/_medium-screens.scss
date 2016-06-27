@@ -1,6 +1,29 @@
+@media only screen and (max-width: $medium-end-point) {
+	// Responsive Table
+	.table-responsive {
+		width: 100%;
+		margin-bottom: 15px;
+		overflow-y: hidden;
+		-ms-overflow-style: -ms-autohiding-scrollbar;
+		border: 1px solid $color__border-light;
+	}
 
+	.table-responsive > table {
+		margin-bottom: 0;
+	}
 
-@media only screen and ( min-width: $medium-start-point ) and ( max-width: $medium-end-point )
-{
+	.table-responsive > table {
+		& > thead,
+		& > tbody,
+		& > tfoot {
+			& > tr {
+				& > th,
+				& > td {
+					white-space: nowrap;
+				}
+			}
+		}
+	}
 
+	// Responsive Table End
 }

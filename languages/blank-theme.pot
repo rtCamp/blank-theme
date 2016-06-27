@@ -4,14 +4,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Blank Theme 1.0.0\n"
 "Report-Msgid-Bugs-To: http://community.blank-theme.com/c/premium-themes\n"
-"POT-Creation-Date: 2016-03-20 10:50:40+00:00\n"
+"POT-Creation-Date: 2016-06-27 12:19:52+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Company <support@blank-theme.com>\n"
 "Language-Team: Team <support@blank-theme.com>\n"
-"X-Generator: grunt-wp-i18n 0.5.3\n"
+"X-Generator: grunt-wp-i18n 0.5.4\n"
 "X-Poedit-KeywordsList: "
 "__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
 "attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
@@ -39,76 +39,36 @@ msgstr ""
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
-#: admin/customizer/customizer-settings.php:19
-msgid "Choose Site Logo"
-msgstr ""
-
-#: admin/customizer/customizer-settings.php:22
-msgid "Remove logo to display site title."
-msgstr ""
-
-#: admin/customizer/customizer-settings.php:36
+#: admin/customizer/customizer-settings.php:18
 msgid "Hide Tagline"
 msgstr ""
 
-#: admin/customizer/customizer-settings.php:51
+#: admin/customizer/customizer-settings.php:33
 msgid "General"
 msgstr ""
 
-#: admin/customizer/customizer-settings.php:60
-#: admin/customizer/customizer-settings.php:75
+#: admin/customizer/customizer-settings.php:42
+#: admin/customizer/customizer-settings.php:57
 msgid "Sidebar Position"
 msgstr ""
 
-#: admin/customizer/customizer-settings.php:79
+#: admin/customizer/customizer-settings.php:61
 #: admin/kirki/includes/class-kirki-toolkit.php:106
 msgid "Left"
 msgstr ""
 
-#: admin/customizer/customizer-settings.php:79
+#: admin/customizer/customizer-settings.php:61
 #: admin/kirki/includes/class-kirki-toolkit.php:107
 msgid "Right"
 msgstr ""
 
+#: admin/customizer/customizer-settings.php:71
 #: admin/customizer/customizer-settings.php:89
-#: admin/customizer/customizer-settings.php:107
 msgid "Copyright Text"
 msgstr ""
 
-#: admin/customizer/customizer-settings.php:91
+#: admin/customizer/customizer-settings.php:73
 msgid "Will override the footer copyright text"
-msgstr ""
-
-#: admin/customizer/customizer-settings.php:121
-msgid "Slider Options"
-msgstr ""
-
-#: admin/customizer/customizer-settings.php:122
-msgid "Add slider"
-msgstr ""
-
-#: admin/customizer/customizer-settings.php:130
-msgid "Slide %s"
-msgstr ""
-
-#: admin/customizer/customizer-settings.php:131
-msgid "Add slide"
-msgstr ""
-
-#: admin/customizer/customizer-settings.php:144
-msgid "Title"
-msgstr ""
-
-#: admin/customizer/customizer-settings.php:157
-msgid "Description"
-msgstr ""
-
-#: admin/customizer/customizer-settings.php:170
-msgid "Link"
-msgstr ""
-
-#: admin/customizer/customizer-settings.php:183
-msgid "Image"
 msgstr ""
 
 #: admin/kirki/includes/class-kirki-toolkit.php:52
@@ -691,15 +651,19 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: functions.php:57
+#. Theme Name of the plugin/theme
+msgid "Blank Theme"
+msgstr ""
+
+#: functions.php:62
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:117
+#: functions.php:129
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:127
+#: functions.php:139
 msgid "Footer"
 msgstr ""
 
@@ -715,51 +679,47 @@ msgstr ""
 msgid "%1$s by %2$s"
 msgstr ""
 
-#: inc/custom-functions.php:96
-msgid "Logo"
-msgstr ""
-
-#: inc/extras.php:108
+#: inc/extras.php:113
 msgid "Home"
 msgstr ""
 
-#: inc/extras.php:132
+#: inc/extras.php:137
 msgid "Author Archive"
 msgstr ""
 
-#: inc/extras.php:136
+#: inc/extras.php:141
 msgid "Blog Archive"
 msgstr ""
 
-#: inc/extras.php:140
+#: inc/extras.php:145
 msgid "Search Archive"
 msgstr ""
 
-#: inc/extras.php:158
+#: inc/extras.php:163
 msgid "Decrease Font Size"
 msgstr ""
 
-#: inc/extras.php:159
+#: inc/extras.php:164
 msgid "Increase Font Size"
 msgstr ""
 
-#: inc/extras.php:179
+#: inc/extras.php:184
 msgid "About "
 msgstr ""
 
-#: inc/extras.php:182
+#: inc/extras.php:187
 msgid "View all posts by "
 msgstr ""
 
-#: inc/extras.php:208
+#: inc/extras.php:213
 msgid " Previous"
 msgstr ""
 
-#: inc/extras.php:223
+#: inc/extras.php:228
 msgid " Next"
 msgstr ""
 
-#: inc/extras.php:258
+#: inc/extras.php:263
 msgid "Read More"
 msgstr ""
 
@@ -789,36 +749,6 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: pro/updater/EDD_SL_Theme_Updater.php:54
-msgid ""
-"Updating this theme will lose any customizations you have made. 'Cancel' to "
-"stop, 'OK' to update."
-msgstr ""
-
-#: pro/updater/licence-activation.php:42
-msgid "Theme License Options"
-msgstr ""
-
-#: pro/updater/licence-activation.php:51
-msgid "License Key"
-msgstr ""
-
-#: pro/updater/licence-activation.php:55
-msgid "Enter your license key"
-msgstr ""
-
-#: pro/updater/licence-activation.php:61 pro/updater/licence-activation.php:70
-msgid "Activate License"
-msgstr ""
-
-#: pro/updater/licence-activation.php:65
-msgid "active"
-msgstr ""
-
-#: pro/updater/licence-activation.php:67
-msgid "Deactivate License"
-msgstr ""
-
 #: search.php:16
 msgid "Search Results for: %s"
 msgstr ""
@@ -837,6 +767,73 @@ msgstr ""
 
 #: searchform.php:6
 msgid "Search"
+msgstr ""
+
+#: temp/customizer-slider.php:15
+msgid "Slider Options"
+msgstr ""
+
+#: temp/customizer-slider.php:16
+msgid "Add slider"
+msgstr ""
+
+#: temp/customizer-slider.php:24
+msgid "Slide %s"
+msgstr ""
+
+#: temp/customizer-slider.php:25
+msgid "Add slide"
+msgstr ""
+
+#: temp/customizer-slider.php:38
+msgid "Title"
+msgstr ""
+
+#: temp/customizer-slider.php:51
+msgid "Description"
+msgstr ""
+
+#: temp/customizer-slider.php:64
+msgid "Link"
+msgstr ""
+
+#: temp/customizer-slider.php:77
+msgid "Image"
+msgstr ""
+
+#: temp/pro/updater/EDD_SL_Theme_Updater.php:54
+msgid ""
+"Updating this theme will lose any customizations you have made. 'Cancel' to "
+"stop, 'OK' to update."
+msgstr ""
+
+#: temp/pro/updater/licence-activation.php:42
+msgid "Theme License Options"
+msgstr ""
+
+#: temp/pro/updater/licence-activation.php:51
+msgid "License Key"
+msgstr ""
+
+#: temp/pro/updater/licence-activation.php:55
+msgid "Enter your license key"
+msgstr ""
+
+#: temp/pro/updater/licence-activation.php:61
+#: temp/pro/updater/licence-activation.php:70
+msgid "Activate License"
+msgstr ""
+
+#: temp/pro/updater/licence-activation.php:65
+msgid "active"
+msgstr ""
+
+#: temp/pro/updater/licence-activation.php:67
+msgid "Deactivate License"
+msgstr ""
+
+#: temp/slider.php:17
+msgid "Slide Image"
 msgstr ""
 
 #: template-parts/content-none.php:14
@@ -867,14 +864,6 @@ msgstr ""
 #: template-parts/content.php:25
 #. translators: %s: Name of current post.
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
-
-#: template-parts/slider.php:18
-msgid "Slide Image"
-msgstr ""
-
-#. Theme Name of the plugin/theme
-msgid "Blank Theme"
 msgstr ""
 
 #. Theme URI of the plugin/theme
