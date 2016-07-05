@@ -200,3 +200,24 @@ if ( ! function_exists( 'db' ) ) {
 		}
 	}
 }
+
+/**
+ * To get server variable
+ *
+ * @param $server_key    string
+ * @param $filter_type    string
+ *
+ * @return mixed
+ */
+function blank_theme_get_server_var( $server_key, $filter_type = 'FILTER_SANITIZE_STRING' ) {
+
+	$server_val = '';
+
+	if ( function_exists( 'filter_input' ) && filter_has_var( INPUT_SERVER, $server_key ) ) {
+		$server_val = filter_input( INPUT_SERVER, $server_key, constant( $filter_type ) );
+	} else if ( isset( $_SERVER[ $server_key ] ) ) {
+		$server_val = sanitize_text_field( wp_unslash( $_SERVER[ $server_key ] ) );
+	}
+
+	return $server_val;
+}

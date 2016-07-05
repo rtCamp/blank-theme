@@ -13,79 +13,78 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
-function blank_theme_body_classes( $classes )
-{
-    global $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone;
-    if( $is_lynx )
-        $classes[] = 'lynx';
-    elseif( $is_gecko )
-        $classes[] = 'gecko';
-    elseif( $is_opera )
-        $classes[] = 'opera';
-    elseif( $is_NS4 )
-        $classes[] = 'ns4';
-    elseif( $is_safari )
-        $classes[] = 'safari';
-    elseif( $is_chrome )
-        $classes[] = 'chrome';
-    elseif( $is_IE ) {
-        $classes[] = 'ie';
-        if( isset( $_SERVER[ 'HTTP_USER_AGENT' ] ) && preg_match( '/MSIE ([0-9]+)([a-zA-Z0-9.]+)/', $_SERVER[ 'HTTP_USER_AGENT' ], $browser_version ) ) {
-            $classes[] = 'ie' . $browser_version[ 1 ];
-        }
-    } else {
-        $classes[] = 'unknown';
-    }
-    if( $is_iphone ) {
-        $classes[] = 'iphone';
-    }
+function blank_theme_body_classes( $classes ) {
+	global $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone;
+	if ( $is_lynx ) {
+		$classes[] = 'lynx';
+	} else if ( $is_gecko ) {
+		$classes[] = 'gecko';
+	} elseif ( $is_opera ) {
+		$classes[] = 'opera';
+	} elseif ( $is_NS4 ) {
+		$classes[] = 'ns4';
+	} elseif ( $is_safari ) {
+		$classes[] = 'safari';
+	} elseif ( $is_chrome ) {
+		$classes[] = 'chrome';
+	} elseif ( $is_IE ) {
+		$classes[] = 'ie';
+		if ( isset( $_SERVER['HTTP_USER_AGENT'] ) && preg_match( '/MSIE ([0-9]+)([a-zA-Z0-9.]+)/', blank_theme_get_server_var( 'HTTP_USER_AGENT' ), $browser_version ) ) {
+			$classes[] = 'ie' . $browser_version[1];
+		}
+	} else {
+		$classes[] = 'unknown';
+	}
+	if ( $is_iphone ) {
+		$classes[] = 'iphone';
+	}
 
-    if( strpos( $_SERVER[ 'HTTP_USER_AGENT' ], 'Mobile' ) !== false ) {
-        $classes[] = 'mobile';
-    }
+	if ( strpos( blank_theme_get_server_var( 'HTTP_USER_AGENT' ), 'Mobile' ) !== false ) {
+		$classes[] = 'mobile';
+	}
 
-    if( strpos( $_SERVER[ 'HTTP_USER_AGENT' ], 'Android' ) !== false ) {
-        $classes[] = 'android';
-    }
+	if ( strpos( blank_theme_get_server_var( 'HTTP_USER_AGENT' ), 'Android' ) !== false ) {
+		$classes[] = 'android';
+	}
 
-    if( strpos( $_SERVER[ 'HTTP_USER_AGENT' ], 'Opera Mini' ) !== false ) {
-        $classes[] = 'opera-mini';
-    }
+	if ( strpos( blank_theme_get_server_var( 'HTTP_USER_AGENT' ), 'Opera Mini' ) !== false ) {
+		$classes[] = 'opera-mini';
+	}
 
-    if( strpos( $_SERVER[ 'HTTP_USER_AGENT' ], 'BlackBerry' ) !== false ) {
-        $classes[] = 'blackberry';
-    }
+	if ( strpos( blank_theme_get_server_var( 'HTTP_USER_AGENT' ), 'BlackBerry' ) !== false ) {
+		$classes[] = 'blackberry';
+	}
 
-    if( isset( $_SERVER[ 'HTTP_USER_AGENT' ] ) && stristr( $_SERVER[ 'HTTP_USER_AGENT' ], 'mac' ) ) {
-        $classes[] = 'osx';
-    } elseif( isset( $_SERVER[ 'HTTP_USER_AGENT' ] ) && stristr( $_SERVER[ 'HTTP_USER_AGENT' ], 'linux' ) ) {
-        $classes[] = 'linux';
-    } elseif( isset( $_SERVER[ 'HTTP_USER_AGENT' ] ) && stristr( $_SERVER[ 'HTTP_USER_AGENT' ], 'windows' ) ) {
-        $classes[] = 'windows';
-    }
-    if( !is_multi_author() ) {
-        $classes[] = 'blank-theme-single-author';
-    }
-    if( is_multi_author() ) {
-        $classes[] = 'group-blog';
-    }
-    if( get_header_image() ) {
-        $classes[] = 'header-image';
-    } else {
-        $classes[] = 'masthead-fixed';
-    }
-    if( is_archive() || is_search() || is_home() ) {
-        $classes[] = 'blank-theme-list-view';
-    }
-    if( is_singular() && !is_front_page() ) {
-        $classes[] = 'singular';
-    }
-    // Adds a class of custom-background-image to sites with a custom background image.
+	if ( isset( $_SERVER['HTTP_USER_AGENT'] ) && stristr( blank_theme_get_server_var( 'HTTP_USER_AGENT' ), 'mac' ) ) {
+		$classes[] = 'osx';
+	} elseif ( isset( $_SERVER['HTTP_USER_AGENT'] ) && stristr( blank_theme_get_server_var( 'HTTP_USER_AGENT' ), 'linux' ) ) {
+		$classes[] = 'linux';
+	} elseif ( isset( $_SERVER['HTTP_USER_AGENT'] ) && stristr( blank_theme_get_server_var( 'HTTP_USER_AGENT' ), 'windows' ) ) {
+		$classes[] = 'windows';
+	}
+	if ( ! is_multi_author() ) {
+		$classes[] = 'blank-theme-single-author';
+	}
+	if ( is_multi_author() ) {
+		$classes[] = 'group-blog';
+	}
+	if ( get_header_image() ) {
+		$classes[] = 'header-image';
+	} else {
+		$classes[] = 'masthead-fixed';
+	}
+	if ( is_archive() || is_search() || is_home() ) {
+		$classes[] = 'blank-theme-list-view';
+	}
+	if ( is_singular() && ! is_front_page() ) {
+		$classes[] = 'singular';
+	}
+	// Adds a class of custom-background-image to sites with a custom background image.
 	if ( get_background_image() ) {
 		$classes[] = 'custom-background-image';
 	}
 
-    return $classes;
+	return $classes;
 }
 
 add_filter( 'body_class', 'blank_theme_body_classes' );
@@ -94,26 +93,20 @@ add_filter( 'body_class', 'blank_theme_body_classes' );
  * Creates breadcrum if yoast bredcrumb does not exist
  * Also ads support for yoast breadcrubs
  */
-if( ! function_exists( 'blank_theme_breadcrumb' ) )
-{
-    function blank_theme_breadcrumb()
-    {
+if ( ! function_exists( 'blank_theme_breadcrumb' ) ) {
+    function blank_theme_breadcrumb() {
         echo '<nav class="blank-theme-breacrumbs" >';
-
-        if ( function_exists('yoast_breadcrumb') )
-        {
+        if ( function_exists('yoast_breadcrumb') ) {
             yoast_breadcrumb('<p id="breadcrumbs">','</p>');
             return;
         }
 
         echo '<ul class="blank-theme-breacrumbs-list" >';
 
-            if ( ! is_home() )
-            {
-                printf( '<li><a href="%s">%s</a></li>' , home_url() , __( 'Home' , 'blank-theme' ) );
+            if ( ! is_home() ) {
+                printf( '<li><a href="%s">%s</a></li>', esc_url( home_url() ), __( 'Home' , 'blank-theme' ) );
 
-                if ( is_category() || is_single() )
-                {
+                if ( is_category() || is_single() ) {
                     echo '<li>';
 
                     the_category(' </li><li> ');
@@ -154,7 +147,7 @@ if( ! function_exists( 'blank_theme_breadcrumb' ) )
 /**
  * Creates font resizer
  */
-if( ! function_exists( 'blank_theme_font_resizer' ) )
+if ( ! function_exists( 'blank_theme_font_resizer' ) )
 {
     function blank_theme_font_resizer()
     {
@@ -170,11 +163,11 @@ if( ! function_exists( 'blank_theme_font_resizer' ) )
 /**
  * Creates Author Profile
  */
-if( ! function_exists( 'blank_theme_author_profile' ) )
+if ( ! function_exists( 'blank_theme_author_profile' ) )
 {
     function blank_theme_author_profile()
     {
-        if( ! get_theme_mod( 'blank_theme_post_author' , true ) ) return;
+        if ( ! get_theme_mod( 'blank_theme_post_author' , true ) ) return;
         ?>
         <div class="blank-theme-author-profile clearfix" rel="info" >
             <figure class="blank-theme-ap-avatar">
@@ -195,7 +188,7 @@ if( ! function_exists( 'blank_theme_author_profile' ) )
 /**
  * Creates post thumbnail navigation which can be used below posts
  */
-if( ! function_exists( 'blank_theme_post_thumbnail_navigation' ) )
+if ( ! function_exists( 'blank_theme_post_thumbnail_navigation' ) )
 {
     function blank_theme_post_thumbnail_navigation()
     {
@@ -242,11 +235,11 @@ if( ! function_exists( 'blank_theme_post_thumbnail_navigation' ) )
 /**
  * Ads back to top functionality
  */
-if( ! function_exists( 'blank_theme_add_back_to_top' ) )
+if ( ! function_exists( 'blank_theme_add_back_to_top' ) )
 {
     function blank_theme_add_back_to_top()
     {
-        if( get_theme_mod( 'blank_theme_back_to_top' , true ) )
+        if ( get_theme_mod( 'blank_theme_back_to_top' , true ) )
         echo '<div class="blank-theme-back-to-top" id="blank-theme-back-to-top"></div>';
     }
 }
@@ -255,7 +248,7 @@ add_action( 'wp_footer', 'blank_theme_add_back_to_top' );
 /**
  * Changes the read more text
  */
-if( ! function_exists( 'blank_theme_readmore_text' ) )
+if ( ! function_exists( 'blank_theme_readmore_text' ) )
 {
     function blank_theme_readmore_text()
     {
@@ -271,13 +264,13 @@ add_filter('excerpt_more', 'blank_theme_readmore_text');
  * Default length of excerpt is 55 words in WordPress
  * Changes the excerpt length
  */
-if( ! function_exists( 'blank_theme_change_excerpt_length' ) )
+if ( ! function_exists( 'blank_theme_change_excerpt_length' ) )
 {
     function blank_theme_change_excerpt_length( $length )
     {
         $excerpt_length = intval( get_theme_mod( 'blank_theme_excerpt_length' ) );
 
-        if( $excerpt_length && $excerpt_length > 29 ){
+        if ( $excerpt_length && $excerpt_length > 29 ){
             return $excerpt_length;
         }
         else{

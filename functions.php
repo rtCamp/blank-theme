@@ -5,104 +5,126 @@
  * @package Blank Theme
  */
 
-$blank_theme = wp_get_theme();
-
-if( ! defined( 'BLANK_THEME_VERSION' ) ) define ( 'BLANK_THEME_VERSION'  , $blank_theme->Version );
-if( ! defined( 'BLANK_THEME_TEMP_URI' ) ) define ( 'BLANK_THEME_TEMP_URI' , get_template_directory_uri() );
-if( ! defined( 'BLANK_THEME_TEMP_DIR' ) ) define ( 'BLANK_THEME_TEMP_DIR' , get_template_directory() );
-if( ! defined( 'BLANK_THEME_CSS_URI' ) ) define ( 'BLANK_THEME_CSS_URI'  , BLANK_THEME_TEMP_URI . '/css' );
-if( ! defined( 'BLANK_THEME_JS_URI' ) ) define ( 'BLANK_THEME_JS_URI'	, BLANK_THEME_TEMP_URI . '/js' 	);
-if( ! defined( 'BLANK_THEME_IMG_URI' ) ) define ( 'BLANK_THEME_IMG_URI'  , BLANK_THEME_TEMP_URI . '/images' );
-if( ! defined( 'BLANK_THEME_IS_DEV' ) ) define ( 'BLANK_THEME_IS_DEV'   , true );
+if ( ! defined( 'BLANK_THEME_VERSION' ) ) {
+	define( 'BLANK_THEME_VERSION', 1.0 );
+}
+if ( ! defined( 'BLANK_THEME_TEMP_URI' ) ) {
+	define( 'BLANK_THEME_TEMP_URI', get_template_directory_uri() );
+}
+if ( ! defined( 'BLANK_THEME_TEMP_DIR' ) ) {
+	define( 'BLANK_THEME_TEMP_DIR', get_template_directory() );
+}
+if ( ! defined( 'BLANK_THEME_CSS_URI' ) ) {
+	define( 'BLANK_THEME_CSS_URI', BLANK_THEME_TEMP_URI . '/css' );
+}
+if ( ! defined( 'BLANK_THEME_JS_URI' ) ) {
+	define( 'BLANK_THEME_JS_URI', BLANK_THEME_TEMP_URI . '/js' );
+}
+if ( ! defined( 'BLANK_THEME_IMG_URI' ) ) {
+	define( 'BLANK_THEME_IMG_URI', BLANK_THEME_TEMP_URI . '/images' );
+}
+if ( ! defined( 'BLANK_THEME_IS_DEV' ) ) {
+	define( 'BLANK_THEME_IS_DEV', true );
+}
 
 do_action( 'blank_theme_before' );
 
 if ( ! function_exists( 'blank_theme_setup' ) ) :
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */
-function blank_theme_setup() {
-	/*
-	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on Blank Theme, use a find and replace
-	 * to change 'blank-theme' to the name of your theme in all the template files
-	 */
-	load_theme_textdomain( 'blank-theme', BLANK_THEME_TEMP_DIR . '/languages' );
-
-	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
 
 	/**
-	 * Enable support for custom logo.
-	 */
-	add_theme_support( 'custom-logo', array( 'header-text' => array( 'site-title', 'site-description' ) ) );
-
-	/*
-	 * Let WordPress manage the document title.
-	 * By adding theme support, we declare that this theme does not use a
-	 * hard-coded <title> tag in the document head, and expect WordPress to
-	 * provide it for us.
-	 */
-	add_theme_support( 'title-tag' );
-
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
+	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
-	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+	 * Note that this function is hooked into the after_setup_theme hook, which
+	 * runs before the init hook. The init hook is too late for some features, such
+	 * as indicating support for post thumbnails.
 	 */
-	add_theme_support( 'post-thumbnails' );
+	function blank_theme_setup() {
+		/*
+		 * Make theme available for translation.
+		 * Translations can be filed in the /languages/ directory.
+		 * If you're building a theme based on Blank Theme, use a find and replace
+		 * to change 'blank-theme' to the name of your theme in all the template files
+		 */
+		load_theme_textdomain( 'blank-theme', BLANK_THEME_TEMP_DIR . '/languages' );
 
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary Menu', 'blank-theme' ),
-	) );
+		// Add default posts and comments RSS feed links to head.
+		add_theme_support( 'automatic-feed-links' );
 
-	/*
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
-	 */
-	add_theme_support( 'html5', array(
-		'search-form',
-		'comment-form',
-		'comment-list',
-		'gallery',
-		'caption',
-	) );
+		/**
+		 * Enable support for custom logo.
+		 */
+		add_theme_support( 'custom-logo', array( 'header-text' => array( 'site-title', 'site-description' ) ) );
 
-	/*
-	 * Enable support for Post Formats.
-	 * See http://codex.wordpress.org/Post_Formats
-	 */
-	add_theme_support( 'post-formats', array(
-		'aside',
-		'image',
-		'video',
-		'quote',
-		'link',
-		'gallery',
-		'status',
-		'audio',
-		'chat',
-	) );
+		/*
+		 * Let WordPress manage the document title.
+		 * By adding theme support, we declare that this theme does not use a
+		 * hard-coded <title> tag in the document head, and expect WordPress to
+		 * provide it for us.
+		 */
+		add_theme_support( 'title-tag' );
 
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'blank_theme_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
+		/*
+		 * Enable support for Post Thumbnails on posts and pages.
+		 *
+		 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+		 */
+		add_theme_support( 'post-thumbnails' );
 
-	add_editor_style( array( 'editor-style.css', blank_theme_main_font_url() ) );
+		// This theme uses wp_nav_menu() in one location.
+		register_nav_menus( array(
+			'primary' => esc_html__( 'Primary Menu', 'blank-theme' ),
+		) );
 
-	// Indicate widget sidebars can use selective refresh in the Customizer.
-	add_theme_support( 'customize-selective-refresh-widgets' );
+		/*
+		 * Switch default core markup for search form, comment form, and comments
+		 * to output valid HTML5.
+		 */
+		add_theme_support( 'html5', array(
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+		) );
 
-	do_action( 'blank_theme_after_setup_theme' );
-}
+		/*
+		 * Enable support for Post Formats.
+		 * See http://codex.wordpress.org/Post_Formats
+		 */
+		add_theme_support( 'post-formats', array(
+			'aside',
+			'image',
+			'video',
+			'quote',
+			'link',
+			'gallery',
+			'status',
+			'audio',
+			'chat',
+		) );
+
+		// Set up the WordPress core custom background feature.
+		add_theme_support( 'custom-background', apply_filters( 'blank_theme_custom_background_args', array(
+			'default-color' => 'ffffff',
+			'default-image' => '',
+		) ) );
+
+		add_theme_support( 'custom-header', apply_filters( 'blank_theme_custom_header_args', array(
+			'default-image'          => '',
+			'default-text-color'     => '000000',
+			'width'                  => 1000,
+			'height'                 => 250,
+			'flex-height'            => true,
+			'wp-head-callback'       => 'blank_theme_header_style',
+		) ) );
+
+		add_editor_style( array( 'editor-style.css', blank_theme_main_font_url() ) );
+
+		// Indicate widget sidebars can use selective refresh in the Customizer.
+		add_theme_support( 'customize-selective-refresh-widgets' );
+
+		do_action( 'blank_theme_after_setup_theme' );
+	}
 endif; // blank_theme_setup
 add_action( 'after_setup_theme', 'blank_theme_setup' );
 
@@ -150,14 +172,12 @@ add_action( 'widgets_init', 'blank_theme_widgets_init' );
 /**
  * Enqueue scripts and styles.
  */
-function blank_theme_scripts()
-{
+function blank_theme_scripts() {
 	/*==============================
 	          GOOGLE FONTS
 	===============================*/
 
 	//wp_enqueue_style( 'google-font-opensanscondensed', blank_theme_main_font_url() );
-	wp_enqueue_style( 'dashicons' );
 
 	/*==============================
 	          STYLES
@@ -184,6 +204,7 @@ function blank_theme_scripts()
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
+
 add_action( 'wp_enqueue_scripts', 'blank_theme_scripts' );
 
 

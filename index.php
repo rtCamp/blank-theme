@@ -10,22 +10,22 @@
  *
  * @package Blank Theme
  */
+get_header();
+?>
 
-
-get_header(); ?>
-
-	<div id="primary" class="<?php blank_theme_primary_classes(); ?>">
-		<main id="main" class="site-main" role="main">
+<div id="primary" class="<?php blank_theme_primary_classes(); ?>">
+	<main id="main" class="site-main" role="main">
 
 		<?php
 		if ( have_posts() ) :
 
-			if ( is_home() && ! is_front_page() ) : ?>
+			if ( is_home() && !is_front_page() ) :
+				?>
 				<header>
 					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
 				</header>
 
-			<?php
+				<?php
 			endif;
 
 			/* Start the Loop */
@@ -44,13 +44,14 @@ get_header(); ?>
 
 			get_template_part( 'template-parts/content', 'none' );
 
-		endif; ?>
+		endif;
+		?>
 
-		</main><!-- #main -->
+	</main><!-- #main -->
 
-		<?php blank_theme_pagination(); ?>
+	<?php blank_theme_pagination(); ?>
 
-	</div><!-- #primary -->
+</div><!-- #primary -->
 
 <?php
 get_sidebar();
