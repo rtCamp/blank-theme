@@ -4,7 +4,6 @@
  *
  * @package Blank Theme
  */
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -13,12 +12,12 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content clearfix">
-		<?php the_content();
-
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'blank-theme' ),
-				'after'  => '</div>',
-			) );
+		<?php
+		the_content();
+		wp_link_pages( array(
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'blank-theme' ),
+			'after'	 => '</div>',
+		) );
 		?>
 	</div><!-- .entry-content -->
 
@@ -26,4 +25,3 @@
 		<?php edit_post_link( esc_html__( 'Edit', 'blank-theme' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
-

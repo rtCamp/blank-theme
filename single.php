@@ -4,11 +4,11 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  * @package Blank Theme
  */
+get_header();
+?>
 
-get_header(); ?>
-
-	<div id="primary" class="<?php blank_theme_primary_classes(); ?>">
-		<main id="main" class="site-main" role="main">
+<div id="primary" class="<?php blank_theme_primary_classes(); ?>">
+	<main id="main" class="site-main" role="main">
 
 		<?php
 		while ( have_posts() ) : the_post();
@@ -24,8 +24,8 @@ get_header(); ?>
 
 		endwhile; // End of the loop.
 		?>
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	</main><!-- #main -->
+</div><!-- #primary -->
 
 <?php
 get_sidebar();
