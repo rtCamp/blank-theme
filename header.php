@@ -29,7 +29,7 @@
 
 		<a id="primary-nav-button" class="blank-theme-mobile-nav-button" href="#site-navigation"><?php _e( 'Mobile Menu' , 'blank-theme' ); ?></a>
 		<nav id="site-navigation" class="blank-theme-main-navigation" role="navigation">
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' , 'depth' => 3 ) ); ?>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'depth' => 3 ) ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 

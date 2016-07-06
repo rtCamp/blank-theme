@@ -18,7 +18,7 @@ if ( ! function_exists( 'blank_theme_primary_classes' ) ) {
 
 		if ( 'left' === $sidebar_postion ) {
 			$foundation_classes .= ' blank-theme-right';
-		} else if ( 'no_sidebar' === $sidebar_postion ) {
+		} elseif ( 'no_sidebar' === $sidebar_postion ) {
 			$foundation_classes = 'large-12 medium-12 small-12 column';
 		}
 
@@ -190,7 +190,7 @@ if ( ! function_exists( 'db' ) ) {
 				echo '<pre>';
 				print_r( $val );
 				echo '</pre>';
-			} else if ( $method ) {
+			} elseif ( $method ) {
 				var_dump( $val );
 			}
 
@@ -215,7 +215,7 @@ function blank_theme_get_server_var( $server_key, $filter_type = 'FILTER_SANITIZ
 
 	if ( function_exists( 'filter_input' ) && filter_has_var( INPUT_SERVER, $server_key ) ) {
 		$server_val = filter_input( INPUT_SERVER, $server_key, constant( $filter_type ) );
-	} else if ( isset( $_SERVER[ $server_key ] ) ) {
+	} elseif ( isset( $_SERVER[ $server_key ] ) ) {
 		$server_val = sanitize_text_field( wp_unslash( $_SERVER[ $server_key ] ) );
 	}
 

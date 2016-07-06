@@ -49,18 +49,18 @@ if ( ! function_exists( 'blank_theme_entry_footer' ) ) :
 		}
 
 		if ( in_array( 'author', $allowed_meta, true ) ) {
-			echo "<span class='byline blank-theme-meta-item blank-theme-icon-user'>" . $byline . "</span> ";
+			echo "<span class='byline blank-theme-meta-item blank-theme-icon-user'>" . $byline . '</span> ';
 		}
 
 		if ( in_array( 'date', $allowed_meta, true ) ) {
-			echo "<span class='posted-on blank-theme-meta-item blank-theme-icon-calendar'>" . $posted_on . "</span> ";
+			echo "<span class='posted-on blank-theme-meta-item blank-theme-icon-calendar'>" . $posted_on . '</span> ';
 		}
 
 		if ( $cat_links && in_array( 'categories', $allowed_meta, true ) ) {
-			echo "<span class='cat-links blank-theme-meta-item blank-theme-icon-category'>" . $cat_links . "</span> ";
+			echo "<span class='cat-links blank-theme-meta-item blank-theme-icon-category'>" . $cat_links . '</span> ';
 		}
 		if ( $tags_list && in_array( 'tags', $allowed_meta, true ) ) {
-			echo "<span class='tag-links blank-theme-meta-item blank-theme-icon-tags'>" . $tags_list . "</span> ";
+			echo "<span class='tag-links blank-theme-meta-item blank-theme-icon-tags'>" . $tags_list . '</span> ';
 		}
 
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) && in_array( 'comment', $allowed_meta, true ) ) {
