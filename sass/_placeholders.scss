@@ -4,13 +4,11 @@
  * over and over in your markup.
  */
 %clearfix {
-
-    &:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
 }
 
 // Vertical rhythm

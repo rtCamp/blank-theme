@@ -36,7 +36,7 @@ if ( ! function_exists( 'blank_theme_secondary_classes' ) ) {
 		//Override will be useful in page-templates
 		$sidebar_postion = get_theme_mod( 'blank_theme_sidebar_position' );
 		$foundation_classes = $override_foundation_classes ? $override_foundation_classes : 'large-4 medium-4 small-12 column';
-		$foundation_classes .= 'left' == $sidebar_postion ? ' blank-theme-left' : false;
+		$foundation_classes .= 'left' === $sidebar_postion ? ' blank-theme-left' : false;
 
 		echo esc_html( apply_filters( 'blank_theme_secondary_classes' , "blank-theme-secondary widget-area {$foundation_classes} {$more_classes} clearfix" , $more_classes, $foundation_classes ) );
 	}
@@ -57,7 +57,7 @@ if ( ! function_exists( 'blank_theme_main_font_url' ) ) {
 		 */
 		$font_url = 'fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700';
 
-		return ( substr( site_url(), 0, 8 ) == 'https://') ? 'https://' . $font_url : 'http://' . $font_url;
+		return ( substr( site_url(), 0, 8 ) === 'https://') ? 'https://' . $font_url : 'http://' . $font_url;
 	}
 }
 
@@ -186,7 +186,7 @@ if ( ! function_exists( 'db' ) ) {
 	function db( $val, $exit = null, $method = 'pre' ) {
 		if ( isset( $_REQUEST['db'] ) && ! empty( $_REQUEST['db'] ) ) {
 
-			if ( 'pre' == $method ) {
+			if ( 'pre' === $method ) {
 				echo '<pre>';
 				print_r( $val );
 				echo '</pre>';

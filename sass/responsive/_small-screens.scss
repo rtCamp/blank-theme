@@ -1,16 +1,14 @@
-
-
-@media only screen and ( max-width: $small-end-point ){
-
+@media only screen and (max-width: $small-end-point) {
 	//Fix of admin bar due to mmenu
-	html.mm-blocking{
-		margin-top: 0!Important;
-		#wpadminbar{
+	html.mm-blocking {
+		margin-top: 0 !important;
+
+		#wpadminbar {
 			z-index: -1;
 		}
-		.logged-in.admin-bar{
+
+		.logged-in.admin-bar {
 			margin-top: 46px;
 		}
 	}
-
 }

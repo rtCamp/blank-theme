@@ -2,36 +2,30 @@
  *  Contains custom scripts for customizer controls
  */
 
-(function( $, window , undefined ){
+( function ( $, window, undefined ) {
 
-    "use strict";
+	"use strict";
 
-    window.BlankThemeCC = {
-        Models  : {},
-        Views   : {}
-    };
+	window.BlankThemeCC = {
+		Models: { },
+		Views: { }
+	};
 
 	/*==============================
-                Main
-    ===============================*/
+	 Main
+	 ===============================*/
 
-    BlankThemeCC.Views.Main = Backbone.View.extend({
+	BlankThemeCC.Views.Main = Backbone.View.extend( {
+		el: '',
+		events: {
+			
+		},
+		initialize: function () {
 
-        el : '',
+		}
+	} );
 
-        events: {
+	new BlankThemeCC.Views.Main();
 
-        },
-
-        initialize: function(){
-
-        },
-
-    });
-
-    new BlankThemeCC.Views.Main();
-
-
-
-})( jQuery , window, undefined );
+} )( jQuery, window, undefined );
 

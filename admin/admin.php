@@ -15,7 +15,6 @@ define( 'BLANK_THEME_CUSTOMIZER_JS' , BLANK_THEME_ADMIN_URI . '/customizer/js' )
 define( 'BLANK_THEME_CUSTOMIZER_CSS' , BLANK_THEME_ADMIN_URI . '/customizer/css' );
 define( 'BLANK_THEME_KIRKI_DIR' , BLANK_THEME_ADMIN_DIR . '/kirki' );
 
-
 $files_to_include = array(
 
 	//Customzier
@@ -30,7 +29,8 @@ $files_to_include = array(
 );
 
 //Loading Files
-foreach ($files_to_include as $file_path )
-{
-	if( file_exists( $file_path ) )	include_once $file_path;
+foreach ( $files_to_include as $file_path ) {
+	if ( file_exists( $file_path ) ) {
+		include_once $file_path;
+	}
 }
