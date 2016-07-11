@@ -1,0 +1,8 @@
+/**
+ * JSCS: JavaScript Code Style checker
+ * @link http://jscs.info/
+ */
+{
+	"preset"			: "wordpress",
+	"fileExtensions"	: [ ".js" ]
+}
