@@ -1,22 +1,22 @@
-jQuery( function ( $ ) {
+jQuery( function( $ ) {
 
-	"use strict";
+	'use strict';
 
 	window.BlankTheme = {
 		$backToTop: $( '#blank-theme-back-to-top' ),
 
-		init: function () {
+		init: function() {
 			this.createMobileMenu();
 			this.animateMenu();
 			this.fixAdminBar();
 			this.events();
 		},
 
-		events: function () {
+		events: function() {
 
 		},
 
-		createSlider: function () {
+		createSlider: function() {
 			if ( $( '#blank-theme-slider' ).length ) {
 				$( '#blank-theme-slider' ).slick( {
 					// Custom Option
@@ -24,24 +24,24 @@ jQuery( function ( $ ) {
 			}
 		},
 
-		fixAdminBar: function () {
-			//mmenu sometimes wrapes adminbar inside its div.
+		fixAdminBar: function() {
+			//Mmenu sometimes wrapes adminbar inside its div.
 			if ( $( 'div.mm-page' ).length && $( 'div.mm-page' ).find( '#wpadminbar' ).length ) {
 				var $adminBar = $( '#wpadminbar' );
 				$( 'body' ).append( $adminBar );
 			}
 		},
 
-		createMobileMenu: function () {
+		createMobileMenu: function() {
 			$( '#site-navigation' ).mmenu( { }, { clone: true } );
 			$( '#mm-site-navigation' ).removeClass( 'blank-theme-main-navigation' );
 		},
 
-		animateMenu: function () {
+		animateMenu: function() {
 			$( '.blank-theme-main-navigation ul ul' ).addClass( 'animated-menu fadeInUp' );
 		},
 
-		showBacktoTop: function ( $this ) {
+		showBacktoTop: function( $this ) {
 			if ( $this.width() > 960 ) {
 
 				if ( $this.scrollTop() > 50 ) {
@@ -52,8 +52,8 @@ jQuery( function ( $ ) {
 			}
 		},
 
-		backToTop: function () {
-			$( "body, html" ).animate( { scrollTop: 0 }, 600 );
+		backToTop: function() {
+			$( 'body, html' ).animate( { scrollTop: 0 }, 600 );
 			return false;
 		}
 	};
