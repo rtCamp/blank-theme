@@ -23,13 +23,13 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'blank-theme' ); ?></a>
 
 	<header id="masthead" class="site-header row-container" role="banner">
-		<div class="site-branding">
+		<div class="site-branding column shrink">
 			<?php echo blank_theme_site_branding(); ?>
 		</div><!-- .site-branding -->
 
 		<a id="primary-nav-button" class="blank-theme-mobile-nav-button" href="#site-navigation"><?php esc_html_e( 'Mobile Menu' , 'blank-theme' ); ?></a>
-		<nav id="site-navigation" class="blank-theme-main-navigation" role="navigation">
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'depth' => 3 ) ); ?>
+		<nav id="site-navigation" class="blank-theme-main-navigation column" role="navigation">
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'menu_class' => 'primary-menu menu', 'depth' => 3 ) ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 

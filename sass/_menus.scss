@@ -8,12 +8,7 @@
 	float: left;
 	width: 100%;
 
-	& > div > ul {
-		margin-left: rem-calc(-10);
-	}
-
 	ul {
-		display: none;
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
@@ -44,7 +39,9 @@
 			}
 
 			:hover > a,
-			.focus > a {}
+			.focus > a {
+				color: $color__link-hover;
+			}
 
 			a:hover,
 			a.focus {}
@@ -62,7 +59,9 @@
 		position: relative;
 
 		&:hover > a,
-		&.focus > a {}
+		&.focus > a {
+			color: $color__link-hover;
+		}
 	}
 
 	a {
@@ -71,9 +70,25 @@
 		padding: rem-calc(10);
 	}
 
+	.primary-menu > ul > li {
+		&:first-child {
+			a {
+				padding-left: 0;
+			}
+		}
+
+		&:last-child {
+			a {
+				padding-right: 0;
+			}
+		}
+	}
+
 	.current_page_item > a,
 	.current-menu-item > a,
-	.current_page_ancestor > a {}
+	.current_page_ancestor > a {
+		color: $color__link-hover;
+	}
 }
 
 /* Small menu. */

@@ -28,6 +28,10 @@
 }
 
 .site-main {
-	background: #fff;
+	background: $white;
 	padding: rem-calc(15);
+}
+
+.blank-theme-pagination {
+	text-align: center;
 }

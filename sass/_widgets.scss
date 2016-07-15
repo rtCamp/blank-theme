@@ -1,5 +1,5 @@
 .widget {
-	margin: rem_calc(0 0 30);
+	margin: 0 0 $column-gutter;
 
 	/* Make sure select elements fit in widgets. */
 	select {

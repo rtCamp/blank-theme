@@ -1,17 +1,17 @@
-module.exports = function ( grunt ) {
+module.exports = function( grunt ) {
 
-	// load all grunt tasks matching the `grunt-*` pattern
+	// Load all grunt tasks matching the `grunt-*` pattern
 	// Ref. https://npmjs.org/package/load-grunt-tasks
 	require( 'load-grunt-tasks' )( grunt );
 
 	grunt.initConfig( {
-		// watch for changes and trigger sass, jshint, uglify and livereload
+		// Watch for changes and trigger sass, jshint, uglify and livereload
 		watch: {
 			sass: {
 				files: [ 'sass/**/*.{scss,sass}', 'pro/**/*.{scss,sass}' ],
 				tasks: [ 'sass', 'autoprefixer', 'cmq' ]
 			},
-			// js: {
+			// Js: {
 			// 	files: '<%= uglify.frontend.src %>',
 			// 	tasks: [ 'uglify' ]
 			// },
@@ -27,7 +27,7 @@ module.exports = function ( grunt ) {
 		sass: {
 			expanded: {
 						options: {
-							style: 'expanded' // nested / compact / compressed / expanded
+							style: 'expanded' // Nested / compact / compressed / expanded
 						},
 						files: {
 							'style-expanded.css': 'sass/style.scss' // 'destination': 'source'
@@ -35,13 +35,13 @@ module.exports = function ( grunt ) {
 					  },
 			minify: {
 						options: {
-							style: 'nested' // nested / compact / compressed / expanded
+							style: 'nested' // Nested / compact / compressed / expanded
 						},
 						files: {
 							'style.css': 'sass/style.scss' // 'destination': 'source'
 						}
-					},
-			// editor: {
+					}
+			// Editor: {
 			// 			options: {
 			// 				style: 'compressed' // nested / compact / compressed / expanded
 			// 			},
@@ -51,7 +51,7 @@ module.exports = function ( grunt ) {
 			// 		},
 
 		},
-		// autoprefixer
+		// Autoprefixer
 		autoprefixer: {
 			options: {
 				browsers: [ 'last 2 versions', 'ie 9', 'ios 6', 'android 4' ],
@@ -92,29 +92,29 @@ module.exports = function ( grunt ) {
 		makepot: {
 			target: {
 				options: {
-					cwd			: '.',													// Directory of files to internationalize.
-					domainPath	: 'languages/',											// Where to save the POT file.
-					exclude		: [ 'node_modules/*' ],									// List of files or directories to ignore.
-					mainFile	: 'style.css',											// Main project file.
-					potFilename	: 'blank-theme.pot',									// Name of the POT file.
-					potComments : '',													// The copyright at the beginning of the POT file.
-					potHeaders	: {														// Headers to add to the generated POT file.
-						poedit					: true,									// Includes common Poedit headers.
-						'Last-Translator'		: 'Company <support@blank-theme.com>',
-						'Language-Team'			: 'Team <support@blank-theme.com>',
-						'report-msgid-bugs-to'	: 'http://community.rtcamp.com/c/premium-themes',
-						'x-poedit-keywordslist'	: true									// Include a list of all possible gettext functions.
+					cwd: '.',														// Directory of files to internationalize.
+					domainPath: 'languages/',										// Where to save the POT file.
+					exclude: [ 'node_modules/*' ],									// List of files or directories to ignore.
+					mainFile: 'style.css',											// Main project file.
+					potFilename: 'blank-theme.pot',									// Name of the POT file.
+					potComments: '',												// The copyright at the beginning of the POT file.
+					potHeaders: {													// Headers to add to the generated POT file.
+						poedit: true,												// Includes common Poedit headers.
+						'Last-Translator': 'Company <support@blank-theme.com>',
+						'Language-Team': 'Team <support@blank-theme.com>',
+						'report-msgid-bugs-to': 'http://community.rtcamp.com/c/premium-themes',
+						'x-poedit-keywordslist': true								// Include a list of all possible gettext functions.
 					},
-					type			: 'wp-theme',										// Type of project (wp-plugin or wp-theme).
-					updateTimestamp	: true,												// Whether the POT-Creation-Date should be updated without other changes.
-					updatePoFiles	: false												// Whether to update PO files in the same directory as the POT file.
+					type: 'wp-theme',												// Type of project (wp-plugin or wp-theme).
+					updateTimestamp: true,											// Whether the POT-Creation-Date should be updated without other changes.
+					updatePoFiles: false											// Whether to update PO files in the same directory as the POT file.
 				}
 			}
 		},
 
 		addtextdomain: {
 			options: {
-				//i18nToolsPath: '', // Path to the i18n tools directory.
+				//I18nToolsPath: '', // Path to the i18n tools directory.
 				textdomain: 'blank-theme', // Project text domain.
 				updateDomains: [ 'buddypress', 'textdomain' ]  // List of text domains to replace.
 			},
@@ -156,7 +156,7 @@ module.exports = function ( grunt ) {
 							'*.php',
 							'**/*.php',
 							'!node_modules/**'
-						], //all php
+						], //All php
 						expand: true
 					} ]
 			}
@@ -175,9 +175,9 @@ module.exports = function ( grunt ) {
 					'style.css': ['style.css']
 				}
 			}
-		},
+		}
 	} );
 
-	// register task
-	grunt.registerTask( 'default', [ 'sass', 'autoprefixer' , 'checktextdomain', 'makepot', 'watch' ] );
+	// Register task
+	grunt.registerTask( 'default', [ 'sass', 'autoprefixer', 'checktextdomain', 'makepot', 'watch' ] );
 };

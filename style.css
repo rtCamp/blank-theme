@@ -1,8 +1,8 @@
 /*
 Theme Name: Blank Theme
-Theme URI: http://underscores.me/
-Author: Sayed Taqui
-Author URI: http://underscore-me.com/
+Theme URI: https://rtcamp.com/
+Author: rtCamp
+Author URI: https://rtcamp.com/
 Description: Blank Theme is a responsive multipurpose theme.
 Version: 1.0.0
 License: GNU General Public License v2 or later
@@ -678,8 +678,8 @@ hr {
 }
 
 .row-container {
-	padding-left: 0.9375rem;
-	padding-right: 0.9375rem;
+	padding-left: 0.625rem;
+	padding-right: 0.625rem;
 }
 
 .animated {
@@ -881,8 +881,8 @@ object {
 .row-container .row-container,
 .column-row .row,
 .column-row .row-container {
-	margin-left: -0.9375rem;
-	margin-right: -0.9375rem;
+	margin-left: -0.625rem;
+	margin-right: -0.625rem;
 }
 
 .column,
@@ -890,8 +890,8 @@ object {
 	-webkit-box-flex: 1;
 	-ms-flex: 1 1 0px;
 	flex: 1 1 0px;
-	padding-left: 0.9375rem;
-	padding-right: 0.9375rem;
+	padding-left: 0.625rem;
+	padding-right: 0.625rem;
 }
 
 .small-1 {
@@ -3206,7 +3206,7 @@ a:hover {
 
 ul,
 ol {
-	margin: 0 0 1.5rem 3rem;
+	margin: 0 0 1.125rem 1.125rem;
 }
 
 ul.no-bullet,
@@ -3340,12 +3340,7 @@ textarea {
 	width: 100%;
 }
 
-.blank-theme-main-navigation > div > ul {
-	margin-left: -0.625rem;
-}
-
 .blank-theme-main-navigation ul {
-	display: none;
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
@@ -3375,6 +3370,11 @@ textarea {
 	width: 200px;
 }
 
+.blank-theme-main-navigation ul ul :hover > a,
+.blank-theme-main-navigation ul ul .focus > a {
+	color: red;
+}
+
 .blank-theme-main-navigation ul li:hover > ul,
 .blank-theme-main-navigation ul li.focus > ul {
 	left: auto;
@@ -3386,10 +3386,29 @@ textarea {
 	position: relative;
 }
 
+.blank-theme-main-navigation li:hover > a,
+.blank-theme-main-navigation li.focus > a {
+	color: red;
+}
+
 .blank-theme-main-navigation a {
 	display: block;
 	text-decoration: none;
 	padding: 0.625rem;
+}
+
+.blank-theme-main-navigation .primary-menu > ul > li:first-child a {
+	padding-left: 0;
+}
+
+.blank-theme-main-navigation .primary-menu > ul > li:last-child a {
+	padding-right: 0;
+}
+
+.blank-theme-main-navigation .current_page_item > a,
+.blank-theme-main-navigation .current-menu-item > a,
+.blank-theme-main-navigation .current_page_ancestor > a {
+	color: red;
 }
 
 /* Small menu. */
@@ -3506,8 +3525,12 @@ textarea {
 }
 
 .site-main {
-	background: #fff;
+	background: #FFFFFF;
 	padding: 0.9375rem;
+}
+
+.blank-theme-pagination {
+	text-align: center;
 }
 
 /*--------------------------------------------------------------
@@ -3515,7 +3538,7 @@ textarea {
 --------------------------------------------------------------*/
 
 .widget {
-	margin: 0 0 1.875rem; /* Make sure select elements fit in widgets. */
+	margin: 0 0 1.25rem; /* Make sure select elements fit in widgets. */
 }
 
 .widget select {

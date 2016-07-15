@@ -96,7 +96,7 @@ a {
 ---------------------------*/
 
 ul, ol {
-	margin: 0 0 1.5rem 3rem;
+	margin: rem-calc(0 0 18 18);
 
 	&.no-bullet {
 		&,

@@ -7,7 +7,9 @@ jQuery( function( $ ) {
 
 		init: function() {
 			this.createMobileMenu();
-			this.animateMenu();
+
+			// Enable to animate child menu
+			// this.animateMenu();
 			this.fixAdminBar();
 			this.events();
 		},
