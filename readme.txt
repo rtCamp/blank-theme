@@ -27,10 +27,7 @@ Resources
 ~~~~~~~~~~~~~~~~~
 Blank Theme is built with the following resources:
 
-Cycle2 http://jquery.malsup.com/cycle2/
-License: The Cycle2 plugin is dual licensed under the MIT and GPL licenses.
-Contributing author : Mike Alsup (https://github.com/malsup)
-Copyright: Copyright © 2012-2016 M. Alsup.
+Slick - http://kenwheeler.github.io/slick
 
 Mmenu https://github.com/BeSite/jQuery.mmenu
 License: The jQuery.mmenu plugin is dual licensed under the MIT license:
@@ -40,6 +37,10 @@ Copyright: Copyright © 2012-2016 M. BeSite.
 HTML5 Shiv - https://github.com/aFarkas/html5shiv
 License: MIT/GPL2 Licensed
 Copyright: @afarkas @jdalton @jon_neal @rem
+
+PHPCS - https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
+
+Dev Lib - https://github.com/xwp/wp-dev-lib
 
 /*Images*/
 
@@ -61,10 +62,3 @@ Blank Theme includes support for Infinite Scroll in Jetpack.
 
 = 1.0 - May 12 2015 =
 * Initial release
-
-== Credits ==
-
-* Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-* normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2015 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
-
-

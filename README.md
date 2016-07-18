@@ -10,7 +10,7 @@ What more does it have?
 
 1) WordPress Customizer is already setup with some basic customizer settings.
 
-2) Basic foundation grids and block grids.
+2) Basic foundation grids.
 
 3) Ready made mobile menu.
 
@@ -22,9 +22,11 @@ What more does it have?
 
 7) Grunt file and configration.
 
-8) Pro folder for creating premium themes, just remove the pro folder if you do not want it.
+8) Slick Slider
 
-9) Cycle2 Slider with ready made template and customizer settings.
+9) PHPCS - https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
+
+10) Dev Lib - https://github.com/xwp/wp-dev-lib
 
 and more..
 
