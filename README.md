@@ -24,9 +24,7 @@ What more does it have?
 
 8) Slick Slider
 
-9) PHPCS - https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
-
-10) Dev Lib - https://github.com/xwp/wp-dev-lib
+9) Dev Lib - https://github.com/xwp/wp-dev-lib
 
 and more..
 
@@ -64,7 +62,8 @@ To setup WordPress Coding Standards
 [sudo] ln -s WordPress-Coding-Standards/WordPress-Extra WordPress-Extra
 ```
 
-### Install wp-dev-lib as submodule
+Install [wp-dev-lib](https://github.com/xwp/wp-dev-lib) as submodule
+---------------
 
 To install as Git submodule (recommended):
 
