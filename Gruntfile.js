@@ -27,7 +27,8 @@ module.exports = function( grunt ) {
 		sass: {
 			expanded: {
 						options: {
-							style: 'expanded' // Nested / compact / compressed / expanded
+							style: 'expanded', // Nested / compact / compressed / expanded
+							sourcemap: 'auto' // Auto / file / inline / none
 						},
 						files: {
 							'style-expanded.css': 'sass/style.scss' // 'destination': 'source'
@@ -35,7 +36,8 @@ module.exports = function( grunt ) {
 					  },
 			minify: {
 						options: {
-							style: 'nested' // Nested / compact / compressed / expanded
+							style: 'nested', // Nested / compact / compressed / expanded
+							sourcemap: 'auto' // Auto / file / inline / none
 						},
 						files: {
 							'style.css': 'sass/style.scss' // 'destination': 'source'
@@ -43,7 +45,8 @@ module.exports = function( grunt ) {
 					}
 			// Editor: {
 			// 			options: {
-			// 				style: 'compressed' // nested / compact / compressed / expanded
+			// 				style: 'compressed', // nested / compact / compressed / expanded
+			// 				sourcemap: 'auto' // auto / file / inline / none
 			// 			},
 			// 			files: {
 			// 				'editor-style.css': 'sass/editor-style.scss' // 'destination': 'source'
@@ -67,12 +70,6 @@ module.exports = function( grunt ) {
 		},
 		// Uglify Ref. https://npmjs.org/package/grunt-contrib-uglify
 		uglify: {
-			options: {
-				banner: '/*! \n * blank_theme JavaScript Library \n * @package Blank Theme \n */',
-				sourceMap: 'js/main.js.map',
-				sourceMappingURL: 'main.js.map',
-				sourceMapPrefix: 2
-			},
 			frontend: {
 				src: [
 					'js/vendor/slick.js',
@@ -94,7 +91,7 @@ module.exports = function( grunt ) {
 				options: {
 					cwd: '.',														// Directory of files to internationalize.
 					domainPath: 'languages/',										// Where to save the POT file.
-					exclude: [ 'node_modules/*' ],									// List of files or directories to ignore.
+					exclude: [ 'node_modules/*', 'dev-lib/*' ],									// List of files or directories to ignore.
 					mainFile: 'style.css',											// Main project file.
 					potFilename: 'blank-theme.pot',									// Name of the POT file.
 					potComments: '',												// The copyright at the beginning of the POT file.
@@ -123,7 +120,8 @@ module.exports = function( grunt ) {
 					src: [
 						'*.php',
 						'**/*.php',
-						'!node_modules/**'
+						'!node_modules/**',
+						'!dev-lib/*'
 					]
 				}
 			}
@@ -155,7 +153,8 @@ module.exports = function( grunt ) {
 						src: [
 							'*.php',
 							'**/*.php',
-							'!node_modules/**'
+							'!node_modules/**',
+							'!dev-lib/*'
 						], //All php
 						expand: true
 					} ]
