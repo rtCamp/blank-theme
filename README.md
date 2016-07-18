@@ -65,6 +65,13 @@ To setup WordPress Coding Standards
 Install [wp-dev-lib](https://github.com/xwp/wp-dev-lib) as submodule
 ---------------
 
+Clone with submodule 
+
+```bash
+git clone --recursive git@github.com:rtCamp/blank-theme.git
+```
+OR
+
 To install as Git submodule (recommended):
 
 ```bash
