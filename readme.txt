@@ -1,15 +1,15 @@
 === Blank Theme ===
 
-Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
+Contributors: rtCampers
+Tags: two-columns, custom-background, custom-header, custom-menu, editor-style, featured-images, full-width-template, post-formats, translation-ready
 
 Requires at least: 4.0
-Tested up to: 4.4
+Tested up to: 4.5.3
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Blank Theme is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
-Blank Theme is distributed under the terms of the GNU GPL v2 or later.
+A starter theme called blank-theme.
 
 == Description ==
 
@@ -22,9 +22,9 @@ Blank Theme is a responsive multipurpose theme.
 3. Click Activate to use your new theme right away.
 
 
-~~~~~~~~~~~~~~~~
-Resources
-~~~~~~~~~~~~~~~~~
+
+== Resources ==
+
 Blank Theme is built with the following resources:
 
 Slick - http://kenwheeler.github.io/slick
@@ -38,19 +38,9 @@ HTML5 Shiv - https://github.com/aFarkas/html5shiv
 License: MIT/GPL2 Licensed
 Copyright: @afarkas @jdalton @jon_neal @rem
 
-PHPCS - https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
+Setup PHP_CodeSniffer - https://github.com/rtCamp/blank-theme/blob/master/README.md#setup-php_codesniffer
 
 Dev Lib - https://github.com/xwp/wp-dev-lib
-
-/*Images*/
-
-Key.jpg and Statue.jpg images - http://pixabay.com/en/key-metal-home-security-wedding-96233/ & http://pixabay.com/en/statue-bronze-umbrella-woman-fig-5998/
-License: Free to use under public domain
-Copyright: Images are not copyright protected
-
-Animated gif images - http://preloaders.net
-License: Free to use under public domain
-Copyright: Images are not copyright protected
 
 == Frequently Asked Questions ==
 

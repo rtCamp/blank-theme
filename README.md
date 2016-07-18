@@ -65,7 +65,7 @@ To setup WordPress Coding Standards
 Install [wp-dev-lib](https://github.com/xwp/wp-dev-lib) as submodule
 ---------------
 
-Clone with submodule 
+Clone with submodule
 
 ```bash
 git clone --recursive git@github.com:rtCamp/blank-theme.git
@@ -78,14 +78,20 @@ To install as Git submodule (recommended):
 git submodule add -b master https://github.com/xwp/wp-dev-lib.git dev-lib
 ```
 
+### Install dev-lib submodule for **downloaded** .zip file (recommended):
+
+```bash
+git submodule update --remote dev-lib
+```
+
 Setup pre-commit hook
 ---------------
 
-To install the pre-commit hook, symlink to [`pre-commit`](dev-lib/pre-commit) from your project's `.git/hooks/pre-commit`:
+To install the pre-commit hook, symlink to [`pre-commit`](https://github.com/xwp/wp-dev-lib/blob/master/pre-commit) from your project's `.git/hooks/pre-commit`:
 
 ```bash
 cd .git/hooks && ln -s ../../dev-lib/pre-commit . && cd -
-```	
+```
 
 
 Getting Started
