@@ -33,7 +33,7 @@ and more..
 Setup PHP_CodeSniffer
 ---------------
 
-#### Install `PEAR`
+#### Install PEAR
 
 ```bash
 sudo apt-get install php-pear
