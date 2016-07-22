@@ -28,6 +28,18 @@ What more does it have?
 
 and more..
 
+Getting Started
+---------------
+
+1. Search for `'blank-theme'` (inside single quotations) to capture the text domain.
+2. Search for `blank_theme_` to capture all the function names.
+3. Search for `Text Domain: blank-theme` in style.css.
+4. Search for <code>&nbsp;Blank Theme</code> (with a space before it) to capture DocBlocks.
+5. Search for `blank-theme-` to capture prefixed handles.
+6. Install PHP_CodeSniffer
+7. Install wp-dev-lib
+8. Setup pre-commit hook
+
 Setup PHP_CodeSniffer
 ---------------
 
@@ -92,13 +104,5 @@ To install the pre-commit hook, symlink to [`pre-commit`](https://github.com/xwp
 ```bash
 cd .git/hooks && ln -s ../../dev-lib/pre-commit . && cd -
 ```
-
-
-Getting Started
----------------
-
-Use Blank Theme Builder to build your custom theme https://github.com/sayedwp/blank-theme-builder
-
-And that's it. :)
 
 Good luck!
