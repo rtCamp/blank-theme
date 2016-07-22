@@ -61,6 +61,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 ---------------------------*/
 
 /*---------------------------
+	 Border
+---------------------------*/
+
+/*---------------------------
 	 Foundation Grid
 ---------------------------*/
 
@@ -540,7 +544,7 @@ code {
 	font-size: 80%;
 	background: #eee;
 	border: 1px solid #ddd;
-	border-radius: 3px;
+	border-radius: 0.1875rem;
 }
 
 /**
@@ -601,7 +605,7 @@ hr {
 .screen-reader-text:active,
 .screen-reader-text:focus {
 	background-color: #f1f1f1;
-	border-radius: 3px;
+	border-radius: 0.1875rem;
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 	clip: auto !important;
 	color: #21759b;
@@ -646,6 +650,18 @@ hr {
 
 .right {
 	float: right;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-center {
+	text-align: center;
 }
 
 /*---------------------------
@@ -3242,7 +3258,7 @@ input[type="reset"],
 input[type="submit"] {
 	border: 1px solid;
 	border-color: #ccc #ccc #bbb;
-	border-radius: 3px;
+	border-radius: 0.1875rem;
 	background: #e6e6e6;
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
 	color: rgba(0, 0, 0, 0.8);
@@ -3281,10 +3297,11 @@ input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"],
+input[type="tel"],
 textarea {
 	color: #666;
 	border: 1px solid #ccc;
-	border-radius: 3px;
+	border-radius: 0.1875rem;
 	font-family: sans-serif;
 	line-height: 1.5;
 }
@@ -3294,6 +3311,7 @@ input[type="email"]:focus,
 input[type="url"]:focus,
 input[type="password"]:focus,
 input[type="search"]:focus,
+input[type="tel"]:focus,
 textarea:focus {
 	color: #111;
 }
@@ -3352,7 +3370,7 @@ textarea {
 	top: 2.1875rem;
 	left: -999em;
 	z-index: 99999;
-	background: #fff;
+	background: #FFFFFF;
 	display: none;
 }
 

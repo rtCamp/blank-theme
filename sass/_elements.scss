@@ -131,7 +131,7 @@ input[type="reset"],
 input[type="submit"] {
 	border: 1px solid;
 	border-color: $color__border-button;
-	border-radius: 3px;
+	border-radius: $border-radius;
 	background: $color__background-button;
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
 	color: rgba(0, 0, 0, 0.8);
@@ -161,10 +161,11 @@ input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"],
+input[type="tel"],
 textarea {
 	color: $color__text-input;
 	border: 1px solid $color__border-input;
-	border-radius: 3px;
+	border-radius: $border-radius;
 	font-family: $font__main;
 	line-height: $font__line-height-body;
 
@@ -194,6 +195,6 @@ textarea {
 	max-width: 100%;
 	line-height: $font__line-height-body;
 	outline: 0;
-	background: #fafafa;
+	background: $color__background-textarea;
 	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1) inset;
 }
