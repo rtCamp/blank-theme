@@ -40,6 +40,14 @@ Getting Started
 7. Install wp-dev-lib
 8. Setup pre-commit hook
 
+Install Grunt Packages
+---------------
+Recommended command to install grunt packages,
+
+```bash
+npm install --save-dev grunt grunt-autoprefixer grunt-checktextdomain grunt-combine-media-queries grunt-contrib-sass grunt-contrib-uglify grunt-contrib-watch grunt-wp-i18n load-grunt-tasks
+```
+
 Setup PHP_CodeSniffer
 ---------------
 
