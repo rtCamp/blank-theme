@@ -10,6 +10,10 @@ jQuery( function( $ ) {
 
 			// Enable to animate child menu
 			// this.animateMenu();
+
+			// Enable to trigger slider
+			// this.createSlider();
+
 			this.fixAdminBar();
 			this.events();
 		},
