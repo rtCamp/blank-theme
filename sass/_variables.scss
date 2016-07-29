@@ -1,86 +1,193 @@
+////
+/// @group Blank-Theme
+////
+
 /*---------------------------
 		Typorgraphy
 ---------------------------*/
 
+/// Global theme font
+/// @type String
 $font__main: sans-serif;
+
+/// Global code font
+/// @type String
 $font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font__pre: "Courier 10 Pitch", Courier, monospace;
 $font__line-height-body: 1.5;
 $font__line-height-pre: 1.6;
 
-//rem base
-$font__rem-base: 16px;
-$font__base-font-size: 16px;
-$font__base-line-height: 30px;
+/// Defines the base font size of the page, which is the value `1rem` is equal to.
+/// @type Number
+$font__rem-base: 16px !default;
 
-// Heading sizes
+/// Global Base Font size. Assigned to `<body>` tag
+/// @type Number
+$font__base-font-size: 16px !default;
+
+/// Global Base Line Height
+/// @type Number
+$font__base-line-height: 30px !default;
+
+/// Heading 1 font size
+/// @type Number
 $font__size-h1: 26px;
+
+/// Heading 2 font size
+/// @type Number
 $font__size-h2: 22px;
+
+/// Heading 3 font size
+/// @type Number
 $font__size-h3: 18px;
+
+/// Heading 4 font size
+/// @type Number
 $font__size-h4: 16px;
+
+/// Heading 5 font size
+/// @type Number
 $font__size-h5: 12px;
+
+/// Heading 6 font size
+/// @type Number
 $font__size-h6: 10px;
 
 /*---------------------------
 		Colors
 ---------------------------*/
 
-$color__primary: #444;
+/// Default Black Color
+/// @type color
+$black: #000000;
+
+/// Default White Color
+/// @type color
+$white: #FFFFFF;
+
+/// Light Gray
+/// @type color
+$light-gray: #ccc;
+
+/// Primary Color - Color for content and links.
+/// @type color
+$color__primary: #444444;
+
+/// Secondary Color
+/// @type color
 $color__secondary: blue;
+
+/// Theme Color - Used for link hover color
+/// @type color
 $color__theme: red;
 
+/// Body background color - Used for `<body>` tag
+/// @type color
 $color__background-body: #fafaf4;
 $color__background-screen: #f1f1f1;
-$color__background-hr: #ccc;
+
+/// Horizontal line color - Used for `<hr />` tag.
+/// @type color
+$color__background-hr: $light-gray;
+
+/// Default Button Background - Used for all button types.
+/// @type color
 $color__background-button: #e6e6e6;
+
+/// pre tag background - Used for `<pre>` tag.
+/// @type color
 $color__background-pre: #eee;
-$color__background-ins: #fff9c0;
+
+/// textarea background - Used for `<textarea>` tag.
+/// @type color
 $color__background-textarea: #fafafa;
 
 $color__text-screen: #21759b;
+
+/// Input fields color - Used for `input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="tel"], textarea` types
+/// @type color
 $color__text-input: #666;
+
+/// Input fields focus state color - Used for `input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="tel"], textarea` types
+/// @type color
 $color__text-input-focus: #111;
+
+/// Link color - Used for all links
+/// @type color
 $color__link: $color__primary;
+
+/// Link hover color - Used for all links on hover state
+/// @type color
 $color__link-hover: $color__theme;
-$color__text-main: #404040;
 
-$color__border-button: #ccc #ccc #bbb;
-$color__border-button-hover: #ccc #bbb #aaa;
+/// Select tag text color - Used for all `<select>` tags
+/// @type color
+$color__select-text: #404040;
+
+/// Button Border Color - Used for `button, input[type="button"], input[type="reset"], input[type="submit"]`
+/// @type color
+$color__border-button: $light-gray $light-gray #bbb;
+
+/// Button Hover State Border Color - Used for `button, input[type="button"], input[type="reset"], input[type="submit"]`
+/// @type color
+$color__border-button-hover: $light-gray #bbb #aaa;
+
+/// Button Focus State Border Color - Used for `button, input[type="button"], input[type="reset"], input[type="submit"]`
+/// @type color
 $color__border-button-focus: #aaa #bbb #bbb;
-$color__border-input: #ccc;
-$color__border-abbr: #666;
-$color__border-line: #ccc;
 
+/// Input Field Border Color - Used for `input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="tel"], textarea`
+/// @type color
+$color__border-input: $light-gray;
+
+/// Light Border Color
+/// @type color
 $color__border-light: #ddd;
-$color__border-button: #ccc #ccc #bbb;
-
-/*---------------------------
-	 Single Colors
----------------------------*/
-
-$black: #000000;
-$white: #FFFFFF;
 
 /*---------------------------
 	 Border
 ---------------------------*/
-$border-radius: rem-calc(3);
+
+/// Default Border Radius
+/// @type Number
+$border-radius: rem-calc(3) !default;
 
 /*---------------------------
 	 Foundation Grid
 ---------------------------*/
 
+/// Global width of your site. Used by the grid to determine row width.
+/// @type Number
 $row-width: rem-calc(1300);
-$column-gutter: rem-calc(20);
+
+/// Global spacing between columns.
+/// @type Number
+$gutter: rem-calc(20);
+
+/// The default column count of a grid. Changing this value affects the logic of the grid mixins, and the number of CSS classes output.
+/// @type Number
 $total-columns: 12;
-$gutter: $column-gutter;
 
 /*---------------------------
 	Foundation Media Query
 ---------------------------*/
 
+/// Responsive - Large End Point
+/// @type Number
 $large-end-point: 1920px;
+
+/// Responsive - Large Start Point
+/// @type Number
 $large-start-point: 1025px;
+
+/// Responsive - Medium Start Point
+/// @type Number
 $medium-start-point: 641px;
+
+/// Responsive - Medium End Point
+/// @type Number
 $medium-end-point: 1024px;
+
+/// Responsive - Small End Point
+/// @type Number
 $small-end-point: 640px;

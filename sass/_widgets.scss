@@ -1,5 +1,5 @@
 .widget {
-	margin: 0 0 $column-gutter;
+	margin: 0 0 $gutter;
 
 	/* Make sure select elements fit in widgets. */
 	select {
@@ -9,7 +9,7 @@
 
 .widget-sidebar {
 	background: $white;
-	padding: $column-gutter;
+	padding: $gutter;
 	clear: both;
 }
 

@@ -31,7 +31,7 @@ body {
 	background: $color__background-body;
 
 	/* [1] */
-	background-size: 100% auto;
+	// background-size: 100% auto;
 	margin: 0;
 
 	/* [2] */
@@ -78,7 +78,7 @@ a {
 	// Self, Active & Visited
 	& {
 		color: $color__link;
-		outline: 0;
+		outline: none;
 		text-decoration: none;
 	}
 
@@ -87,7 +87,7 @@ a {
 	// Hover
 	&:hover {
 		color: $color__link-hover;
-		outline: 0;
+		outline: none;
 	}
 }
 
@@ -95,7 +95,8 @@ a {
 		Lists & Tables
 ---------------------------*/
 
-ul, ol {
+ul,
+ol {
 	margin: rem-calc(0 0 18 18);
 
 	&.no-bullet {
@@ -183,18 +184,16 @@ input[type="search"] {
 }
 
 select {
-	color: $color__text-main;
+	color: $color__select-text;
 	font-family: $font__main;
-
-	@include font-size(1);
-
+	font-size: $font__base-font-size;
 	line-height: $font__line-height-body;
 }
 
 textarea {
 	max-width: 100%;
 	line-height: $font__line-height-body;
-	outline: 0;
+	outline: none;
 	background: $color__background-textarea;
 	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1) inset;
 }

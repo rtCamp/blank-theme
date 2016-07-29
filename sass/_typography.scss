@@ -171,7 +171,7 @@ samp {
 
 q,
 blockquote {
-	border-left: 4px solid #ccc;
+	border-left: 4px solid $light-gray;
 	color: #999;
 	font-style: italic;
 	margin: rem-calc(0 0 $font__base-line-height $font__base-line-height);

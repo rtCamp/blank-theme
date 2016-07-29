@@ -1,11 +1,18 @@
+////
+/// @group Blank-Theme
+////
+
 $font__rem-base: 16px;
 
 /*---------------------------
 		Rem Calc
 ---------------------------*/
 
-// STRIP UNIT
-// It strips the unit of measure and returns it
+/// STRIP UNIT
+/// It strips the unit of measure and returns it
+/// @param {Number} $num - Number Value
+/// @return {Number} - Value without unit
+///
 @function strip-unit($num) {
 	@return $num / ($num * 0 + 1);
 }
@@ -22,6 +29,15 @@ $font__rem-base: 16px;
 	@return $value;
 }
 
+/// Convert px to rem
+/// @param {Number} $values - Number Value
+/// @param {Number} $base-value [$font__rem-base] - Base Value
+///
+/// @example scss - rem-calc basic usage
+/// font-size: rem-calc( 16 );
+///
+/// @return {Number} - A calculated rem value
+///
 @function rem-calc($values, $base-value: $font__rem-base) {
 	$max: length($values);
 

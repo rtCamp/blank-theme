@@ -52,9 +52,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 		Colors
 ---------------------------*/
 /*---------------------------
-	 Single Colors
----------------------------*/
-/*---------------------------
 	 Border
 ---------------------------*/
 /*---------------------------
@@ -63,11 +60,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*---------------------------
 	Foundation Media Query
 ---------------------------*/
-/**
- * Micro clearfix, as per: http://cssmojo.com/latest_new_clearfix_so_far/
- * Extend the clearfix class with Sass to avoid the `.clearfix` class appearing
- * over and over in your markup.
- */
 .comment-content:after, .clearfix:after {
   content: "";
   display: table;
@@ -2787,7 +2779,7 @@ html.mm-pagedim #mm-blocker {
 }
 
 html.mm-pagedim-white #mm-blocker {
-  background: #fff;
+  background: #FFFFFF;
 }
 
 html.mm-pagedim-black #mm-blocker {
@@ -3367,7 +3359,7 @@ html {
   /* [5] */
   -webkit-text-size-adjust: 100%;
   /* [5] */
-  color: #444;
+  color: #444444;
   /* [additional] */
 }
 
@@ -3389,7 +3381,6 @@ html {
 body {
   background: #fafaf4;
   /* [1] */
-  background-size: 100% auto;
   margin: 0;
   /* [2] */
   font-family: sans-serif;
@@ -3428,24 +3419,26 @@ a {
           transition: 0.3s;
 }
 a {
-  color: #444;
-  outline: 0;
+  color: #444444;
+  outline: none;
   text-decoration: none;
 }
 a:hover {
   color: red;
-  outline: 0;
+  outline: none;
 }
 
 /*---------------------------
 		Lists & Tables
 ---------------------------*/
-ul, ol {
+ul,
+ol {
   margin: 0 0 1.125rem 1.125rem;
 }
 ul.no-bullet,
 ul.no-bullet ul,
-ul.no-bullet ol, ol.no-bullet,
+ul.no-bullet ol,
+ol.no-bullet,
 ol.no-bullet ul,
 ol.no-bullet ol {
   list-style: none;
@@ -3538,14 +3531,14 @@ input[type="search"] {
 select {
   color: #404040;
   font-family: sans-serif;
-  font-size: 0.0625rem;
+  font-size: 16px;
   line-height: 1.5;
 }
 
 textarea {
   max-width: 100%;
   line-height: 1.5;
-  outline: 0;
+  outline: none;
   background: #fafafa;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1) inset;
 }
@@ -3782,7 +3775,7 @@ textarea {
   margin-right: 0.9375rem;
 }
 .comments-area .comment-author .url {
-  color: #444;
+  color: #444444;
   text-transform: capitalize;
 }
 .comments-area li.comment {

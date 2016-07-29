@@ -1,4 +1,11 @@
-// Rem output with px fallback
+////
+/// @group Blank-Theme
+////
+
+/// Rem output with px fallback
+/// @param {Number} $font-size [$font__base-font-size] - Font size without unit
+/// @param {Number} $line-height [false] - Font line height
+///
 @mixin font-size($font-size: $font__base-font-size, $line-height: false) {
 	font-size: rem-calc($font-size);
 
@@ -7,49 +14,20 @@
 	}
 }
 
-// Center block
+/// Center block
 @mixin center-block {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-// Clearfix
+/// Clearfix
 @mixin clearfix {
 	content: "";
 	display: table;
 }
 
-// Clear after (not all clearfix need this also)
+/// Clear after (not all clearfix need this also)
 @mixin clearfix-after {
 	clear: both;
-}
-
-@mixin transition($args...) {
-	-webkit-transition: $args;
-	-moz-transition: $args;
-	-ms-transition: $args;
-	-o-transition: $args;
-	transition: $args;
-}
-
-//Should be used for single ul > li nav
-@mixin navigation-list($padding, $color, $hover-color) {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-
-	& > li {
-		float: left;
-	}
-
-	a {
-		display: inline-block;
-		padding: $padding;
-		color: $color;
-
-		&:hover {
-			color: $hover-color;
-		}
-	}
 }
