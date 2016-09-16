@@ -78,6 +78,7 @@ To setup WordPress Coding Standards
 ```bash
 [sudo] ln -s WordPress-Coding-Standards/WordPress WordPress
 [sudo] ln -s WordPress-Coding-Standards/WordPress-Core WordPress-Core
+[sudo] ln -s WordPress-Coding-Standards/WordPress-Docs WordPress-Docs
 [sudo] ln -s WordPress-Coding-Standards/WordPress-VIP WordPress-VIP
 [sudo] ln -s WordPress-Coding-Standards/WordPress-Extra WordPress-Extra
 ```
