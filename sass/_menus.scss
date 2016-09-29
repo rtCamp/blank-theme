@@ -20,7 +20,8 @@
 			left: -999em;
 			z-index: 99999;
 			background: $white;
-			display: none;
+
+			// display: none;
 
 			ul {
 				left: -999rem;
@@ -38,19 +39,18 @@
 				width: 200px;
 			}
 
-			:hover > a,
-			.focus > a {
+			&:hover > a,
+			&.focus > a {
 				color: $color__link-hover;
 			}
-
-			a:hover,
-			a.focus {}
 		}
 
 		li:hover > ul,
 		li.focus > ul {
 			left: auto;
-			display: block;
+
+			// display: block;
+
 		}
 	}
 
@@ -92,8 +92,7 @@
 }
 
 /* Small menu. */
-.menu-toggle,
-.blank-theme-main-navigation.toggled ul {
+.menu-toggle {
 	display: block;
 }
 

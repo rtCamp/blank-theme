@@ -3420,12 +3420,10 @@ a {
 }
 a {
   color: #444444;
-  outline: none;
   text-decoration: none;
 }
 a:hover {
   color: red;
-  outline: none;
 }
 
 /*---------------------------
@@ -3570,7 +3568,6 @@ textarea {
   left: -999em;
   z-index: 99999;
   background: #FFFFFF;
-  display: none;
 }
 .blank-theme-main-navigation ul ul ul {
   left: -999rem;
@@ -3582,14 +3579,12 @@ textarea {
 .blank-theme-main-navigation ul ul a {
   width: 200px;
 }
-.blank-theme-main-navigation ul ul :hover > a,
-.blank-theme-main-navigation ul ul .focus > a {
+.blank-theme-main-navigation ul ul:hover > a, .blank-theme-main-navigation ul ul.focus > a {
   color: red;
 }
 .blank-theme-main-navigation ul li:hover > ul,
 .blank-theme-main-navigation ul li.focus > ul {
   left: auto;
-  display: block;
 }
 .blank-theme-main-navigation li {
   float: left;
@@ -3616,8 +3611,7 @@ textarea {
 }
 
 /* Small menu. */
-.menu-toggle,
-.blank-theme-main-navigation.toggled ul {
+.menu-toggle {
   display: block;
 }
 
@@ -3807,7 +3801,12 @@ textarea {
 # Media
 --------------------------------------------------------------*/
 @media only screen and (min-width: 1025px) {
-  .blank-theme-mobile-nav-button {
+  .menu-toggle {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1025px) {
+  .blank-theme-main-navigation ul {
     display: none;
   }
 }

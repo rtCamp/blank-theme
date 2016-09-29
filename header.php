@@ -27,9 +27,17 @@
 			<?php echo blank_theme_site_branding(); ?>
 		</div><!-- .site-branding -->
 
-		<a id="primary-nav-button" class="blank-theme-mobile-nav-button" href="#site-navigation"><?php esc_html_e( 'Mobile Menu' , 'blank-theme' ); ?></a>
-		<nav id="site-navigation" class="blank-theme-main-navigation column" role="navigation">
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'menu_class' => 'primary-menu menu', 'depth' => 3 ) ); ?>
+		<a id="primary-nav-button" class="blank-theme-mobile-nav-button menu-toggle" href="#site-navigation"><?php esc_html_e( 'Mobile Menu' , 'blank-theme' ); ?></a>
+
+		<nav id="site-navigation" class="blank-theme-main-navigation column" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'blank-theme' ); ?>">
+			<?php
+			wp_nav_menu( array(
+				'theme_location'	=> 'primary',
+				'menu_id'			=> 'primary-menu',
+				'menu_class'		=> 'primary-menu menu',
+				'depth'				=> 3,
+			) );
+			?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 

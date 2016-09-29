@@ -78,7 +78,6 @@ a {
 	// Self, Active & Visited
 	& {
 		color: $color__link;
-		outline: none;
 		text-decoration: none;
 	}
 
@@ -87,7 +86,6 @@ a {
 	// Hover
 	&:hover {
 		color: $color__link-hover;
-		outline: none;
 	}
 }
 
