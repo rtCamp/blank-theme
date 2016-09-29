@@ -72,6 +72,7 @@ module.exports = function( grunt ) {
 		uglify: {
 			frontend: {
 				src: [
+					'js/vendor/navigation.js',
 					'js/vendor/slick.js',
 					'js/vendor/jquery.mmenu.min.all.js',
 					'js/main.js'
