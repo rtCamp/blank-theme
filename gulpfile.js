@@ -4,7 +4,7 @@ var gulp			= require( 'gulp' );
 // Plugins related to styles
 var sass			= require( 'gulp-sass' );
 var autoprefixer	= require( 'gulp-autoprefixer' ); // Concatenates JS files
-var cmq				= require( 'gulp-combine-media-queries' ); // Combine media queries
+var combineMq				= require( 'gulp-combine-mq' ); // Combine media queries
 
 
 // Plugins related to JS
@@ -42,23 +42,10 @@ gulp.task( 'sass', function() {
   return gulp.src( './sass/style.scss' )
 	.pipe( autoprefixer( autoprefixer_browsers ) )
 	.pipe( sass.sync().on( 'error', sass.logError ) )
+	.pipe( combineMq() )
 	.pipe( gulp.dest( '.' ) )
 	.pipe( notify( {
 		message: 'TASK: "sass" Completed!',
-		onLast : true
-	} ) );
-} );
-
-
-// Combine different media queries into one in css files
-gulp.task( 'cmq', function() {
-	return gulp.src( '*.css' )
-	.pipe( cmq( {
-	  log: false
-	} ) )
-	.pipe( gulp.dest( '.' ) )
-	.pipe( notify( {
-		message: 'TASK: "cmq" Completed!',
 		onLast : true
 	} ) );
 } );
