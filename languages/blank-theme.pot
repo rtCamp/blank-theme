@@ -1,41 +1,31 @@
-# Copyright (C) 2016 rtCamp
-# This file is distributed under the GNU General Public License v2 or later.
+# Copyright (C) 2016 blank-theme
+# This file is distributed under the same license as the blank-theme package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Blank Theme 1.0.0\n"
+"Project-Id-Version: blank-theme\n"
 "Report-Msgid-Bugs-To: http://community.rtcamp.com/c/premium-themes\n"
-"POT-Creation-Date: 2016-09-29 06:56:24+00:00\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Company <support@blank-theme.com>\n"
+"Last-Translator: Team <support@blank-theme.com>\n"
 "Language-Team: Team <support@blank-theme.com>\n"
-"X-Generator: grunt-wp-i18n 0.5.4\n"
-"X-Poedit-KeywordsList: "
-"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
-"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
-"Language: en\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-Country: United States\n"
+"X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-Basepath: ../\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
-"X-Poedit-Bookmarks: \n"
-"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: 404.php:15
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
 #: 404.php:19
-msgid ""
-"It looks like nothing was found at this location. Maybe try one of the "
-"links below or a search?"
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
 msgstr ""
 
 #: 404.php:25
-#. translators: %1$s: smiley
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
@@ -47,23 +37,19 @@ msgstr ""
 msgid "General"
 msgstr ""
 
-#: admin/customizer/customizer-settings.php:39
-#: admin/customizer/customizer-settings.php:54
+#: admin/customizer/customizer-settings.php:39, admin/customizer/customizer-settings.php:54
 msgid "Sidebar Position"
 msgstr ""
 
-#: admin/customizer/customizer-settings.php:58
-#: admin/kirki/includes/class-kirki-toolkit.php:106
+#: admin/customizer/customizer-settings.php:58, admin/kirki/includes/class-kirki-toolkit.php:106
 msgid "Left"
 msgstr ""
 
-#: admin/customizer/customizer-settings.php:58
-#: admin/kirki/includes/class-kirki-toolkit.php:107
+#: admin/customizer/customizer-settings.php:58, admin/kirki/includes/class-kirki-toolkit.php:107
 msgid "Right"
 msgstr ""
 
-#: admin/customizer/customizer-settings.php:68
-#: admin/customizer/customizer-settings.php:84
+#: admin/customizer/customizer-settings.php:68, admin/customizer/customizer-settings.php:84
 msgid "Copyright Text"
 msgstr ""
 
@@ -247,6 +233,21 @@ msgstr ""
 msgid "Thai"
 msgstr ""
 
+#: admin/kirki/includes/class-kirki-toolkit.php:96
+msgctxt "font style"
+msgid "Serif"
+msgstr ""
+
+#: admin/kirki/includes/class-kirki-toolkit.php:97
+msgctxt "font style"
+msgid "Sans Serif"
+msgstr ""
+
+#: admin/kirki/includes/class-kirki-toolkit.php:98
+msgctxt "font style"
+msgid "Monospace"
+msgstr ""
+
 #: admin/kirki/includes/class-kirki-toolkit.php:99
 msgid "Font Family"
 msgstr ""
@@ -307,7 +308,7 @@ msgstr ""
 msgid "Composite Controls"
 msgstr ""
 
-#: admin/kirki/kirki-settings.php:50 admin/kirki/kirki-settings.php:210
+#: admin/kirki/kirki-settings.php:50, admin/kirki/kirki-settings.php:210
 msgid "Custom Control"
 msgstr ""
 
@@ -319,17 +320,7 @@ msgstr ""
 msgid "This is a simple checkbox"
 msgstr ""
 
-#: admin/kirki/kirki-settings.php:73 admin/kirki/kirki-settings.php:84
-#: admin/kirki/kirki-settings.php:102 admin/kirki/kirki-settings.php:112
-#: admin/kirki/kirki-settings.php:123 admin/kirki/kirki-settings.php:135
-#: admin/kirki/kirki-settings.php:145 admin/kirki/kirki-settings.php:162
-#: admin/kirki/kirki-settings.php:187 admin/kirki/kirki-settings.php:223
-#: admin/kirki/kirki-settings.php:251 admin/kirki/kirki-settings.php:270
-#: admin/kirki/kirki-settings.php:287 admin/kirki/kirki-settings.php:319
-#: admin/kirki/kirki-settings.php:351 admin/kirki/kirki-settings.php:367
-#: admin/kirki/kirki-settings.php:383 admin/kirki/kirki-settings.php:413
-#: admin/kirki/kirki-settings.php:425 admin/kirki/kirki-settings.php:456
-#: admin/kirki/kirki-settings.php:491 admin/kirki/kirki-settings.php:508
+#: admin/kirki/kirki-settings.php:73, admin/kirki/kirki-settings.php:84, admin/kirki/kirki-settings.php:102, admin/kirki/kirki-settings.php:112, admin/kirki/kirki-settings.php:123, admin/kirki/kirki-settings.php:135, admin/kirki/kirki-settings.php:145, admin/kirki/kirki-settings.php:162, admin/kirki/kirki-settings.php:187, admin/kirki/kirki-settings.php:223, admin/kirki/kirki-settings.php:251, admin/kirki/kirki-settings.php:270, admin/kirki/kirki-settings.php:287, admin/kirki/kirki-settings.php:319, admin/kirki/kirki-settings.php:351, admin/kirki/kirki-settings.php:367, admin/kirki/kirki-settings.php:383, admin/kirki/kirki-settings.php:413, admin/kirki/kirki-settings.php:425, admin/kirki/kirki-settings.php:456, admin/kirki/kirki-settings.php:491, admin/kirki/kirki-settings.php:508
 msgid "This is a tooltip"
 msgstr ""
 
@@ -338,9 +329,7 @@ msgid "Switch demo"
 msgstr ""
 
 #: admin/kirki/kirki-settings.php:83
-msgid ""
-"This is a switch control. Internally it is a checkbox and you can also "
-"change the ON/OFF labels."
+msgid "This is a switch control. Internally it is a checkbox and you can also change the ON/OFF labels."
 msgstr ""
 
 #: admin/kirki/kirki-settings.php:100
@@ -348,10 +337,7 @@ msgid "Toggle demo"
 msgstr ""
 
 #: admin/kirki/kirki-settings.php:101
-msgid ""
-"This is a toggle. it is basically identical to a switch, the only "
-"difference is that it does not have any labels and to save space it is "
-"inline with the label. Internally this is a checkbox."
+msgid "This is a toggle. it is basically identical to a switch, the only difference is that it does not have any labels and to save space it is inline with the label. Internally this is a checkbox."
 msgstr ""
 
 #: admin/kirki/kirki-settings.php:111
@@ -387,12 +373,10 @@ msgid "Code Control"
 msgstr ""
 
 #: admin/kirki/kirki-settings.php:146
-msgid ""
-"This is a simple code control. You can define the language you want as well "
-"as the theme. In this demo we are using a CSS editor with the monokai theme."
+msgid "This is a simple code control. You can define the language you want as well as the theme. In this demo we are using a CSS editor with the monokai theme."
 msgstr ""
 
-#: admin/kirki/kirki-settings.php:160 admin/kirki/kirki-settings.php:556
+#: admin/kirki/kirki-settings.php:160, admin/kirki/kirki-settings.php:556
 msgid "Color Control"
 msgstr ""
 
@@ -405,10 +389,7 @@ msgid "Color-Alpha Control"
 msgstr ""
 
 #: admin/kirki/kirki-settings.php:186
-msgid ""
-"Similar to the default Color control but with a teist: This one allows you "
-"to also select an opacity for the color and saves the value as HEX or RGBA "
-"depending on the alpha channel's value."
+msgid "Similar to the default Color control but with a teist: This one allows you to also select an opacity for the color and saves the value as HEX or RGBA depending on the alpha channel's value."
 msgstr ""
 
 #: admin/kirki/kirki-settings.php:211
@@ -416,10 +397,7 @@ msgid "This is the control description"
 msgstr ""
 
 #: admin/kirki/kirki-settings.php:212
-msgid ""
-"This is some extra help. You can use this to add some additional "
-"instructions for users. The main description should go in the "
-"\"description\" of the field, this is only to be used for help tips."
+msgid "This is some extra help. You can use this to add some additional instructions for users. The main description should go in the \"description\" of the field, this is only to be used for help tips."
 msgstr ""
 
 #: admin/kirki/kirki-settings.php:221
@@ -435,33 +413,26 @@ msgid "Multicheck control"
 msgstr ""
 
 #: admin/kirki/kirki-settings.php:250
-msgid ""
-"You can define choices for this control and it will save the selected "
-"values as an array."
+msgid "You can define choices for this control and it will save the selected values as an array."
 msgstr ""
 
-#: admin/kirki/kirki-settings.php:256 admin/kirki/kirki-settings.php:274
-#: admin/kirki/kirki-settings.php:514 admin/kirki/kirki-settings.php:533
+#: admin/kirki/kirki-settings.php:256, admin/kirki/kirki-settings.php:274, admin/kirki/kirki-settings.php:514, admin/kirki/kirki-settings.php:533
 msgid "Option 1"
 msgstr ""
 
-#: admin/kirki/kirki-settings.php:257 admin/kirki/kirki-settings.php:275
-#: admin/kirki/kirki-settings.php:515 admin/kirki/kirki-settings.php:542
+#: admin/kirki/kirki-settings.php:257, admin/kirki/kirki-settings.php:275, admin/kirki/kirki-settings.php:515, admin/kirki/kirki-settings.php:542
 msgid "Option 2"
 msgstr ""
 
-#: admin/kirki/kirki-settings.php:258 admin/kirki/kirki-settings.php:276
-#: admin/kirki/kirki-settings.php:516
+#: admin/kirki/kirki-settings.php:258, admin/kirki/kirki-settings.php:276, admin/kirki/kirki-settings.php:516
 msgid "Option 3"
 msgstr ""
 
-#: admin/kirki/kirki-settings.php:259 admin/kirki/kirki-settings.php:277
-#: admin/kirki/kirki-settings.php:517
+#: admin/kirki/kirki-settings.php:259, admin/kirki/kirki-settings.php:277, admin/kirki/kirki-settings.php:517
 msgid "Option 4"
 msgstr ""
 
-#: admin/kirki/kirki-settings.php:260 admin/kirki/kirki-settings.php:278
-#: admin/kirki/kirki-settings.php:518
+#: admin/kirki/kirki-settings.php:260, admin/kirki/kirki-settings.php:278, admin/kirki/kirki-settings.php:518
 msgid "Option 5"
 msgstr ""
 
@@ -470,11 +441,7 @@ msgid "Sortable Control"
 msgstr ""
 
 #: admin/kirki/kirki-settings.php:269
-msgid ""
-"Similar to the \"multicheck\" control, you can define choices foir this "
-"control and the options will be saved as an array. The main difference "
-"between the multicheck control and this one is that this one also allows "
-"you to rearrange the order of the items."
+msgid "Similar to the \"multicheck\" control, you can define choices foir this control and the options will be saved as an array. The main difference between the multicheck control and this one is that this one also allows you to rearrange the order of the items."
 msgstr ""
 
 #: admin/kirki/kirki-settings.php:285
@@ -490,10 +457,7 @@ msgid "Slider Control"
 msgstr ""
 
 #: admin/kirki/kirki-settings.php:318
-msgid ""
-"Similar to the number control. The main difference is that on this one you "
-"can define a min, max & step value thus allowing you to use decimal values "
-"instead of just integers."
+msgid "Similar to the number control. The main difference is that on this one you can define a min, max & step value thus allowing you to use decimal values instead of just integers."
 msgstr ""
 
 #: admin/kirki/kirki-settings.php:349
@@ -504,18 +468,15 @@ msgstr ""
 msgid "A simple radio-inputs control."
 msgstr ""
 
-#: admin/kirki/kirki-settings.php:356 admin/kirki/kirki-settings.php:372
-#: admin/kirki/kirki-settings.php:497
+#: admin/kirki/kirki-settings.php:356, admin/kirki/kirki-settings.php:372, admin/kirki/kirki-settings.php:497
 msgid "Red"
 msgstr ""
 
-#: admin/kirki/kirki-settings.php:357 admin/kirki/kirki-settings.php:373
-#: admin/kirki/kirki-settings.php:498
+#: admin/kirki/kirki-settings.php:357, admin/kirki/kirki-settings.php:373, admin/kirki/kirki-settings.php:498
 msgid "Green"
 msgstr ""
 
-#: admin/kirki/kirki-settings.php:358 admin/kirki/kirki-settings.php:374
-#: admin/kirki/kirki-settings.php:499
+#: admin/kirki/kirki-settings.php:358, admin/kirki/kirki-settings.php:374, admin/kirki/kirki-settings.php:499
 msgid "Blue"
 msgstr ""
 
@@ -524,9 +485,7 @@ msgid "Radio-Buttonset Control"
 msgstr ""
 
 #: admin/kirki/kirki-settings.php:366
-msgid ""
-"This is a radio control styled as inline buttons. You can use this if you "
-"have few options with short titles that will fit in a single line."
+msgid "This is a radio control styled as inline buttons. You can use this if you have few options with short titles that will fit in a single line."
 msgstr ""
 
 #: admin/kirki/kirki-settings.php:381
@@ -534,11 +493,7 @@ msgid "Radio-Image Control"
 msgstr ""
 
 #: admin/kirki/kirki-settings.php:382
-msgid ""
-"This is a radio control that allows you to define an image for every option "
-"is the array of choices in the field. Useful if you want for example to "
-"select a layout. You can even use the images included in the Kirki plugin "
-"for that, in the /assets/images directory."
+msgid "This is a radio control that allows you to define an image for every option is the array of choices in the field. Useful if you want for example to select a layout. You can even use the images included in the Kirki plugin for that, in the /assets/images directory."
 msgstr ""
 
 #: admin/kirki/kirki-settings.php:411
@@ -546,10 +501,7 @@ msgid "Palette Control"
 msgstr ""
 
 #: admin/kirki/kirki-settings.php:412
-msgid ""
-"This is basically a radio control. It allows you to define an array of "
-"colors that will be used in order to convey your message in a visually "
-"compelling way."
+msgid "This is basically a radio control. It allows you to define an array of colors that will be used in order to convey your message in a visually compelling way."
 msgstr ""
 
 #: admin/kirki/kirki-settings.php:423
@@ -557,9 +509,7 @@ msgid "Typography Control"
 msgstr ""
 
 #: admin/kirki/kirki-settings.php:424
-msgid ""
-"This is a composite typography control. It saves the data as an array, and "
-"you can define which of the controls you want shown."
+msgid "This is a composite typography control. It saves the data as an array, and you can define which of the controls you want shown."
 msgstr ""
 
 #: admin/kirki/kirki-settings.php:454
@@ -567,11 +517,7 @@ msgid "Repeater Control"
 msgstr ""
 
 #: admin/kirki/kirki-settings.php:455
-msgid ""
-"The \"repeater\" control allows you to create rows of data and you can "
-"define the fields that the rows will use. Valide field-types are: text, "
-"checkbox, radio, select, textarea. The data is saves as a multi-dimentional "
-"array."
+msgid "The \"repeater\" control allows you to create rows of data and you can define the fields that the rows will use. Valide field-types are: text, checkbox, radio, select, textarea. The data is saves as a multi-dimentional array."
 msgstr ""
 
 #: admin/kirki/kirki-settings.php:462
@@ -603,9 +549,7 @@ msgid "Select Control"
 msgstr ""
 
 #: admin/kirki/kirki-settings.php:490
-msgid ""
-"A simple select (dropdown) control, allowing you to make a single option "
-"from a relatively large pool of options."
+msgid "A simple select (dropdown) control, allowing you to make a single option from a relatively large pool of options."
 msgstr ""
 
 #: admin/kirki/kirki-settings.php:496
@@ -617,10 +561,7 @@ msgid "Select Control (multiple)"
 msgstr ""
 
 #: admin/kirki/kirki-settings.php:507
-msgid ""
-"A multi-select control, allowing you to select multiple items "
-"simultaneously as well as re-arrange them at will using a simple "
-"drag-n-drop interface. Data is saved as an array."
+msgid "A multi-select control, allowing you to select multiple items simultaneously as well as re-arrange them at will using a simple drag-n-drop interface. Data is saved as an array."
 msgstr ""
 
 #: admin/kirki/kirki-settings.php:525
@@ -635,15 +576,22 @@ msgstr ""
 msgid "Color Alpha Control"
 msgstr ""
 
-#: comments.php:36 comments.php:57
+#: comments.php:30
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:36, comments.php:57
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:39 comments.php:60
+#: comments.php:39, comments.php:60
 msgid "Older Comments"
 msgstr ""
 
-#: comments.php:40 comments.php:61
+#: comments.php:40, comments.php:61
 msgid "Newer Comments"
 msgstr ""
 
@@ -651,11 +599,11 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#. Theme Name of the plugin/theme
+#: footer.php:24
 msgid "Blank Theme"
 msgstr ""
 
-#: functions.php:75 header.php:32
+#: functions.php:75, header.php:32
 msgid "Primary Menu"
 msgstr ""
 
@@ -723,13 +671,16 @@ msgstr ""
 msgid "Read More"
 msgstr ""
 
+#: inc/template-tags.php:34
+msgctxt "post author"
+msgid "<span class=\"author vcard\"><a class=\"url fn n\" href=\"%1$s\">%2$s</a></span>"
+msgstr ""
+
 #: inc/template-tags.php:42
-#. translators: used between list items, there is a space after the comma
 msgid ", "
 msgstr ""
 
 #: inc/template-tags.php:68
-#. translators: used between list items, there is a space after the comma
 msgid "Leave a comment"
 msgstr ""
 
@@ -741,7 +692,7 @@ msgstr ""
 msgid "Comments (%)"
 msgstr ""
 
-#: inc/template-tags.php:72 template-parts/content-page.php:25
+#: inc/template-tags.php:72, template-parts/content-page.php:25
 msgid "Edit"
 msgstr ""
 
@@ -798,9 +749,7 @@ msgid "Image"
 msgstr ""
 
 #: temp/pro/updater/EDD_SL_Theme_Updater.php:54
-msgid ""
-"Updating this theme will lose any customizations you have made. 'Cancel' to "
-"stop, 'OK' to update."
+msgid "Updating this theme will lose any customizations you have made. 'Cancel' to stop, 'OK' to update."
 msgstr ""
 
 #: temp/pro/updater/licence-activation.php:42
@@ -815,8 +764,7 @@ msgstr ""
 msgid "Enter your license key"
 msgstr ""
 
-#: temp/pro/updater/licence-activation.php:61
-#: temp/pro/updater/licence-activation.php:70
+#: temp/pro/updater/licence-activation.php:61, temp/pro/updater/licence-activation.php:70
 msgid "Activate License"
 msgstr ""
 
@@ -841,68 +789,17 @@ msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
 #: template-parts/content-none.php:24
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
 #: template-parts/content-none.php:29
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
-#: template-parts/content-page.php:18 template-parts/content-single.php:22
-#: template-parts/content.php:29
+#: template-parts/content-page.php:18, template-parts/content-single.php:22, template-parts/content.php:29
 msgid "Pages:"
 msgstr ""
 
 #: template-parts/content.php:23
-#. translators: %s: Name of current post.
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "https://rtcamp.com/"
-msgstr ""
-
-#. Description of the plugin/theme
-msgid "Blank Theme is a responsive multipurpose theme."
-msgstr ""
-
-#. Author of the plugin/theme
-msgid "rtCamp"
-msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "Full Width Template"
-msgstr ""
-
-#: admin/kirki/includes/class-kirki-toolkit.php:96
-msgctxt "font style"
-msgid "Serif"
-msgstr ""
-
-#: admin/kirki/includes/class-kirki-toolkit.php:97
-msgctxt "font style"
-msgid "Sans Serif"
-msgstr ""
-
-#: admin/kirki/includes/class-kirki-toolkit.php:98
-msgctxt "font style"
-msgid "Monospace"
-msgstr ""
-
-#: comments.php:30
-msgctxt "comments title"
-msgid "One thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/template-tags.php:34
-msgctxt "post author"
-msgid ""
-"<span class=\"author vcard\"><a class=\"url fn n\" "
-"href=\"%1$s\">%2$s</a></span>"
 msgstr ""
