@@ -20,7 +20,7 @@ What more does it have?
 
 6) Some helpful php functions.
 
-7) Grunt file and configration.
+7) Gulp file and configration.
 
 8) Slick Slider
 
@@ -40,12 +40,12 @@ Getting Started
 7. Install wp-dev-lib
 8. Setup pre-commit hook
 
-Install Grunt Packages
+Install Gulp Packages
 ---------------
-Recommended command to install grunt packages,
+Recommended command to install gulp packages,
 
 ```bash
-npm install --save-dev grunt grunt-autoprefixer grunt-checktextdomain grunt-combine-media-queries grunt-contrib-sass grunt-contrib-uglify grunt-contrib-watch grunt-wp-i18n load-grunt-tasks
+npm install --save-dev gulp gulp-autoprefixer gulp-checktextdomain gulp-combine-media-queries gulp-concat gulp-notify gulp-sass gulp-uglify gulp-wp-pot gulp-imagemin gulp-sort gulp-load-tasks gulp-watch
 ```
 
 Setup PHP_CodeSniffer
