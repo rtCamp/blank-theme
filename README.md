@@ -14,7 +14,7 @@ What more does it have?
 
 3) Ready made mobile menu.
 
-4) Removed some unnecessary saas files and folder which are shipped with underscore theme.
+4) Removed some unnecessary sass files and folder which are shipped with underscore theme.
 
 5) Css fixes, in underscore and helpful css classes.
 
