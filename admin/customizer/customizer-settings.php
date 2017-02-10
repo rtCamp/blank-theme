@@ -6,7 +6,7 @@
 
 //Hide tagline
 $wp_customize->add_setting( 'blank_theme_hide_tagline', array(
-	'default'			 => '',
+	'default'			 => 0,
 	'capability'		 => 'edit_theme_options',
 	'sanitize_callback'	 => 'blank_theme_sanitize_checkboxes',
 ) );

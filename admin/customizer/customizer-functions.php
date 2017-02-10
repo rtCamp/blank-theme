@@ -142,10 +142,11 @@ if ( ! function_exists( 'blank_theme_sanitize_checkboxes' ) ) {
 	 * @return int either 1 or 0
 	 */
 	function blank_theme_sanitize_checkboxes( $input ) {
+		$input = intval( $input );
 		if ( 1 === $input ) {
 		      return 1;
 		} else {
-			return '';
+			return 0;
 		}
 	}
 }
