@@ -6,21 +6,17 @@
 
 //Hide tagline
 $wp_customize->add_setting( 'blank_theme_hide_tagline', array(
-	'default'			 => '',
-	'capability'		 => 'edit_theme_options',
-	'sanitize_callback'	 => 'blank_theme_sanitize_checkboxes',
+	'default'	 => 'no',
+	'capability'	 => 'edit_theme_options',
 ) );
 
-$wp_customize->add_control(
-	new WP_Customize_Control(
-		$wp_customize, 'blank_theme_hide_tagline', array(
-			'label'		 => esc_html__( 'Hide Tagline', 'blank-theme' ),
-			'section'	 => 'title_tagline',
-			'settings'	 => 'blank_theme_hide_tagline',
-			'type'		 => 'checkbox',
-		)
-	)
-);
+$wp_customize->add_control( 'blank_theme_hide_tagline' ,array(
+	'label'		 => esc_html__( 'Hide Tagline', 'blank-theme' ),
+	'section'	 => 'title_tagline',
+	'settings'	 => 'blank_theme_hide_tagline',
+	'type'		 => 'radio',
+	'choices'	 => array( 'yes' => esc_html__( 'Yes', 'blank-theme' ), 'no' => esc_html__( 'No', 'blank-theme' ) ),
+));
 
 /* * ************************ GENERAL ************************** */
 
