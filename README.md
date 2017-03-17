@@ -45,7 +45,7 @@ Install Gulp Packages
 Recommended command to install gulp packages,
 
 ```bash
-npm install --save-dev gulp gulp-sass gulp-autoprefixer gulp-combine-mq gulp-concat gulp-uglify gulp-checktextdomain gulp-wp-pot gulp-sort gulp-notify gulp-imagemin gulp-watch
+npm install --save-dev gulp gulp-sass gulp-autoprefixer gulp-combine-mq gulp-concat gulp-uglify gulp-checktextdomain gulp-wp-pot gulp-sort gulp-notify gulp-imagemin gulp-watch foundation-sites fs-extra
 ```
 
 Setup PHP_CodeSniffer

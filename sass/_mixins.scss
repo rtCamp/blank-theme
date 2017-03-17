@@ -1,11 +1,15 @@
+/*
 ////
 /// @group Blank-Theme
 ////
+*/
 
+/*
 /// Rem output with px fallback
 /// @param {Number} $font-size [$font__base-font-size] - Font size without unit
 /// @param {Number} $line-height [false] - Font line height
 ///
+*/
 @mixin font-size($font-size: $font__base-font-size, $line-height: false) {
 	font-size: rem-calc($font-size);
 

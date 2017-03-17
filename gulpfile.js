@@ -39,7 +39,7 @@ var autoprefixer_browsers = ['last 2 versions', 'ie 9', 'ios 6', 'android 4'];
 
 // Styles
 gulp.task( 'sass', function() {
-  return gulp.src( './sass/style.scss' )
+  return gulp.src( './sass/*.scss' )
 	.pipe( autoprefixer( autoprefixer_browsers ) )
 	.pipe( sass.sync().on( 'error', sass.logError ) )
 	.pipe( combineMq() )
@@ -74,7 +74,7 @@ gulp.task( 'checktextdomain', function() {
     return gulp
     .src( ['**/*.php', './*.php'] )
     .pipe( checktextdomain( {
-        text_domain: 'blank-theme', // Specify allowed domain(s) 
+        text_domain: 'blank-theme', // Specify allowed domain(s)
         keywords: [ // List keyword specifications
 			'__:1,2d',
 			'_e:1,2d',

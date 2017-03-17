@@ -1,10 +1,10 @@
-@media only screen and (min-width: $large-start-point) {
+@media only screen and (min-width: 1025px) {
 	.menu-toggle {
 		display: none;
 	}
 }
 
-@media only screen and (max-width: $large-start-point) {
+@media only screen and (max-width: 1025px) {
 	.blank-theme-main-navigation ul {
 		display: none;
 	}

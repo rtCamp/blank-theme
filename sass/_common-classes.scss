@@ -113,8 +113,43 @@
 }
 
 .row-container {
-	@extend .row;
+	@include flex-grid-row;
 
-	padding-left: $gutter / 2;
-	padding-right: $gutter / 2;
+	// Nesting behavior
+	& .row,
+	& .row-container {
+		@include flex-grid-row(nest, $base: false);
+
+		&.collapse {
+			margin-right: 0;
+			margin-left: 0;
+		}
+	}
+
+	// Expanded row
+	&.expanded {
+		@include grid-row-size(expand);
+	}
+
+	&:not(.expanded) .row,
+	&:not(.expanded) .row-container {
+		@include grid-row-size(expand);
+	}
+
+	&.collapse {
+		& > .column {
+			@include grid-col-collapse;
+		}
+	}
+
+	// Undo negative margins
+	// From collapsed child
+	&.is-collapse-child,
+	&.collapse > .column > .row,
+	&.collapse > .column > .row-container {
+		margin-right: 0;
+		margin-left: 0;
+	}
+
+	@include grid-column-gutter($gutters: $grid-column-gutter);
 }
