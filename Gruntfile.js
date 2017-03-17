@@ -8,7 +8,7 @@ module.exports = function( grunt ) {
 		// Watch for changes and trigger sass, jshint, uglify and livereload
 		watch: {
 			sass: {
-				files: [ 'sass/**/*.{scss,sass}', 'pro/**/*.{scss,sass}' ],
+				files: [ 'sass/**/*.{scss,sass}' ],
 				tasks: [ 'sass', 'autoprefixer', 'cmq' ]
 			},
 			// Js: {
@@ -42,23 +42,23 @@ module.exports = function( grunt ) {
 						files: {
 							'style.css': 'sass/style.scss' // 'destination': 'source'
 						}
+					},
+			editor: {
+						options: {
+							style: 'compressed', // Nested / compact / compressed / expanded
+							sourcemap: 'auto' // Auto / file / inline / none
+						},
+						files: {
+							'editor-style.css': 'sass/editor-style.scss' // 'destination': 'source'
+						}
 					}
-			// Editor: {
-			// 			options: {
-			// 				style: 'compressed', // nested / compact / compressed / expanded
-			// 				sourcemap: 'auto' // auto / file / inline / none
-			// 			},
-			// 			files: {
-			// 				'editor-style.css': 'sass/editor-style.scss' // 'destination': 'source'
-			// 			}
-			// 		},
 
 		},
 		// Autoprefixer
 		autoprefixer: {
 			options: {
-				browsers: [ 'last 2 versions', 'ie 9', 'ios 6', 'android 4' ],
-				map: true
+				browsers: [ 'last 2 versions', 'ie >= 9', 'ios >= 6', 'android >= 4.2' ],
+				map: false
 			},
 
 			files: {
