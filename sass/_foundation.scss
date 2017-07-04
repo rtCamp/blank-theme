@@ -8,21 +8,41 @@
 // Import Variables
 @import "variables";
 
-// Include Foundation Flex Grid
-// Ref. http://foundation.zurb.com/sites/docs/flex-grid.html
-@include foundation-flex-grid;
+$flex: true;
+$xy-grid: false;
 
-// Include Foundation Flexbox
-// Ref. http://foundation.zurb.com/sites/docs/flexbox.html
-@include foundation-flex-classes;
+@if not $flex {
+	@include foundation-grid;
+}
+
+@else {
+	@if $xy-grid {
+		// XY Grid
+		// A fully reworked new grid system in v6.4 which has all the variety inbuilt in the form of multiple grid types which includes
+		// margin grid, padding grid, frame grid, block grid and vertical grid.
+		//
+		// Ref. http://foundation.zurb.com/sites/docs/xy-grid.html
+		@include foundation-xy-grid-classes;
+	}
+
+	@else {
+		// Include Foundation Flex Grid
+		// Ref. http://foundation.zurb.com/sites/docs/flex-grid.html
+		@include foundation-flex-grid;
+	}
+}
+
+@if $flex {
+	// Include Foundation Flexbox
+	// Ref. http://foundation.zurb.com/sites/docs/flexbox.html
+	@include foundation-flex-classes;
+}
 
 // Include FOundation Visibility Classes
 // Ref. http://foundation.zurb.com/sites/docs/visibility.html
 @include foundation-visibility-classes;
 
 // Other Foundation Libraries
-// @include foundation-global-styles;
-// @include foundation-grid;
 // @include foundation-typography;
 // @include foundation-forms;
 // @include foundation-button;

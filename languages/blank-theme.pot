@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Blank Theme 1.0.0\n"
 "Report-Msgid-Bugs-To: http://community.rtcamp.com/c/premium-themes\n"
-"POT-Creation-Date: 2017-03-17 11:21:17+00:00\n"
+"POT-Creation-Date: 2017-07-04 10:21:13+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -52,22 +52,26 @@ msgstr ""
 msgid "Sidebar Position"
 msgstr ""
 
-#: admin/customizer/customizer-settings.php:58
+#: admin/customizer/customizer-settings.php:59
 #: admin/kirki/includes/class-kirki-toolkit.php:106
 msgid "Left"
 msgstr ""
 
-#: admin/customizer/customizer-settings.php:58
+#: admin/customizer/customizer-settings.php:60
 #: admin/kirki/includes/class-kirki-toolkit.php:107
 msgid "Right"
 msgstr ""
 
-#: admin/customizer/customizer-settings.php:68
-#: admin/customizer/customizer-settings.php:84
+#: admin/customizer/customizer-settings.php:61
+msgid "No Sidebar"
+msgstr ""
+
+#: admin/customizer/customizer-settings.php:72
+#: admin/customizer/customizer-settings.php:88
 msgid "Copyright Text"
 msgstr ""
 
-#: admin/customizer/customizer-settings.php:70
+#: admin/customizer/customizer-settings.php:74
 msgid "Will override the footer copyright text"
 msgstr ""
 
@@ -675,7 +679,7 @@ msgstr ""
 msgid "Mobile Menu"
 msgstr ""
 
-#: inc/custom-functions.php:68
+#: inc/custom-functions.php:70
 msgid "%1$s by %2$s"
 msgstr ""
 
