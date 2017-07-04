@@ -45,7 +45,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
  * Ref. http://foundation.zurb.com/sites/docs/sass.html
  **//**
  * Foundation for Sites by ZURB
- * Version 6.3.1
+ * Version 6.4.1
  * foundation.zurb.com
  * Licensed under MIT Open Source
  *//* Import Variables *//*---------------------------
@@ -56,7 +56,54 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	 Border
 ---------------------------*//*---------------------------
 	 Foundation Grid
----------------------------*//* Include Foundation Flex Grid *//* Ref. http://foundation.zurb.com/sites/docs/flex-grid.html */.row {max-width: 81.25rem;margin-right: auto;margin-left: auto;display: flex;flex-flow: row wrap;}.row .row {margin-right: -0.625rem;margin-left: -0.625rem;}.row .row.collapse {margin-right: 0;margin-left: 0;}.row.expanded {max-width: none;}.row:not(.expanded) .row {max-width: none;}.row.collapse > .column,.row.collapse > .columns {padding-right: 0;padding-left: 0;}.row.is-collapse-child,.row.collapse > .column > .row,.row.collapse > .columns > .row {margin-right: 0;margin-left: 0;}.column,.columns {flex: 1 1 0px;padding-right: 0.625rem;padding-left: 0.625rem;min-width: initial;}.column.row.row,.row.row.columns {float: none;display: block;}.row .column.row.row,.row .row.row.columns {margin-right: 0;margin-left: 0;padding-right: 0;padding-left: 0;}.flex-container {display: flex;}.flex-child-auto {flex: 1 1 auto;}.flex-child-grow {flex: 1 0 auto;}.flex-child-shrink {flex: 0 1 auto;}.flex-dir-row {flex-direction: row;}.flex-dir-row-reverse {flex-direction: row-reverse;}.flex-dir-column {flex-direction: column;}.flex-dir-column-reverse {flex-direction: column-reverse;}.small-1 {flex: 0 0 8.33333%;max-width: 8.33333%;}.small-offset-0 {margin-left: 0%;}.small-2 {flex: 0 0 16.66667%;max-width: 16.66667%;}.small-offset-1 {margin-left: 8.33333%;}.small-3 {flex: 0 0 25%;max-width: 25%;}.small-offset-2 {margin-left: 16.66667%;}.small-4 {flex: 0 0 33.33333%;max-width: 33.33333%;}.small-offset-3 {margin-left: 25%;}.small-5 {flex: 0 0 41.66667%;max-width: 41.66667%;}.small-offset-4 {margin-left: 33.33333%;}.small-6 {flex: 0 0 50%;max-width: 50%;}.small-offset-5 {margin-left: 41.66667%;}.small-7 {flex: 0 0 58.33333%;max-width: 58.33333%;}.small-offset-6 {margin-left: 50%;}.small-8 {flex: 0 0 66.66667%;max-width: 66.66667%;}.small-offset-7 {margin-left: 58.33333%;}.small-9 {flex: 0 0 75%;max-width: 75%;}.small-offset-8 {margin-left: 66.66667%;}.small-10 {flex: 0 0 83.33333%;max-width: 83.33333%;}.small-offset-9 {margin-left: 75%;}.small-11 {flex: 0 0 91.66667%;max-width: 91.66667%;}.small-offset-10 {margin-left: 83.33333%;}.small-12 {flex: 0 0 100%;max-width: 100%;}.small-offset-11 {margin-left: 91.66667%;}.small-order-1 {order: 1;}.small-order-2 {order: 2;}.small-order-3 {order: 3;}.small-order-4 {order: 4;}.small-order-5 {order: 5;}.small-order-6 {order: 6;}.small-up-1 {flex-wrap: wrap;}.small-up-1 > .column,.small-up-1 > .columns {flex: 0 0 100%;max-width: 100%;}.small-up-2 {flex-wrap: wrap;}.small-up-2 > .column,.small-up-2 > .columns {flex: 0 0 50%;max-width: 50%;}.small-up-3 {flex-wrap: wrap;}.small-up-3 > .column,.small-up-3 > .columns {flex: 0 0 33.33333%;max-width: 33.33333%;}.small-up-4 {flex-wrap: wrap;}.small-up-4 > .column,.small-up-4 > .columns {flex: 0 0 25%;max-width: 25%;}.small-up-5 {flex-wrap: wrap;}.small-up-5 > .column,.small-up-5 > .columns {flex: 0 0 20%;max-width: 20%;}.small-up-6 {flex-wrap: wrap;}.small-up-6 > .column,.small-up-6 > .columns {flex: 0 0 16.66667%;max-width: 16.66667%;}.small-up-7 {flex-wrap: wrap;}.small-up-7 > .column,.small-up-7 > .columns {flex: 0 0 14.28571%;max-width: 14.28571%;}.small-up-8 {flex-wrap: wrap;}.small-up-8 > .column,.small-up-8 > .columns {flex: 0 0 12.5%;max-width: 12.5%;}.small-collapse > .column,.small-collapse > .columns {padding-right: 0;padding-left: 0;}.small-uncollapse > .column,.small-uncollapse > .columns {padding-right: 0.625rem;padding-left: 0.625rem;}.row.medium-unstack > .column,.row.medium-unstack > .columns {flex: 0 0 100%;}.row.large-unstack > .column,.row.large-unstack > .columns {flex: 0 0 100%;}.shrink {flex: 0 0 auto;max-width: 100%;}.column-block {margin-bottom: 1.25rem;}.column-block > :last-child {margin-bottom: 0;}/* Include Foundation Flexbox *//* Ref. http://foundation.zurb.com/sites/docs/flexbox.html */.align-right {justify-content: flex-end;}.align-center {justify-content: center;}.align-justify {justify-content: space-between;}.align-spaced {justify-content: space-around;}.align-top {align-items: flex-start;}.align-self-top {align-self: flex-start;}.align-bottom {align-items: flex-end;}.align-self-bottom {align-self: flex-end;}.align-middle {align-items: center;}.align-self-middle {align-self: center;}.align-stretch {align-items: stretch;}.align-self-stretch {align-self: stretch;}.small-order-1 {order: 1;}.small-order-2 {order: 2;}.small-order-3 {order: 3;}.small-order-4 {order: 4;}.small-order-5 {order: 5;}.small-order-6 {order: 6;}/* Include FOundation Visibility Classes *//* Ref. http://foundation.zurb.com/sites/docs/visibility.html */.hide {display: none !important;}.invisible {visibility: hidden;}.show-for-sr,.show-on-focus {position: absolute !important;width: 1px;height: 1px;overflow: hidden;clip: rect(0, 0, 0, 0);}.show-on-focus:active,.show-on-focus:focus {position: static !important;width: auto;height: auto;overflow: visible;clip: auto;}.show-for-landscape,.hide-for-portrait {display: block !important;}.hide-for-landscape,.show-for-portrait {display: none !important;}/* Other Foundation Libraries *//* @include foundation-global-styles; *//* @include foundation-grid; *//* @include foundation-typography; *//* @include foundation-forms; *//* @include foundation-button; *//* @include foundation-accordion; *//* @include foundation-accordion-menu; *//* @include foundation-badge; *//* @include foundation-breadcrumbs; *//* @include foundation-button-group; *//* @include foundation-callout; *//* @include foundation-card; *//* @include foundation-close-button; *//* @include foundation-menu; *//* @include foundation-menu-icon; *//* @include foundation-drilldown-menu; *//* @include foundation-dropdown; *//* @include foundation-dropdown-menu; *//* @include foundation-responsive-embed; *//* @include foundation-label; *//* @include foundation-media-object; *//* @include foundation-off-canvas; *//* @include foundation-orbit; *//* @include foundation-pagination; *//* @include foundation-progress-bar; *//* @include foundation-slider; *//* @include foundation-sticky; *//* @include foundation-reveal; *//* @include foundation-switch; *//* @include foundation-table; *//* @include foundation-tabs; *//* @include foundation-thumbnail; *//* @include foundation-title-bar; *//* @include foundation-tooltip; *//* @include foundation-top-bar; *//* @include foundation-visibility-classes; *//* @include foundation-float-classes; *//**
+---------------------------*//*
+		Include Foundation Flex Grid
+		Ref. http://foundation.zurb.com/sites/docs/flex-grid.html
+		*/.row {max-width: 81.25rem;margin-right: auto;margin-left: auto;display: flex;flex-flow: row wrap;}.row .row {margin-right: -0.625rem;margin-left: -0.625rem;}.row .row.collapse {margin-right: 0;margin-left: 0;}.row.expanded {max-width: none;}.row.expanded .row {margin-right: auto;margin-left: auto;}.row:not(.expanded) .row {max-width: none;}.row.collapse > .column,.row.collapse > .columns {padding-right: 0;padding-left: 0;}.row.is-collapse-child,.row.collapse > .column > .row,.row.collapse > .columns > .row {margin-right: 0;margin-left: 0;}.column,.columns {flex: 1 1 0px;padding-right: 0.625rem;padding-left: 0.625rem;min-width: 0;}.column.row.row,.row.row.columns {float: none;display: block;}.row .column.row.row,.row .row.row.columns {margin-right: 0;margin-left: 0;padding-right: 0;padding-left: 0;}.small-1 {flex: 0 0 8.33333%;max-width: 8.33333%;}.small-offset-0 {margin-left: 0%;}.small-2 {flex: 0 0 16.66667%;max-width: 16.66667%;}.small-offset-1 {margin-left: 8.33333%;}.small-3 {flex: 0 0 25%;max-width: 25%;}.small-offset-2 {margin-left: 16.66667%;}.small-4 {flex: 0 0 33.33333%;max-width: 33.33333%;}.small-offset-3 {margin-left: 25%;}.small-5 {flex: 0 0 41.66667%;max-width: 41.66667%;}.small-offset-4 {margin-left: 33.33333%;}.small-6 {flex: 0 0 50%;max-width: 50%;}.small-offset-5 {margin-left: 41.66667%;}.small-7 {flex: 0 0 58.33333%;max-width: 58.33333%;}.small-offset-6 {margin-left: 50%;}.small-8 {flex: 0 0 66.66667%;max-width: 66.66667%;}.small-offset-7 {margin-left: 58.33333%;}.small-9 {flex: 0 0 75%;max-width: 75%;}.small-offset-8 {margin-left: 66.66667%;}.small-10 {flex: 0 0 83.33333%;max-width: 83.33333%;}.small-offset-9 {margin-left: 75%;}.small-11 {flex: 0 0 91.66667%;max-width: 91.66667%;}.small-offset-10 {margin-left: 83.33333%;}.small-12 {flex: 0 0 100%;max-width: 100%;}.small-offset-11 {margin-left: 91.66667%;}.small-up-1 {flex-wrap: wrap;}.small-up-1 > .column,.small-up-1 > .columns {flex: 0 0 100%;max-width: 100%;}.small-up-2 {flex-wrap: wrap;}.small-up-2 > .column,.small-up-2 > .columns {flex: 0 0 50%;max-width: 50%;}.small-up-3 {flex-wrap: wrap;}.small-up-3 > .column,.small-up-3 > .columns {flex: 0 0 33.33333%;max-width: 33.33333%;}.small-up-4 {flex-wrap: wrap;}.small-up-4 > .column,.small-up-4 > .columns {flex: 0 0 25%;max-width: 25%;}.small-up-5 {flex-wrap: wrap;}.small-up-5 > .column,.small-up-5 > .columns {flex: 0 0 20%;max-width: 20%;}.small-up-6 {flex-wrap: wrap;}.small-up-6 > .column,.small-up-6 > .columns {flex: 0 0 16.66667%;max-width: 16.66667%;}.small-up-7 {flex-wrap: wrap;}.small-up-7 > .column,.small-up-7 > .columns {flex: 0 0 14.28571%;max-width: 14.28571%;}.small-up-8 {flex-wrap: wrap;}.small-up-8 > .column,.small-up-8 > .columns {flex: 0 0 12.5%;max-width: 12.5%;}.small-collapse > .column,.small-collapse > .columns {padding-right: 0;padding-left: 0;}.small-uncollapse > .column,.small-uncollapse > .columns {padding-right: 0.625rem;padding-left: 0.625rem;}.row.small-unstack > .column,.row.small-unstack > .columns {flex: 0 0 100%;flex: 1 1 0px;}.row.small-unstack > .column,.row.small-unstack > .columns {flex: 0 0 100%;flex: 1 1 0px;}.shrink {flex: 0 0 auto;max-width: 100%;}.column-block {margin-bottom: 1.25rem;}.column-block > :last-child {margin-bottom: 0;}/*
+	Include Foundation Flexbox
+	Ref. http://foundation.zurb.com/sites/docs/flexbox.html
+	*/.align-right {justify-content: flex-end;}.align-center {justify-content: center;}.align-justify {justify-content: space-between;}.align-spaced {justify-content: space-around;}.align-right.vertical.menu > li > a {justify-content: flex-end;}.align-center.vertical.menu > li > a {justify-content: center;}.align-top {align-items: flex-start;}.align-self-top {align-self: flex-start;}.align-bottom {align-items: flex-end;}.align-self-bottom {align-self: flex-end;}.align-middle {align-items: center;}.align-self-middle {align-self: center;}.align-stretch {align-items: stretch;}.align-self-stretch {align-self: stretch;}.align-center-middle {justify-content: center;align-items: center;align-content: center;}.small-order-1 {order: 1;}.small-order-2 {order: 2;}.small-order-3 {order: 3;}.small-order-4 {order: 4;}.small-order-5 {order: 5;}.small-order-6 {order: 6;}.flex-container {display: flex;}.flex-child-auto {flex: 1 1 auto;}.flex-child-grow {flex: 1 0 auto;}.flex-child-shrink {flex: 0 1 auto;}.flex-dir-row {flex-direction: row;}.flex-dir-row-reverse {flex-direction: row-reverse;}.flex-dir-column {flex-direction: column;}.flex-dir-column-reverse {flex-direction: column-reverse;}/*
+Include FOundation Visibility Classes
+Ref. http://foundation.zurb.com/sites/docs/visibility.html
+*/.hide {display: none !important;}.invisible {visibility: hidden;}.show-for-sr,.show-on-focus {position: absolute !important;width: 1px;height: 1px;padding: 0;overflow: hidden;clip: rect(0, 0, 0, 0);white-space: nowrap;clip-path: inset(50%);border: 0;}.show-on-focus:active,.show-on-focus:focus {position: static !important;width: auto;height: auto;overflow: visible;clip: auto;white-space: normal;clip-path: none;}.show-for-landscape,.hide-for-portrait {display: block !important;}.hide-for-landscape,.show-for-portrait {display: none !important;}/*
+Other Foundation Libraries
+
+@include foundation-typography;
+@include foundation-forms;
+@include foundation-button;
+@include foundation-accordion;
+@include foundation-accordion-menu;
+@include foundation-badge;
+@include foundation-breadcrumbs;
+@include foundation-button-group;
+@include foundation-callout;
+@include foundation-card;
+@include foundation-close-button;
+@include foundation-menu;
+@include foundation-menu-icon;
+@include foundation-drilldown-menu;
+@include foundation-dropdown;
+@include foundation-dropdown-menu;
+@include foundation-responsive-embed;
+@include foundation-label;
+@include foundation-media-object;
+@include foundation-off-canvas;
+@include foundation-orbit;
+@include foundation-pagination;
+@include foundation-progress-bar;
+@include foundation-slider;
+@include foundation-sticky;
+@include foundation-reveal;
+@include foundation-switch;
+@include foundation-table;
+@include foundation-tabs;
+@include foundation-thumbnail;
+@include foundation-title-bar;
+@include foundation-tooltip;
+@include foundation-top-bar;
+@include foundation-visibility-classes;
+@include foundation-float-classes;
+*//**
  * End of Foundation Styles
  **//*
 ////
@@ -3064,30 +3111,6 @@ textarea {
     margin-left: 91.66667%;
   }
 
-  .medium-order-1 {
-    order: 1;
-  }
-
-  .medium-order-2 {
-    order: 2;
-  }
-
-  .medium-order-3 {
-    order: 3;
-  }
-
-  .medium-order-4 {
-    order: 4;
-  }
-
-  .medium-order-5 {
-    order: 5;
-  }
-
-  .medium-order-6 {
-    order: 6;
-  }
-
   .medium-up-1 {
     flex-wrap: wrap;
   }
@@ -3160,44 +3183,12 @@ textarea {
     max-width: 12.5%;
   }
 
-  .medium-flex-dir-row {
-    flex-direction: row;
-  }
-
-  .medium-flex-dir-row-reverse {
-    flex-direction: row-reverse;
-  }
-
-  .medium-flex-dir-column {
-    flex-direction: column;
-  }
-
-  .medium-flex-dir-column-reverse {
-    flex-direction: column-reverse;
-  }
-
-  .medium-flex-child-auto {
-    flex: 1 1 auto;
-  }
-
-  .medium-flex-child-grow {
-    flex: 1 0 auto;
-  }
-
-  .medium-flex-child-shrink {
-    flex: 0 1 auto;
-  }
-
-  .row.medium-unstack > .column,.row.medium-unstack > .columns {
-    flex: 1 1 0px;
-  }
-
-  .medium-collapse > .column,.medium-collapse > .columns {
+  .small-collapse > .column,.small-collapse > .columns {
     padding-right: 0;
     padding-left: 0;
   }
 
-  .medium-uncollapse > .column,.medium-uncollapse > .columns {
+  .small-uncollapse > .column,.small-uncollapse > .columns {
     padding-right: 0.625rem;
     padding-left: 0.625rem;
   }
@@ -3232,6 +3223,38 @@ textarea {
 
   .medium-order-6 {
     order: 6;
+  }
+
+  .medium-flex-container {
+    display: flex;
+  }
+
+  .medium-flex-child-auto {
+    flex: 1 1 auto;
+  }
+
+  .medium-flex-child-grow {
+    flex: 1 0 auto;
+  }
+
+  .medium-flex-child-shrink {
+    flex: 0 1 auto;
+  }
+
+  .medium-flex-dir-row {
+    flex-direction: row;
+  }
+
+  .medium-flex-dir-row-reverse {
+    flex-direction: row-reverse;
+  }
+
+  .medium-flex-dir-column {
+    flex-direction: column;
+  }
+
+  .medium-flex-dir-column-reverse {
+    flex-direction: column-reverse;
   }
 
   .hide-for-medium {
@@ -3386,30 +3409,6 @@ textarea {
     margin-left: 91.66667%;
   }
 
-  .large-order-1 {
-    order: 1;
-  }
-
-  .large-order-2 {
-    order: 2;
-  }
-
-  .large-order-3 {
-    order: 3;
-  }
-
-  .large-order-4 {
-    order: 4;
-  }
-
-  .large-order-5 {
-    order: 5;
-  }
-
-  .large-order-6 {
-    order: 6;
-  }
-
   .large-up-1 {
     flex-wrap: wrap;
   }
@@ -3482,44 +3481,12 @@ textarea {
     max-width: 12.5%;
   }
 
-  .large-flex-dir-row {
-    flex-direction: row;
-  }
-
-  .large-flex-dir-row-reverse {
-    flex-direction: row-reverse;
-  }
-
-  .large-flex-dir-column {
-    flex-direction: column;
-  }
-
-  .large-flex-dir-column-reverse {
-    flex-direction: column-reverse;
-  }
-
-  .large-flex-child-auto {
-    flex: 1 1 auto;
-  }
-
-  .large-flex-child-grow {
-    flex: 1 0 auto;
-  }
-
-  .large-flex-child-shrink {
-    flex: 0 1 auto;
-  }
-
-  .row.large-unstack > .column,.row.large-unstack > .columns {
-    flex: 1 1 0px;
-  }
-
-  .large-collapse > .column,.large-collapse > .columns {
+  .small-collapse > .column,.small-collapse > .columns {
     padding-right: 0;
     padding-left: 0;
   }
 
-  .large-uncollapse > .column,.large-uncollapse > .columns {
+  .small-uncollapse > .column,.small-uncollapse > .columns {
     padding-right: 0.625rem;
     padding-left: 0.625rem;
   }
@@ -3554,6 +3521,38 @@ textarea {
 
   .large-order-6 {
     order: 6;
+  }
+
+  .large-flex-container {
+    display: flex;
+  }
+
+  .large-flex-child-auto {
+    flex: 1 1 auto;
+  }
+
+  .large-flex-child-grow {
+    flex: 1 0 auto;
+  }
+
+  .large-flex-child-shrink {
+    flex: 0 1 auto;
+  }
+
+  .large-flex-dir-row {
+    flex-direction: row;
+  }
+
+  .large-flex-dir-row-reverse {
+    flex-direction: row-reverse;
+  }
+
+  .large-flex-dir-column {
+    flex-direction: column;
+  }
+
+  .large-flex-dir-column-reverse {
+    flex-direction: column-reverse;
   }
 
   .hide-for-large {
