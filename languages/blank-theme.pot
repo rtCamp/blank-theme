@@ -17,15 +17,15 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: 404.php:15
+#: 404.php:16
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: 404.php:19
+#: 404.php:20
 msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
 msgstr ""
 
-#: 404.php:25
+#: 404.php:26
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
@@ -41,19 +41,23 @@ msgstr ""
 msgid "Sidebar Position"
 msgstr ""
 
-#: admin/customizer/customizer-settings.php:58, admin/kirki/includes/class-kirki-toolkit.php:106
+#: admin/customizer/customizer-settings.php:59, admin/kirki/includes/class-kirki-toolkit.php:106
 msgid "Left"
 msgstr ""
 
-#: admin/customizer/customizer-settings.php:58, admin/kirki/includes/class-kirki-toolkit.php:107
+#: admin/customizer/customizer-settings.php:60, admin/kirki/includes/class-kirki-toolkit.php:107
 msgid "Right"
 msgstr ""
 
-#: admin/customizer/customizer-settings.php:68, admin/customizer/customizer-settings.php:84
+#: admin/customizer/customizer-settings.php:61
+msgid "No Sidebar"
+msgstr ""
+
+#: admin/customizer/customizer-settings.php:72, admin/customizer/customizer-settings.php:88
 msgid "Copyright Text"
 msgstr ""
 
-#: admin/customizer/customizer-settings.php:70
+#: admin/customizer/customizer-settings.php:74
 msgid "Will override the footer copyright text"
 msgstr ""
 
@@ -623,7 +627,7 @@ msgstr ""
 msgid "Mobile Menu"
 msgstr ""
 
-#: inc/custom-functions.php:68
+#: inc/custom-functions.php:70
 msgid "%1$s by %2$s"
 msgstr ""
 

@@ -55,7 +55,11 @@ $wp_customize->add_control(
 			'section'	 => 'blank_theme_sidebar_position_section',
 			'settings'	 => 'blank_theme_sidebar_position',
 			'type'		 => 'radio',
-			'choices'	 => array( 'left' => esc_html__( 'Left', 'blank-theme' ), 'right' => esc_html__( 'Right', 'blank-theme' ) ),
+			'choices'	 => array(
+				'left'       => esc_html__( 'Left', 'blank-theme' ),
+				'right'      => esc_html__( 'Right', 'blank-theme' ),
+				'no_sidebar' => esc_html__( 'No Sidebar', 'blank-theme' ),
+			),
 		)
 	)
 );

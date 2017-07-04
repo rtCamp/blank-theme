@@ -17,9 +17,11 @@ if ( ! function_exists( 'blank_theme_primary_classes' ) ) {
 		$foundation_classes = $override_foundation_classes ? $override_foundation_classes : 'large-8 medium-8 small-12 column';
 
 		if ( 'left' === $sidebar_postion ) {
-			$foundation_classes .= ' large-order-2 medium-order-2 small-order-1';
+			$foundation_classes .= ' large-order-2 medium-order-2 small-order-1 ';
+		} elseif ( 'right' === $sidebar_postion ) {
+			$foundation_classes .= ' ';
 		} elseif ( 'no_sidebar' === $sidebar_postion ) {
-			$foundation_classes = 'large-12 medium-12 small-12 column';
+			$foundation_classes = ' large-12 medium-12 small-12 column ';
 		}
 
 		echo esc_html( apply_filters( 'blank_theme_primary_classes' , "blank-theme-primary {$foundation_classes} {$more_classes} clearfix" , $more_classes, $foundation_classes ) );

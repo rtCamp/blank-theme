@@ -281,3 +281,15 @@ function blank_theme_javascript_detection() {
 }
 add_action( 'wp_head', 'blank_theme_javascript_detection', 0 );
 
+if ( ! function_exists( 'blank_theme_get_sidebar' ) ) {
+	/**
+	 * Check if sidebar is disable from customizer setting
+	 * If sidebar is disable then remove it sitewide
+	 */
+	function blank_theme_get_sidebar() {
+		$sidebar_postion = get_theme_mod( 'blank_theme_sidebar_position' );
+		if ( 'no_sidebar' !== $sidebar_postion ) {
+			get_sidebar();
+		}
+	}
+}
