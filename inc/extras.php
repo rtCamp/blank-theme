@@ -181,11 +181,11 @@ if ( ! function_exists( 'blank_theme_post_thumbnail_navigation' ) ) {
 		$prev_post = get_previous_post( true );
 		$next_post = get_next_post( true );
 
-		echo "<nav class='blank-theme-post-navigation row'>";
+		echo "<div class='grid-container grid-container-padded'><nav class='blank-theme-post-navigation row grid-x grid-margin-x'>";
 
 		if ( ! empty( $prev_post ) ) :  ?>
 
-			<div class="blank-theme-prev-post large-5 medium-5 small-6 column">
+			<div class="blank-theme-prev-post large-5 medium-5 small-6 cell column">
 				<?php
 				$link = get_permalink( $prev_post->ID );
 				$title = get_the_title( $prev_post->ID );
@@ -200,7 +200,7 @@ if ( ! function_exists( 'blank_theme_post_thumbnail_navigation' ) ) {
 
 		if ( ! empty( $next_post ) ) :  ?>
 
-			<div class="blank-theme-next-post large-5 medium-5 small-6 column">
+			<div class="blank-theme-next-post large-5 medium-5 small-6 cell column">
 				<?php
 				$link = get_permalink( $next_post->ID );
 				$title = get_the_title( $next_post->ID );
@@ -213,7 +213,7 @@ if ( ! function_exists( 'blank_theme_post_thumbnail_navigation' ) ) {
 
 		<?php endif;
 
-		echo '</nav>';
+		echo '</nav></div>';
 
 	}
 }
@@ -282,6 +282,7 @@ function blank_theme_javascript_detection() {
 add_action( 'wp_head', 'blank_theme_javascript_detection', 0 );
 
 if ( ! function_exists( 'blank_theme_get_sidebar' ) ) {
+
 	/**
 	 * Check if sidebar is disable from customizer setting
 	 * If sidebar is disable then remove it sitewide

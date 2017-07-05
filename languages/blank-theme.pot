@@ -603,11 +603,11 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:24
+#: footer.php:26
 msgid "Blank Theme"
 msgstr ""
 
-#: functions.php:75, header.php:32
+#: functions.php:75, header.php:33
 msgid "Primary Menu"
 msgstr ""
 
@@ -623,7 +623,7 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:30
+#: header.php:31
 msgid "Mobile Menu"
 msgstr ""
 

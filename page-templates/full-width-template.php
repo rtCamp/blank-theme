@@ -9,7 +9,7 @@
 get_header();
 ?>
 
-<div id="primary" class="<?php blank_theme_primary_classes( 'blank-theme-full-page', 'large-12 medium-12 small-12 column' ); ?>">
+<div id="primary" class="<?php blank_theme_primary_classes( 'blank-theme-full-page', 'cell column' ); ?>">
 	<main id="main" class="site-main" role="main">
 		<?php while ( have_posts() ) : the_post(); ?>
 
