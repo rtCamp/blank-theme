@@ -46,7 +46,7 @@ gulp.task( 'sass', function() {
 	.pipe( gulp.dest( '.' ) )
 	.pipe( notify( {
 		message: 'TASK: "sass" Completed!',
-		onLast : true
+		onLast: true
 	} ) );
 } );
 
@@ -64,7 +64,7 @@ gulp.task( 'scripts', function() {
 	.pipe( gulp.dest( './js/' ) )
 	.pipe( notify( {
 		message: 'TASK: "scripts" Completed!',
-		onLast : true
+		onLast: true
 	} ) );
 } );
 
@@ -72,7 +72,7 @@ gulp.task( 'scripts', function() {
 // Checktextdomain in php files
 gulp.task( 'checktextdomain', function() {
     return gulp
-    .src( ['**/*.php', './*.php'] )
+    .src( ['**/*.php', './*.php', '!./node_modules/**'] )
     .pipe( checktextdomain( {
         text_domain: 'blank-theme', // Specify allowed domain(s)
         keywords: [ // List keyword specifications
@@ -94,7 +94,7 @@ gulp.task( 'checktextdomain', function() {
     } ) )
 	.pipe( notify( {
 		message: 'TASK: "checktextdomain" Completed!',
-		onLast : true
+		onLast: true
 	} ) );
 } );
 
@@ -104,17 +104,17 @@ gulp.task( 'makepot', function() {
 	return gulp.src( ['**/*.php', './*.php'] )
 	.pipe( sort() )
 	.pipe( wpPot( {
-		domain        : 'blank-theme',
-		destFile      : 'blank-theme.pot',
-		package       : 'blank-theme',
-		bugReport     : 'https://rtcamp.com/contact/',
+		domain: 'blank-theme',
+		destFile: 'blank-theme.pot',
+		package: 'blank-theme',
+		bugReport: 'https://rtcamp.com/contact/',
 		lastTranslator: 'Team <support@rtcamp.com>',
-		team          : 'Team <support@rtcamp.com>'
+		team: 'Team <support@rtcamp.com>'
 	} ) )
    .pipe( gulp.dest( './languages/' ) )
    .pipe( notify( {
 	   message: 'TASK: "makepot" Completed!',
-	   onLast : true
+	   onLast: true
    } ) );
 } );
 
@@ -124,13 +124,13 @@ gulp.task( 'images', function() {
   return gulp.src( 'assets/img/*' )
 	.pipe( imagemin( {
 		optimizationLevel: 7,
-		progressive      : true,
-		interlaced       : true
+		progressive: true,
+		interlaced: true
 	} ) )
 	.pipe( gulp.dest( 'assets/img' ) )
 	.pipe( notify( {
 		message: 'TASK: "images" Completed!',
-		onLast : true
+		onLast: true
 	} ) );
 } );
 

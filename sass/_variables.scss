@@ -160,17 +160,29 @@ $breakpoint-classes: small medium large;
 
 /// Global width of your site. Used by the grid to determine row width.
 /// @type Number
-$grid-row-width: rem-calc(1300);
+$global-width: rem-calc(1300);
 
 /// The default column count of a grid. Changing this value affects the logic of the grid mixins, and the number of CSS classes output.
 /// @type Number
-$grid-column-count: 12;
+$global-column-count: 12;
+
+/// Flex Grid
+$grid-row-width: $global-width;
+$grid-column-count: $global-column-count;
 
 /// Global spacing between columns.
 /// @type Number
 $grid-column-gutter: (small: 20px, medium: 20px, large: 20px);
-
 $grid-column-align-edge: true;
+$grid-column-alias: "columns";
+
+/// XY Grid
+$grid-container: $global-width;
+$grid-columns: $global-column-count;
+$grid-margin-gutters: (small: 20px, medium: 20px, large: 20px);
+$grid-padding-gutters: $grid-margin-gutters;
+$grid-container-padding: $grid-padding-gutters;
+$grid-container-max: $global-width;
 
 /// Block grid Max Number
 /// @type Number
