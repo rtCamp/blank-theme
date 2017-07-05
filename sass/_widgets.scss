@@ -1,5 +1,5 @@
 .widget {
-	margin: 0 0 (rem-calc(map-get($grid-column-gutter, small)) / 2);
+	margin: 0 0 rem-calc(map-get($grid-column-gutter, small));
 
 	/* Make sure select elements fit in widgets. */
 	select {

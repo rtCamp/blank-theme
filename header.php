@@ -22,23 +22,26 @@
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'blank-theme' ); ?></a>
 
-	<header id="masthead" class="site-header row-container" role="banner">
-		<div class="site-branding column shrink">
-			<?php echo blank_theme_site_branding(); ?>
-		</div><!-- .site-branding -->
+	<header id="masthead" class="site-header grid-container grid-container-padded" role="banner">
+		<div class="row grid-x grid-margin-x">
+			<div class="site-branding shrink cell column">
+				<?php echo blank_theme_site_branding(); ?>
+			</div><!-- .site-branding -->
 
-		<a id="primary-nav-button" class="blank-theme-mobile-nav-button menu-toggle" href="#site-navigation"><?php esc_html_e( 'Mobile Menu' , 'blank-theme' ); ?></a>
+			<a id="primary-nav-button" class="blank-theme-mobile-nav-button menu-toggle" href="#site-navigation"><?php esc_html_e( 'Mobile Menu' , 'blank-theme' ); ?></a>
 
-		<nav id="site-navigation" class="blank-theme-main-navigation column" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'blank-theme' ); ?>">
-			<?php
-			wp_nav_menu( array(
-				'theme_location'	=> 'primary',
-				'menu_id'			=> 'primary-menu',
-				'menu_class'		=> 'primary-menu menu',
-				'depth'				=> 3,
-			) );
-			?>
-		</nav><!-- #site-navigation -->
+			<nav id="site-navigation" class="blank-theme-main-navigation auto cell column" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'blank-theme' ); ?>">
+				<?php
+				wp_nav_menu( array(
+					'theme_location'	=> 'primary',
+					'menu_id'			=> 'primary-menu',
+					'menu_class'		=> 'primary-menu menu',
+					'depth'				=> 3,
+				) );
+				?>
+			</nav><!-- #site-navigation -->
+		</div>
 	</header><!-- #masthead -->
 
-	<div id="content" class="site-content row">
+	<div class="grid-container grid-container-padded">
+	<div id="content" class="site-content row grid-x grid-margin-x">

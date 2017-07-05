@@ -3985,7 +3985,7 @@ textarea {
 --------------------------------------------------------------*/
 
 .widget {
-	margin: 0 0 0.625rem; /* Make sure select elements fit in widgets. */
+	margin: 0 0 1.25rem; /* Make sure select elements fit in widgets. */
 }
 
 .widget select {
