@@ -1,14 +1,14 @@
-# <!=Copyright (C) 2017 rtCamp
+# <!=Copyright (C) 2018 rtCamp
 # This file is distributed under the GNU General Public License v2 or later.=!>
 msgid ""
 msgstr ""
 "Project-Id-Version: Blank Theme 1.0.0\n"
 "Report-Msgid-Bugs-To: http://community.rtcamp.com/c/premium-themes\n"
-"POT-Creation-Date: 2017-07-05 13:51:53+00:00\n"
+"POT-Creation-Date: 2018-01-05 09:36:15+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Company <support@blank-theme.com>\n"
 "Language-Team: Team <support@blank-theme.com>\n"
 "Language: en\n"
@@ -24,17 +24,17 @@ msgstr ""
 "X-Textdomain-Support: yes\n"
 "X-Generator: grunt-wp-i18n1.0.0\n"
 
-#: 404.php:15
+#: 404.php:16
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: 404.php:19
+#: 404.php:20
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the "
 "links below or a search?"
 msgstr ""
 
-#: 404.php:25
+#: 404.php:26
 #. translators: %1$s: smiley
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
@@ -639,133 +639,115 @@ msgstr ""
 msgid "Color Alpha Control"
 msgstr ""
 
-#: comments.php:36 comments.php:57
+#: comments.php:57 comments.php:78
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:39 comments.php:60
+#: comments.php:60 comments.php:81
 msgid "Older Comments"
 msgstr ""
 
-#: comments.php:40 comments.php:61
+#: comments.php:61 comments.php:82
 msgid "Newer Comments"
 msgstr ""
 
-#: comments.php:73
+#: comments.php:94
 msgid "Comments are closed."
+msgstr ""
+
+#: footer.php:29
+#. translators: 1: Theme name, 2: Theme author.
+msgid "%1$s by %2$s"
 msgstr ""
 
 #. Theme Name of the plugin/theme
 msgid "Blank Theme"
 msgstr ""
 
-#: functions.php:75 header.php:33
+#. Author of the plugin/theme
+msgid "rtCamp"
+msgstr ""
+
+#: functions.php:75 header.php:67
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:151
+#: functions.php:154
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:161
+#: functions.php:164
 msgid "Footer"
 msgstr ""
 
-#: header.php:23
+#: header.php:22
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:31
+#: header.php:65
 msgid "Mobile Menu"
 msgstr ""
 
-#: inc/custom-functions.php:70
-msgid "%1$s by %2$s"
-msgstr ""
-
-#: inc/extras.php:107
+#: inc/extras.php:112
 msgid "Home"
 msgstr ""
 
-#: inc/extras.php:123
+#: inc/extras.php:128
 msgid "Author Archive"
 msgstr ""
 
-#: inc/extras.php:125
+#: inc/extras.php:130
 msgid "Blog Archive"
 msgstr ""
 
-#: inc/extras.php:127
+#: inc/extras.php:132
 msgid "Search Archive"
 msgstr ""
 
-#: inc/extras.php:144
-msgid "Decrease Font Size"
-msgstr ""
-
-#: inc/extras.php:145
-msgid "Increase Font Size"
-msgstr ""
-
-#: inc/extras.php:164
-msgid "About "
-msgstr ""
-
-#: inc/extras.php:167
-msgid "View all posts by "
-msgstr ""
-
-#: inc/extras.php:192
-msgid " Previous"
-msgstr ""
-
-#: inc/extras.php:207
-msgid " Next"
-msgstr ""
-
-#: inc/extras.php:240
+#: inc/extras.php:163
 msgid "Read More"
 msgstr ""
 
-#: inc/template-tags.php:42
+#: inc/template-tags.php:48
 #. translators: used between list items, there is a space after the comma
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:68
+#: inc/template-tags.php:74
 #. translators: used between list items, there is a space after the comma
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/template-tags.php:68
+#: inc/template-tags.php:74
 msgid "Comment (1)"
 msgstr ""
 
-#: inc/template-tags.php:68
+#: inc/template-tags.php:74
 msgid "Comments (%)"
 msgstr ""
 
-#: inc/template-tags.php:72 template-parts/content-page.php:25
+#: inc/template-tags.php:78 template-parts/content-page.php:25
 msgid "Edit"
 msgstr ""
 
-#: search.php:16
+#: search.php:20
+#. translators: %s: search phrase
 msgid "Search Results for: %s"
 msgstr ""
 
-#: searchform.php:3
+#: searchform.php:11
 msgid "Search For :"
 msgstr ""
 
-#: searchform.php:4
+#: searchform.php:12
 msgid "Search..."
 msgstr ""
 
-#: searchform.php:4
+#: searchform.php:12
 msgid "Search for:"
 msgstr ""
 
-#: searchform.php:6
+#: searchform.php:14
 msgid "Search"
 msgstr ""
 
@@ -874,10 +856,6 @@ msgstr ""
 msgid "Blank Theme is a responsive multipurpose theme."
 msgstr ""
 
-#. Author of the plugin/theme
-msgid "rtCamp"
-msgstr ""
-
 #. Template Name of the plugin/theme
 msgid "Full Width Template"
 msgstr ""
@@ -897,14 +875,22 @@ msgctxt "font style"
 msgid "Monospace"
 msgstr ""
 
-#: comments.php:30
+#: comments.php:35
+#. translators: %s: post title
 msgctxt "comments title"
-msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid "One thought on &ldquo;%s&rdquo;"
+msgstr ""
+
+#: comments.php:41
+#. translators: 1: number of comments, 2: post title
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/template-tags.php:34
+#: inc/template-tags.php:41
+#. translators: 1: Author URI, 2: Post Author.
 msgctxt "post author"
 msgid ""
 "<span class=\"author vcard\"><a class=\"url fn n\" "

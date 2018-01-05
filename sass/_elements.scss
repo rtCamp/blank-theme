@@ -9,6 +9,11 @@ html {
 	color: $color__primary;
 
 	/* [additional] */
+
+	@if $font-smoothing == true {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
 }
 
 *,
@@ -194,4 +199,10 @@ textarea {
 	outline: none;
 	background: $color__background-textarea;
 	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1) inset;
+}
+
+p {
+	&:empty {
+		display: none;
+	}
 }

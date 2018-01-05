@@ -4,6 +4,7 @@
  *
  * @package Blank Theme
  */
+
 get_header();
 ?>
 

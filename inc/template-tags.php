@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Custom template tags for this theme.
  *
@@ -7,7 +6,14 @@
  *
  * @package Blank Theme
  */
+
 if ( ! function_exists( 'blank_theme_posted_on' ) ) {
+
+	/**
+	 * Display post posted date.
+	 *
+	 * @return string
+	 */
 	function blank_theme_posted_on() {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 
@@ -16,7 +22,7 @@ if ( ! function_exists( 'blank_theme_posted_on' ) ) {
 		}
 
 		$time_string = sprintf( $time_string, esc_attr( get_the_date( 'c' ) ), esc_html( get_the_date() ), esc_attr( get_the_modified_date( 'c' ) ), esc_html( get_the_modified_date() ) );
-		$posted_on = $time_string;
+		$posted_on   = $time_string;
 
 		return $posted_on;
 	}
@@ -28,11 +34,11 @@ if ( ! function_exists( 'blank_theme_entry_footer' ) ) :
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
 	function blank_theme_entry_footer() {
-		$posted_on = blank_theme_posted_on();
+		$posted_on    = blank_theme_posted_on();
 		$allowed_meta = get_theme_mod( 'blank_theme_manage_meta', array( 'author', 'date', 'comment' ) );
 
-		$byline = sprintf( _x( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>', 'post author', 'blank-theme' ), esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ), get_the_author() );
-
+		/* translators: 1: Author URI, 2: Post Author. */
+		$byline    = sprintf( _x( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>', 'post author', 'blank-theme' ), esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ), get_the_author() );
 		$cat_links = false;
 		$tags_list = false;
 
@@ -80,12 +86,11 @@ endif;
  * @return bool
  */
 function blank_theme_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'blank_theme_categories' ) ) ) {
+	if ( false === get_transient( 'blank_theme_categories' ) ) {
 		$args = array(
-			'fields'	 => 'ids',
+			'fields'     => 'ids',
 			'hide_empty' => 1,
-			// We only need to know if there is more than one category.
-			'number'	 => 2,
+			'number'     => 2, // We only need to know if there is more than one category.
 		);
 
 		// Create an array of all the categories that are attached to posts.

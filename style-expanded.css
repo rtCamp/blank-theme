@@ -151,10 +151,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 .small-1 {
   -webkit-box-flex: 0;
-  -webkit-flex: 0 0 8.33333%;
-      -ms-flex: 0 0 8.33333%;
-          flex: 0 0 8.33333%;
-  max-width: 8.33333%;
+  -webkit-flex: 0 0 8.3333333333%;
+      -ms-flex: 0 0 8.3333333333%;
+          flex: 0 0 8.3333333333%;
+  max-width: 8.3333333333%;
 }
 
 .small-offset-0 {
@@ -163,14 +163,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 .small-2 {
   -webkit-box-flex: 0;
-  -webkit-flex: 0 0 16.66667%;
-      -ms-flex: 0 0 16.66667%;
-          flex: 0 0 16.66667%;
-  max-width: 16.66667%;
+  -webkit-flex: 0 0 16.6666666667%;
+      -ms-flex: 0 0 16.6666666667%;
+          flex: 0 0 16.6666666667%;
+  max-width: 16.6666666667%;
 }
 
 .small-offset-1 {
-  margin-left: 8.33333%;
+  margin-left: 8.3333333333%;
 }
 
 .small-3 {
@@ -182,15 +182,15 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 }
 
 .small-offset-2 {
-  margin-left: 16.66667%;
+  margin-left: 16.6666666667%;
 }
 
 .small-4 {
   -webkit-box-flex: 0;
-  -webkit-flex: 0 0 33.33333%;
-      -ms-flex: 0 0 33.33333%;
-          flex: 0 0 33.33333%;
-  max-width: 33.33333%;
+  -webkit-flex: 0 0 33.3333333333%;
+      -ms-flex: 0 0 33.3333333333%;
+          flex: 0 0 33.3333333333%;
+  max-width: 33.3333333333%;
 }
 
 .small-offset-3 {
@@ -199,14 +199,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 .small-5 {
   -webkit-box-flex: 0;
-  -webkit-flex: 0 0 41.66667%;
-      -ms-flex: 0 0 41.66667%;
-          flex: 0 0 41.66667%;
-  max-width: 41.66667%;
+  -webkit-flex: 0 0 41.6666666667%;
+      -ms-flex: 0 0 41.6666666667%;
+          flex: 0 0 41.6666666667%;
+  max-width: 41.6666666667%;
 }
 
 .small-offset-4 {
-  margin-left: 33.33333%;
+  margin-left: 33.3333333333%;
 }
 
 .small-6 {
@@ -218,15 +218,15 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 }
 
 .small-offset-5 {
-  margin-left: 41.66667%;
+  margin-left: 41.6666666667%;
 }
 
 .small-7 {
   -webkit-box-flex: 0;
-  -webkit-flex: 0 0 58.33333%;
-      -ms-flex: 0 0 58.33333%;
-          flex: 0 0 58.33333%;
-  max-width: 58.33333%;
+  -webkit-flex: 0 0 58.3333333333%;
+      -ms-flex: 0 0 58.3333333333%;
+          flex: 0 0 58.3333333333%;
+  max-width: 58.3333333333%;
 }
 
 .small-offset-6 {
@@ -235,14 +235,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 .small-8 {
   -webkit-box-flex: 0;
-  -webkit-flex: 0 0 66.66667%;
-      -ms-flex: 0 0 66.66667%;
-          flex: 0 0 66.66667%;
-  max-width: 66.66667%;
+  -webkit-flex: 0 0 66.6666666667%;
+      -ms-flex: 0 0 66.6666666667%;
+          flex: 0 0 66.6666666667%;
+  max-width: 66.6666666667%;
 }
 
 .small-offset-7 {
-  margin-left: 58.33333%;
+  margin-left: 58.3333333333%;
 }
 
 .small-9 {
@@ -254,15 +254,15 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 }
 
 .small-offset-8 {
-  margin-left: 66.66667%;
+  margin-left: 66.6666666667%;
 }
 
 .small-10 {
   -webkit-box-flex: 0;
-  -webkit-flex: 0 0 83.33333%;
-      -ms-flex: 0 0 83.33333%;
-          flex: 0 0 83.33333%;
-  max-width: 83.33333%;
+  -webkit-flex: 0 0 83.3333333333%;
+      -ms-flex: 0 0 83.3333333333%;
+          flex: 0 0 83.3333333333%;
+  max-width: 83.3333333333%;
 }
 
 .small-offset-9 {
@@ -271,14 +271,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 .small-11 {
   -webkit-box-flex: 0;
-  -webkit-flex: 0 0 91.66667%;
-      -ms-flex: 0 0 91.66667%;
-          flex: 0 0 91.66667%;
-  max-width: 91.66667%;
+  -webkit-flex: 0 0 91.6666666667%;
+      -ms-flex: 0 0 91.6666666667%;
+          flex: 0 0 91.6666666667%;
+  max-width: 91.6666666667%;
 }
 
 .small-offset-10 {
-  margin-left: 83.33333%;
+  margin-left: 83.3333333333%;
 }
 
 .small-12 {
@@ -290,7 +290,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 }
 
 .small-offset-11 {
-  margin-left: 91.66667%;
+  margin-left: 91.6666666667%;
 }
 
 .small-up-1 {
@@ -326,10 +326,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 }
 .small-up-3 > .column, .small-up-3 > .columns {
   -webkit-box-flex: 0;
-  -webkit-flex: 0 0 33.33333%;
-      -ms-flex: 0 0 33.33333%;
-          flex: 0 0 33.33333%;
-  max-width: 33.33333%;
+  -webkit-flex: 0 0 33.3333333333%;
+      -ms-flex: 0 0 33.3333333333%;
+          flex: 0 0 33.3333333333%;
+  max-width: 33.3333333333%;
 }
 
 .small-up-4 {
@@ -365,10 +365,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 }
 .small-up-6 > .column, .small-up-6 > .columns {
   -webkit-box-flex: 0;
-  -webkit-flex: 0 0 16.66667%;
-      -ms-flex: 0 0 16.66667%;
-          flex: 0 0 16.66667%;
-  max-width: 16.66667%;
+  -webkit-flex: 0 0 16.6666666667%;
+      -ms-flex: 0 0 16.6666666667%;
+          flex: 0 0 16.6666666667%;
+  max-width: 16.6666666667%;
 }
 
 .small-up-7 {
@@ -378,10 +378,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 }
 .small-up-7 > .column, .small-up-7 > .columns {
   -webkit-box-flex: 0;
-  -webkit-flex: 0 0 14.28571%;
-      -ms-flex: 0 0 14.28571%;
-          flex: 0 0 14.28571%;
-  max-width: 14.28571%;
+  -webkit-flex: 0 0 14.2857142857%;
+      -ms-flex: 0 0 14.2857142857%;
+          flex: 0 0 14.2857142857%;
+  max-width: 14.2857142857%;
 }
 
 .small-up-8 {
@@ -410,10 +410,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @media print, screen and (min-width: 41.6875em) {
   .medium-1 {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 8.33333%;
-        -ms-flex: 0 0 8.33333%;
-            flex: 0 0 8.33333%;
-    max-width: 8.33333%;
+    -webkit-flex: 0 0 8.3333333333%;
+        -ms-flex: 0 0 8.3333333333%;
+            flex: 0 0 8.3333333333%;
+    max-width: 8.3333333333%;
   }
 
   .medium-offset-0 {
@@ -422,14 +422,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
   .medium-2 {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 16.66667%;
-        -ms-flex: 0 0 16.66667%;
-            flex: 0 0 16.66667%;
-    max-width: 16.66667%;
+    -webkit-flex: 0 0 16.6666666667%;
+        -ms-flex: 0 0 16.6666666667%;
+            flex: 0 0 16.6666666667%;
+    max-width: 16.6666666667%;
   }
 
   .medium-offset-1 {
-    margin-left: 8.33333%;
+    margin-left: 8.3333333333%;
   }
 
   .medium-3 {
@@ -441,15 +441,15 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   }
 
   .medium-offset-2 {
-    margin-left: 16.66667%;
+    margin-left: 16.6666666667%;
   }
 
   .medium-4 {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 33.33333%;
-        -ms-flex: 0 0 33.33333%;
-            flex: 0 0 33.33333%;
-    max-width: 33.33333%;
+    -webkit-flex: 0 0 33.3333333333%;
+        -ms-flex: 0 0 33.3333333333%;
+            flex: 0 0 33.3333333333%;
+    max-width: 33.3333333333%;
   }
 
   .medium-offset-3 {
@@ -458,14 +458,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
   .medium-5 {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 41.66667%;
-        -ms-flex: 0 0 41.66667%;
-            flex: 0 0 41.66667%;
-    max-width: 41.66667%;
+    -webkit-flex: 0 0 41.6666666667%;
+        -ms-flex: 0 0 41.6666666667%;
+            flex: 0 0 41.6666666667%;
+    max-width: 41.6666666667%;
   }
 
   .medium-offset-4 {
-    margin-left: 33.33333%;
+    margin-left: 33.3333333333%;
   }
 
   .medium-6 {
@@ -477,15 +477,15 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   }
 
   .medium-offset-5 {
-    margin-left: 41.66667%;
+    margin-left: 41.6666666667%;
   }
 
   .medium-7 {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 58.33333%;
-        -ms-flex: 0 0 58.33333%;
-            flex: 0 0 58.33333%;
-    max-width: 58.33333%;
+    -webkit-flex: 0 0 58.3333333333%;
+        -ms-flex: 0 0 58.3333333333%;
+            flex: 0 0 58.3333333333%;
+    max-width: 58.3333333333%;
   }
 
   .medium-offset-6 {
@@ -494,14 +494,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
   .medium-8 {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 66.66667%;
-        -ms-flex: 0 0 66.66667%;
-            flex: 0 0 66.66667%;
-    max-width: 66.66667%;
+    -webkit-flex: 0 0 66.6666666667%;
+        -ms-flex: 0 0 66.6666666667%;
+            flex: 0 0 66.6666666667%;
+    max-width: 66.6666666667%;
   }
 
   .medium-offset-7 {
-    margin-left: 58.33333%;
+    margin-left: 58.3333333333%;
   }
 
   .medium-9 {
@@ -513,15 +513,15 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   }
 
   .medium-offset-8 {
-    margin-left: 66.66667%;
+    margin-left: 66.6666666667%;
   }
 
   .medium-10 {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 83.33333%;
-        -ms-flex: 0 0 83.33333%;
-            flex: 0 0 83.33333%;
-    max-width: 83.33333%;
+    -webkit-flex: 0 0 83.3333333333%;
+        -ms-flex: 0 0 83.3333333333%;
+            flex: 0 0 83.3333333333%;
+    max-width: 83.3333333333%;
   }
 
   .medium-offset-9 {
@@ -530,14 +530,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
   .medium-11 {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 91.66667%;
-        -ms-flex: 0 0 91.66667%;
-            flex: 0 0 91.66667%;
-    max-width: 91.66667%;
+    -webkit-flex: 0 0 91.6666666667%;
+        -ms-flex: 0 0 91.6666666667%;
+            flex: 0 0 91.6666666667%;
+    max-width: 91.6666666667%;
   }
 
   .medium-offset-10 {
-    margin-left: 83.33333%;
+    margin-left: 83.3333333333%;
   }
 
   .medium-12 {
@@ -549,7 +549,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   }
 
   .medium-offset-11 {
-    margin-left: 91.66667%;
+    margin-left: 91.6666666667%;
   }
 
   .medium-up-1 {
@@ -585,10 +585,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   }
   .medium-up-3 > .column, .medium-up-3 > .columns {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 33.33333%;
-        -ms-flex: 0 0 33.33333%;
-            flex: 0 0 33.33333%;
-    max-width: 33.33333%;
+    -webkit-flex: 0 0 33.3333333333%;
+        -ms-flex: 0 0 33.3333333333%;
+            flex: 0 0 33.3333333333%;
+    max-width: 33.3333333333%;
   }
 
   .medium-up-4 {
@@ -624,10 +624,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   }
   .medium-up-6 > .column, .medium-up-6 > .columns {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 16.66667%;
-        -ms-flex: 0 0 16.66667%;
-            flex: 0 0 16.66667%;
-    max-width: 16.66667%;
+    -webkit-flex: 0 0 16.6666666667%;
+        -ms-flex: 0 0 16.6666666667%;
+            flex: 0 0 16.6666666667%;
+    max-width: 16.6666666667%;
   }
 
   .medium-up-7 {
@@ -637,10 +637,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   }
   .medium-up-7 > .column, .medium-up-7 > .columns {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 14.28571%;
-        -ms-flex: 0 0 14.28571%;
-            flex: 0 0 14.28571%;
-    max-width: 14.28571%;
+    -webkit-flex: 0 0 14.2857142857%;
+        -ms-flex: 0 0 14.2857142857%;
+            flex: 0 0 14.2857142857%;
+    max-width: 14.2857142857%;
   }
 
   .medium-up-8 {
@@ -688,10 +688,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @media print, screen and (min-width: 64em) {
   .large-1 {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 8.33333%;
-        -ms-flex: 0 0 8.33333%;
-            flex: 0 0 8.33333%;
-    max-width: 8.33333%;
+    -webkit-flex: 0 0 8.3333333333%;
+        -ms-flex: 0 0 8.3333333333%;
+            flex: 0 0 8.3333333333%;
+    max-width: 8.3333333333%;
   }
 
   .large-offset-0 {
@@ -700,14 +700,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
   .large-2 {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 16.66667%;
-        -ms-flex: 0 0 16.66667%;
-            flex: 0 0 16.66667%;
-    max-width: 16.66667%;
+    -webkit-flex: 0 0 16.6666666667%;
+        -ms-flex: 0 0 16.6666666667%;
+            flex: 0 0 16.6666666667%;
+    max-width: 16.6666666667%;
   }
 
   .large-offset-1 {
-    margin-left: 8.33333%;
+    margin-left: 8.3333333333%;
   }
 
   .large-3 {
@@ -719,15 +719,15 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   }
 
   .large-offset-2 {
-    margin-left: 16.66667%;
+    margin-left: 16.6666666667%;
   }
 
   .large-4 {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 33.33333%;
-        -ms-flex: 0 0 33.33333%;
-            flex: 0 0 33.33333%;
-    max-width: 33.33333%;
+    -webkit-flex: 0 0 33.3333333333%;
+        -ms-flex: 0 0 33.3333333333%;
+            flex: 0 0 33.3333333333%;
+    max-width: 33.3333333333%;
   }
 
   .large-offset-3 {
@@ -736,14 +736,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
   .large-5 {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 41.66667%;
-        -ms-flex: 0 0 41.66667%;
-            flex: 0 0 41.66667%;
-    max-width: 41.66667%;
+    -webkit-flex: 0 0 41.6666666667%;
+        -ms-flex: 0 0 41.6666666667%;
+            flex: 0 0 41.6666666667%;
+    max-width: 41.6666666667%;
   }
 
   .large-offset-4 {
-    margin-left: 33.33333%;
+    margin-left: 33.3333333333%;
   }
 
   .large-6 {
@@ -755,15 +755,15 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   }
 
   .large-offset-5 {
-    margin-left: 41.66667%;
+    margin-left: 41.6666666667%;
   }
 
   .large-7 {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 58.33333%;
-        -ms-flex: 0 0 58.33333%;
-            flex: 0 0 58.33333%;
-    max-width: 58.33333%;
+    -webkit-flex: 0 0 58.3333333333%;
+        -ms-flex: 0 0 58.3333333333%;
+            flex: 0 0 58.3333333333%;
+    max-width: 58.3333333333%;
   }
 
   .large-offset-6 {
@@ -772,14 +772,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
   .large-8 {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 66.66667%;
-        -ms-flex: 0 0 66.66667%;
-            flex: 0 0 66.66667%;
-    max-width: 66.66667%;
+    -webkit-flex: 0 0 66.6666666667%;
+        -ms-flex: 0 0 66.6666666667%;
+            flex: 0 0 66.6666666667%;
+    max-width: 66.6666666667%;
   }
 
   .large-offset-7 {
-    margin-left: 58.33333%;
+    margin-left: 58.3333333333%;
   }
 
   .large-9 {
@@ -791,15 +791,15 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   }
 
   .large-offset-8 {
-    margin-left: 66.66667%;
+    margin-left: 66.6666666667%;
   }
 
   .large-10 {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 83.33333%;
-        -ms-flex: 0 0 83.33333%;
-            flex: 0 0 83.33333%;
-    max-width: 83.33333%;
+    -webkit-flex: 0 0 83.3333333333%;
+        -ms-flex: 0 0 83.3333333333%;
+            flex: 0 0 83.3333333333%;
+    max-width: 83.3333333333%;
   }
 
   .large-offset-9 {
@@ -808,14 +808,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
   .large-11 {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 91.66667%;
-        -ms-flex: 0 0 91.66667%;
-            flex: 0 0 91.66667%;
-    max-width: 91.66667%;
+    -webkit-flex: 0 0 91.6666666667%;
+        -ms-flex: 0 0 91.6666666667%;
+            flex: 0 0 91.6666666667%;
+    max-width: 91.6666666667%;
   }
 
   .large-offset-10 {
-    margin-left: 83.33333%;
+    margin-left: 83.3333333333%;
   }
 
   .large-12 {
@@ -827,7 +827,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   }
 
   .large-offset-11 {
-    margin-left: 91.66667%;
+    margin-left: 91.6666666667%;
   }
 
   .large-up-1 {
@@ -863,10 +863,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   }
   .large-up-3 > .column, .large-up-3 > .columns {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 33.33333%;
-        -ms-flex: 0 0 33.33333%;
-            flex: 0 0 33.33333%;
-    max-width: 33.33333%;
+    -webkit-flex: 0 0 33.3333333333%;
+        -ms-flex: 0 0 33.3333333333%;
+            flex: 0 0 33.3333333333%;
+    max-width: 33.3333333333%;
   }
 
   .large-up-4 {
@@ -902,10 +902,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   }
   .large-up-6 > .column, .large-up-6 > .columns {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 16.66667%;
-        -ms-flex: 0 0 16.66667%;
-            flex: 0 0 16.66667%;
-    max-width: 16.66667%;
+    -webkit-flex: 0 0 16.6666666667%;
+        -ms-flex: 0 0 16.6666666667%;
+            flex: 0 0 16.6666666667%;
+    max-width: 16.6666666667%;
   }
 
   .large-up-7 {
@@ -915,10 +915,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   }
   .large-up-7 > .column, .large-up-7 > .columns {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 14.28571%;
-        -ms-flex: 0 0 14.28571%;
-            flex: 0 0 14.28571%;
-    max-width: 14.28571%;
+    -webkit-flex: 0 0 14.2857142857%;
+        -ms-flex: 0 0 14.2857142857%;
+            flex: 0 0 14.2857142857%;
+    max-width: 14.2857142857%;
   }
 
   .large-up-8 {
@@ -1849,18 +1849,18 @@ figure {
 \*------------------------------------*/
 h1 {
   font-size: 1.625rem;
-  line-height: 1.15385;
+  line-height: 1.1538461538;
 }
 
 h2 {
   font-size: 1.375rem;
-  line-height: 1.36364;
+  line-height: 1.3636363636;
   /*font-weight: 400;*/
 }
 
 h3 {
   font-size: 1.125rem;
-  line-height: 1.66667;
+  line-height: 1.6666666667;
 }
 
 h4 {
@@ -2005,21 +2005,29 @@ hr {
 ---------------------------*/
 /* Text meant only for screen readers. */
 .screen-reader-text {
+  border: 0;
   clip: rect(1px, 1px, 1px, 1px);
-  position: absolute !important;
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
   height: 1px;
-  width: 1px;
+  left: -999em;
+  margin: -1px;
   overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
 }
-.screen-reader-text:hover, .screen-reader-text:active, .screen-reader-text:focus {
+.screen-reader-text:focus {
   background-color: #f1f1f1;
   border-radius: 0.1875rem;
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   clip: auto !important;
+  -webkit-clip-path: none;
+          clip-path: none;
   color: #21759b;
   display: block;
-  font-size: 0.05469rem;
-  font-weight: bold;
+  font-size: 1em;
   height: auto;
   left: 5px;
   line-height: normal;
@@ -2063,13 +2071,14 @@ hr {
 .text-left {
   text-align: left;
 }
-
 .text-right {
   text-align: right;
 }
-
 .text-center {
   text-align: center;
+}
+.text-justify {
+  text-align: justify;
 }
 
 /*---------------------------
@@ -2078,85 +2087,39 @@ hr {
 .clear-both {
   clear: both;
 }
-
+.clear-left {
+  clear: left;
+}
+.clear-right {
+  clear: right;
+}
 .clear-none {
   clear: none;
 }
 
-.clear-left {
-  clear: left;
+.float-left {
+  float: left;
 }
-
-.clear-right {
-  clear: right;
+.float-right {
+  float: right;
+}
+.float-none {
+  float: none;
 }
 
 /*---------------------------
 		Others
 ---------------------------*/
-.hide, .hidden {
+.hide {
   display: none;
 }
 
-.row-container {
-  max-width: 81.25rem;
-  margin-right: auto;
-  margin-left: auto;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: row wrap;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  padding-right: 0.625rem;
-  padding-left: 0.625rem;
+.hidden {
+  visibility: hidden;
 }
-.row-container .row, .row-container .row-container {
-  margin-right: -0.625rem;
-  margin-left: -0.625rem;
-}
-@media print, screen and (min-width: 41.6875em) {
-  .row-container .row, .row-container .row-container {
-    margin-right: -0.625rem;
-    margin-left: -0.625rem;
-  }
-}
-@media print, screen and (min-width: 64em) {
-  .row-container .row, .row-container .row-container {
-    margin-right: -0.625rem;
-    margin-left: -0.625rem;
-  }
-}
-.row-container .row.collapse, .row-container .row-container.collapse {
-  margin-right: 0;
-  margin-left: 0;
-}
-.row-container.expanded {
-  max-width: none;
-}
-.row-container:not(.expanded) .row, .row-container:not(.expanded) .row-container {
-  max-width: none;
-}
-.row-container.collapse > .column, .row-container.collapse > .columns {
-  padding-right: 0;
-  padding-left: 0;
-}
-.row-container.is-collapse-child, .row-container.collapse > .column > .row, .row-container.collapse > .columns > .row, .row-container.collapse > .column > .row-container, .row-container.collapse > .columns > .row-container {
-  margin-right: 0;
-  margin-left: 0;
-}
-@media print, screen and (min-width: 41.6875em) {
-  .row-container {
-    padding-right: 0.625rem;
-    padding-left: 0.625rem;
-  }
-}
-@media print, screen and (min-width: 64em) {
-  .row-container {
-    padding-right: 0.625rem;
-    padding-left: 0.625rem;
-  }
+
+.visible {
+  visibility: visible;
 }
 
 .animated {
@@ -4392,6 +4355,8 @@ html {
   /* [5] */
   color: #444444;
   /* [additional] */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 *,
@@ -4572,6 +4537,10 @@ textarea {
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1) inset;
 }
 
+p:empty {
+  display: none;
+}
+
 /*--------------------------------------------------------------
 # Site Layout
 --------------------------------------------------------------*/
@@ -4646,21 +4615,17 @@ textarea {
   display: block;
 }
 
-.site-main .comment-navigation, .site-main
-.posts-navigation, .site-main
-.post-navigation {
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation {
   margin: 0 0 1.5rem;
   overflow: hidden;
 }
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
+.comment-navigation .nav-previous, .posts-navigation .nav-previous, .post-navigation .nav-previous {
   float: left;
   width: 50%;
 }
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
+.comment-navigation .nav-next, .posts-navigation .nav-next, .post-navigation .nav-next {
   float: right;
   text-align: right;
   width: 50%;

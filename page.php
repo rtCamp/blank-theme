@@ -6,6 +6,7 @@
  * Please note that this is the WordPress construct of pages
  * and that other 'pages' on your WordPress site will use a
  * different template.
+ *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package Blank Theme
@@ -17,7 +18,9 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 			<?php
-			while ( have_posts() ) : the_post();
+			while ( have_posts() ) :
+
+				the_post();
 
 				get_template_part( 'template-parts/content', 'page' );
 

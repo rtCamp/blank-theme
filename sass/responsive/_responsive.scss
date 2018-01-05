@@ -1,3 +1,23 @@
+// Import responsive styles
 @import "large-screens";
 @import "medium-screens";
 @import "small-screens";
+
+/// Device width specific import style.
+//
+// IMPORTANT: You need to create file under /responsive/ directory to import in to this file.
+// For eg. If you want to import 1024 style, you should create file as `_1024.scss` in /responsive/ directory.
+
+// @import "1080";
+// @import "1024";
+// @import "768";
+// @import "750";
+// @import "736";
+// @import "667";
+// @import "640";
+// @import "570";
+// @import "534";
+// @import "414";
+// @import "375";
+// @import "360";
+// @import "320";

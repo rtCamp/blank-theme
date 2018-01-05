@@ -32,7 +32,7 @@ if ( have_comments() ) :
 			if ( 1 === $comments_number ) {
 				printf(
 					/* translators: %s: post title */
-					esc_html_x( 'One thought on &ldquo;%s&rdquo;', 'comments title', '_s' ),
+					esc_html_x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'blank-theme' ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			} else {
@@ -43,7 +43,7 @@ if ( have_comments() ) :
 						'%1$s thoughts on &ldquo;%2$s&rdquo;',
 						$comments_number,
 						'comments title',
-						'_s'
+						'blank-theme'
 					) ),
 					number_format_i18n( $comments_number ),
 					'<span>' . get_the_title() . '</span>'
@@ -62,12 +62,12 @@ if ( have_comments() ) :
 
 				</div><!-- .nav-links -->
 			</nav><!-- #comment-nav-above -->
-	<?php endif; // Check for comment navigation.  ?>
+	<?php endif; // Check for comment navigation. ?>
 
 		<ol class="comment-list">
 		<?php
 		wp_list_comments( apply_filters( 'blank_theme_list_comments_args', array(
-			'style'		 => 'ol',
+			'style'      => 'ol',
 			'short_ping' => true,
 		) ) );
 		?>
