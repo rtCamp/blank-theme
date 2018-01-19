@@ -35,7 +35,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Clearings
 # Widgets
 # Content
-    ## Posts and pages
+	## Posts and pages
 	## Asides
 	## Comments
 # Infinite scroll
@@ -3668,26 +3668,38 @@ html.mm-opening .mm-menu.mm-next {
 /* Slider */
 
 .slick-slider {
-	position: relative;
-	display: block;
 	box-sizing: border-box;
-	-webkit-touch-callout: none;
+	display: block;
+	position: relative;
 	-webkit-user-select: none;
-	-khtml-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+	-webkit-touch-callout: none;
+	-khtml-user-select: none;
 	-ms-touch-action: pan-y;
 	touch-action: pan-y;
 	-webkit-tap-highlight-color: transparent;
 }
 
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+	-webkit-perspective: 1000px;
+	-webkit-transform: translate3d(0, 0, 0);
+	-ms-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+.slick-slider.slick-dotted {
+	margin-bottom: 1.875rem;
+}
+
 .slick-list {
-	position: relative;
-	overflow: hidden;
 	display: block;
 	margin: 0;
+	overflow: hidden;
 	padding: 0;
+	position: relative;
 }
 
 .slick-list:focus {
@@ -3699,23 +3711,18 @@ html.mm-opening .mm-menu.mm-next {
 	cursor: hand;
 }
 
-.slick-slider .slick-track,
-.slick-slider .slick-list {
-	-webkit-transform: translate3d(0, 0, 0);
-	-ms-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0);
-}
-
 .slick-track {
-	position: relative;
-	left: 0;
-	top: 0;
 	display: block;
+	left: 0;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	top: 0;
 }
 
 .slick-track:before,
 .slick-track:after {
-	content: "";
+	content: '';
 	display: table;
 }
 
@@ -3728,13 +3735,13 @@ html.mm-opening .mm-menu.mm-next {
 }
 
 .slick-slide {
+	display: none;
 	float: left;
 	height: 100%;
 	min-height: 1px;
-	display: none;
 }
 
-[dir="rtl"] .slick-slide {
+[dir='rtl'] .slick-slide {
 	float: right;
 }
 
@@ -3759,13 +3766,152 @@ html.mm-opening .mm-menu.mm-next {
 }
 
 .slick-vertical .slick-slide {
+	border: 1px solid transparent;
 	display: block;
 	height: auto;
-	border: 1px solid transparent;
 }
 
 .slick-arrow.slick-hidden {
 	display: none;
+}
+
+/* Arrows */
+
+.slick-prev,
+.slick-next {
+	cursor: pointer;
+	display: block;
+	font-size: 0;
+	line-height: 0;
+	outline: none;
+	padding: 0.625rem;
+	position: absolute;
+	top: 50%;
+	z-index: 10;
+	-webkit-transform: translate(0, -50%);
+	-ms-transform: translate(0, -50%);
+	transform: translate(0, -50%);
+}
+
+.slick-prev:before,
+.slick-prev:before,
+.slick-next:before,
+.slick-next:before {
+	font-size: 20px;
+	line-height: 1;
+	opacity: .75;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.slick-prev:hover:before,
+.slick-prev:focus:before,
+.slick-next:hover:before,
+.slick-next:focus:before {
+	opacity: 1;
+}
+
+.slick-prev {
+	left: 25px;
+}
+
+.slick-prev:before {
+	content: '←';
+}
+
+[dir='rtl'] .slick-prev {
+	left: auto;
+	right: 25px;
+}
+
+[dir='rtl'] .slick-prev:before {
+	content: '→';
+}
+
+.slick-next {
+	right: 25px;
+}
+
+.slick-next:before {
+	content: '→';
+}
+
+[dir='rtl'] .slick-next {
+	left: 25px;
+	right: auto;
+}
+
+[dir='rtl'] .slick-next:before {
+	content: '←';
+}
+
+/* Dots */
+
+.slick-dots {
+	bottom: -25px;
+	display: block;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+}
+
+.slick-dots li {
+	cursor: pointer;
+	display: inline-block;
+	height: 20px;
+	margin: 0 5px;
+	padding: 0;
+	position: relative;
+	width: 20px;
+}
+
+.slick-dots li button {
+	background: transparent;
+	border: 0;
+	box-shadow: none;
+	color: transparent;
+	cursor: pointer;
+	display: block;
+	font-size: 0;
+	height: 20px;
+	line-height: 0;
+	outline: none;
+	padding: 5px;
+	width: 20px;
+}
+
+.slick-dots li button:hover,
+.slick-dots li button:focus {
+	outline: none;
+}
+
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before {
+	opacity: 1;
+}
+
+.slick-dots li button:before {
+	color: black;
+	content: '•';
+	font-size: 40px;
+	height: 20px;
+	left: 0;
+	line-height: 20px;
+	opacity: .25;
+	position: absolute;
+	text-align: center;
+	top: 0;
+	width: 20px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.slick-dots li.slick-active button:before {
+	color: black;
+	opacity: .75;
 }
 
 /*--------------------------------------------------------------

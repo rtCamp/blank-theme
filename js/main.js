@@ -25,15 +25,17 @@ jQuery( function( $ ) {
 		createSlider: function() {
 			if ( $( '#blank-theme-slider' ).length ) {
 				$( '#blank-theme-slider' ).slick( {
+
 					// Custom Option
 				} );
 			}
 		},
 
 		fixAdminBar: function() {
-			//Mmenu sometimes wrapes adminbar inside its div.
-			if ( $( 'div.mm-page' ).length && $( 'div.mm-page' ).find( '#wpadminbar' ).length ) {
-				var $adminBar = $( '#wpadminbar' );
+			var $adminBar = $( '#wpadminbar' );
+
+			// Mmenu sometimes wrapes adminbar inside its div.
+			if ( $( 'div.mm-page' ).length && $( 'div.mm-page' ).find( $adminBar ).length ) {
 				$( 'body' ).append( $adminBar );
 			}
 		},
