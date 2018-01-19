@@ -51,7 +51,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 /**
  * Foundation for Sites by ZURB
- * Version 6.4.1
+ * Version 6.4.3
  * foundation.zurb.com
  * Licensed under MIT Open Source
  */
@@ -422,28 +422,20 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	padding-left: 0.625rem;
 }
 
-.row.small-unstack > .column,
-.row.small-unstack > .columns {
+.row.medium-unstack > .column,
+.row.medium-unstack > .columns {
 	-webkit-box-flex: 0;
 	-webkit-flex: 0 0 100%;
 	-ms-flex: 0 0 100%;
 	flex: 0 0 100%;
-	-webkit-box-flex: 1;
-	-webkit-flex: 1 1 0px;
-	-ms-flex: 1 1 0px;
-	flex: 1 1 0px;
 }
 
-.row.small-unstack > .column,
-.row.small-unstack > .columns {
+.row.large-unstack > .column,
+.row.large-unstack > .columns {
 	-webkit-box-flex: 0;
 	-webkit-flex: 0 0 100%;
 	-ms-flex: 0 0 100%;
 	flex: 0 0 100%;
-	-webkit-box-flex: 1;
-	-webkit-flex: 1 1 0px;
-	-ms-flex: 1 1 0px;
-	flex: 1 1 0px;
 }
 
 .shrink {
@@ -727,11 +719,17 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 }
 
 h1,
+.h1,
 h2,
+.h2,
 h3,
+.h3,
 h4,
+.h4,
 h5,
+.h5,
 h6,
+.h6,
 ul,
 ol,
 dd,
@@ -1056,6 +1054,213 @@ figure {
 }
 
 /*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+
+html {
+	box-sizing: border-box;
+	-ms-text-size-adjust: 100%; /* [5] */
+	-webkit-text-size-adjust: 100%; /* [5] */
+	color: #444444; /* [additional] */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+/**
+ * 1. Fallback for when there is no custom background color defined. [WordPress]
+ * 2. Remove default margin. [normalize.css]
+ * 3. Set the base elements `font-size` to the value of your choosing.
+ * 4. Work out the unitless `line-height` for your project based around your
+ *    desired `line-height` (defined previously in pixels), and your projects
+ *    base font size.
+ */
+
+body {
+	background: #fafaf4; /* [1] */
+	margin: 0; /* [2] */
+	font-family: sans-serif;
+	font-size: 1rem;
+	line-height: 1.875; /* [3] */ /* [4] */
+}
+
+body.mce-content-body {
+	font-family: inherit;
+	margin: 15px;
+}
+
+blockquote,
+q {
+	quotes: "" "";
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+}
+
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%;
+	vertical-align: middle; /* Adhere to container width. */
+}
+
+figure {
+	max-width: 100%;
+}
+
+/* Default Links */
+
+a {
+	-webkit-transition: 0.3s;
+	transition: 0.3s;
+}
+
+a {
+	color: #444444;
+	text-decoration: none;
+}
+
+a:hover {
+	color: red;
+}
+
+/*---------------------------
+		Lists & Tables
+---------------------------*/
+
+ul,
+ol {
+	margin: 0 0 1.125rem 1.125rem;
+}
+
+ul.no-bullet,
+ul.no-bullet ul,
+ul.no-bullet ol,
+ol.no-bullet,
+ol.no-bullet ul,
+ol.no-bullet ol {
+	margin-left: 0;
+	list-style: none;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5rem;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.5rem 1.5rem;
+}
+
+/*---------------------------
+		Buttons
+---------------------------*/
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 1px solid;
+	border-color: #ccc #ccc #bbb;
+	border-radius: 0.1875rem;
+	background: #e6e6e6;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
+	color: rgba(0, 0, 0, 0.8);
+	line-height: 1;
+	padding: .6rem 1rem .4rem;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+	font-family: sans-serif;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+	border-color: #ccc #bbb #aaa;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
+}
+
+button:active,
+button:focus,
+input[type="button"]:active,
+input[type="button"]:focus,
+input[type="reset"]:active,
+input[type="reset"]:focus,
+input[type="submit"]:active,
+input[type="submit"]:focus {
+	border-color: #aaa #bbb #bbb;
+	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/*---------------------------
+		Fields
+---------------------------*/
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+textarea {
+	color: #666;
+	border: 1px solid #ccc;
+	border-radius: 0.1875rem;
+	font-family: sans-serif;
+	line-height: 1.5;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+textarea:focus {
+	color: #111;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"] {
+	padding: 3px;
+}
+
+select {
+	color: #404040;
+	font-family: sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+textarea {
+	max-width: 100%;
+	line-height: 1.5;
+	outline: none;
+	background: #fafafa;
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1) inset;
+}
+
+p:empty {
+	display: none;
+}
+
+/*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
 
@@ -1063,32 +1268,38 @@ figure {
     #HEADINGS
 \*------------------------------------*/
 
-h1 {
+h1,
+.h1 {
 	font-size: 1.625rem;
 	line-height: 1.1538461538;
 }
 
-h2 {
+h2,
+.h2 {
 	font-size: 1.375rem;
 	line-height: 1.3636363636; /*font-weight: 400;*/
 }
 
-h3 {
+h3,
+.h3 {
 	font-size: 1.125rem;
 	line-height: 1.6666666667;
 }
 
-h4 {
+h4,
+.h4 {
 	font-size: 1rem;
 	line-height: 1.875;
 }
 
-h5 {
+h5,
+.h5 {
 	font-size: 0.75rem;
 	line-height: 2.5;
 }
 
-h6 {
+h6,
+.h6 {
 	font-size: 0.625rem;
 	line-height: 3;
 }
@@ -1361,6 +1572,14 @@ hr {
 
 .visible {
 	visibility: visible;
+}
+
+.radius {
+	border-radius: 0.1875rem;
+}
+
+.round {
+	border-radius: 50%;
 }
 
 .animated {
@@ -3550,212 +3769,6 @@ html.mm-opening .mm-menu.mm-next {
 }
 
 /*--------------------------------------------------------------
-# Elements
---------------------------------------------------------------*/
-
-html {
-	box-sizing: border-box;
-	-ms-text-size-adjust: 100%; /* [5] */
-	-webkit-text-size-adjust: 100%; /* [5] */
-	color: #444444; /* [additional] */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-*,
-*:before,
-*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-	box-sizing: inherit;
-}
-
-/**
- * 1. Fallback for when there is no custom background color defined. [WordPress]
- * 2. Remove default margin. [normalize.css]
- * 3. Set the base elements `font-size` to the value of your choosing.
- * 4. Work out the unitless `line-height` for your project based around your
- *    desired `line-height` (defined previously in pixels), and your projects
- *    base font size.
- */
-
-body {
-	background: #fafaf4; /* [1] */
-	margin: 0; /* [2] */
-	font-family: sans-serif;
-	font-size: 1rem;
-	line-height: 1.875; /* [3] */ /* [4] */
-}
-
-body.mce-content-body {
-	font-family: inherit;
-	margin: 15px;
-}
-
-blockquote,
-q {
-	quotes: "" "";
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-	content: "";
-}
-
-img {
-	height: auto; /* Make sure images are scaled correctly. */
-	max-width: 100%;
-	vertical-align: middle; /* Adhere to container width. */
-}
-
-figure {
-	max-width: 100%;
-}
-
-/* Default Links */
-
-a {
-	-webkit-transition: 0.3s;
-	transition: 0.3s;
-}
-
-a {
-	color: #444444;
-	text-decoration: none;
-}
-
-a:hover {
-	color: red;
-}
-
-/*---------------------------
-		Lists & Tables
----------------------------*/
-
-ul,
-ol {
-	margin: 0 0 1.125rem 1.125rem;
-}
-
-ul.no-bullet,
-ul.no-bullet ul,
-ul.no-bullet ol,
-ol.no-bullet,
-ol.no-bullet ul,
-ol.no-bullet ol {
-	list-style: none;
-}
-
-li > ul,
-li > ol {
-	margin-bottom: 0;
-	margin-left: 1.5rem;
-}
-
-dt {
-	font-weight: bold;
-}
-
-dd {
-	margin: 0 1.5rem 1.5rem;
-}
-
-/*---------------------------
-		Buttons
----------------------------*/
-
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
-	border-radius: 0.1875rem;
-	background: #e6e6e6;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-	color: rgba(0, 0, 0, 0.8);
-	line-height: 1;
-	padding: .6rem 1rem .4rem;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
-	font-family: sans-serif;
-}
-
-button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
-}
-
-button:active,
-button:focus,
-input[type="button"]:active,
-input[type="button"]:focus,
-input[type="reset"]:active,
-input[type="reset"]:focus,
-input[type="submit"]:active,
-input[type="submit"]:focus {
-	border-color: #aaa #bbb #bbb;
-	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
-}
-
-/*---------------------------
-		Fields
----------------------------*/
-
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-input[type="tel"],
-textarea {
-	color: #666;
-	border: 1px solid #ccc;
-	border-radius: 0.1875rem;
-	font-family: sans-serif;
-	line-height: 1.5;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-input[type="tel"]:focus,
-textarea:focus {
-	color: #111;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"] {
-	padding: 3px;
-}
-
-select {
-	color: #404040;
-	font-family: sans-serif;
-	font-size: 16px;
-	line-height: 1.5;
-}
-
-textarea {
-	max-width: 100%;
-	line-height: 1.5;
-	outline: none;
-	background: #fafafa;
-	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1) inset;
-}
-
-p:empty {
-	display: none;
-}
-
-/*--------------------------------------------------------------
 # Site Layout
 --------------------------------------------------------------*/
 
@@ -4381,14 +4394,22 @@ p:empty {
 	max-width: 12.5%;
 }
 
-.small-collapse > .column,
-.small-collapse > .columns {
+.row.medium-unstack > .column,
+.row.medium-unstack > .columns {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1 1 0px;
+	-ms-flex: 1 1 0px;
+	flex: 1 1 0px;
+}
+
+.medium-collapse > .column,
+.medium-collapse > .columns {
 	padding-right: 0;
 	padding-left: 0;
 }
 
-.small-uncollapse > .column,
-.small-uncollapse > .columns {
+.medium-uncollapse > .column,
+.medium-uncollapse > .columns {
 	padding-right: 0.625rem;
 	padding-left: 0.625rem;
 }
@@ -4813,14 +4834,22 @@ p:empty {
 	max-width: 12.5%;
 }
 
-.small-collapse > .column,
-.small-collapse > .columns {
+.row.large-unstack > .column,
+.row.large-unstack > .columns {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1 1 0px;
+	-ms-flex: 1 1 0px;
+	flex: 1 1 0px;
+}
+
+.large-collapse > .column,
+.large-collapse > .columns {
 	padding-right: 0;
 	padding-left: 0;
 }
 
-.small-uncollapse > .column,
-.small-uncollapse > .columns {
+.large-uncollapse > .column,
+.large-uncollapse > .columns {
 	padding-right: 0.625rem;
 	padding-left: 0.625rem;
 }

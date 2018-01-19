@@ -6,10 +6,10 @@
     "grunt-checktextdomain": "^1.0.1",
     "grunt-combine-media-queries": "^1.0.20",
     "grunt-contrib-sass": "^1.0.0",
-    "grunt-contrib-uglify": "^3.0.1",
+    "grunt-contrib-uglify": "^3.3.0",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-wp-i18n": "^1.0.0",
-    "foundation-sites": "^6.4.1",
+    "grunt-wp-i18n": "^1.0.1",
+    "foundation-sites": "^6.4.3",
     "load-grunt-tasks": "^3.5.2"
   }
 }

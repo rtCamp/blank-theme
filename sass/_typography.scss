@@ -2,38 +2,38 @@
     #HEADINGS
 \*------------------------------------*/
 
-h1 {
+h1, .h1 {
 	@include font-size($font__size-h1, $line-height: true);
 
 	@extend %vertical-rhythm;
 }
 
-h2 {
+h2, .h2 {
 	@include font-size($font__size-h2, $line-height: true);
 
 	/*font-weight: 400;*/
 	@extend %vertical-rhythm;
 }
 
-h3 {
+h3, .h3 {
 	@include font-size($font__size-h3, $line-height: true);
 
 	@extend %vertical-rhythm;
 }
 
-h4 {
+h4, .h4 {
 	@include font-size($font__size-h4, $line-height: true);
 
 	@extend %vertical-rhythm;
 }
 
-h5 {
+h5, .h5 {
 	@include font-size($font__size-h5, $line-height: true);
 
 	@extend %vertical-rhythm;
 }
 
-h6 {
+h6, .h6 {
 	@include font-size($font__size-h6, $line-height: true);
 
 	@extend %vertical-rhythm;

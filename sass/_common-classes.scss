@@ -139,3 +139,11 @@
 .visible {
 	visibility: visible;
 }
+
+.radius {
+	border-radius: $border-radius;
+}
+
+.round {
+	border-radius: 50%;
+}

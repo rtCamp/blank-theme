@@ -2,8 +2,8 @@
  * Import Zurb Foundation Grid
  * Ref. http://foundation.zurb.com/sites/docs/sass.html
  **/
-@import "../node_modules/foundation-sites/scss/global";
-@import "../node_modules/foundation-sites/scss/foundation";
+@import "global";
+@import "foundation";
 
 // Import Variables
 @import "variables";

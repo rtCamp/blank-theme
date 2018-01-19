@@ -28,7 +28,8 @@ module.exports = function( grunt ) {
 			expanded: {
 						options: {
 							style: 'expanded', // Nested / compact / compressed / expanded
-							sourcemap: 'auto' // Auto / file / inline / none
+							sourcemap: 'auto', // Auto / file / inline / none
+							loadPath: 'node_modules/foundation-sites/scss/'
 						},
 						files: {
 							'style-expanded.css': 'sass/style.scss' // 'destination': 'source'
@@ -37,7 +38,8 @@ module.exports = function( grunt ) {
 			minify: {
 						options: {
 							style: 'nested', // Nested / compact / compressed / expanded
-							sourcemap: 'auto' // Auto / file / inline / none
+							sourcemap: 'auto', // Auto / file / inline / none
+							loadPath: 'node_modules/foundation-sites/scss/'
 						},
 						files: {
 							'style.css': 'sass/style.scss' // 'destination': 'source'
@@ -46,7 +48,8 @@ module.exports = function( grunt ) {
 			editor: {
 						options: {
 							style: 'compressed', // Nested / compact / compressed / expanded
-							sourcemap: 'auto' // Auto / file / inline / none
+							sourcemap: 'auto', // Auto / file / inline / none
+							loadPath: 'node_modules/foundation-sites/scss/'
 						},
 						files: {
 							'editor-style.css': 'sass/editor-style.scss' // 'destination': 'source'
