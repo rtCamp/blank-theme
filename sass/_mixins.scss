@@ -1,15 +1,12 @@
-/*
-////
-/// @group Blank-Theme
-////
-*/
+/**
+ * @group Blank-Theme
+ **/
 
-/*
-/// Rem output with px fallback
-/// @param {Number} $font-size [$font__base-font-size] - Font size without unit
-/// @param {Number} $line-height [false] - Font line height
-///
-*/
+/**
+ * Rem output with px fallback
+ * @param {Number} $font-size [$font__base-font-size] - Font size without unit
+ * @param {Number} $line-height [false] - Font line height
+ **/
 @mixin font-size($font-size: $font__base-font-size, $line-height: false) {
 	font-size: rem-calc($font-size);
 
@@ -18,20 +15,20 @@
 	}
 }
 
-/// Center block
+/* Center block */
 @mixin center-block {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-/// Clearfix
+/* Clearfix */
 @mixin clearfix {
 	content: "";
 	display: table;
 }
 
-/// Clear after (not all clearfix need this also)
+/* Clear after (not all clearfix need this also) */
 @mixin clearfix-after {
 	clear: both;
 }

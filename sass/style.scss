@@ -35,7 +35,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Clearings
 # Widgets
 # Content
-    ## Posts and pages
+	## Posts and pages
 	## Asides
 	## Comments
 # Infinite scroll
@@ -44,7 +44,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Galleries
 --------------------------------------------------------------*/
 
-@import "foundation";
+@import "zurb-foundation";
 @import "mixins";
 @import "placeholders";
 
@@ -52,6 +52,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Normalize
 --------------------------------------------------------------*/
 @import "normalize";
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+@import "elements";
 
 /*--------------------------------------------------------------
 # Typography
@@ -74,11 +79,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Typography
 --------------------------------------------------------------*/
 @import "vendor/vendor";
-
-/*--------------------------------------------------------------
-# Elements
---------------------------------------------------------------*/
-@import "elements";
 
 /*--------------------------------------------------------------
 # Site Layout
@@ -116,7 +116,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "comments";
 
 /*--------------------------------------------------------------
-## Foooter
+## Footer
 --------------------------------------------------------------*/
 @import "footer";
 

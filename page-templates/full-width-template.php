@@ -2,7 +2,7 @@
 /**
  * Template Name: Full Width Template
  *
- * Used for showing full width tempalte
+ * Used for showing full width template
  *
  * @package Blank Theme
  */

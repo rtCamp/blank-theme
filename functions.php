@@ -21,7 +21,7 @@ if ( ! defined( 'BLANK_THEME_JS_URI' ) ) {
 	define( 'BLANK_THEME_JS_URI', BLANK_THEME_TEMP_URI . '/js' );
 }
 if ( ! defined( 'BLANK_THEME_IMG_URI' ) ) {
-	define( 'BLANK_THEME_IMG_URI', BLANK_THEME_TEMP_URI . '/images' );
+	define( 'BLANK_THEME_IMG_URI', BLANK_THEME_TEMP_URI . '/img' );
 }
 if ( ! defined( 'BLANK_THEME_IS_DEV' ) ) {
 	define( 'BLANK_THEME_IS_DEV', true );
@@ -39,7 +39,7 @@ if ( ! function_exists( 'blank_theme_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function blank_theme_setup() {
-		/*
+		/**
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
 		 * If you're building a theme based on Blank Theme, use a find and replace
@@ -55,7 +55,7 @@ if ( ! function_exists( 'blank_theme_setup' ) ) :
 		 */
 		add_theme_support( 'custom-logo', array( 'header-text' => array( 'site-title', 'site-description' ) ) );
 
-		/*
+		/**
 		 * Let WordPress manage the document title.
 		 * By adding theme support, we declare that this theme does not use a
 		 * hard-coded <title> tag in the document head, and expect WordPress to
@@ -63,7 +63,7 @@ if ( ! function_exists( 'blank_theme_setup' ) ) :
 		 */
 		add_theme_support( 'title-tag' );
 
-		/*
+		/**
 		 * Enable support for Post Thumbnails on posts and pages.
 		 *
 		 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
@@ -75,7 +75,7 @@ if ( ! function_exists( 'blank_theme_setup' ) ) :
 			'primary' => esc_html__( 'Primary Menu', 'blank-theme' ),
 		) );
 
-		/*
+		/**
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
@@ -87,7 +87,7 @@ if ( ! function_exists( 'blank_theme_setup' ) ) :
 			'caption',
 		) );
 
-		/*
+		/**
 		 * Enable support for Post Formats.
 		 * See http://codex.wordpress.org/Post_Formats
 		 */
@@ -110,12 +110,12 @@ if ( ! function_exists( 'blank_theme_setup' ) ) :
 		) ) );
 
 		add_theme_support( 'custom-header', apply_filters( 'blank_theme_custom_header_args', array(
-			'default-image'          => '',
-			'default-text-color'     => '000000',
-			'width'                  => 1000,
-			'height'                 => 250,
-			'flex-height'            => true,
-			'wp-head-callback'       => 'blank_theme_header_style',
+			'default-image'      => '',
+			'default-text-color' => '000000',
+			'width'              => 1000,
+			'height'             => 250,
+			'flex-height'        => true,
+			'wp-head-callback'   => 'blank_theme_header_style',
 		) ) );
 
 		add_editor_style( array( 'editor-style.css', blank_theme_main_font_url() ) );
@@ -125,7 +125,9 @@ if ( ! function_exists( 'blank_theme_setup' ) ) :
 
 		do_action( 'blank_theme_after_setup_theme' );
 	}
-endif; // blank_theme_setup
+
+endif; // End of blank_theme_setup.
+
 add_action( 'after_setup_theme', 'blank_theme_setup' );
 
 /**
@@ -139,6 +141,7 @@ function blank_theme_content_width() {
 	global $content_width;
 	$content_width = apply_filters( 'blank_theme_content_width', 640 );
 }
+
 add_action( 'after_setup_theme', 'blank_theme_content_width', 0 );
 
 /**
@@ -173,23 +176,16 @@ add_action( 'widgets_init', 'blank_theme_widgets_init' );
  * Enqueue scripts and styles.
  */
 function blank_theme_scripts() {
-	/*==============================
-	          GOOGLE FONTS
-	===============================*/
 
-	//wp_enqueue_style( 'google-font-opensanscondensed', blank_theme_main_font_url() );
+	/**
+	 * STYLES.
+	 */
+	wp_enqueue_style( 'blank-theme-style', get_stylesheet_uri(), array(), BLANK_THEME_VERSION );
 
-	/*==============================
-	          STYLES
-	===============================*/
-
-	wp_enqueue_style( 'blank-theme-style', get_stylesheet_uri() );
-
-	/*==============================
-	          SCRIPTS
-	===============================*/
-
-	if ( BLANK_THEME_IS_DEV ) {
+	/**
+	 * SCRIPTS.
+	 */
+	if ( BLANK_THEME_IS_DEV || ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ) {
 		wp_register_script( 'blank-theme-nav', BLANK_THEME_JS_URI . '/vendor/navigation.js', array( 'jquery' ), BLANK_THEME_VERSION, true );
 		wp_register_script( 'blank-theme-mmenu', BLANK_THEME_JS_URI . '/vendor/jquery.mmenu.min.all.js', array( 'jquery' ), BLANK_THEME_VERSION, true );
 		wp_register_script( 'blank-theme-slick', BLANK_THEME_JS_URI . '/vendor/slick.js', array( 'jquery' ), BLANK_THEME_VERSION, true );
@@ -208,15 +204,13 @@ function blank_theme_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'blank_theme_scripts' );
 
-
-/*==============================
-          FILE INCLUDES
-===============================*/
-
+/**
+ * FILE INCLUDES.
+ */
 $blank_theme_depedencies = apply_filters( 'blank_theme_depedencies', array(
 	BLANK_THEME_TEMP_DIR . '/inc/*.php',
 	BLANK_THEME_TEMP_DIR . '/admin/*.php',
-));
+) );
 
 foreach ( $blank_theme_depedencies as $path ) {
 	foreach ( glob( $path ) as $filename ) {

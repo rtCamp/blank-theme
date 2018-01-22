@@ -29,11 +29,18 @@ add_action( 'after_setup_theme', 'blank_theme_jetpack_setup' );
  */
 function blank_theme_infinite_scroll_render() {
 	while ( have_posts() ) {
+
 		the_post();
+
 		if ( is_search() ) :
-		    get_template_part( 'template-parts/content', 'search' );
+
+			get_template_part( 'template-parts/content', 'search' );
+
 		else :
-		    get_template_part( 'template-parts/content', get_post_format() );
+
+			get_template_part( 'template-parts/content', get_post_format() );
+
 		endif;
+
 	}
-} // end function blank_theme_infinite_scroll_render
+} // End function blank_theme_infinite_scroll_render.

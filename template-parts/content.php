@@ -27,7 +27,7 @@
 		<?php
 		wp_link_pages( array(
 			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'blank-theme' ),
-			'after'	 => '</div>',
+			'after'  => '</div>',
 		) );
 		?>
 	</div><!-- .entry-content -->

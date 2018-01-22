@@ -1,9 +1,9 @@
 /**
  * Import Zurb Foundation Grid
- * Ref. http://foundation.zurb.com/sites/docs/sass.html
+ * Ref. http:foundation.zurb.com/sites/docs/sass.html
  **//**
  * Foundation for Sites by ZURB
- * Version 6.4.1
+ * Version 6.4.3
  * foundation.zurb.com
  * Licensed under MIT Open Source
  *//* Import Variables *//*---------------------------
@@ -14,9 +14,8 @@
 	 Border
 ---------------------------*//*---------------------------
 	 Foundation Grid
----------------------------*//*
-		Include Foundation Flex Grid
-		Ref. http://foundation.zurb.com/sites/docs/flex-grid.html
+---------------------------*//* Include Foundation Flex Grid
+		   Ref. http:foundation.zurb.com/sites/docs/flex-grid.html
 		*/.row {
   max-width: 81.25rem;
   margin-right: auto;
@@ -267,14 +266,12 @@
   padding-left: 0.625rem;
 }
 
-.row.small-unstack > .column,.row.small-unstack > .columns {
+.row.medium-unstack > .column,.row.medium-unstack > .columns {
   flex: 0 0 100%;
-  flex: 1 1 0px;
 }
 
-.row.small-unstack > .column,.row.small-unstack > .columns {
+.row.large-unstack > .column,.row.large-unstack > .columns {
   flex: 0 0 100%;
-  flex: 1 1 0px;
 }
 
 .shrink {
@@ -288,9 +285,8 @@
 
 .column-block > :last-child {
   margin-bottom: 0;
-}/*
-	Include Foundation Flexbox
-	Ref. http://foundation.zurb.com/sites/docs/flexbox.html
+}/* Include Foundation Flexbox
+	   Ref. http:foundation.zurb.com/sites/docs/flexbox.html
 	*/.align-right {
   justify-content: flex-end;
 }
@@ -407,10 +403,7 @@
 
 .flex-dir-column-reverse {
   flex-direction: column-reverse;
-}/*
-Include FOundation Visibility Classes
-Ref. http://foundation.zurb.com/sites/docs/visibility.html
-*/.hide {
+}/* Include FOundation Visibility Classes *//* Ref. http:foundation.zurb.com/sites/docs/visibility.html */.hide {
   display: none !important;
 }
 
@@ -446,44 +439,43 @@ Ref. http://foundation.zurb.com/sites/docs/visibility.html
 
 .hide-for-landscape,.show-for-portrait {
   display: none !important;
-}/*
-Other Foundation Libraries
-
-@include foundation-typography;
-@include foundation-forms;
-@include foundation-button;
-@include foundation-accordion;
-@include foundation-accordion-menu;
-@include foundation-badge;
-@include foundation-breadcrumbs;
-@include foundation-button-group;
-@include foundation-callout;
-@include foundation-card;
-@include foundation-close-button;
-@include foundation-menu;
-@include foundation-menu-icon;
-@include foundation-drilldown-menu;
-@include foundation-dropdown;
-@include foundation-dropdown-menu;
-@include foundation-responsive-embed;
-@include foundation-label;
-@include foundation-media-object;
-@include foundation-off-canvas;
-@include foundation-orbit;
-@include foundation-pagination;
-@include foundation-progress-bar;
-@include foundation-slider;
-@include foundation-sticky;
-@include foundation-reveal;
-@include foundation-switch;
-@include foundation-table;
-@include foundation-tabs;
-@include foundation-thumbnail;
-@include foundation-title-bar;
-@include foundation-tooltip;
-@include foundation-top-bar;
-@include foundation-visibility-classes;
-@include foundation-float-classes;
+}/**
+ Other Foundation Libraries
+ @include foundation-typography;
+ @include foundation-forms;
+ @include foundation-button;
+ @include foundation-accordion;
+ @include foundation-accordion-menu;
+ @include foundation-badge;
+ @include foundation-breadcrumbs;
+ @include foundation-button-group;
+ @include foundation-callout;
+ @include foundation-card;
+ @include foundation-close-button;
+ @include foundation-menu;
+ @include foundation-menu-icon;
+ @include foundation-drilldown-menu;
+ @include foundation-dropdown;
+ @include foundation-dropdown-menu;
+ @include foundation-responsive-embed;
+ @include foundation-label;
+ @include foundation-media-object;
+ @include foundation-off-canvas;
+ @include foundation-orbit;
+ @include foundation-pagination;
+ @include foundation-progress-bar;
+ @include foundation-slider;
+ @include foundation-sticky;
+ @include foundation-reveal;
+ @include foundation-switch;
+ @include foundation-table;
+ @include foundation-tabs;
+ @include foundation-thumbnail;
+ @include foundation-title-bar;
+ @include foundation-tooltip;
+ @include foundation-top-bar;
+ @include foundation-visibility-classes;
+ @include foundation-float-classes;
 *//**
  * End of Foundation Styles
  **/.comment-content:after,.clearfix:after {
@@ -492,46 +484,43 @@ Other Foundation Libraries
   clear: both;
 }
 
-h1,h2,h3,h4,h5,h6,ul,ol,dd,table,p,address,pre,hr {
+h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,ul,ol,dd,table,p,address,pre,hr {
   margin: 0 0 1.875rem;
   padding: 0;
-}/*
-////
-/// @group Blank-Theme
-////
-*//*
-/// Rem output with px fallback
-/// @param {Number} $font-size [$font__base-font-size] - Font size without unit
-/// @param {Number} $line-height [false] - Font line height
-///
-*//*------------------------------------*    #HEADINGS
-\*------------------------------------*/h1 {
+}/**
+ * @group Blank-Theme
+ **//**
+ * Rem output with px fallback
+ * @param {Number} $font-size [$font__base-font-size] - Font size without unit
+ * @param {Number} $line-height [false] - Font line height
+ **//* Center block *//* Clearfix *//* Clear after (not all clearfix need this also) *//*------------------------------------*    #HEADINGS
+\*------------------------------------*/h1,.h1 {
   font-size: 1.625rem;
   line-height: 1.15385;
 }
 
-h2 {
+h2,.h2 {
   font-size: 1.375rem;
   line-height: 1.36364;
  /*font-weight: 400;*/;
 }
 
-h3 {
+h3,.h3 {
   font-size: 1.125rem;
   line-height: 1.66667;
 }
 
-h4 {
+h4,.h4 {
   font-size: 1rem;
   line-height: 1.875;
 }
 
-h5 {
+h5,.h5 {
   font-size: 0.75rem;
   line-height: 2.5;
 }
 
-h6 {
+h6,.h6 {
   font-size: 0.625rem;
   line-height: 3;
 }
@@ -634,22 +623,28 @@ code {
 }/*---------------------------
 		Accessiblity
 ---------------------------*//* Text meant only for screen readers. */.screen-reader-text {
+  border: 0;
   clip: rect(1px, 1px, 1px, 1px);
-  position: absolute !important;
+  clip-path: inset(50%);
   height: 1px;
-  width: 1px;
+  left: -999em;
+  margin: -1px;
   overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
 }
 
-.screen-reader-text:hover,.screen-reader-text:active,.screen-reader-text:focus {
+.screen-reader-text:focus {
   background-color: #f1f1f1;
   border-radius: 0.1875rem;
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   clip: auto !important;
+  clip-path: none;
   color: #21759b;
   display: block;
-  font-size: 0.05469rem;
-  font-weight: bold;
+  font-size: 1em;
   height: auto;
   left: 5px;
   line-height: normal;
@@ -697,14 +692,14 @@ code {
 
 .text-center {
   text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
 }/*---------------------------
 		Clearing
 ---------------------------*/.clear-both {
   clear: both;
-}
-
-.clear-none {
-  clear: none;
 }
 
 .clear-left {
@@ -713,48 +708,42 @@ code {
 
 .clear-right {
   clear: right;
+}
+
+.clear-none {
+  clear: none;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.float-none {
+  float: none;
 }/*---------------------------
 		Others
----------------------------*/.hide,.hidden {
+---------------------------*/.hide {
   display: none;
 }
 
-.row-container {
-  max-width: 81.25rem;
-  margin-right: auto;
-  margin-left: auto;
-  display: flex;
-  flex-flow: row wrap;
-  padding-right: 0.625rem;
-  padding-left: 0.625rem;
+.hidden {
+  visibility: hidden;
 }
 
-.row-container .row,.row-container .row-container {
-  margin-right: -0.625rem;
-  margin-left: -0.625rem;
+.visible {
+  visibility: visible;
 }
 
-.row-container .row.collapse,.row-container .row-container.collapse {
-  margin-right: 0;
-  margin-left: 0;
+.radius {
+  border-radius: 0.1875rem;
 }
 
-.row-container.expanded {
-  max-width: none;
-}
-
-.row-container:not(.expanded) .row,.row-container:not(.expanded) .row-container {
-  max-width: none;
-}
-
-.row-container.collapse > .column,.row-container.collapse > .columns {
-  padding-right: 0;
-  padding-left: 0;
-}
-
-.row-container.is-collapse-child,.row-container.collapse > .column > .row,.row-container.collapse > .columns > .row,.row-container.collapse > .column > .row-container,.row-container.collapse > .columns > .row-container {
-  margin-right: 0;
-  margin-left: 0;
+.round {
+  border-radius: 50%;
 }
 
 @media screen and (orientation: landscape) {
@@ -992,12 +981,16 @@ code {
     max-width: 12.5%;
   }
 
-  .small-collapse > .column,.small-collapse > .columns {
+  .row.medium-unstack > .column,.row.medium-unstack > .columns {
+    flex: 1 1 0px;
+  }
+
+  .medium-collapse > .column,.medium-collapse > .columns {
     padding-right: 0;
     padding-left: 0;
   }
 
-  .small-uncollapse > .column,.small-uncollapse > .columns {
+  .medium-uncollapse > .column,.medium-uncollapse > .columns {
     padding-right: 0.625rem;
     padding-left: 0.625rem;
   }
@@ -1068,16 +1061,6 @@ code {
 
   .hide-for-medium {
     display: none !important;
-  }
-
-  .row-container .row,.row-container .row-container {
-    margin-right: -0.625rem;
-    margin-left: -0.625rem;
-  }
-
-  .row-container {
-    padding-right: 0.625rem;
-    padding-left: 0.625rem;
   }
 }
 
@@ -1290,12 +1273,16 @@ code {
     max-width: 12.5%;
   }
 
-  .small-collapse > .column,.small-collapse > .columns {
+  .row.large-unstack > .column,.row.large-unstack > .columns {
+    flex: 1 1 0px;
+  }
+
+  .large-collapse > .column,.large-collapse > .columns {
     padding-right: 0;
     padding-left: 0;
   }
 
-  .small-uncollapse > .column,.small-uncollapse > .columns {
+  .large-uncollapse > .column,.large-uncollapse > .columns {
     padding-right: 0.625rem;
     padding-left: 0.625rem;
   }
@@ -1366,16 +1353,6 @@ code {
 
   .hide-for-large {
     display: none !important;
-  }
-
-  .row-container .row,.row-container .row-container {
-    margin-right: -0.625rem;
-    margin-left: -0.625rem;
-  }
-
-  .row-container {
-    padding-right: 0.625rem;
-    padding-left: 0.625rem;
   }
 }
 

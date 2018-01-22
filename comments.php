@@ -9,6 +9,7 @@
  *
  * @package _s
  */
+
 /*
  * If the current post is protected by a password and
  * the visitor has not yet entered the password we will
@@ -27,7 +28,27 @@ if ( have_comments() ) :
 	?>
 		<h2 class="comments-title">
 			<?php
-			esc_html( sprintf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'blank-theme' ), number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' ) );
+			$comments_number = get_comments_number();
+			if ( 1 === $comments_number ) {
+				printf(
+					/* translators: %s: post title */
+					esc_html_x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'blank-theme' ),
+					'<span>' . get_the_title() . '</span>'
+				);
+			} else {
+				printf( // WPCS: XSS OK.
+					/* translators: 1: number of comments, 2: post title */
+					esc_html( _nx(
+						'%1$s thought on &ldquo;%2$s&rdquo;',
+						'%1$s thoughts on &ldquo;%2$s&rdquo;',
+						$comments_number,
+						'comments title',
+						'blank-theme'
+					) ),
+					number_format_i18n( $comments_number ),
+					'<span>' . get_the_title() . '</span>'
+				);
+			}
 			?>
 		</h2>
 
@@ -41,12 +62,12 @@ if ( have_comments() ) :
 
 				</div><!-- .nav-links -->
 			</nav><!-- #comment-nav-above -->
-	<?php endif; // Check for comment navigation.  ?>
+	<?php endif; // Check for comment navigation. ?>
 
 		<ol class="comment-list">
 		<?php
 		wp_list_comments( apply_filters( 'blank_theme_list_comments_args', array(
-			'style'		 => 'ol',
+			'style'      => 'ol',
 			'short_ping' => true,
 		) ) );
 		?>

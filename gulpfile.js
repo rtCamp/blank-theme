@@ -101,7 +101,7 @@ gulp.task( 'checktextdomain', function() {
 
 // POT file generations
 gulp.task( 'makepot', function() {
-	return gulp.src( ['**/*.php', './*.php'] )
+	return gulp.src( ['**/*.php', './*.php', '!./node_modules/**'] )
 	.pipe( sort() )
 	.pipe( wpPot( {
 		domain: 'blank-theme',
@@ -144,4 +144,4 @@ gulp.task( 'watch', function() {
 
 // Default tasks
 // gulp.task('default', ['sass','scripts','images','checktextdomain','makepot','watch']);
-gulp.task( 'default', ['checktextdomain', 'makepot', 'watch'] );
+gulp.task( 'default', ['checktextdomain', 'watch'] );
