@@ -86,6 +86,7 @@ endif;
  * @return bool
  */
 function blank_theme_categorized_blog() {
+	$all_the_cool_cats = null;
 	if ( false === get_transient( 'blank_theme_categories' ) ) {
 		$args = array(
 			'fields'     => 'ids',
