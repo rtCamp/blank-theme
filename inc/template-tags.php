@@ -87,9 +87,9 @@ endif;
  */
 function blank_theme_categorized_blog() {
 
-	$all_the_cool_cats = null;
+	$all_the_cool_cats = get_transient( 'blank_theme_categories' );
 
-	if ( false === get_transient( 'blank_theme_categories' ) ) {
+	if ( false === $all_the_cool_cats ) {
 		$args = array(
 			'fields'     => 'ids',
 			'hide_empty' => 1,
