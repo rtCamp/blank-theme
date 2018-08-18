@@ -1,1 +1,3 @@
-dev-lib/.eslintignore
+**/*.min.js
+**/node_modules/**
+**/vendor/**

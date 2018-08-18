@@ -209,7 +209,6 @@ add_action( 'wp_enqueue_scripts', 'blank_theme_scripts' );
  */
 $blank_theme_depedencies = apply_filters( 'blank_theme_depedencies', array(
 	BLANK_THEME_TEMP_DIR . '/inc/*.php',
-	BLANK_THEME_TEMP_DIR . '/admin/*.php',
 ) );
 
 foreach ( $blank_theme_depedencies as $path ) {
