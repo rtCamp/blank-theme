@@ -175,7 +175,8 @@ module.exports = {
 	entry: {
 		main: JSDir + '/main.js',
 		home: JSDir + '/home.js',
-		single: JSDir + '/single.js'
+		single: JSDir + '/single.js',
+		'admin/customizer': JSDir + '/admin/customizer.js'
 	},
 
 	output: {

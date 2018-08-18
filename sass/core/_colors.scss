@@ -1,0 +1,65 @@
+// Default Black Color
+$black: #000000;
+
+// Default White Color
+$white: #FFFFFF;
+
+// Light Gray
+$light-gray: #ccc;
+
+// Primary Color - Color for content and links.
+$color__primary: #444444;
+
+// Secondary Color
+$color__secondary: blue;
+
+// Theme Color - Used for link hover color
+$color__theme: red;
+
+// Body background color - Used for `<body>` tag
+$color__background-body: #fafaf4;
+$color__background-screen: #f1f1f1;
+
+// Horizontal line color - Used for `<hr />` tag.
+$color__background-hr: $light-gray;
+
+// Default Button Background - Used for all button types.
+$color__background-button: #e6e6e6;
+
+// pre tag background - Used for `<pre>` tag.
+$color__background-pre: #eee;
+
+// textarea background - Used for `<textarea>` tag.
+$color__background-textarea: #fafafa;
+
+$color__text-screen: #21759b;
+
+// Input fields color - Used for `input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="tel"], textarea` types
+$color__text-input: #666;
+
+// Input fields focus state color - Used for `input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="tel"], textarea` types
+$color__text-input-focus: #111;
+
+// Link color - Used for all links
+$color__link: $color__primary;
+
+// Link hover color - Used for all links on hover state
+$color__link-hover: $color__theme;
+
+// Select tag text color - Used for all `<select>` tags
+$color__select-text: #404040;
+
+// Button Border Color - Used for `button, input[type="button"], input[type="reset"], input[type="submit"]`
+$color__border-button: $light-gray $light-gray #bbb;
+
+// Button Hover State Border Color - Used for `button, input[type="button"], input[type="reset"], input[type="submit"]`
+$color__border-button-hover: $light-gray #bbb #aaa;
+
+// Button Focus State Border Color - Used for `button, input[type="button"], input[type="reset"], input[type="submit"]`
+$color__border-button-focus: #aaa #bbb #bbb;
+
+// Input Field Border Color - Used for `input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="tel"], textarea`
+$color__border-input: $light-gray;
+
+// Light Border Color
+$color__border-light: #ddd;
