@@ -43,6 +43,7 @@ class Blank_Theme extends Base {
 		add_theme_support( 'title-tag' );
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'customize-selective-refresh-widgets' );
+		add_theme_support( 'jetpack-responsive-videos' );
 
 		add_theme_support( 'html5', array(
 			'search-form',
@@ -69,15 +70,6 @@ class Blank_Theme extends Base {
 			'default-image' => '',
 		) );
 
-		add_theme_support( 'custom-header', array(
-			'default-image'      => '',
-			'default-text-color' => '000000',
-			'width'              => 1000,
-			'height'             => 250,
-			'flex-height'        => true,
-			'wp-head-callback'   => 'blank_theme_header_style',
-		) );
-
 		add_theme_support( 'custom-logo', array(
 			'header-text' => array(
 				'site-title', 'site-description'
@@ -89,6 +81,19 @@ class Blank_Theme extends Base {
 		register_nav_menus( array(
 			'primary' => esc_html__( 'Primary Menu', 'blank-theme' ),
 		) );
+	}
+
+	/**
+	 * Add read more link
+	 *
+	 * @filter excerpt_more
+	 *
+	 * @return string
+	 */
+	public function add_read_more_link() {
+		global $post;
+
+		return sprintf( '<a class="moretag" href="%s">%s</a>', get_permalink( $post->ID ), esc_html__( 'Read More', 'blank-theme' ) );
 	}
 
 }

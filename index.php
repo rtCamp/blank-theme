@@ -57,5 +57,5 @@ get_header();
 </div><!-- #primary -->
 
 <?php
-blank_theme_get_sidebar();
+get_sidebar();
 get_footer();

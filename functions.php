@@ -2,32 +2,19 @@
 /**
  * Blank Theme functions and definitions
  *
- * @package Blank Theme
+ * @package blank-theme
  */
+
+namespace Blank_Theme;
 
 if ( ! defined( 'BLANK_THEME_VERSION' ) ) {
 	define( 'BLANK_THEME_VERSION', 1.0 );
-}
-if ( ! defined( 'BLANK_THEME_TEMP_URI' ) ) {
-	define( 'BLANK_THEME_TEMP_URI', get_template_directory_uri() );
 }
 if ( ! defined( 'BLANK_THEME_TEMP_DIR' ) ) {
 	define( 'BLANK_THEME_TEMP_DIR', get_template_directory() );
 }
 if ( ! defined( 'BLANK_THEME_BUILD_URI' ) ) {
-	define( 'BLANK_THEME_BUILD_URI', BLANK_THEME_TEMP_URI . '/build' );
-}
-if ( ! defined( 'BLANK_THEME_CSS_URI' ) ) {
-	define( 'BLANK_THEME_CSS_URI', BLANK_THEME_TEMP_URI . '/css' );
-}
-if ( ! defined( 'BLANK_THEME_JS_URI' ) ) {
-	define( 'BLANK_THEME_JS_URI', BLANK_THEME_TEMP_URI . '/js' );
-}
-if ( ! defined( 'BLANK_THEME_IMG_URI' ) ) {
-	define( 'BLANK_THEME_IMG_URI', BLANK_THEME_TEMP_URI . '/img' );
-}
-if ( ! defined( 'BLANK_THEME_IS_DEV' ) ) {
-	define( 'BLANK_THEME_IS_DEV', true );
+	define( 'BLANK_THEME_BUILD_URI', get_template_directory_uri() . '/build' );
 }
 
 do_action( 'blank_theme_before' );
@@ -35,7 +22,17 @@ do_action( 'blank_theme_before' );
 require_once BLANK_THEME_TEMP_DIR . '/inc/classes/class-base.php';
 require_once BLANK_THEME_TEMP_DIR . '/inc/classes/class-blank-theme.php';
 
-new \Blank_Theme\Blank_Theme();
+$blank_theme = new Blank_Theme();
+
+/**
+ * Get blank theme instance.
+ *
+ * @return Blank_Theme
+ */
+function get_theme_instance() {
+	global $blank_theme;
+	return $blank_theme;
+}
 
 /**
  * FILE INCLUDES.

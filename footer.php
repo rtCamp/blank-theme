@@ -39,6 +39,8 @@
 </footer><!-- #colophon -->
 </div><!-- #page -->
 
+<div class="blank-theme-back-to-top" id="blank-theme-back-to-top"></div>
+
 <?php wp_footer(); ?>
 
 </body>
