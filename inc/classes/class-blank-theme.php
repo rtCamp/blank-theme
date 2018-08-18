@@ -13,11 +13,18 @@ namespace Blank_Theme;
 class Blank_Theme extends Base {
 
 	/**
-	 * Assets Class instance.
+	 * Assets class instance.
 	 *
 	 * @var Assets
 	 */
 	public $assets;
+
+	/**
+	 * Customizer class instance.
+	 *
+	 * @var Customizer
+	 */
+	public $customizer;
 
 	/**
 	 * Initiate the theme resources.
@@ -28,6 +35,7 @@ class Blank_Theme extends Base {
 		$this->setup_theme();
 
 		$this->assets = new Assets();
+		$this->customizer = new Customizer();
 	}
 
 	/**
