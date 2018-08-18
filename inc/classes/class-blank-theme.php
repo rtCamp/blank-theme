@@ -104,4 +104,39 @@ class Blank_Theme extends Base {
 		return sprintf( '<a class="moretag" href="%s">%s</a>', get_permalink( $post->ID ), esc_html__( 'Read More', 'blank-theme' ) );
 	}
 
+	/**
+	 * Adds custom classes to the array of body classes.
+	 *
+	 * @param array $classes Classes for the body element.
+	 *
+	 * @filter body_class
+	 * @return array
+	 */
+	public function filter_body_classes( $classes ) {
+
+		if ( ! is_singular() ) {
+			$classes[] = 'hfeed';
+		}
+
+		// Adds a class of no-sidebar when there is no sidebar present.
+		if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+			$classes[] = 'no-sidebar';
+		}
+
+		return $classes;
+	}
+
+	/**
+	 * Add a ping back url auto-discovery header for single posts, pages, or attachments.
+	 *
+	 * @action wp_head
+	 *
+	 * @return void
+	 */
+	public function add_pingback_link() {
+		if ( is_singular() && pings_open() ) {
+			echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
+		}
+	}
+
 }
