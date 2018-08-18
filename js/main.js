@@ -5,7 +5,9 @@
  */
 
 import '../sass/main.scss';
-import components from './components';
+import * as components from './components';
+
+window.$ = window.$ || jQuery;
 
 // Initialize common scripts.
 components.common.init();

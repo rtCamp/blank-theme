@@ -27,6 +27,13 @@ class Blank_Theme extends Base {
 	public $customizer;
 
 	/**
+	 * Widgets
+	 *
+	 * @var Widgets
+	 */
+	public $widgets;
+
+	/**
 	 * Initiate the theme resources.
 	 *
 	 * @action after_setup_theme, 9
@@ -36,6 +43,7 @@ class Blank_Theme extends Base {
 
 		$this->assets = new Assets();
 		$this->customizer = new Customizer();
+		$this->widgets = new Widgets();
 	}
 
 	/**

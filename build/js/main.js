@@ -3253,18 +3253,20 @@ __webpack_require__(6);
 
 var _components = __webpack_require__(0);
 
-var _components2 = _interopRequireDefault(_components);
+var components = _interopRequireWildcard(_components);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-// Initialize common scripts.
 /**
  * Main scripts, loaded on all pages.
  *
  * @package blank-theme
  */
 
-_components2.default.common.init();
+window.$ = window.$ || jQuery;
+
+// Initialize common scripts.
+components.common.init();
 
 /***/ }),
 /* 6 */

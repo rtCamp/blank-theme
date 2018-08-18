@@ -5,7 +5,7 @@
  */
 
 import '../sass/home.scss';
-import components from './components';
+import * as components from './components';
 
 // Initialize Slider.
 components.slider.init();
