@@ -24,7 +24,7 @@
 			// display: none;
 
 			ul {
-				left: -999rem;
+				left: -999px;
 				top: 0;
 			}
 
@@ -48,9 +48,6 @@
 		li:hover > ul,
 		li.focus > ul {
 			left: auto;
-
-			// display: block;
-
 		}
 	}
 
@@ -68,20 +65,6 @@
 		display: block;
 		text-decoration: none;
 		padding: rem-calc(10);
-	}
-
-	.primary-menu > ul > li {
-		&:first-child {
-			a {
-				padding-left: 0;
-			}
-		}
-
-		&:last-child {
-			a {
-				padding-right: 0;
-			}
-		}
 	}
 
 	.current_page_item > a,
@@ -114,10 +97,4 @@
 		text-align: right;
 		width: 50%;
 	}
-}
-
-/**Sidr**/
-.mm-menu .mm-search input {
-	border-radius: 30px;
-	text-indent: 10px;
 }

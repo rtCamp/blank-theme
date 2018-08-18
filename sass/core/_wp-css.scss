@@ -134,12 +134,14 @@ object {
 		Other
 ---------------------------*/
 
+/* stylelint-disable */
 #tinymce.mce-content-body {
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 400;
 	padding: 15px !important;
 }
+/* stylelint-enable */
 
 .site-content {
 	word-wrap: break-word;

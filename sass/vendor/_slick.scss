@@ -8,7 +8,6 @@
 	-ms-user-select: none;
 	user-select: none;
 	-webkit-touch-callout: none;
-	-khtml-user-select: none;
 	-ms-touch-action: pan-y;
 	touch-action: pan-y;
 	-webkit-tap-highlight-color: transparent;
@@ -40,7 +39,6 @@
 	}
 
 	&.dragging {
-		cursor: pointer;
 		cursor: hand;
 	}
 }
@@ -53,13 +51,13 @@
 	position: relative;
 	top: 0;
 
-	&:before,
-	&:after {
+	&::before,
+	&::after {
 		content: '';
 		display: table;
 	}
 
-	&:after {
+	&::after {
 		clear: both;
 	}
 }
@@ -125,8 +123,8 @@
 	-ms-transform: translate(0, -50%);
 	transform: translate(0, -50%);
 
-	&:before,
-	&:before {
+	&::before,
+	&::before {
 		font-size: 20px;
 		line-height: 1;
 		opacity: .75;
@@ -134,8 +132,8 @@
 		-moz-osx-font-smoothing: grayscale;
 	}
 
-	&:hover:before,
-	&:focus:before {
+	&:hover::before,
+	&:focus::before {
 		opacity: 1;
 	}
 }
@@ -143,7 +141,7 @@
 .slick-prev {
 	left: 25px;
 
-	&:before {
+	&::before {
 		content: '←';
 	}
 }
@@ -153,14 +151,14 @@
 	right: 25px;
 }
 
-[dir='rtl'] .slick-prev:before {
+[dir='rtl'] .slick-prev::before {
 	content: '→';
 }
 
 .slick-next {
 	right: 25px;
 
-	&:before {
+	&::before {
 		content: '→';
 	}
 }
@@ -170,7 +168,7 @@
 	right: auto;
 }
 
-[dir='rtl'] .slick-next:before {
+[dir='rtl'] .slick-next::before {
 	content: '←';
 }
 
@@ -212,12 +210,12 @@
 			&:focus {
 				outline: none;
 
-				&:before {
+				&::before {
 					opacity: 1;
 				}
 			}
 
-			&:before {
+			&::before {
 				color: black;
 				content: '•';
 				font-size: 40px;
@@ -236,7 +234,7 @@
 	}
 }
 
-.slick-dots li.slick-active button:before {
+.slick-dots li.slick-active button::before {
 	color: black;
 	opacity: .75;
 }

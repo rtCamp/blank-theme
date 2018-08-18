@@ -12,15 +12,15 @@
 	margin: -1px;
 	overflow: hidden;
 	padding: 0;
-	position: absolute !important;
+	position: absolute;
 	width: 1px;
-	word-wrap: normal !important;
+	word-wrap: normal;
 
 	&:focus {
 		background-color: $color__background-screen;
 		border-radius: $border-radius;
 		box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-		clip: auto !important;
+		clip: auto;
 		clip-path: none;
 		color: $color__text-screen;
 		display: block;
