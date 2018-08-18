@@ -29,6 +29,11 @@ if ( ! defined( 'BLANK_THEME_IS_DEV' ) ) {
 
 do_action( 'blank_theme_before' );
 
+require_once BLANK_THEME_TEMP_DIR . '/inc/classes/class-base.php';
+require_once BLANK_THEME_TEMP_DIR . '/inc/classes/class-blank-theme.php';
+
+new \Blank_Theme\Blank_Theme();
+
 if ( ! function_exists( 'blank_theme_setup' ) ) :
 
 	/**
@@ -39,6 +44,7 @@ if ( ! function_exists( 'blank_theme_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function blank_theme_setup() {
+
 		/**
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
