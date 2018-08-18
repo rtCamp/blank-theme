@@ -1,4 +1,226 @@
-/*
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _common = __webpack_require__(1);
+
+Object.defineProperty(exports, 'common', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_common).default;
+  }
+});
+
+var _slider = __webpack_require__(2);
+
+Object.defineProperty(exports, 'slider', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_slider).default;
+  }
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+/**
+ * Common JS.
+ *
+ * @type {Object}
+ */
+var common = {
+
+	/**
+  * Initialize.
+  *
+  * @return {void}
+  */
+	init: function init() {
+		this.setProps();
+		this.bindEvents();
+	},
+
+
+	/**
+  * Bind events.
+  *
+  * @return {void}
+  */
+	bindEvents: function bindEvents() {
+		this.backToTopButton.on('click', this.goBackToTop);
+	},
+
+
+	/**
+  * Set properties and selectors.
+  *
+  * @return {void}
+  */
+	setProps: function setProps() {
+		this.backToTopButton = $('#blank-theme-back-to-top');
+		this.bodyHtml = $('body, html');
+	},
+
+
+	/**
+  * Handles back to top.
+  *
+  * @return {void}
+  */
+	goBackToTop: function goBackToTop() {
+		var animationDuration = 600;
+
+		this.bodyHtml.animate({
+			scrollTop: 0
+		}, animationDuration);
+	}
+};
+
+exports.default = common;
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+__webpack_require__(3);
+
+/**
+ * Slider component
+ *
+ * @type {object}
+ */
+var slider = {
+
+	/**
+  * Initialize.
+  *
+  * @return {void}
+  */
+	init: function init() {
+		this.setProps();
+		this.createSlider();
+	},
+
+
+	/**
+  * Set properties and selectors.
+  *
+  * @return {void}
+  */
+	setProps: function setProps() {
+		this.sliderContainer = $('#blank-theme-slider');
+	},
+
+
+	/**
+  * Create slider.
+  *
+  * @return {void}
+  */
+	createSlider: function createSlider() {
+		if (!this.sliderContainer.length) {
+			return;
+		}
+
+		this.sliderContainer.slick();
+	}
+};
+
+exports.default = slider;
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
      _ _      _       _
  ___| (_) ___| | __  (_)___
 / __| | |/ __| |/ /  | / __|
@@ -6,7 +228,7 @@
 |___/_|_|\___|_|\_(_)/ |___/
                    |__/
 
- Version: 1.8.0
+ Version: 1.8.1
   Author: Ken Wheeler
  Website: http://kenwheeler.github.io
     Docs: http://kenwheeler.github.io/slick
@@ -17,8 +239,11 @@
 /* global window, document, define, jQuery, setInterval, clearInterval */
 ;(function(factory) {
     'use strict';
-    if (typeof define === 'function' && define.amd) {
-        define(['jquery'], factory);
+    if (true) {
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(4)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
     } else if (typeof exports !== 'undefined') {
         module.exports = factory(require('jquery'));
     } else {
@@ -3009,3 +3234,43 @@
     };
 
 }));
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+module.exports = jQuery;
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(6);
+
+var _components = __webpack_require__(0);
+
+var _components2 = _interopRequireDefault(_components);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// Initialize common scripts.
+/**
+ * Main scripts, loaded on all pages.
+ *
+ * @package blank-theme
+ */
+
+_components2.default.common.init();
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ })
+/******/ ]);

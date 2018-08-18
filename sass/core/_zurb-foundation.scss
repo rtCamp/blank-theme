@@ -3,33 +3,6 @@
 @import "~foundation-sites/scss/global";
 @import "~foundation-sites/scss/foundation";
 
-$breakpoints: (
-	small : 0,
-	medium : $g-breakpoint-tablet,
-	large  : $g-breakpoint-desktop,
-	xlarge : 1279px
-);
-
-$breakpoint-classes: small medium large xlarge;
-
-/// Global width of your site. Used by the grid to determine row width.
-/// @type Number
-$global-width: 1470px;
-
-/// The default column count of a grid. Changing this value affects the logic of the grid mixins, and the number of CSS classes output.
-/// @type Number
-$global-column-count: 12;
-
-/// Flex Grid
-$grid-row-width: $global-width;
-$grid-column-count: $global-column-count;
-
-/// Global spacing between columns.
-/// @type Number
-$grid-column-gutter: (small: 30px, medium: 30px, large: 30px);
-$grid-column-align-edge: true;
-$grid-column-alias: "columns";
-
 @include foundation-flex-grid;
 @include foundation-flex-classes;
 @include foundation-visibility-classes;

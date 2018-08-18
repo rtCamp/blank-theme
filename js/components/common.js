@@ -1,71 +1,52 @@
-jQuery( function( $ ) {
+/**
+ * Common JS.
+ *
+ * @type {Object}
+ */
+const common = {
 
-	'use strict';
+	/**
+	 * Initialize.
+	 *
+	 * @return {void}
+	 */
+	init() {
+		this.setProps();
+		this.bindEvents();
+	},
 
-	window.BlankTheme = {
-		$backToTop: $( '#blank-theme-back-to-top' ),
+	/**
+	 * Bind events.
+	 *
+	 * @return {void}
+	 */
+	bindEvents() {
+		this.backToTopButton.on( 'click', this.goBackToTop );
+	},
 
-		init: function() {
-			this.createMobileMenu();
+	/**
+	 * Set properties and selectors.
+	 *
+	 * @return {void}
+	 */
+	setProps() {
+		this.backToTopButton = $( '#blank-theme-back-to-top' );
+		this.bodyHtml = $( 'body, html' );
+	},
 
-			// Enable to animate child menu
-			// this.animateMenu();
+	/**
+	 * Handles back to top.
+	 *
+	 * @return {void}
+	 */
+	goBackToTop() {
+		const animationDuration = 600;
 
-			// Enable to trigger slider
-			// this.createSlider();
+		this.bodyHtml.animate( {
+			scrollTop: 0
+		}, animationDuration );
+	}
 
-			this.fixAdminBar();
-			this.events();
-		},
+};
 
-		events: function() {
-
-		},
-
-		createSlider: function() {
-			if ( $( '#blank-theme-slider' ).length ) {
-				$( '#blank-theme-slider' ).slick( {
-
-					// Custom Option
-				} );
-			}
-		},
-
-		fixAdminBar: function() {
-			var $adminBar = $( '#wpadminbar' );
-
-			// Mmenu sometimes wrapes adminbar inside its div.
-			if ( $( 'div.mm-page' ).length && $( 'div.mm-page' ).find( $adminBar ).length ) {
-				$( 'body' ).append( $adminBar );
-			}
-		},
-
-		createMobileMenu: function() {
-			$( '#site-navigation' ).mmenu( { }, { clone: true } );
-			$( '#mm-site-navigation' ).removeClass( 'blank-theme-main-navigation' );
-		},
-
-		animateMenu: function() {
-			$( '.blank-theme-main-navigation ul ul' ).addClass( 'animated-menu fadeInUp' );
-		},
-
-		showBacktoTop: function( $this ) {
-			if ( $this.width() > 960 ) {
-
-				if ( $this.scrollTop() > 50 ) {
-					this.$backToTop.show();
-				} else {
-					this.$backToTop.hide();
-				}
-			}
-		},
-
-		backToTop: function() {
-			$( 'body, html' ).animate( { scrollTop: 0 }, 600 );
-			return false;
-		}
-	};
-
-	window.BlankTheme.init();
-
-} );
+export default common;
