@@ -3,7 +3,7 @@
  */
 const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
 const StyleLintPlugin = require( 'stylelint-webpack-plugin' );
-const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
+const FriendlyErrorsPlugin = require( 'friendly-errors-webpack-plugin' );
 
 const path = require( 'path' );
 const webpack = require( 'webpack' );
@@ -198,7 +198,7 @@ module.exports = {
 
 	plugins: plugins,
 
-	watch: ! isProduction,
+	watch: !isProduction,
 
 	watchOptions: {
 		ignored: /node_modules/

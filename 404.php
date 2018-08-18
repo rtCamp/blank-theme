@@ -2,7 +2,7 @@
 /**
  * The template for displaying 404 pages (not found).
  *
- * @package Blank Theme
+ * @package blank-theme
  */
 
 get_header();

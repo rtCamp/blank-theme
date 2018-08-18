@@ -2,7 +2,7 @@
 /**
  * Contains custom functions used for the theme
  *
- * @package Blank Theme
+ * @package blank-theme
  */
 
 /**
@@ -39,7 +39,7 @@ function blank_theme_primary_classes( $more_classes = false, $override_foundatio
  */
 function blank_theme_secondary_classes( $more_classes = false, $override_foundation_classes = false ) {
 	// Override will be useful in page-templates.
-	$sidebar_position     = get_theme_mod( 'blank_theme_sidebar_position' );
+	$sidebar_position    = get_theme_mod( 'blank_theme_sidebar_position' );
 	$foundation_classes  = $override_foundation_classes ? $override_foundation_classes : 'large-4 medium-4 small-12 cell column';
 	$foundation_classes .= 'left' === $sidebar_position ? ' large-order-1 medium-order-1 small-order-2' : false;
 

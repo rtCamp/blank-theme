@@ -41,9 +41,9 @@ class Blank_Theme extends Base {
 	public function init() {
 		$this->setup_theme();
 
-		$this->assets = new Assets();
+		$this->assets     = new Assets();
 		$this->customizer = new Customizer();
-		$this->widgets = new Widgets();
+		$this->widgets    = new Widgets();
 	}
 
 	/**
@@ -61,42 +61,53 @@ class Blank_Theme extends Base {
 		add_theme_support( 'customize-selective-refresh-widgets' );
 		add_theme_support( 'jetpack-responsive-videos' );
 
-		add_theme_support( 'html5', array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-		) );
+		add_theme_support(
+			'html5', array(
+				'search-form',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+			)
+		);
 
-		add_theme_support( 'post-formats', array(
-			'aside',
-			'image',
-			'video',
-			'quote',
-			'link',
-			'gallery',
-			'status',
-			'audio',
-			'chat',
-		) );
+		add_theme_support(
+			'post-formats', array(
+				'aside',
+				'image',
+				'video',
+				'quote',
+				'link',
+				'gallery',
+				'status',
+				'audio',
+				'chat',
+			)
+		);
 
-		add_theme_support( 'custom-background', array(
-			'default-color' => 'ffffff',
-			'default-image' => '',
-		) );
+		add_theme_support(
+			'custom-background', array(
+				'default-color' => 'ffffff',
+				'default-image' => '',
+			)
+		);
 
-		add_theme_support( 'custom-logo', array(
-			'header-text' => array(
-				'site-title', 'site-description'
-			),
-		) );
+		add_theme_support(
+			'custom-logo', array(
+				'header-text' => array(
+					'site-title',
+					'site-description',
+				),
+			)
+		);
 
 		add_editor_style( array( 'editor-style.css', blank_theme_main_font_url() ) );
 
-		register_nav_menus( array(
-			'primary' => esc_html__( 'Primary Menu', 'blank-theme' ),
-		) );
+		register_nav_menus(
+			array(
+				'primary' => esc_html__( 'Primary Menu', 'blank-theme' ),
+			)
+		);
 	}
 
 	/**

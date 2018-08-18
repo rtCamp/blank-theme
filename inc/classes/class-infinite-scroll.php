@@ -10,17 +10,19 @@ namespace Blank_Theme;
 class Infinite_Scroll extends Base {
 
 	/**
-	 * Setup jetpack for infinite theme support.
+	 * Setup Jetpack for infinite theme support.
 	 *
 	 * @action after_setup_theme
 	 */
 	public function setup_jetpack() {
 
-		add_theme_support( 'infinite-scroll', array(
-			'container' => 'main',
-			'render'    => array( $this, 'render_callback' ),
-			'footer'    => 'page',
-		) );
+		add_theme_support(
+			'infinite-scroll', array(
+				'container' => 'main',
+				'render'    => array( $this, 'render_callback' ),
+				'footer'    => 'page',
+			)
+		);
 
 	}
 
@@ -44,7 +46,6 @@ class Infinite_Scroll extends Base {
 				get_template_part( 'template-parts/content', get_post_format() );
 
 			}
-
 		}
 
 	}

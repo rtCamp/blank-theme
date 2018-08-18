@@ -2,7 +2,7 @@
 /**
  * Template part for displaying posts.
  *
- * @package Blank Theme
+ * @package blank-theme
  */
 ?>
 

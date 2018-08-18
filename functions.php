@@ -21,6 +21,8 @@ do_action( 'blank_theme_before' );
 
 require_once BLANK_THEME_TEMP_DIR . '/inc/classes/class-base.php';
 require_once BLANK_THEME_TEMP_DIR . '/inc/classes/class-blank-theme.php';
+require_once BLANK_THEME_TEMP_DIR . '/inc/custom-functions.php';
+require_once BLANK_THEME_TEMP_DIR . '/inc/template-tags.php';
 
 $blank_theme = new Blank_Theme();
 
@@ -32,19 +34,6 @@ $blank_theme = new Blank_Theme();
 function get_theme_instance() {
 	global $blank_theme;
 	return $blank_theme;
-}
-
-/**
- * FILE INCLUDES.
- */
-$blank_theme_depedencies = apply_filters( 'blank_theme_depedencies', array(
-	BLANK_THEME_TEMP_DIR . '/inc/*.php',
-) );
-
-foreach ( $blank_theme_depedencies as $path ) {
-	foreach ( glob( $path ) as $filename ) {
-		include $filename;
-	}
 }
 
 do_action( 'blank_theme_after' );

@@ -7,7 +7,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package _s
+ * @package blank-theme
  */
 
 /*
@@ -38,13 +38,15 @@ if ( have_comments() ) :
 			} else {
 				printf( // WPCS: XSS OK.
 					/* translators: 1: number of comments, 2: post title */
-					esc_html( _nx(
-						'%1$s thought on &ldquo;%2$s&rdquo;',
-						'%1$s thoughts on &ldquo;%2$s&rdquo;',
-						$comments_number,
-						'comments title',
-						'blank-theme'
-					) ),
+					esc_html(
+						_nx(
+							'%1$s thought on &ldquo;%2$s&rdquo;',
+							'%1$s thoughts on &ldquo;%2$s&rdquo;',
+							$comments_number,
+							'comments title',
+							'blank-theme'
+						)
+					),
 					number_format_i18n( $comments_number ),
 					'<span>' . get_the_title() . '</span>'
 				);
@@ -66,10 +68,14 @@ if ( have_comments() ) :
 
 		<ol class="comment-list">
 		<?php
-		wp_list_comments( apply_filters( 'blank_theme_list_comments_args', array(
-			'style'      => 'ol',
-			'short_ping' => true,
-		) ) );
+		wp_list_comments(
+			apply_filters(
+				'blank_theme_list_comments_args', array(
+					'style'      => 'ol',
+					'short_ping' => true,
+				)
+			)
+		);
 		?>
 		</ol><!-- .comment-list -->
 
@@ -87,6 +93,7 @@ if ( have_comments() ) :
 	endif; // Check for comment navigation.
 
 endif; // Check for have_comments().
+
 // If comments are closed and there are comments, let's leave a little note, shall we?
 if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
