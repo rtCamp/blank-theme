@@ -1,15 +1,48 @@
 {
-  "name": "blank-theme",
-  "devDependencies": {
-    "grunt": "^1.0.1",
-    "grunt-autoprefixer": "^3.0.4",
-    "grunt-checktextdomain": "^1.0.1",
-    "grunt-combine-media-queries": "^1.0.20",
-    "grunt-contrib-sass": "^1.0.0",
-    "grunt-contrib-uglify": "^3.3.0",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-wp-i18n": "^1.0.1",
-    "foundation-sites": "^6.4.3",
-    "load-grunt-tasks": "^3.5.2"
-  }
+	"name": "blank-theme",
+	"version": "2.0.0",
+	"description": "Blank Theme Package",
+	"author": "rtCamp",
+	"license": "MIT",
+	"private": true,
+	"scripts": {
+		"dev": "cross-env BABEL_ENV=default webpack --watch",
+		"prod": "cross-env BABEL_ENV=default NODE_ENV=production PROD_ENV=1 webpack"
+	},
+	"dependencies": {
+		"lodash": "^4.17.10",
+		"slick-carousel": "^1.8.1"
+	},
+	"devDependencies": {
+		"autoprefixer": "^9.1.1",
+		"babel-core": "^6.26.0",
+		"babel-loader": "^7.1.2",
+		"babel-preset-es2015": "^6.24.1",
+		"babel-preset-stage-1": "^6.24.1",
+		"cross-env": "^5.2.0",
+		"css-loader": "^0.28.7",
+		"cssnano": "^4.0.5",
+		"eslint": "^4.8.0",
+		"eslint-config-airbnb-base": "^12.0.2",
+		"eslint-config-wordpress": "^2.0.0",
+		"eslint-loader": "^1.9.0",
+		"eslint-plugin-import": "^2.7.0",
+		"extract-text-webpack-plugin": "^3.0.1",
+		"file-loader": "^1.1.5",
+		"foundation-sites": "^6.5.0-rc.1",
+		"friendly-errors-webpack-plugin": "^1.7.0",
+		"node-sass": "^4.5.3",
+		"postcss-cssnext": "^3.0.2",
+		"postcss-loader": "^2.0.7",
+		"postcss-pxtorem": "^4.0.1",
+		"postcss-scss": "^1.0.2",
+		"sass-loader": "^6.0.6",
+		"style-loader": "^0.19.0",
+		"stylelint": "^8.2.0",
+		"stylelint-config-wordpress": "^12.0.0",
+		"stylelint-webpack-plugin": "^0.9.0",
+		"uglify-js": "^3.1.6",
+		"uglify-loader": "^2.0.0",
+		"webpack": "^3.6.0"
+	}
 }

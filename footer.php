@@ -3,9 +3,8 @@
  * The template for displaying the footer.
  * Contains the closing of the #content div and all content after.
  *
- * @package Blank Theme
+ * @package blank-theme
  */
-
 ?>
 
 </div><!-- #content -->
@@ -38,6 +37,8 @@
 	</div><!-- .site-info -->
 </footer><!-- #colophon -->
 </div><!-- #page -->
+
+<div class="blank-theme-back-to-top" id="blank-theme-back-to-top"></div>
 
 <?php wp_footer(); ?>
 

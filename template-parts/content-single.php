@@ -2,7 +2,7 @@
 /**
  * Template part for displaying single posts.
  *
- * @package Blank Theme
+ * @package blank-theme
  */
 ?>
 
@@ -11,7 +11,7 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
 		<div class="entry-meta">
-			<?php echo blank_theme_posted_on(); ?>
+			<?php blank_theme_posted_on(); ?>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 

@@ -1,54 +1,39 @@
-=== Blank Theme ===
+Blank Theme
+===
 
-Contributors: rtCampers
-Tags: two-columns, custom-background, custom-header, custom-menu, editor-style, featured-images, full-width-template, post-formats, translation-ready
+Blank Theme is a custom blank theme created with underscore theme, which includes foundation basic grid system and some basic customizer settings which are required in almost all projects.
 
-Requires at least: 4.0
-Tested up to: 4.5.3
-Stable tag: 1.0.0
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+What more does it have?
+---------------
 
-A starter theme called blank-theme.
+1) WordPress Customizer is already setup with some basic customizer settings.
 
-== Description ==
+2) Webpack configuration with all required packages to develop theme.
 
-Blank Theme is a responsive multipurpose theme.
+3) Basic foundation grids.
 
-== Installation ==
+4) Stylelint, eslint and postcss configuration.
 
-1. In your admin panel, go to Appearance > Themes and click the Add New button.
-2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
-3. Click Activate to use your new theme right away.
+5) CSS fixes, in underscore and helpful CSS classes.
+
+6) Some helpful php functions.
+
+7) Slick Slider
+
+and more..
+
+Getting Started
+---------------
+
+1. Search for `'blank-theme'` (inside single quotations) to capture the text domain.
+2. Search for `blank_theme_` to capture all the function names.
+3. Search for `Text Domain: blank-theme` in style.css.
+4. Search for <code>&nbsp;Blank Theme</code> (with a space before it) to capture DocBlocks.
+5. Search for `blank-theme-` to capture prefixed handles.
+6. Install packages by running `npm install`
+7. Use `npm run dev` during development.
+8. Use `npm run prod` when ready for production.
 
 
 
-== Resources ==
-
-Blank Theme is built with the following resources:
-
-Slick - http://kenwheeler.github.io/slick
-
-Mmenu https://github.com/BeSite/jQuery.mmenu
-License: The jQuery.mmenu plugin is dual licensed under the MIT license:
-Contributing author : BeSite (https://github.com/BeSite)
-Copyright: Copyright © 2012-2016 M. BeSite.
-
-HTML5 Shiv - https://github.com/aFarkas/html5shiv
-License: MIT/GPL2 Licensed
-Copyright: @afarkas @jdalton @jon_neal @rem
-
-Setup PHP_CodeSniffer - https://github.com/rtCamp/blank-theme/blob/master/README.md#setup-php_codesniffer
-
-Dev Lib - https://github.com/xwp/wp-dev-lib
-
-== Frequently Asked Questions ==
-
-= Does this theme support any plugins? =
-
-Blank Theme includes support for Infinite Scroll in Jetpack.
-
-== Changelog ==
-
-= 1.0 - May 12 2015 =
-* Initial release
+Good luck!

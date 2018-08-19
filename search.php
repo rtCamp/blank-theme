@@ -2,7 +2,7 @@
 /**
  * The template for displaying search results pages.
  *
- * @package Blank Theme
+ * @package blank-theme
  */
 
 get_header();
@@ -49,5 +49,5 @@ get_header();
 </section><!-- #primary -->
 
 <?php
-blank_theme_get_sidebar();
+get_sidebar();
 get_footer();

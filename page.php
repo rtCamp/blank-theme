@@ -9,10 +9,11 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Blank Theme
+ * @package blank-theme
  */
 
-get_header(); ?>
+get_header();
+?>
 
 	<div id="primary" class="<?php blank_theme_primary_classes(); ?>">
 		<main id="main" class="site-main" role="main">
@@ -36,5 +37,5 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-blank_theme_get_sidebar();
+get_sidebar();
 get_footer();

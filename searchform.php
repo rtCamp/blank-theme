@@ -2,10 +2,10 @@
 /**
  * Custom search form.
  *
- * @package Blank Theme
+ * @package blank-theme
  */
-
 ?>
+
 <form role="search" method="get" class="blank-theme-search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 	<label>
 		<span class="screen-reader-text"><?php esc_html_e( 'Search For :', 'blank-theme' ); ?></span>

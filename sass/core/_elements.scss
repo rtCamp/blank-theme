@@ -1,0 +1,342 @@
+// Elements.
+
+html {
+	box-sizing: border-box;
+	-ms-text-size-adjust: 100%;
+
+	/* [5] */
+	-webkit-text-size-adjust: 100%;
+
+	/* [5] */
+	color: $color__primary;
+
+	/* [additional] */
+
+	@if $font-smoothing == true {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+}
+
+/* stylelint-disable */
+*,
+*:before,
+*:after {
+	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+/* stylelint-enable */
+
+/**
+ * 1. Fallback for when there is no custom background color defined. [WordPress]
+ * 2. Remove default margin. [normalize.css]
+ * 3. Set the base elements `font-size` to the value of your choosing.
+ * 4. Work out the unitless `line-height` for your project based around your
+ *    desired `line-height` (defined previously in pixels), and your projects
+ *    base font size.
+ */
+body {
+	background: $color__background-body;
+	margin: 0;
+	font-family: $font__main;
+
+	// WP Editor
+	&.mce-content-body {
+		font-family: inherit;
+		margin: 15px;
+	}
+}
+
+blockquote, q {
+	quotes: "" "";
+
+	&::before,
+	&::after {
+		content: "";
+	}
+}
+
+img {
+	height: auto;
+
+	/* Make sure images are scaled correctly. */
+	max-width: 100%;
+	vertical-align: middle;
+
+	/* Adhere to container width. */
+}
+
+figure {
+	max-width: 100%;
+}
+
+/* Default Links */
+a {
+	// Self, Active & Visited
+	& {
+		color: $color__link;
+		text-decoration: none;
+	}
+
+	transition: 0.3s;
+
+	// Hover
+	&:hover {
+		color: $color__link-hover;
+	}
+}
+
+/*---------------------------
+		Lists & Tables
+---------------------------*/
+
+ul,
+ol {
+	margin: rem-calc(0 0 18 18);
+
+	&.no-bullet {
+		&,
+		ul,
+		ol {
+			margin-left: 0;
+			list-style: none;
+		}
+	}
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5rem;
+}
+
+dt {
+	font-weight: 700;
+}
+
+dd {
+	margin: 0 1.5rem 1.5rem;
+}
+
+/*---------------------------
+		Buttons
+---------------------------*/
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 1px solid;
+	border-color: $color__border-button;
+	border-radius: $border-radius;
+	background: $color__background-button;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
+	color: rgba(0, 0, 0, 0.8);
+	line-height: 1;
+	padding: .6rem 1rem .4rem;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+	font-family: $font__main;
+
+	&:hover {
+		border-color: $color__border-button-hover;
+		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
+	}
+
+	&:active,
+	&:focus {
+		border-color: $color__border-button-focus;
+		box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
+	}
+}
+
+/*---------------------------
+		Fields
+---------------------------*/
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+textarea {
+	color: $color__text-input;
+	border: 1px solid $color__border-input;
+	border-radius: $border-radius;
+	font-family: $font__main;
+	line-height: $font__line-height-body;
+
+	&:focus {
+		color: $color__text-input-focus;
+	}
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"] {
+	padding: 3px;
+}
+
+select {
+	color: $color__select-text;
+	font-family: $font__main;
+	font-size: $font__base-font-size;
+	line-height: $font__line-height-body;
+}
+
+textarea {
+	max-width: 100%;
+	line-height: $font__line-height-body;
+	outline: none;
+	background: $color__background-textarea;
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1) inset;
+}
+
+p {
+	&:empty {
+		display: none;
+	}
+}
+
+/*------------------------------------*\
+    #HEADINGS
+\*------------------------------------*/
+
+h1, .h1 {
+	font-size: $font__size-h1;
+}
+
+h2, .h2 {
+	font-size: $font__size-h2;
+}
+
+h3, .h3 {
+	font-size: $font__size-h3;
+}
+
+h4, .h4 {
+	font-size: $font__size-h4;
+}
+
+h5, .h5 {
+	font-size: $font__size-h5;
+}
+
+h6, .h6 {
+	font-size: $font__size-h6;
+}
+
+// Lists
+ul, ol, dd {
+
+	margin-left: rem-calc($font__base-line-height);
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+}
+
+/**
+ * Crude table styles; tables are very difficult to keep on the baseline.
+ */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+}
+
+.table-responsive {
+	min-height: .01%;
+	overflow-x: auto;
+}
+
+th,
+td {
+	border-bottom: 1px solid #E1E1E1;
+	padding: $font__base-line-height / 2;
+	text-align: left;
+
+	&:first-child {
+		padding-left: 0;
+	}
+
+	&:last-child {
+		padding-right: 0;
+	}
+}
+
+.rthd-comment-content {
+	th,
+	td {
+		vertical-align: top;
+
+		&:first-child {
+			width: 18%;
+		}
+	}
+}
+
+pre {
+	background: $color__background-pre;
+	border: 1px solid $color__border-light;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1rem; /* Contain overflow in all browsers. */
+
+	code.bash,
+	& > code {
+		background: transparent;
+		border: 0;
+		display: block;
+		margin: 0;
+		padding: 0;
+	}
+
+	code code.bash {
+		font-size: inherit;
+	}
+}
+
+code {
+	padding: rem-calc(2 6);
+	margin: rem-calc(0 3);
+	font-size: 80%;
+
+	//white-space: nowrap;
+	background: $color__background-pre;
+	border: 1px solid $color__border-light;
+	border-radius: $border-radius;
+}
+
+/**
+ * 1. Fix an odd quirk whereby, without this, code blocks are rendered at a
+ *    font-size smaller than 1em.
+ */
+code,
+kbd,
+pre,
+samp {
+	font-family: $font__code;
+}
+
+q,
+blockquote {
+	border-left: 4px solid $light-gray;
+	color: #999;
+	font-style: italic;
+	margin: rem-calc(0 0 $font__base-line-height $font__base-line-height);
+	padding-left: rem-calc(16);
+}
+
+hr {
+	background-color: $color__background-hr;
+	border: 0;
+	box-sizing: content-box;
+
+	/* Address differences between Firefox and other browsers. Source- normalize.css */
+	height: 1px;
+
+}

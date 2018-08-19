@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
- * @package Blank Theme
+ * @package blank-theme
  */
 
 ?><!DOCTYPE html>
@@ -18,6 +18,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'blank-theme' ); ?></a>
 
@@ -66,16 +67,18 @@
 
 			<nav id="site-navigation" class="blank-theme-main-navigation auto cell column" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'blank-theme' ); ?>">
 				<?php
-				wp_nav_menu( array(
-					'theme_location' => 'primary',
-					'menu_id'        => 'primary-menu',
-					'menu_class'     => 'primary-menu menu',
-					'depth'          => 3,
-				) );
+				wp_nav_menu(
+					array(
+						'theme_location' => 'primary',
+						'menu_id'        => 'primary-menu',
+						'menu_class'     => 'primary-menu menu',
+						'depth'          => 3,
+					)
+				);
 				?>
 			</nav><!-- #site-navigation -->
 		</div>
 	</header><!-- #masthead -->
 
 	<div class="grid-container grid-container-padded">
-	<div id="content" class="site-content row grid-x grid-margin-x">
+		<div id="content" class="site-content row grid-x grid-margin-x">
