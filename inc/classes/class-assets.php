@@ -2,7 +2,7 @@
 /**
  * Enqueue theme assets.
  *
- * @package Blank_Theme
+ * @package blank-theme
  */
 
 namespace Blank_Theme;

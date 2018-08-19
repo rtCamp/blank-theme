@@ -4,7 +4,7 @@
  *
  * @credit https://github.com/xwp/wp-foo-bar
  *
- * @package Blank_Theme
+ * @package blank-theme
  */
 
 namespace Blank_Theme;

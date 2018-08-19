@@ -6,6 +6,7 @@
  *
  * @package blank-theme
  */
+
 get_header();
 ?>
 

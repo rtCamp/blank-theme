@@ -198,7 +198,7 @@ module.exports = {
 
 	plugins: plugins,
 
-	watch: !isProduction,
+	watch: ! isProduction,
 
 	watchOptions: {
 		ignored: /node_modules/
