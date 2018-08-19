@@ -1275,6 +1275,82 @@
     .show-for-portrait {
       display: block !important; } }
 
+.wp-block-video video {
+  max-width: 39.75rem; }
+
+.wp-block-image img {
+  display: block; }
+
+.wp-block-image.alignleft, .wp-block-image.alignright {
+  width: 100%; }
+
+.wp-block-image.alignfull img {
+  width: 100vw; }
+
+.wp-block-gallery:not(.components-placeholder) {
+  margin: 1.5em auto; }
+
+.wp-block-cover-text p {
+  padding: 1.5em 0.875rem; }
+
+ul.wp-block-latest-posts.alignwide,
+ul.wp-block-latest-posts.alignfull,
+ul.wp-block-latest-posts.is-grid.alignwide,
+ul.wp-block-latest-posts.is-grid.alignwide {
+  padding: 0 0.875rem; }
+
+.wp-block-table {
+  display: block;
+  overflow-x: auto; }
+
+.wp-block-table table {
+  border-collapse: collapse;
+  width: 100%; }
+
+.wp-block-table td, .wp-block-table th {
+  padding: .5em; }
+
+.entry-content li {
+  margin-left: 2.5em;
+  margin-bottom: 0.375rem; }
+
+.entry-content ul ul,
+.entry-content ol ol,
+.entry-content ul ol,
+.entry-content ol ul {
+  margin: 0 auto; }
+
+.entry-content ul ul li,
+.entry-content ol ol li,
+.entry-content ul ol li,
+.entry-content ol ul li {
+  margin-left: 0; }
+
+.wp-block-embed.type-video > .wp-block-embed__wrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 56.25%; }
+
+.wp-block-embed.type-video > .wp-block-embed__wrapper > iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0; }
+
+.wp-block-quote.is-large {
+  margin: 0 auto 1rem; }
+
+.wp-block-pullquote > p:first-child {
+  margin-top: 0; }
+
+.wp-block-separator {
+  margin: 3em auto;
+  padding: 0; }
+
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /* Note: This file is updated by Sagar, To remove ducplication of styles. */
 /* HTML5 display definitions

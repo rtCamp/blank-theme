@@ -1,6 +1,6 @@
 <?php
 /**
- * Blank Theme functions and definitions
+ * Blank Theme file includes and definitions
  *
  * @package blank-theme
  */
@@ -8,7 +8,7 @@
 namespace Blank_Theme;
 
 if ( ! defined( 'BLANK_THEME_VERSION' ) ) {
-	define( 'BLANK_THEME_VERSION', 1.0 );
+	define( 'BLANK_THEME_VERSION', 2.0 );
 }
 if ( ! defined( 'BLANK_THEME_TEMP_DIR' ) ) {
 	define( 'BLANK_THEME_TEMP_DIR', get_template_directory() );
