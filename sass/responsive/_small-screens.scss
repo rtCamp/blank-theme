@@ -1,18 +1,3 @@
 @media only screen and (max-width: 640px) {
-	//Fix of admin bar due to mmenu
-
-	/* stylelint-disable */
-	html.mm-blocking {
-		margin-top: 0 !important;
-
-		#wpadminbar {
-			z-index: -1;
-		}
-
-		/* stylelint-enable */
-
-		.logged-in.admin-bar {
-			margin-top: 46px;
-		}
-	}
+	// Small screen styles.
 }

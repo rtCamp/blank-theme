@@ -36,6 +36,10 @@ module.exports = {
 			replace: true,
 			mediaQuery: true,
 			minPixelValue: 2
+		},
+
+		'css-mqpacker': {
+			sort: true
 		}
 
 	}
