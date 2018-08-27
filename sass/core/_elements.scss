@@ -13,8 +13,7 @@ html {
 	/* [additional] */
 
 	@if $font-smoothing == true {
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
+		@include font-smoothing();
 	}
 }
 
@@ -186,12 +185,16 @@ select {
 	line-height: $font__line-height-body;
 }
 
+/**
+ * 1. Remove the default vertical scrollbar in IE 10+.
+ */
 textarea {
-	max-width: 100%;
-	line-height: $font__line-height-body;
-	outline: none;
 	background: $color__background-textarea;
 	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1) inset;
+	line-height: $font__line-height-body;
+	max-width: 100%;
+	outline: none;
+	overflow: auto; /* 1 */
 }
 
 p {
@@ -292,17 +295,6 @@ td {
 	}
 }
 
-.rthd-comment-content {
-	th,
-	td {
-		vertical-align: top;
-
-		&:first-child {
-			width: 18%;
-		}
-	}
-}
-
 pre {
 	background: $color__background-pre;
 	border: 1px solid $color__border-light;
@@ -362,5 +354,4 @@ hr {
 
 	/* Address differences between Firefox and other browsers. Source- normalize.css */
 	height: 1px;
-
 }

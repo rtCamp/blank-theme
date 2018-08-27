@@ -5,13 +5,7 @@
 	margin-right: auto;
 }
 
-/// Clearfix
-@mixin clearfix {
-	content: "";
-	display: table;
-}
-
-/// Clear after (not all clearfix need this also)
-@mixin clearfix-after {
-	clear: both;
+@mixin font-smoothing() {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }

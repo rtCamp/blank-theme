@@ -1,5 +1,9 @@
-.comment-content a {
-	word-wrap: break-word;
+.comment-content {
+	@include clearfix();
+
+	a {
+		word-wrap: break-word;
+	}
 }
 
 .bypostauthor {
