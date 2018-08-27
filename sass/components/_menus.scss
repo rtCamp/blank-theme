@@ -13,15 +13,17 @@
 		margin: 0;
 		padding-left: 0;
 
+		@include mq(false, desktop) {
+			display: none;
+		}
+
 		ul {
 			float: left;
 			position: absolute;
-			top: rem-calc(35);
+			top: 35px;
 			left: -999em;
 			z-index: 99999;
 			background: $white;
-
-			// display: none;
 
 			ul {
 				left: -999px;
@@ -64,7 +66,7 @@
 	a {
 		display: block;
 		text-decoration: none;
-		padding: rem-calc(10);
+		padding: 10px;
 	}
 
 	.current_page_item > a,
@@ -76,7 +78,11 @@
 
 /* Small menu. */
 .menu-toggle {
-	display: block;
+	display: none;
+
+	@include mq(false, desktop) {
+		display: block;
+	}
 }
 
 .comment-navigation,

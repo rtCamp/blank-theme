@@ -11,6 +11,7 @@
 	},
 	"dependencies": {
 		"lodash": "^4.17.10",
+		"sass-mq": "^5.0.0",
 		"slick-carousel": "^1.8.1"
 	},
 	"devDependencies": {

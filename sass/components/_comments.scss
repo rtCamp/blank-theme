@@ -16,7 +16,7 @@
 	.comment-author {
 		img {
 			float: left;
-			margin-right: rem-calc(15);
+			margin-right: 15px;
 		}
 
 		.url {
@@ -28,7 +28,7 @@
 	li.comment {
 		border-bottom: 1px solid $color__background-hr;
 		overflow: hidden;
-		margin-bottom: rem-calc(25);
+		margin-bottom: 25px;
 	}
 
 	li.comment:last-child {
@@ -36,10 +36,10 @@
 	}
 
 	.comment-body {
-		margin-bottom: rem-calc(20);
+		margin-bottom: 20px;
 
 		p {
-			margin-bottom: rem-calc(5);
+			margin-bottom: 5px;
 		}
 	}
 
