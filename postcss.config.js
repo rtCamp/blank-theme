@@ -31,10 +31,10 @@ module.exports = {
 		'postcss-pxtorem': {
 			rootValue: 16,
 			unitPrecision: 5,
-			propList: ['*'],
+			propList: [ '*' ],
 			selectorBlackList: [],
 			replace: true,
-			mediaQuery: true,
+			mediaQuery: false,
 			minPixelValue: 2
 		},
 

@@ -69,9 +69,8 @@
 /*---------------------------
 		Clearing
 ---------------------------*/
-
-.comment-content, .clearfix {
-	@extend %clearfix;
+.clearfix {
+	@include clearfix();
 }
 
 // Clear

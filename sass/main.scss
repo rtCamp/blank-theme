@@ -2,10 +2,10 @@
 @import "core/essentials";
 
 // Core
-@import "core/zurb-foundation";
-@import "core/blocks";
 @import "core/normalize";
 @import "core/elements";
+@import "core/zurb-foundation";
+@import "core/blocks";
 @import "core/common-classes";
 @import "core/wp-css";
 
@@ -26,8 +26,3 @@
 @import "components/banner";
 @import "components/comments";
 @import "components/widgets";
-
-// Responsive
-@import "responsive/large-screens";
-@import "responsive/medium-screens";
-@import "responsive/small-screens";

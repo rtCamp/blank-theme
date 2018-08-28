@@ -1,5 +1,5 @@
 .widget {
-	margin: 0 0 rem-calc(map-get($grid-column-gutter, small));
+	margin: 0 0 map-get($grid-column-gutter, small);
 
 	/* Make sure select elements fit in widgets. */
 	select {
@@ -9,8 +9,8 @@
 
 .widget-sidebar {
 	background: $white;
-	padding: rem-calc(map-get($grid-column-gutter, small)) / 2;
 	clear: both;
+	padding: map-get($grid-column-gutter, small) / 2;
 }
 
 /* Search widget. */
@@ -19,6 +19,6 @@
 }
 
 .widget-title {
-	font-size: rem-calc(22);
-	line-height: rem-calc(30);
+	font-size: 22px;
+	line-height: 30px;
 }

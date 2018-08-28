@@ -7,7 +7,7 @@
     "max-empty-lines": 1,
     "selector-max-specificity": "0,3,1",
     "selector-pseudo-element-colon-notation": "double",
-	"indentation": "tab",
+    "indentation": "tab",
     "color-no-invalid-hex": true,
     "comment-no-empty": true
   }

@@ -13,8 +13,7 @@ html {
 	/* [additional] */
 
 	@if $font-smoothing == true {
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
+		@include font-smoothing();
 	}
 }
 
@@ -92,7 +91,7 @@ a {
 
 ul,
 ol {
-	margin: rem-calc(0 0 18 18);
+	margin: 0 0 18px 0;
 
 	&.no-bullet {
 		&,
@@ -186,12 +185,16 @@ select {
 	line-height: $font__line-height-body;
 }
 
+/**
+ * 1. Remove the default vertical scrollbar in IE 10+.
+ */
 textarea {
-	max-width: 100%;
-	line-height: $font__line-height-body;
-	outline: none;
 	background: $color__background-textarea;
 	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1) inset;
+	line-height: $font__line-height-body;
+	max-width: 100%;
+	outline: none;
+	overflow: auto; /* 1 */
 }
 
 p {
@@ -229,9 +232,8 @@ h6, .h6 {
 }
 
 // Lists
-ul, ol, dd {
-
-	margin-left: rem-calc($font__base-line-height);
+dd {
+	margin-left: $font__base-line-height;
 }
 
 li > ul,
@@ -251,6 +253,31 @@ table {
 .table-responsive {
 	min-height: .01%;
 	overflow-x: auto;
+
+	@include mq(false, desktop) {
+		width: 100%;
+		margin-bottom: 15px;
+		overflow-y: hidden;
+		-ms-overflow-style: -ms-autohiding-scrollbar;
+		border: 1px solid $color__border-light;
+
+		& > table {
+			margin-bottom: 0;
+		}
+
+		& > table {
+			& > thead,
+			& > tbody,
+			& > tfoot {
+				& > tr {
+					& > th,
+					& > td {
+						white-space: nowrap;
+					}
+				}
+			}
+		}
+	}
 }
 
 th,
@@ -265,17 +292,6 @@ td {
 
 	&:last-child {
 		padding-right: 0;
-	}
-}
-
-.rthd-comment-content {
-	th,
-	td {
-		vertical-align: top;
-
-		&:first-child {
-			width: 18%;
-		}
 	}
 }
 
@@ -301,14 +317,14 @@ pre {
 }
 
 code {
-	padding: rem-calc(2 6);
-	margin: rem-calc(0 3);
 	font-size: 80%;
+	margin: 0 3px;
+	padding: 2px 6px;
 
 	//white-space: nowrap;
 	background: $color__background-pre;
-	border: 1px solid $color__border-light;
 	border-radius: $border-radius;
+	border: 1px solid $color__border-light;
 }
 
 /**
@@ -327,8 +343,8 @@ blockquote {
 	border-left: 4px solid $light-gray;
 	color: #999;
 	font-style: italic;
-	margin: rem-calc(0 0 $font__base-line-height $font__base-line-height);
-	padding-left: rem-calc(16);
+	margin: 0 0 $font__base-line-height $font__base-line-height;
+	padding-left: 16px;
 }
 
 hr {
@@ -338,5 +354,4 @@ hr {
 
 	/* Address differences between Firefox and other browsers. Source- normalize.css */
 	height: 1px;
-
 }

@@ -58,7 +58,7 @@ const config = {
 				warnings: false
 			},
 			output: {
-				comments: false,
+				comments: false
 			}
 		} ),
 
@@ -134,7 +134,7 @@ const config = {
 								'./sass/'
 							]
 						}
-					},
+					}
 				],
 
 				fallback: 'style-loader'
