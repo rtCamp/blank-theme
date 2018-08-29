@@ -1,7 +1,7 @@
 /**
  * Plugins
  */
-const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const StyleLintPlugin = require( 'stylelint-webpack-plugin' );
 const FriendlyErrorsPlugin = require( 'friendly-errors-webpack-plugin' );
 
@@ -11,7 +11,7 @@ const webpack = require( 'webpack' );
 const isProduction = 'production' === process.env.NODE_ENV;
 const JSDir = path.resolve( __dirname, 'js' );
 
-const extractSass = new ExtractTextPlugin( {
+const extractSass = new MiniCssExtractPlugin( {
 	filename: 'css/[name].css'
 } );
 
@@ -49,18 +49,6 @@ const config = {
 		 * SASS plugin.
 		 */
 		scss: extractSass,
-
-		/**
-		 * Uglify js plugin.
-		 */
-		uglifyJS: new webpack.optimize.UglifyJsPlugin( {
-			compress: {
-				warnings: false
-			},
-			output: {
-				comments: false
-			}
-		} ),
 
 		/**
 		 * Minify plugin.
@@ -105,7 +93,7 @@ const config = {
 			exclude: /(node_modules|vendor|bower_components)/,
 			loader: 'babel-loader',
 			query: {
-				presets: [ 'es2015' ]
+				presets: [ '@babel/preset-env' ]
 			}
 		},
 
@@ -114,31 +102,28 @@ const config = {
 		 */
 		scss: {
 			test: /\.scss$/,
-			use: extractSass.extract( {
-				use: [
-					{
-						loader: 'css-loader',
-						options: {
-							url: false,
-							importLoaders: 1
-						}
-					},
-					{
-						loader: 'postcss-loader'
-					},
-					{
-						loader: 'sass-loader',
-						options: {
-							includePaths: [
-								JSDir,
-								'./sass/'
-							]
-						}
+			use: [
+				isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
+				{
+					loader: 'css-loader',
+					options: {
+						url: false,
+						importLoaders: 1
 					}
-				],
-
-				fallback: 'style-loader'
-			} )
+				},
+				{
+					loader: 'postcss-loader'
+				},
+				{
+					loader: 'sass-loader',
+					options: {
+						includePaths: [
+							JSDir,
+							'./sass/'
+						]
+					}
+				}
+			],
 		}
 	}
 };
@@ -160,7 +145,6 @@ if ( isProduction ) {
 
 	plugins.push(
 		config.plugins.stylelint,
-		config.plugins.uglifyJS,
 		config.plugins.minify,
 	);
 }
@@ -171,6 +155,8 @@ if ( isProduction ) {
  * @type {object}
  */
 module.exports = {
+
+	mode: isProduction ? 'production' : 'development',
 
 	entry: {
 		main: JSDir + '/main.js',
@@ -190,6 +176,10 @@ module.exports = {
 			config.rules.js,
 			config.rules.scss
 		]
+	},
+
+	optimization: {
+		minimize: false
 	},
 
 	externals: {

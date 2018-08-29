@@ -36,12 +36,32 @@
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
 /******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
 /******/ 	};
 /******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
@@ -59,165 +79,124 @@
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
 /******/
+/******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _common = __webpack_require__(1);
-
-Object.defineProperty(exports, 'common', {
-  enumerable: true,
-  get: function get() {
-    return _interopRequireDefault(_common).default;
-  }
-});
-
-var _slider = __webpack_require__(2);
-
-Object.defineProperty(exports, 'slider', {
-  enumerable: true,
-  get: function get() {
-    return _interopRequireDefault(_slider).default;
-  }
-});
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+// CONCATENATED MODULE: ./js/components/common.js
 /**
  * Common JS.
  *
  * @type {Object}
  */
 var common = {
+  /**
+   * Initialize.
+   *
+   * @return {void}
+   */
+  init: function init() {
+    this.setProps();
+    this.bindEvents();
+  },
 
-	/**
-  * Initialize.
-  *
-  * @return {void}
-  */
-	init: function init() {
-		this.setProps();
-		this.bindEvents();
-	},
+  /**
+   * Bind events.
+   *
+   * @return {void}
+   */
+  bindEvents: function bindEvents() {
+    this.backToTopButton.on('click', this.goBackToTop);
+  },
 
+  /**
+   * Set properties and selectors.
+   *
+   * @return {void}
+   */
+  setProps: function setProps() {
+    this.backToTopButton = $('#blank-theme-back-to-top');
+    this.bodyHtml = $('body, html');
+  },
 
-	/**
-  * Bind events.
-  *
-  * @return {void}
-  */
-	bindEvents: function bindEvents() {
-		this.backToTopButton.on('click', this.goBackToTop);
-	},
-
-
-	/**
-  * Set properties and selectors.
-  *
-  * @return {void}
-  */
-	setProps: function setProps() {
-		this.backToTopButton = $('#blank-theme-back-to-top');
-		this.bodyHtml = $('body, html');
-	},
-
-
-	/**
-  * Handles back to top.
-  *
-  * @return {void}
-  */
-	goBackToTop: function goBackToTop() {
-		var animationDuration = 600;
-
-		this.bodyHtml.animate({
-			scrollTop: 0
-		}, animationDuration);
-	}
+  /**
+   * Handles back to top.
+   *
+   * @return {void}
+   */
+  goBackToTop: function goBackToTop() {
+    var animationDuration = 600;
+    this.bodyHtml.animate({
+      scrollTop: 0
+    }, animationDuration);
+  }
 };
+/* harmony default export */ var components_common = (common);
+// EXTERNAL MODULE: ./node_modules/slick-carousel/slick/slick.js
+var slick = __webpack_require__(1);
 
-exports.default = common;
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-__webpack_require__(3);
+// CONCATENATED MODULE: ./js/components/slider.js
 
 /**
  * Slider component
  *
  * @type {object}
  */
+
 var slider = {
+  /**
+   * Initialize.
+   *
+   * @return {void}
+   */
+  init: function init() {
+    this.setProps();
+    this.createSlider();
+  },
 
-	/**
-  * Initialize.
-  *
-  * @return {void}
-  */
-	init: function init() {
-		this.setProps();
-		this.createSlider();
-	},
+  /**
+   * Set properties and selectors.
+   *
+   * @return {void}
+   */
+  setProps: function setProps() {
+    this.sliderContainer = $('#blank-theme-slider');
+  },
 
+  /**
+   * Create slider.
+   *
+   * @return {void}
+   */
+  createSlider: function createSlider() {
+    if (!this.sliderContainer.length) {
+      return;
+    }
 
-	/**
-  * Set properties and selectors.
-  *
-  * @return {void}
-  */
-	setProps: function setProps() {
-		this.sliderContainer = $('#blank-theme-slider');
-	},
-
-
-	/**
-  * Create slider.
-  *
-  * @return {void}
-  */
-	createSlider: function createSlider() {
-		if (!this.sliderContainer.length) {
-			return;
-		}
-
-		this.sliderContainer.slick();
-	}
+    this.sliderContainer.slick();
+  }
 };
+/* harmony default export */ var components_slider = (slider);
+// CONCATENATED MODULE: ./js/components/index.js
+/* concated harmony reexport common */__webpack_require__.d(__webpack_exports__, "a", function() { return components_common; });
+/* concated harmony reexport slider */__webpack_require__.d(__webpack_exports__, "b", function() { return components_slider; });
+/**
+ * Blank Theme component.
+ *
+ * @package blank-theme
+ */
 
-exports.default = slider;
+
 
 /***/ }),
-/* 3 */
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -240,15 +219,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 ;(function(factory) {
     'use strict';
     if (true) {
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(4)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(2)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-    } else if (typeof exports !== 'undefined') {
-        module.exports = factory(require('jquery'));
-    } else {
-        factory(jQuery);
-    }
+    } else {}
 
 }(function($) {
     'use strict';
@@ -3237,42 +3212,36 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 
 /***/ }),
-/* 4 */
+/* 2 */
 /***/ (function(module, exports) {
 
 module.exports = jQuery;
 
 /***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 3 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-__webpack_require__(6);
-
-var _components = __webpack_require__(0);
-
-var components = _interopRequireWildcard(_components);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_sass_main_scss__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
 /**
  * Main scripts, loaded on all pages.
  *
  * @package blank-theme
  */
 
-window.$ = window.$ || jQuery;
 
-// Initialize common scripts.
-components.common.init();
+window.$ = window.$ || jQuery; // Initialize common scripts.
+
+_components__WEBPACK_IMPORTED_MODULE_1__[/* common */ "a"].init();
 
 /***/ }),
-/* 6 */
-/***/ (function(module, exports) {
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
 
-// removed by extract-text-webpack-plugin
+// extracted by mini-css-extract-plugin
 
 /***/ })
 /******/ ]);
