@@ -1,14 +1,19 @@
 {
   "rules": {
     "block-no-empty": true,
+    "color-hex-case": "lower",
+    "color-no-invalid-hex": true,
+    "comment-no-empty": true,
     "declaration-block-no-shorthand-property-overrides": true,
     "declaration-no-important": true,
     "font-weight-notation": "numeric",
+    "indentation": "tab",
     "max-empty-lines": 1,
     "selector-max-specificity": "0,3,1",
+    "selector-pseudo-element-case": "lower",
     "selector-pseudo-element-colon-notation": "double",
-    "indentation": "tab",
-    "color-no-invalid-hex": true,
-    "comment-no-empty": true
+    "property-case": "lower",
+    "unit-case": "lower",
+    "unit-no-unknown": true
   }
 }
