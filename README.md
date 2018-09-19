@@ -33,6 +33,9 @@ Getting Started
 6. Install packages by running `npm install`
 7. Use `npm run dev` during development.
 8. Use `npm run prod` when ready for production.
+9. Use `npm run clean` to cleanup build directory.
+10. Use `npm run lint-css` to lint scss files.
+11. Use `npm run update-deps` to re-install all dependencies.
 
 
 
