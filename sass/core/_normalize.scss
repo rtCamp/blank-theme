@@ -95,8 +95,8 @@ dfn {
  */
 
 mark {
-	background: #ff0;
-	color: #000;
+	background: $yellow;
+	color: $black;
 }
 
 /**
@@ -120,11 +120,11 @@ sup {
 }
 
 sup {
-	top: -0.5rem;
+	top: -8px;
 }
 
 sub {
-	bottom: -0.25rem;
+	bottom: -4px;
 }
 
 /* Embedded content
@@ -301,9 +301,9 @@ input[type="search"]::-webkit-search-decoration {
  */
 
 fieldset {
-	border: 1px solid #c0c0c0;
+	border: 1px solid $color__fieldset-border;
 	margin: 0 2px;
-	padding: 0.35rem 0.625rem 0.75rem;
+	padding: 6px 10px 12px;
 }
 
 /**

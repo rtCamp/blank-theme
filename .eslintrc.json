@@ -8,8 +8,7 @@
 			"blockBindings": true,
 			"classes": true,
 			"defaultParams": true,
-			"modules": true,
-			"experimentalObjectRestSpread": true
+			"modules": true
 		},
 		"sourceType": "module"
 	},
@@ -39,4 +38,3 @@
 		"no-param-reassign": 0
 	}
 }
-

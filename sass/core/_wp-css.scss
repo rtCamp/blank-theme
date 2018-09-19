@@ -29,7 +29,7 @@ object {
 --------------------------------------------------------------*/
 
 .wp-caption {
-	margin-bottom: 1.5rem;
+	margin-bottom: 24px;
 	max-width: 100%;
 
 	img[class*="wp-image-"] {
@@ -37,7 +37,7 @@ object {
 	}
 
 	.wp-caption-text {
-		margin: 0.8075rem 0;
+		margin: 12.92px 0;
 	}
 }
 
@@ -50,7 +50,7 @@ object {
 --------------------------------------------------------------*/
 
 .gallery {
-	margin-bottom: 1.5rem;
+	margin-bottom: 24px;
 }
 
 .gallery-item {
