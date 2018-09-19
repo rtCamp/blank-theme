@@ -9,7 +9,7 @@
 		"dev": "cross-env NODE_ENV=development webpack --watch --mode development --progress",
 		"prod": "cross-env NODE_ENV=production webpack --mode production --progress",
 		"clean": "rm -rf build/*",
-		"lint-css": "stylelint sass/*.scss --syntax scss",
+		"lint-css": "stylelint sass/**/*.scss --syntax scss",
 		"update-deps": "rm -rf node_modules && rm package-lock.json && npm install"
 	},
 	"dependencies": {},
