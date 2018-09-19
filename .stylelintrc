@@ -1,5 +1,6 @@
 {
   "rules": {
+    "at-rule-empty-line-before": null,
     "block-no-empty": true,
     "color-hex-case": "lower",
     "color-no-invalid-hex": true,
@@ -9,10 +10,13 @@
     "font-weight-notation": "numeric",
     "indentation": "tab",
     "max-empty-lines": 1,
+    "no-missing-end-of-source-newline": true,
+    "property-case": "lower",
+    "rule-empty-line-before": null,
+    "selector-list-comma-newline-after": null,
     "selector-max-specificity": "0,3,1",
     "selector-pseudo-element-case": "lower",
     "selector-pseudo-element-colon-notation": "double",
-    "property-case": "lower",
     "unit-case": "lower",
     "unit-no-unknown": true
   }

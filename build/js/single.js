@@ -81,31 +81,31 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 9);
+/******/ 	return __webpack_require__(__webpack_require__.s = "./js/single.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 10:
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-
-/***/ 9:
+/***/ "./js/single.js":
+/*!**********************!*\
+  !*** ./js/single.js ***!
+  \**********************/
+/*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _sass_single_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10);
-/* harmony import */ var _sass_single_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_sass_single_scss__WEBPACK_IMPORTED_MODULE_0__);
-/**
- * Single page scripts.
- *
- * @package blank-theme
- */
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sass_single_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sass/single.scss */ \"./sass/single.scss\");\n/* harmony import */ var _sass_single_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_sass_single_scss__WEBPACK_IMPORTED_MODULE_0__);\n/**\n * Single page scripts.\n *\n * @package blank-theme\n */\n\n\n//# sourceURL=webpack:///./js/single.js?");
 
+/***/ }),
+
+/***/ "./sass/single.scss":
+/*!**************************!*\
+  !*** ./sass/single.scss ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./sass/single.scss?");
 
 /***/ })
 

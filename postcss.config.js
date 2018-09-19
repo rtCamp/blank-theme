@@ -24,10 +24,6 @@ module.exports = {
 			]
 		},
 
-		'postcss-cssnext': {
-			warnForDuplicates: false
-		},
-
 		'postcss-pxtorem': {
 			rootValue: 16,
 			unitPrecision: 5,

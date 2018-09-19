@@ -81,53 +81,19 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 12);
+/******/ 	return __webpack_require__(__webpack_require__.s = "./js/admin/customizer.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 12:
+/***/ "./js/admin/customizer.js":
+/*!********************************!*\
+  !*** ./js/admin/customizer.js ***!
+  \********************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
-/**
- * File customizer.js.
- *
- * Theme Customizer enhancements for a better user experience.
- *
- * Contains handlers to make Theme Customizer preview reload changes asynchronously.
- */
-(function ($) {
-  // Site title and description.
-  wp.customize('blogname', function (value) {
-    value.bind(function (to) {
-      $('.site-title a').text(to);
-    });
-  });
-  wp.customize('blogdescription', function (value) {
-    value.bind(function (to) {
-      $('.site-description').text(to);
-    });
-  }); // Header text color.
-
-  wp.customize('header_textcolor', function (value) {
-    value.bind(function (to) {
-      if ('blank' === to) {
-        $('.site-title, .site-description').css({
-          'clip': 'rect(1px, 1px, 1px, 1px)',
-          'position': 'absolute'
-        });
-      } else {
-        $('.site-title, .site-description').css({
-          'clip': 'auto',
-          'position': 'relative'
-        });
-        $('.site-title a, .site-description').css({
-          'color': to
-        });
-      }
-    });
-  });
-})(jQuery);
+eval("/**\n * File customizer.js.\n *\n * Theme Customizer enhancements for a better user experience.\n *\n * Contains handlers to make Theme Customizer preview reload changes asynchronously.\n */\n(function ($) {\n  // Site title and description.\n  wp.customize('blogname', function (value) {\n    value.bind(function (to) {\n      $('.site-title a').text(to);\n    });\n  });\n  wp.customize('blogdescription', function (value) {\n    value.bind(function (to) {\n      $('.site-description').text(to);\n    });\n  }); // Header text color.\n\n  wp.customize('header_textcolor', function (value) {\n    value.bind(function (to) {\n      if ('blank' === to) {\n        $('.site-title, .site-description').css({\n          'clip': 'rect(1px, 1px, 1px, 1px)',\n          'position': 'absolute'\n        });\n      } else {\n        $('.site-title, .site-description').css({\n          'clip': 'auto',\n          'position': 'relative'\n        });\n        $('.site-title a, .site-description').css({\n          'color': to\n        });\n      }\n    });\n  });\n})(jQuery);\n\n//# sourceURL=webpack:///./js/admin/customizer.js?");
 
 /***/ })
 
