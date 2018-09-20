@@ -251,7 +251,7 @@ table {
 }
 
 .table-responsive {
-	min-height: .01%;
+	min-height: 0.01%;
 	overflow-x: auto;
 
 	@include mq(false, desktop) {

@@ -6,10 +6,12 @@
 	"license": "MIT",
 	"private": true,
 	"scripts": {
-		"dev": "cross-env NODE_ENV=development webpack --watch --mode development --progress",
-		"prod": "cross-env NODE_ENV=production webpack --mode production --progress",
 		"clean": "rm -rf build/*",
+		"dev": "cross-env NODE_ENV=development webpack --watch --mode development --progress",
 		"lint-css": "stylelint sass/**/*.scss --syntax scss",
+		"lint-js": "eslint js/",
+		"precommit": "npm run lint-css && npm run lint-js",
+		"prod": "cross-env NODE_ENV=production webpack --mode production --progress",
 		"update-deps": "rm -rf node_modules && rm package-lock.json && npm install"
 	},
 	"dependencies": {},

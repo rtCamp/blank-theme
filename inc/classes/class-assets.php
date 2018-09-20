@@ -29,7 +29,7 @@ class Assets extends Base {
 			return self::$asset_paths;
 		}
 
-		$json_data   = get_template_directory() . '/build/manifest.json';
+		$json_data   = BLANK_THEME_TEMP_DIR . '/build/manifest.json';
 		$asset_array = file_get_contents( $json_data ); // phpcs:ignore
 
 		self::$asset_paths = ( $asset_array ) ? json_decode( $asset_array, true ) : [];
@@ -42,20 +42,46 @@ class Assets extends Base {
 	 *
 	 * @param string $filename File name of which hash path retrive.
 	 *
-	 * @link https://danielshaw.co.nz/wordpress-cache-busting-json-hash-map/
-	 *
-	 * @return string|bool
+	 * @return bool|string
 	 */
 	public static function asset_path( $filename ) {
+
+		if ( ! $filename ) {
+			return false;
+		}
 
 		$asset_paths = self::get_asset_path();
 
 		if ( ! empty( $asset_paths[ $filename ] ) ) {
-			return BLANK_THEME_BUILD_URI . '/' . $asset_paths[ $filename ];
+			return sprintf( '%1$s/%2$s', BLANK_THEME_BUILD_URI, $asset_paths[ $filename ] );
 		}
 
 		return false;
 
+	}
+
+	/**
+	 * Return timestamp when file is changes.
+	 * This is used for cache busting assets.
+	 *
+	 * @param string $filename File name you want to get timestamp from.
+	 *
+	 * @return bool|int Timestamp.
+	 */
+	public static function asset_version( $filename = null ) {
+
+		if ( ! $filename ) {
+			return false;
+		}
+
+		$file_location = null;
+		$asset_paths   = self::get_asset_path();
+
+		if ( ! empty( $asset_paths[ $filename ] ) ) {
+			$file_location = sprintf( '%1$s/build/%2$s', BLANK_THEME_TEMP_DIR, $asset_paths[ $filename ] );
+		}
+
+		return filemtime( $file_location );
 	}
 
 	/**
@@ -65,9 +91,9 @@ class Assets extends Base {
 	 */
 	public function register_scripts() {
 
-		wp_register_script( 'blank-theme-main', self::asset_path( 'main.js' ), array( 'jquery' ), BLANK_THEME_VERSION, true );
-		wp_register_script( 'blank-theme-home', self::asset_path( 'home.js' ), array( 'jquery' ), BLANK_THEME_VERSION, true );
-		wp_register_script( 'blank-theme-single', self::asset_path( 'single.js' ), array( 'jquery' ), BLANK_THEME_VERSION, true );
+		wp_register_script( 'blank-theme-main', self::asset_path( 'main.js' ), array( 'jquery' ), self::asset_version( 'main.js' ), true );
+		wp_register_script( 'blank-theme-home', self::asset_path( 'home.js' ), array( 'jquery' ), self::asset_version( 'home.js' ), true );
+		wp_register_script( 'blank-theme-single', self::asset_path( 'single.js' ), array( 'jquery' ), self::asset_version( 'single.js' ), true );
 
 		wp_enqueue_script( 'blank-theme-main' );
 
@@ -92,9 +118,9 @@ class Assets extends Base {
 	 */
 	public function register_styles() {
 
-		wp_register_style( 'blank-theme-main', self::asset_path( 'main.css' ), array(), BLANK_THEME_VERSION );
-		wp_register_style( 'blank-theme-home', self::asset_path( 'home.css' ), array( 'blank-theme-main' ), BLANK_THEME_VERSION );
-		wp_register_style( 'blank-theme-single', self::asset_path( 'single.css' ), array( 'blank-theme-main' ), BLANK_THEME_VERSION );
+		wp_register_style( 'blank-theme-main', self::asset_path( 'main.css' ), array(), self::asset_version( 'main.css' ) );
+		wp_register_style( 'blank-theme-home', self::asset_path( 'home.css' ), array( 'blank-theme-main' ), self::asset_version( 'home.css' ) );
+		wp_register_style( 'blank-theme-single', self::asset_path( 'single.css' ), array( 'blank-theme-main' ), self::asset_version( 'single.css' ) );
 
 		wp_enqueue_style( 'blank-theme-main' );
 

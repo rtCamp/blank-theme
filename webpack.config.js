@@ -1,3 +1,6 @@
+/* global process __dirname */
+const DEV = 'production' !== process.env.NODE_ENV;
+
 /**
  * Plugins
  */
@@ -23,7 +26,7 @@ const entry = {
 
 const output = {
 	path: __dirname + '/build',
-	filename: 'js/[name].[contenthash].js'
+	filename: DEV ? 'js/[name].js' : 'js/[name].[contenthash].js'
 };
 
 /**
@@ -33,7 +36,7 @@ const plugins = ( argv ) => [
 	new CleanWebpackPlugin( [ 'build' ] ),
 
 	new MiniCssExtractPlugin( {
-		filename: 'css/[name].[contenthash].css'
+		filename: DEV ? 'css/[name].css' : 'css/[name].[contenthash].css'
 	} ),
 
 	new WebpackAssetsManifest(),
