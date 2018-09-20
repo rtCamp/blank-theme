@@ -10,15 +10,61 @@ namespace Blank_Theme;
 class Assets extends Base {
 
 	/**
+	 * Hold asset path.
+	 *
+	 * @var array
+	 */
+	public static $asset_paths = array();
+
+	/**
+	 * Get asset path.
+	 *
+	 * @return array
+	 */
+	public static function get_asset_path() {
+		if ( ! empty( self::$asset_paths ) ) {
+			return self::$asset_paths;
+		}
+
+		$json_data   = get_template_directory() . '/build/manifest.json';
+		$asset_array = file_get_contents( $json_data ); // phpcs:ignore
+
+		self::$asset_paths = ( $asset_array ) ? json_decode( $asset_array, true ) : [];
+
+		return self::$asset_paths;
+	}
+
+	/**
+	 * Retrive asset path.
+	 *
+	 * @param string $filename File name of which hash path retrive.
+	 *
+	 * @link https://danielshaw.co.nz/wordpress-cache-busting-json-hash-map/
+	 *
+	 * @return string|bool
+	 */
+	public static function asset_path( $filename ) {
+
+		$asset_paths = self::get_asset_path();
+
+		if ( ! empty( $asset_paths[ $filename ] ) ) {
+			return BLANK_THEME_BUILD_URI . '/' . $asset_paths[ $filename ];
+		}
+
+		return false;
+
+	}
+
+	/**
 	 * Register scripts.
 	 *
 	 * @action wp_enqueue_scripts
 	 */
 	public function register_scripts() {
 
-		wp_register_script( 'blank-theme-main', BLANK_THEME_BUILD_URI . '/js/main.js', array( 'jquery' ), BLANK_THEME_VERSION, true );
-		wp_register_script( 'blank-theme-home', BLANK_THEME_BUILD_URI . '/js/home.js', array( 'jquery' ), BLANK_THEME_VERSION, true );
-		wp_register_script( 'blank-theme-single', BLANK_THEME_BUILD_URI . '/js/single.js', array( 'jquery' ), BLANK_THEME_VERSION, true );
+		wp_register_script( 'blank-theme-main', self::asset_path( 'main.js' ), array( 'jquery' ), BLANK_THEME_VERSION, true );
+		wp_register_script( 'blank-theme-home', self::asset_path( 'home.js' ), array( 'jquery' ), BLANK_THEME_VERSION, true );
+		wp_register_script( 'blank-theme-single', self::asset_path( 'single.js' ), array( 'jquery' ), BLANK_THEME_VERSION, true );
 
 		wp_enqueue_script( 'blank-theme-main' );
 
@@ -33,6 +79,7 @@ class Assets extends Base {
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
+
 	}
 
 	/**
@@ -42,9 +89,9 @@ class Assets extends Base {
 	 */
 	public function register_styles() {
 
-		wp_register_style( 'blank-theme-main', BLANK_THEME_BUILD_URI . '/css/main.css', array(), BLANK_THEME_VERSION );
-		wp_register_style( 'blank-theme-home', BLANK_THEME_BUILD_URI . '/css/home.css', array( 'blank-theme-main' ), BLANK_THEME_VERSION );
-		wp_register_style( 'blank-theme-single', BLANK_THEME_BUILD_URI . '/css/single.css', array( 'blank-theme-main' ), BLANK_THEME_VERSION );
+		wp_register_style( 'blank-theme-main', self::asset_path( 'main.css' ), array(), BLANK_THEME_VERSION );
+		wp_register_style( 'blank-theme-home', self::asset_path( 'home.css' ), array( 'blank-theme-main' ), BLANK_THEME_VERSION );
+		wp_register_style( 'blank-theme-single', self::asset_path( 'single.css' ), array( 'blank-theme-main' ), BLANK_THEME_VERSION );
 
 		wp_enqueue_style( 'blank-theme-main' );
 

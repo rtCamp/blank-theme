@@ -9,6 +9,7 @@ const CleanWebpackPlugin = require( 'clean-webpack-plugin' );
 const UglifyJsPlugin = require( 'uglifyjs-webpack-plugin' );
 const StyleLintPlugin = require( 'stylelint-webpack-plugin' );
 const FriendlyErrorsPlugin = require( 'friendly-errors-webpack-plugin' );
+const WebpackAssetsManifest = require( 'webpack-assets-manifest' );
 
 // JS Directory path.
 const JSDir = path.resolve( __dirname, 'js' );
@@ -22,7 +23,7 @@ const entry = {
 
 const output = {
 	path: __dirname + '/build',
-	filename: 'js/[name].js'
+	filename: 'js/[name].[contenthash].js'
 };
 
 /**
@@ -32,8 +33,10 @@ const plugins = ( argv ) => [
 	new CleanWebpackPlugin( [ 'build' ] ),
 
 	new MiniCssExtractPlugin( {
-		filename: 'css/[name].css'
+		filename: 'css/[name].[contenthash].css'
 	} ),
+
+	new WebpackAssetsManifest(),
 
 	new StyleLintPlugin( {
 		'extends': 'stylelint-config-wordpress/scss'
