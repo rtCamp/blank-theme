@@ -10,31 +10,49 @@ namespace Blank_Theme;
 class Assets extends Base {
 
 	/**
+	 * Hold asset path.
+	 *
+	 * @var array
+	 */
+	public static $asset_paths = array();
+
+	/**
+	 * Get asset path.
+	 *
+	 * @return array
+	 */
+	public static function get_asset_path() {
+		if ( ! empty( self::$asset_paths ) ) {
+			return self::$asset_paths;
+		}
+
+		ob_start();
+		include_once get_template_directory() . '/build/manifest.json';
+		$json_data = ob_get_clean();
+
+		self::$asset_paths = ( $json_data ) ? json_decode( $json_data, true ) : [];
+
+		return self::$asset_paths;
+	}
+
+	/**
 	 * Retrive asset path.
 	 *
 	 * @param string $filename File name of which hash path retrive.
 	 *
 	 * @link https://danielshaw.co.nz/wordpress-cache-busting-json-hash-map/
 	 *
-	 * @return string
+	 * @return string|bool
 	 */
 	public static function asset_path( $filename ) {
 
-		ob_start();
-		require_once get_template_directory() . '/build/manifest.json';
-		$map = ob_get_clean();
+		$asset_paths = self::get_asset_path();
 
-		static $hash = null;
-
-		if ( null === $hash ) {
-			$hash = ( $map ) ? json_decode( $map, true ) : [];
+		if ( ! empty( $asset_paths[ $filename ] ) ) {
+			return BLANK_THEME_BUILD_URI . '/' . $asset_paths[ $filename ];
 		}
 
-		if ( array_key_exists( $filename, $hash ) ) {
-			return BLANK_THEME_BUILD_URI . '/' . $hash[ $filename ];
-		}
-
-		return BLANK_THEME_BUILD_URI . '/' . $filename;
+		return false;
 
 	}
 
