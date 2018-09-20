@@ -63,8 +63,8 @@ npm run clean
 ### Note
 - For assets, make sure you watch and sync `manifest.json` file, otherwise assets will not found on server.
   - For `npm run dev` compiled file name will be normal.
-  - For `npm run prod` compiled file name with come with content hash.
+  - For `npm run prod` compiled file name with content hash.
 - Sync complete `build` directory on server. 
-- Before code push to repository, make sure you link your code using above mentioned commands.
+- Before code push to repository, make sure you lint your code using `npm run precommit` command.
 
 Good luck!
