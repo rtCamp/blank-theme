@@ -5,6 +5,7 @@
  *
  * @package blank-theme
  */
+
 ?>
 
 </div><!-- #content -->

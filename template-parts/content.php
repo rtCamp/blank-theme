@@ -4,6 +4,7 @@
  *
  * @package blank-theme
  */
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -18,17 +19,29 @@
 
 	<div class="entry-content clearfix">
 		<?php
-		the_content( sprintf(
-			/* translators: %s: Name of current post. */
-			wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'blank-theme' ), array( 'span' => array( 'class' => array() ) ) ), the_title( '<span class="screen-reader-text">"', '"</span>', false )
-		) );
+		the_content(
+			sprintf(
+				wp_kses(
+					/* translators: %s: Name of current post. */
+					__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'blank-theme' ),
+					array(
+						'span' => array(
+							'class' => array(),
+						),
+					)
+				),
+				the_title( '<span class="screen-reader-text">"', '"</span>', false )
+			)
+		);
 		?>
 
 		<?php
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'blank-theme' ),
-			'after'	 => '</div>',
-		) );
+		wp_link_pages(
+			array(
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'blank-theme' ),
+				'after'  => '</div>',
+			)
+		);
 		?>
 	</div><!-- .entry-content -->
 

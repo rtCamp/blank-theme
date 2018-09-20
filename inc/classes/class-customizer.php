@@ -7,6 +7,9 @@
 
 namespace Blank_Theme;
 
+/**
+ * Class Customizer
+ */
 class Customizer extends Base {
 
 	/**
@@ -25,13 +28,15 @@ class Customizer extends Base {
 		if ( isset( $wp_customize->selective_refresh ) ) {
 
 			$wp_customize->selective_refresh->add_partial(
-				'blogname', array(
+				'blogname',
+				array(
 					'selector'        => '.site-title a',
 					'render_callback' => array( $this, 'customize_partial_blog_name' ),
 				)
 			);
 			$wp_customize->selective_refresh->add_partial(
-				'blogdescription', array(
+				'blogdescription',
+				array(
 					'selector'        => '.site-description',
 					'render_callback' => array( $this, 'customize_partial_blog_description' ),
 				)

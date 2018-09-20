@@ -7,6 +7,9 @@
 
 namespace Blank_Theme;
 
+/**
+ * Class Widgets
+ */
 class Widgets extends Base {
 
 	/**

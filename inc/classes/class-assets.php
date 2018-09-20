@@ -7,6 +7,9 @@
 
 namespace Blank_Theme;
 
+/**
+ * Class Assets
+ */
 class Assets extends Base {
 
 	/**
