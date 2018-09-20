@@ -26,11 +26,10 @@ class Assets extends Base {
 			return self::$asset_paths;
 		}
 
-		ob_start();
-		include_once get_template_directory() . '/build/manifest.json';
-		$json_data = ob_get_clean();
+		$json_data   = get_template_directory() . '/build/manifest.json';
+		$asset_array = file_get_contents( $json_data ); // phpcs:ignore
 
-		self::$asset_paths = ( $json_data ) ? json_decode( $json_data, true ) : [];
+		self::$asset_paths = ( $asset_array ) ? json_decode( $asset_array, true ) : [];
 
 		return self::$asset_paths;
 	}
