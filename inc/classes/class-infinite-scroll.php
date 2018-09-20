@@ -7,6 +7,9 @@
 
 namespace Blank_Theme;
 
+/**
+ * Class Infinite_Scroll
+ */
 class Infinite_Scroll extends Base {
 
 	/**
@@ -17,7 +20,8 @@ class Infinite_Scroll extends Base {
 	public function setup_jetpack() {
 
 		add_theme_support(
-			'infinite-scroll', array(
+			'infinite-scroll',
+			array(
 				'container' => 'main',
 				'render'    => array( $this, 'render_callback' ),
 				'footer'    => 'page',

@@ -9,6 +9,9 @@
 
 namespace Blank_Theme;
 
+/**
+ * Class Base
+ */
 abstract class Base {
 
 	/**

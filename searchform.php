@@ -4,6 +4,7 @@
  *
  * @package blank-theme
  */
+
 ?>
 
 <form role="search" method="get" class="blank-theme-search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">

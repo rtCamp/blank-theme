@@ -8,7 +8,7 @@
 namespace Blank_Theme;
 
 /**
- * Main plugin bootstrap file.
+ * Main theme bootstrap file.
  */
 class Blank_Theme extends Base {
 
@@ -62,7 +62,8 @@ class Blank_Theme extends Base {
 		add_theme_support( 'jetpack-responsive-videos' );
 
 		add_theme_support(
-			'html5', array(
+			'html5',
+			array(
 				'search-form',
 				'comment-form',
 				'comment-list',
@@ -72,7 +73,8 @@ class Blank_Theme extends Base {
 		);
 
 		add_theme_support(
-			'post-formats', array(
+			'post-formats',
+			array(
 				'aside',
 				'image',
 				'video',
@@ -86,14 +88,16 @@ class Blank_Theme extends Base {
 		);
 
 		add_theme_support(
-			'custom-background', array(
+			'custom-background',
+			array(
 				'default-color' => 'ffffff',
 				'default-image' => '',
 			)
 		);
 
 		add_theme_support(
-			'custom-logo', array(
+			'custom-logo',
+			array(
 				'header-text' => array(
 					'site-title',
 					'site-description',

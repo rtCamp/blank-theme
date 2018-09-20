@@ -4,6 +4,7 @@
  *
  * @package blank-theme
  */
+
 ?>
 
 <aside id="secondary" class="<?php blank_theme_secondary_classes(); ?>" role="complementary">
