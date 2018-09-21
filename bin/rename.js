@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const path    = require( 'path' );
+const fs      = require( 'fs' );
 const prompt  = require( 'prompt-sync' )();
 const replace = require( 'replace-in-file' );
 const rootDir = path.join( __dirname, '..' );
@@ -159,6 +160,7 @@ if ( 'y' === confirm ) {
 	findReplace( 'blank_theme', lowerWithUnderscore );
 
 	if ( fs.existsSync( `${rootDir}/inc/classes/class-blank-theme.php` ) ) {
+
 		fs.renameSync( `${rootDir}/inc/classes/class-blank-theme.php`, `${rootDir}/inc/classes/class-${lowerWithHyphen}.php`, ( err ) => {
 			if ( err ) {
 				throw err;
@@ -170,9 +172,10 @@ if ( 'y' === confirm ) {
 				consoleOutput( fgBlue, `stats: ${JSON.stringify( stats )}` );
 			} );
 		} );
+
 	}
 
-	consoleOutput( fgGreen, 'Finished! Success! Now run `npm install` ' + 'to begin packages installations.' );
+	consoleOutput( fgGreen, 'Finished! Success! Now run `npm run update-deps` to begin package update.' );
 
 } else {
 	consoleOutput( fgRed, 'Cancelled.' );
