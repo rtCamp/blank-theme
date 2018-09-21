@@ -148,7 +148,6 @@ if ( 'y' === confirm ) {
 
 	findReplace( 'Blank Theme', themeName );
 	findReplace( 'blank_theme_description', themeDescription );
-	findReplace( 'blank-theme', textDomain );
 	findReplace( 'Blank_Theme', themePackageName );
 	findReplace( 'Blank_Theme', themeNamespace );
 	findReplace( 'BLANK_THEME_VERSION', themeVersionConst );
@@ -157,6 +156,7 @@ if ( 'y' === confirm ) {
 	findReplace( 'blank_theme_', functionPrefix );
 	findReplace( 'blank-theme-', themeCssClassPrefix );
 	findReplace( 'blank-theme', textDomain );
+	findReplace( 'blank_theme', textDomain );
 
 	consoleOutput( fgGreen, 'Finished! Success! Now run `npm install` ' + 'to begin packages installations.' );
 
