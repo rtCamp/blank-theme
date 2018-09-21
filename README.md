@@ -30,13 +30,41 @@ Getting Started
 3. Search for `Text Domain: blank-theme` in style.css.
 4. Search for <code>&nbsp;Blank Theme</code> (with a space before it) to capture DocBlocks.
 5. Search for `blank-theme-` to capture prefixed handles.
-6. Install packages by running `npm install`
-7. Use `npm run dev` during development.
-8. Use `npm run prod` when ready for production.
-9. Use `npm run clean` to cleanup build directory.
-10. Use `npm run lint-css` to lint scss files.
-11. Use `npm run update-deps` to re-install all dependencies.
 
+#### Package Setup
 
+Install packages by running
+
+```bash
+npm install
+```
+
+#### Install OR update all dependencies
+```bash
+npm run update-deps
+```
+
+#### Compile Assets
+```
+npm run dev       # During development
+npm run prod      # When ready for production
+```
+
+#### Code Linting
+- Use `npm run precommit` before commit and push your changes.
+- Use `npm run lint-css` to lint scss files.
+- Use `npm run lint-js` to lint js files.
+
+#### Cleanup build directory
+```bash
+npm run clean
+```
+
+### Note
+- For assets, make sure you watch and sync `manifest.json` file, otherwise assets will not found on server.
+  - For `npm run dev` compiled file name will be normal.
+  - For `npm run prod` compiled file name with content hash.
+- Sync complete `build` directory on server. 
+- Before code push to repository, make sure you lint your code using `npm run precommit` command.
 
 Good luck!

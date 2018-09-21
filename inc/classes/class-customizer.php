@@ -70,7 +70,13 @@ class Customizer extends Base {
 	 * @action customize_preview_init
 	 */
 	public function enqueue_customizer_scripts() {
-		wp_enqueue_script( 'blank-theme-customizer', Assets::asset_path( 'admin/customizer.js' ), array( 'customize-preview' ), BLANK_THEME_VERSION, true );
+		wp_enqueue_script(
+			'blank-theme-customizer',
+			Assets::asset_path( 'admin/customizer.js' ),
+			array( 'customize-preview' ),
+			Assets::asset_version( 'admin/customizer.js' ),
+			true
+		);
 	}
 
 }
