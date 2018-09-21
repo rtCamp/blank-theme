@@ -1,7 +1,7 @@
 /**
  * Home scripts.
  *
- * @package blank-theme
+ * @package Blank_Theme
  */
 
 import '../sass/home.scss';

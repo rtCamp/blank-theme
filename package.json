@@ -14,7 +14,10 @@
 		"prod": "cross-env NODE_ENV=production webpack --mode production --progress",
 		"update-deps": "rm -rf node_modules && rm package-lock.json && npm install"
 	},
-	"dependencies": {},
+	"dependencies": {
+		"prompt-sync": "^4.1.6",
+		"replace-in-file": "^3.4.2"
+	},
 	"devDependencies": {
 		"@babel/core": "^7.0.0",
 		"@babel/preset-env": "^7.0.0",

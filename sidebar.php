@@ -2,7 +2,7 @@
 /**
  * The sidebar containing the main widget area.
  *
- * @package blank-theme
+ * @package Blank_Theme
  */
 
 ?>
