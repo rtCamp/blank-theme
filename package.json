@@ -12,7 +12,8 @@
 		"lint-js": "eslint js/",
 		"precommit": "npm run lint-css && npm run lint-js",
 		"prod": "cross-env NODE_ENV=production webpack --mode production --progress",
-		"update-deps": "rm -rf node_modules && rm package-lock.json && npm install"
+		"update-deps": "rm -rf node_modules && rm package-lock.json && npm install",
+		"rename": "./bin/rename.js"
 	},
 	"dependencies": {
 		"prompt-sync": "^4.1.6",

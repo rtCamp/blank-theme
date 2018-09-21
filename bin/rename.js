@@ -153,9 +153,10 @@ if ( 'y' === confirm ) {
 	findReplace( 'Blank_Theme', themeNamespace );
 	findReplace( 'BLANK_THEME_VERSION', themeVersionConst );
 	findReplace( 'BLANK_THEME_TEMP_DIR', themeDirConst );
-	findReplace( 'BLANK_THEME_TEMP_DIR', themeBuildDirConst );
+	findReplace( 'BLANK_THEME_BUILD_URI', themeBuildDirConst );
 	findReplace( 'blank_theme_', functionPrefix );
 	findReplace( 'blank-theme-', themeCssClassPrefix );
+	findReplace( 'blank-theme', textDomain );
 
 	consoleOutput( fgGreen, 'Finished! Success! Now run `npm install` ' + 'to begin packages installations.' );
 
