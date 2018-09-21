@@ -60,6 +60,16 @@ do {
 	}
 } while ( 0 >= themeName.length );
 
+// Theme Version.
+consoleOutput( fgGreen, 'Please enter your theme version:' );
+
+let themeVersion = prompt( 'Theme version (2.0.0): ' );
+
+if ( null !== themeVersion && themeVersion.length ) {
+	themeVersion = themeVersion.trim();
+} else {
+	themeVersion = '2.0.0';
+}
 
 // Theme description
 consoleOutput( fgGreen, 'Please enter your theme description:' );
@@ -101,6 +111,7 @@ consoleOutput( fgCyan, '----------------------------------------------------' );
 consoleOutput( fgGreen, 'Your details will be:' );
 
 consoleOutput( fgMagenta, `Theme name: ${themeName}` );
+consoleOutput( fgMagenta, `Theme version: ${themeVersion}` );
 consoleOutput( fgMagenta, `Theme description: ${themeDescription}` );
 consoleOutput( fgMagenta, `Text domain: ${lowerWithHyphen}` );
 consoleOutput( fgMagenta, `Package: ${camelCaseWithHyphen}` );
@@ -119,6 +130,10 @@ if ( 'y' === confirm ) {
 
 	findReplace( 'Blank Theme', themeName );
 	findReplace( 'blank theme', lowerThemeName );
+
+	findReplace( 'Version: 2.0.0', 'Version: ' + themeVersion );
+	findReplace( '"version": "2.0.0"', '"version": "' + themeVersion + '"' );
+
 	findReplace( 'blank_theme_description', themeDescription );
 
 	findReplace( 'Blank-Theme-', camelCasePrefixWithHyphen );
@@ -142,6 +157,20 @@ if ( 'y' === confirm ) {
 
 	findReplace( 'blank-theme', lowerWithHyphen );
 	findReplace( 'blank_theme', lowerWithUnderscore );
+
+	if ( fs.existsSync( `${rootDir}/inc/classes/class-blank-theme.php` ) ) {
+		fs.renameSync( `${rootDir}/inc/classes/class-blank-theme.php`, `${rootDir}/inc/classes/class-${lowerWithHyphen}.php`, ( err ) => {
+			if ( err ) {
+				throw err;
+			}
+			fs.statSync( `${rootDir}/inc/classes/class-${lowerWithHyphen}.php`, ( error, stats ) => {
+				if ( error ) {
+					throw error;
+				}
+				consoleOutput( fgBlue, `stats: ${JSON.stringify( stats )}` );
+			} );
+		} );
+	}
 
 	consoleOutput( fgGreen, 'Finished! Success! Now run `npm install` ' + 'to begin packages installations.' );
 
