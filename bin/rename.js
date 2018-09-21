@@ -93,9 +93,9 @@ const upperPrefixWithHyphen = upperWithHyphen + '-';
 const upperPrefixWithUnderscore = upperWithUnderscore + '_';
 
 // Theme Constants.
-const themeVersionConst  = `${upperThemeName}_VERSION`;
-const themeDirConst      = `${upperThemeName}_TEMP_DIR`;
-const themeBuildDirConst = `${upperThemeName}_BUILD_URI`;
+const themeVersionConst  = `${upperWithUnderscore}_VERSION`;
+const themeDirConst      = `${upperWithUnderscore}_TEMP_DIR`;
+const themeBuildDirConst = `${upperWithUnderscore}_BUILD_URI`;
 
 consoleOutput( fgCyan, '----------------------------------------------------' );
 consoleOutput( fgGreen, 'Your details will be:' );
