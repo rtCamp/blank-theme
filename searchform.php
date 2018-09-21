@@ -2,7 +2,7 @@
 /**
  * Custom search form.
  *
- * @package Blank_Theme
+ * @package Blank-Theme
  */
 
 ?>

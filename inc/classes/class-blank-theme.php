@@ -2,7 +2,7 @@
 /**
  * Bootstraps the Theme.
  *
- * @package Blank_Theme
+ * @package Blank-Theme
  */
 
 namespace Blank_Theme;

@@ -1,7 +1,7 @@
 /**
  * Main scripts, loaded on all pages.
  *
- * @package Blank_Theme
+ * @package Blank-Theme
  */
 
 import '../sass/main.scss';

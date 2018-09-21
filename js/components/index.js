@@ -1,7 +1,7 @@
 /**
  * Blank Theme component.
  *
- * @package Blank_Theme
+ * @package Blank-Theme
  */
 
 export { default as common } from './common';

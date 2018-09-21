@@ -4,7 +4,7 @@
  *
  * Used for showing full width template
  *
- * @package Blank_Theme
+ * @package Blank-Theme
  */
 
 get_header();

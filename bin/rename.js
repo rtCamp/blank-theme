@@ -17,8 +17,6 @@ const consoleOutput = ( color, text ) => {
 	console.log( color, text );
 };
 
-const capCase = ( string ) => string.replace( /\W+/g, '_' ).split( '_' ).map( ( item ) => item[0].toUpperCase() + item.slice( 1 ) ).join( '_' );
-
 const findReplace = ( findString, replaceString ) => {
 	const regex = new RegExp( findString, 'g' );
 	const options = {
@@ -48,98 +46,71 @@ consoleOutput( fgGreen, 'The script will uniquely set up your theme.' );
 consoleOutput( fgGreen, '* - required' );
 
 // Theme name
-consoleOutput( fgBlue, 'Please enter your theme name (shown in WordPress admin)*:' );
+consoleOutput( fgGreen, 'Please enter your theme name (shown in WordPress admin)*:' );
 
 let themeName;
 do {
-	consoleOutput( fgBlue, '' );
-	themeName = prompt( 'Theme name: ' ).trim();
+	consoleOutput( fgGreen, '' );
+	themeName = prompt( 'Theme name: ' );
 
-	if ( 0 >= themeName.length ) {
+	if ( null !== themeName && themeName.length ) {
+		themeName = themeName.trim();
+	} else {
 		consoleOutput( fgRed, 'Theme name field is required and cannot be empty.' );
 	}
 } while ( 0 >= themeName.length );
 
-// Package name
-consoleOutput( fgBlue, 'Please enter your package name (used in translations - ' + 'lowercase with no special characters, \'_\' or \'-\' allowed for spaces)*:' );
-
-let themePackageName;
-do {
-	consoleOutput( fgBlue, '' );
-	themePackageName = prompt( 'Package name: ' ).replace( /\W+/g, '-' ).toLowerCase().trim();
-
-	if ( 0 >= themePackageName.length ) {
-		consoleOutput( fgRed, 'Package name field is required and cannot be empty.' );
-	}
-} while ( 0 >= themePackageName.length );
-
-let textDomain;
-do {
-	consoleOutput( fgBlue, '' );
-	textDomain = prompt( 'Text Domain: ' ).replace( /\W+/g, '-' ).toLowerCase().trim();
-
-	if ( 0 >= textDomain.length ) {
-		consoleOutput( fgRed, 'Text domain field is required and cannot be empty.' );
-	}
-} while ( 0 >= textDomain.length );
-
-// Theme prefix
-consoleOutput( fgBlue, 'Please enter a theme prefix (used when defining constants)*:' );
-
-let themePrefix;
-do {
-	consoleOutput( fgBlue, '' );
-	themePrefix = prompt( 'Prefix (e.g. INF, ABRR): ' ).toUpperCase().trim();
-
-	if ( 0 >= themePrefix.length ) {
-		consoleOutput( fgRed, 'Prefix is required and cannot be empty.' );
-	}
-} while ( 0 >= themePrefix.length );
-
-let functionPrefix;
-do {
-	consoleOutput( fgBlue, '' );
-	functionPrefix = prompt( 'Function prefix with underscore (e.g. foo_): ' ).trim();
-
-	if ( 0 >= functionPrefix.length ) {
-		consoleOutput( fgRed, 'Prefix is required and cannot be empty.' );
-	}
-} while ( 0 >= functionPrefix.length );
-
-let themeCssClassPrefix;
-do {
-	consoleOutput( fgBlue, '' );
-	themeCssClassPrefix = prompt( 'CSS class prefix with hyphen (e.g. foo-): ' ).trim();
-
-	if ( 0 >= themeCssClassPrefix.length ) {
-		consoleOutput( fgRed, 'CSS class prefix is required and cannot be empty.' );
-	}
-} while ( 0 >= themeCssClassPrefix.length );
-
-// Theme Version
-const themeVersionConst  = `${themePrefix}_VERSION`;
-const themeDirConst      = `${themePrefix}_TEMP_DIR`;
-const themeBuildDirConst = `${themePrefix}_BUILD_URI`;
-
-// Namespace
-const themeNamespace = capCase( themePackageName );
 
 // Theme description
-consoleOutput( fgBlue, 'Please enter your theme description:' );
+consoleOutput( fgGreen, 'Please enter your theme description:' );
 
-const themeDescription = prompt( 'Theme description: ' ).trim();
+let themeDescription = prompt( 'Theme description: ' );
+
+if ( null !== themeDescription && themeDescription.length ) {
+	themeDescription = themeDescription.trim();
+} else {
+	themeDescription = themeName + ' is a responsive multipurpose theme.';
+}
+
+const lowerThemeName = themeName.toLowerCase().trim();
+const lowerWithHyphen = lowerThemeName.replace( /\W+/g, '-' ).trim();
+const lowerWithUnderscore = lowerThemeName.replace( /\W+/g, '_' ).trim();
+const lowerPrefixWithHyphen = lowerWithHyphen + '-';
+const lowerPrefixWithunderscore = lowerWithUnderscore + '_';
+
+const camelCaseThemeName = themeName.replace( /\w\S*/g, function ( txt ) {
+	return txt.charAt( 0 ).toUpperCase() + txt.substr( 1 ).toLowerCase();
+} );
+const camelCaseWithHyphen = camelCaseThemeName.replace( /\W+/g, '-' ).trim();
+const camelCaseWithUnderscore = camelCaseThemeName.replace( /\W+/g, '_' ).trim();
+const camelCasePrefixWithHyphen = camelCaseWithHyphen + '-';
+const camelCasePrefixWithUnderscore = camelCaseWithUnderscore + '_';
+
+const upperThemeName = themeName.toUpperCase().trim();
+const upperWithHyphen = upperThemeName.replace( /\W+/g, '-' ).trim();
+const upperWithUnderscore = upperThemeName.replace( /\W+/g, '_' ).trim();
+const upperPrefixWithHyphen = upperWithHyphen + '-';
+const upperPrefixWithUnderscore = upperWithUnderscore + '_';
+
+// Theme Constants.
+const themeVersionConst  = `${upperThemeName}_VERSION`;
+const themeDirConst      = `${upperThemeName}_TEMP_DIR`;
+const themeBuildDirConst = `${upperThemeName}_BUILD_URI`;
 
 consoleOutput( fgCyan, '----------------------------------------------------' );
 consoleOutput( fgGreen, 'Your details will be:' );
 
 consoleOutput( fgMagenta, `Theme name: ${themeName}` );
 consoleOutput( fgMagenta, `Theme description: ${themeDescription}` );
-consoleOutput( fgMagenta, `Text domain: ${textDomain}` );
-consoleOutput( fgMagenta, `Package: ${themePackageName}` );
-consoleOutput( fgMagenta, `Namespace: ${themeNamespace}` );
-consoleOutput( fgMagenta, `Theme prefix: ${themePrefix}` );
-consoleOutput( fgMagenta, `Function prefix: ${functionPrefix}` );
-consoleOutput( fgMagenta, `CSS class prefix: ${themeCssClassPrefix}` );
+consoleOutput( fgMagenta, `Text domain: ${lowerWithHyphen}` );
+consoleOutput( fgMagenta, `Package: ${camelCaseWithHyphen}` );
+consoleOutput( fgMagenta, `Namespace: ${camelCaseWithUnderscore}` );
+consoleOutput( fgMagenta, `Function prefix: ${lowerPrefixWithunderscore}` );
+consoleOutput( fgMagenta, `CSS class prefix: ${lowerPrefixWithHyphen}` );
+consoleOutput( fgMagenta, `PHP variable: ${lowerPrefixWithunderscore}` );
+consoleOutput( fgMagenta, `Version constant: ${themeVersionConst}` );
+consoleOutput( fgMagenta, `Directory constant: ${themeDirConst}` );
+consoleOutput( fgMagenta, `Build directory constant: ${themeBuildDirConst}` );
 
 const confirm = prompt( 'Confirm? (y/n) ' ).trim();
 
@@ -147,16 +118,30 @@ if ( 'y' === confirm ) {
 	consoleOutput( fgGreen, 'This might take some time...' );
 
 	findReplace( 'Blank Theme', themeName );
+	findReplace( 'blank theme', lowerThemeName );
 	findReplace( 'blank_theme_description', themeDescription );
-	findReplace( 'Blank_Theme', themePackageName );
-	findReplace( 'Blank_Theme', themeNamespace );
+
+	findReplace( 'Blank-Theme-', camelCasePrefixWithHyphen );
+	findReplace( 'Blank_Theme_', camelCasePrefixWithUnderscore );
+
+	findReplace( 'blank-theme-', lowerPrefixWithHyphen );
+	findReplace( 'blank_theme_', lowerPrefixWithunderscore );
+
 	findReplace( 'BLANK_THEME_VERSION', themeVersionConst );
 	findReplace( 'BLANK_THEME_TEMP_DIR', themeDirConst );
 	findReplace( 'BLANK_THEME_BUILD_URI', themeBuildDirConst );
-	findReplace( 'blank_theme_', functionPrefix );
-	findReplace( 'blank-theme-', themeCssClassPrefix );
-	findReplace( 'blank-theme', textDomain );
-	findReplace( 'blank_theme', textDomain );
+
+	findReplace( 'BLANK-THEME-', upperPrefixWithHyphen );
+	findReplace( 'BLANK_THEME_', upperPrefixWithUnderscore );
+
+	findReplace( 'BLANK-THEME', upperWithHyphen );
+	findReplace( 'BLANK_THEME', upperWithUnderscore );
+
+	findReplace( 'Blank-Theme', camelCaseWithHyphen );
+	findReplace( 'Blank_Theme', camelCaseWithUnderscore );
+
+	findReplace( 'blank-theme', lowerWithHyphen );
+	findReplace( 'blank_theme', lowerWithUnderscore );
 
 	consoleOutput( fgGreen, 'Finished! Success! Now run `npm install` ' + 'to begin packages installations.' );
 

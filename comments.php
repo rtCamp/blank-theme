@@ -7,7 +7,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Blank_Theme
+ * @package Blank-Theme
  */
 
 /*

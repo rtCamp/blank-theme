@@ -2,7 +2,7 @@
 /**
  * Contains custom functions used for the theme
  *
- * @package Blank_Theme
+ * @package Blank-Theme
  */
 
 /**

@@ -2,7 +2,7 @@
 /**
  * Theme widgets.
  *
- * @package Blank_Theme
+ * @package Blank-Theme
  */
 
 namespace Blank_Theme;

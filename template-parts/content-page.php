@@ -2,7 +2,7 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package Blank_Theme
+ * @package Blank-Theme
  */
 
 ?>

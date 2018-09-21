@@ -2,7 +2,7 @@
 /**
  * Blank Theme file includes and definitions
  *
- * @package Blank_Theme
+ * @package Blank-Theme
  */
 
 namespace Blank_Theme;
