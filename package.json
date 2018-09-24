@@ -8,7 +8,7 @@
 	"scripts": {
 		"clean": "rm -rf build/*",
 		"dev": "cross-env NODE_ENV=development webpack --watch --mode development --progress",
-		"init": "npm install; ./bin/rename.js; npm run update-deps; npm run pot; rm -rf .git .github ./bin/;",
+		"init": "npm install; ./bin/rename.js; npm run update-deps; npm run pot; rm -rf .git .github ./bin/ languages/blank-theme.pot;",
 		"lint-css": "stylelint sass/**/*.scss --syntax scss",
 		"lint-js": "eslint js/",
 		"pot": "wp-pot --src '**/*.php' --dest-file 'languages/blank-theme.pot' --domain 'blank-theme' --package 'Blank Theme' ",
