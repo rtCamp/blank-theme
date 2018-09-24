@@ -25,21 +25,15 @@ and more..
 Getting Started
 ---------------
 
-1. Search for `'blank-theme'` (inside single quotations) to capture the text domain.
-2. Search for `blank_theme_` to capture all the function names.
-3. Search for `Text Domain: blank-theme` in style.css.
-4. Search for <code>&nbsp;Blank Theme</code> (with a space before it) to capture DocBlocks.
-5. Search for `blank-theme-` to capture prefixed handles.
+Setup theme and install packages.
 
-#### Package Setup
-
-Install packages by running
+**Note:** After install packages, it will prompt for theme name. Once theme setup complete for development, it will remove git directory.
 
 ```bash
-npm install
+npm run init
 ```
 
-#### Install OR update all dependencies
+#### Install or update all dependencies
 ```bash
 npm run update-deps
 ```

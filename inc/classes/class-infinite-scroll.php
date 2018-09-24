@@ -2,7 +2,7 @@
 /**
  * Infinite scroll for the theme.
  *
- * @package blank-theme
+ * @package Blank-Theme
  */
 
 namespace Blank_Theme;

@@ -1,7 +1,7 @@
 /**
  * Single page scripts.
  *
- * @package blank-theme
+ * @package Blank-Theme
  */
 
 import '../sass/single.scss';

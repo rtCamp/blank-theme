@@ -1,20 +1,24 @@
 {
 	"name": "blank-theme",
 	"version": "2.0.0",
-	"description": "Blank Theme Package",
+	"description": "Blank Theme Packages",
 	"author": "rtCamp",
 	"license": "MIT",
 	"private": true,
 	"scripts": {
 		"clean": "rm -rf build/*",
 		"dev": "cross-env NODE_ENV=development webpack --watch --mode development --progress",
+		"init": "npm install; ./bin/rename.js; npm run update-deps; rm -rf .git .github ./bin/;",
 		"lint-css": "stylelint sass/**/*.scss --syntax scss",
 		"lint-js": "eslint js/",
 		"precommit": "npm run lint-css && npm run lint-js",
 		"prod": "cross-env NODE_ENV=production webpack --mode production --progress",
 		"update-deps": "rm -rf node_modules && rm package-lock.json && npm install"
 	},
-	"dependencies": {},
+	"dependencies": {
+		"prompt-sync": "^4.1.6",
+		"replace-in-file": "^3.4.2"
+	},
 	"devDependencies": {
 		"@babel/core": "^7.0.0",
 		"@babel/preset-env": "^7.0.0",
@@ -32,6 +36,7 @@
 		"eslint-loader": "^2.1.0",
 		"foundation-sites": "^6.5.0-rc.2",
 		"friendly-errors-webpack-plugin": "^1.7.0",
+		"fs-extra": "^7.0.0",
 		"jquery": "^3.3.1",
 		"mini-css-extract-plugin": "^0.4.2",
 		"node-sass": "^4.9.3",
