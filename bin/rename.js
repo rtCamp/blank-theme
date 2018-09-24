@@ -29,7 +29,6 @@ const findReplace = ( findString, replaceString ) => {
 			`${rootDir}/.git/**/*`,
 			`${rootDir}/.github/**/*`,
 			`${rootDir}/vendor/**/*`,
-			`${rootDir}/_rename.sh`,
 			`${rootDir}/bin/rename.js`
 		]
 	};
@@ -62,26 +61,7 @@ do {
 } while ( 0 >= themeName.length );
 
 // Theme Version.
-consoleOutput( fgGreen, 'Please enter your theme version:' );
-
-let themeVersion = prompt( 'Theme version (2.0.0): ' );
-
-if ( null !== themeVersion && themeVersion.length ) {
-	themeVersion = themeVersion.trim();
-} else {
-	themeVersion = '2.0.0';
-}
-
-// Theme description
-consoleOutput( fgGreen, 'Please enter your theme description:' );
-
-let themeDescription = prompt( 'Theme description: ' );
-
-if ( null !== themeDescription && themeDescription.length ) {
-	themeDescription = themeDescription.trim();
-} else {
-	themeDescription = themeName + ' is a responsive multipurpose theme.';
-}
+const themeVersion = '1.0.0';
 
 const lowerThemeName = themeName.toLowerCase().trim();
 const lowerWithHyphen = lowerThemeName.replace( /\W+/g, '-' ).trim();
@@ -109,11 +89,10 @@ const themeDirConst      = `${upperWithUnderscore}_TEMP_DIR`;
 const themeBuildDirConst = `${upperWithUnderscore}_BUILD_URI`;
 
 consoleOutput( fgCyan, '----------------------------------------------------' );
-consoleOutput( fgGreen, 'Your details will be:' );
+consoleOutput( fgGreen, 'Theme details will be:' );
 
 consoleOutput( fgMagenta, `Theme name: ${themeName}` );
 consoleOutput( fgMagenta, `Theme version: ${themeVersion}` );
-consoleOutput( fgMagenta, `Theme description: ${themeDescription}` );
 consoleOutput( fgMagenta, `Text domain: ${lowerWithHyphen}` );
 consoleOutput( fgMagenta, `Package: ${camelCaseWithHyphen}` );
 consoleOutput( fgMagenta, `Namespace: ${camelCaseWithUnderscore}` );
@@ -134,8 +113,6 @@ if ( 'y' === confirm ) {
 
 	findReplace( 'Version: 2.0.0', 'Version: ' + themeVersion );
 	findReplace( '"version": "2.0.0"', '"version": "' + themeVersion + '"' );
-
-	findReplace( 'blank_theme_description', themeDescription );
 
 	findReplace( 'Blank-Theme-', camelCasePrefixWithHyphen );
 	findReplace( 'Blank_Theme_', camelCasePrefixWithUnderscore );
