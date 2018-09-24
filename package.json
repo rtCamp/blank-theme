@@ -8,12 +8,12 @@
 	"scripts": {
 		"clean": "rm -rf build/*",
 		"dev": "cross-env NODE_ENV=development webpack --watch --mode development --progress",
+		"init": "npm install; ./bin/rename.js; npm run update-deps; rm -rf .git .github ./bin/;",
 		"lint-css": "stylelint sass/**/*.scss --syntax scss",
 		"lint-js": "eslint js/",
 		"precommit": "npm run lint-css && npm run lint-js",
 		"prod": "cross-env NODE_ENV=production webpack --mode production --progress",
-		"update-deps": "rm -rf node_modules && rm package-lock.json && npm install",
-		"rename": "./bin/rename.js"
+		"update-deps": "rm -rf node_modules && rm package-lock.json && npm install"
 	},
 	"dependencies": {
 		"prompt-sync": "^4.1.6",

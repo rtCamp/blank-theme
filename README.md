@@ -25,21 +25,15 @@ and more..
 Getting Started
 ---------------
 
-Install packages by running
+Setup theme and install packages.
+
+**Note:** After install packages, it will prompt for theme name. Once theme setup complete for development, it will remove git directory.
 
 ```bash
-npm install
+npm run init
 ```
 
-#### Setup theme files and variables
-
-Please enter valid input for theme name, version and description after running following command.
-
-```bash
-npm run rename
-```
-
-#### Install OR update all dependencies
+#### Install or update all dependencies
 ```bash
 npm run update-deps
 ```
