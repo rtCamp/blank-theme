@@ -8,9 +8,10 @@
 	"scripts": {
 		"clean": "rm -rf build/*",
 		"dev": "cross-env NODE_ENV=development webpack --watch --mode development --progress",
-		"init": "npm install; ./bin/rename.js; npm run update-deps; rm -rf .git .github ./bin/;",
+		"init": "npm install; ./bin/rename.js; npm run update-deps; npm run pot; rm -rf .git .github ./bin/ languages/blank-theme.pot;",
 		"lint-css": "stylelint sass/**/*.scss --syntax scss",
 		"lint-js": "eslint js/",
+		"pot": "wp-pot --src '**/*.php' --dest-file 'languages/blank-theme.pot' --domain 'blank-theme' --package 'Blank Theme' ",
 		"precommit": "npm run lint-css && npm run lint-js",
 		"prod": "cross-env NODE_ENV=production webpack --mode production --progress",
 		"update-deps": "rm -rf node_modules && rm package-lock.json && npm install"
@@ -54,7 +55,8 @@
 		"uglifyjs-webpack-plugin": "^2.0.1",
 		"webpack": "^4.17.1",
 		"webpack-assets-manifest": "^3.0.2",
-		"webpack-cli": "^3.1.0"
+		"webpack-cli": "^3.1.0",
+		"wp-pot-cli": "^1.2.1"
 	},
 	"browserslist": [
 		"defaults"
