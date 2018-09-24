@@ -14,19 +14,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../404.php:16
-msgid "Hey manish"
-msgstr ""
-
-#: ../404.php:17
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: ../404.php:21
+#: ../404.php:20
 msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
 msgstr ""
 
 #. translators: %1$s: smiley
-#: ../404.php:27
+#: ../404.php:26
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
@@ -44,32 +40,32 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../comments.php:59, ../comments.php:84
+#: ../comments.php:61, ../comments.php:91
 msgid "Comment navigation"
 msgstr ""
 
-#: ../comments.php:62, ../comments.php:87
+#: ../comments.php:64, ../comments.php:94
 msgid "Older Comments"
 msgstr ""
 
-#: ../comments.php:63, ../comments.php:88
+#: ../comments.php:65, ../comments.php:95
 msgid "Newer Comments"
 msgstr ""
 
-#: ../comments.php:101
+#: ../comments.php:108
 msgid "Comments are closed."
 msgstr ""
 
 #. translators: 1: Theme name, 2: Theme author.
-#: ../footer.php:28
+#: ../footer.php:29
 msgid "%1$s by %2$s"
 msgstr ""
 
-#: ../footer.php:28, ../footer.php:35
+#: ../footer.php:29, ../footer.php:36
 msgid "Blank Theme"
 msgstr ""
 
-#: ../footer.php:28
+#: ../footer.php:29
 msgid "rtCamp"
 msgstr ""
 
@@ -81,19 +77,19 @@ msgstr ""
 msgid "Mobile Menu"
 msgstr ""
 
-#: ../header.php:68, ../inc/classes/class-blank-theme.php:108
+#: ../header.php:68, ../inc/classes/class-blank-theme.php:112
 msgid "Primary Menu"
 msgstr ""
 
-#: ../inc/classes/class-blank-theme.php:123
+#: ../inc/classes/class-blank-theme.php:127
 msgid "Read More"
 msgstr ""
 
-#: ../inc/classes/class-widgets.php:21
+#: ../inc/classes/class-widgets.php:24
 msgid "Sidebar"
 msgstr ""
 
-#: ../inc/classes/class-widgets.php:33
+#: ../inc/classes/class-widgets.php:36
 msgid "Footer"
 msgstr ""
 
@@ -106,47 +102,48 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: ../searchform.php:11
+#: ../searchform.php:12
 msgid "Search For :"
 msgstr ""
 
-#: ../searchform.php:12
+#: ../searchform.php:13
 msgid "Search..."
 msgstr ""
 
-#: ../searchform.php:12
+#: ../searchform.php:13
 msgid "Search for:"
 msgstr ""
 
-#: ../searchform.php:14
+#: ../searchform.php:15
 msgid "Search"
 msgstr ""
 
-#: ../template-parts/content-none.php:13
+#: ../template-parts/content-none.php:14
 msgid "Nothing Found"
 msgstr ""
 
-#: ../template-parts/content-none.php:20
+#. translators: 1. is add new post url
+#: ../template-parts/content-none.php:26
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: ../template-parts/content-none.php:24
+#: ../template-parts/content-none.php:40
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
-#: ../template-parts/content-none.php:29
+#: ../template-parts/content-none.php:45
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
-#: ../template-parts/content-page.php:18, ../template-parts/content-single.php:22, ../template-parts/content.php:29
+#: ../template-parts/content-page.php:20, ../template-parts/content-single.php:24, ../template-parts/content.php:41
 msgid "Pages:"
 msgstr ""
 
-#: ../template-parts/content-page.php:25
+#: ../template-parts/content-page.php:28
 msgid "Edit"
 msgstr ""
 
 #. translators: %s: Name of current post.
-#: ../template-parts/content.php:23
+#: ../template-parts/content.php:26
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
