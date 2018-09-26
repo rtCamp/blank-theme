@@ -18,7 +18,8 @@
 	},
 	"dependencies": {
 		"prompt-sync": "^4.1.6",
-		"replace-in-file": "^3.4.2"
+		"replace-in-file": "^3.4.2",
+		"webfontloader": "^1.6.28"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.0.0",
