@@ -8,11 +8,11 @@
 	"scripts": {
 		"clean": "rm -rf build/*",
 		"dev": "cross-env NODE_ENV=development webpack --watch --mode development --progress",
-		"init": "npm install; ./bin/rename.js; npm run update-deps; npm run pot; rm -rf .git .github ./bin/ languages/blank-theme.pot;",
+		"init": "npm install && ./bin/rename.js && npm run update-deps && npm run pot && rm -rf .git .github ./bin/ languages/blank-theme.pot",
 		"lint-css": "stylelint sass/**/*.scss --syntax scss",
 		"lint-js": "eslint js/",
 		"pot": "wp-pot --src '**/*.php' --dest-file 'languages/blank-theme.pot' --domain 'blank-theme' --package 'Blank Theme' ",
-		"precommit": "npm run lint-css && npm run lint-js",
+		"precommit": "npm run lint-css && npm run lint-js && npm run pot",
 		"prod": "cross-env NODE_ENV=production webpack --mode production --progress",
 		"update-deps": "rm -rf node_modules && rm package-lock.json && npm install"
 	},
@@ -36,6 +36,7 @@
 		"eslint": "^5.5.0",
 		"eslint-config-wordpress": "^2.0.0",
 		"eslint-loader": "^2.1.0",
+		"file-loader": "^2.0.0",
 		"foundation-sites": "^6.5.0-rc.2",
 		"friendly-errors-webpack-plugin": "^1.7.0",
 		"fs-extra": "^7.0.0",

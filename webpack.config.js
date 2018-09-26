@@ -17,6 +17,10 @@ const WebpackAssetsManifest = require( 'webpack-assets-manifest' );
 // JS Directory path.
 const JSDir = path.resolve( __dirname, 'js' );
 
+const outputFile = '[name].[ext]';
+const outputImages = `img/${outputFile}`;
+const outputFonts = `fonts/${outputFile}`;
+
 const entry = {
 	main: JSDir + '/main.js',
 	home: JSDir + '/home.js',
@@ -52,29 +56,38 @@ const plugins = ( argv ) => [
 
 const rules = [
 	{
-		'enforce': 'pre',
-		'test': /\.(js|jsx)$/,
-		'exclude': /node_modules/,
-		'use': 'eslint-loader'
+		enforce: 'pre',
+		test: /\.(js|jsx)$/,
+		exclude: /node_modules/,
+		use: 'eslint-loader'
 	},
 	{
-		'test': /\.js$/,
+		test: /\.js$/,
 		include: [
 			path.resolve( __dirname, 'js' )
 		],
-		'exclude': /node_modules/,
-		'use': {
-			'loader': 'babel-loader'
-		}
+		exclude: /node_modules/,
+		use: 'babel-loader'
 	},
 	{
-		'test': /\.scss$/,
-		'use': [
+		test: /\.scss$/,
+		exclude: /node_modules/,
+		use: [
 			MiniCssExtractPlugin.loader,
 			'css-loader',
 			'postcss-loader',
 			'sass-loader'
 		]
+	},
+	{
+		test: /\.(png|jpg|jpeg|gif|ico)$/,
+		exclude: [ /fonts/, /node_modules/ ],
+		use: `file-loader?name=${outputImages}`
+	},
+	{
+		test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+		exclude: [ /img/, /node_modules/ ],
+		use: `file-loader?name=${outputFonts}`
 	}
 ];
 
@@ -94,6 +107,7 @@ module.exports = ( env, argv ) => ( {
 	entry: entry,
 	output: output,
 	plugins: plugins( argv ),
+	devtool: 'source-map',
 
 	module: {
 		'rules': rules

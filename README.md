@@ -44,14 +44,25 @@ npm run dev       # During development
 npm run prod      # When ready for production
 ```
 
-#### Code Linting
-- Use `npm run precommit` before commit and push your changes.
-- Use `npm run lint-css` to lint scss files.
-- Use `npm run lint-js` to lint js files.
-
 #### Cleanup build directory
 ```bash
 npm run clean
+```
+
+#### Generate pot file
+```bash
+npm run pot
+```
+
+#### Code Linting
+- Use `npm run lint-css` to lint scss files.
+- Use `npm run lint-js` to lint js files.
+
+#### Before commit
+This `precommit` script will lint your scss, js files and also generate pot file.
+
+```bash
+npm run precommit
 ```
 
 ### Note
