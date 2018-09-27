@@ -8,8 +8,12 @@ module.exports = {
 	syntax: 'postcss-scss',
 
 	plugins: {
-
 		'autoprefixer': {},
+
+		'postcss-assets': {
+			loadPaths: [ 'img/', 'fonts/' ],
+			relative: true
+		},
 
 		'postcss-pxtorem': {
 			rootValue: 16,
