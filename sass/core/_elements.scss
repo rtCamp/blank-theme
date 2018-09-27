@@ -37,13 +37,22 @@ html {
 body {
 	background: $color__background-body;
 	margin: 0;
-	font-family: $font__main;
+	@include font-family();
 
 	// WP Editor
 	&.mce-content-body {
 		font-family: inherit;
 		margin: 15px;
 	}
+}
+
+// Fix font flash issue. Basically we are showing content once font loaded successfully.
+.wf-loading {
+	opacity: 0;
+}
+
+.wf-active {
+	opacity: 1;
 }
 
 blockquote, q {
@@ -134,7 +143,6 @@ input[type="submit"] {
 	line-height: 1;
 	padding: 8px 16px 7px;
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
-	font-family: $font__main;
 
 	&:hover {
 		border-color: $color__border-button-hover;
@@ -162,7 +170,6 @@ textarea {
 	color: $color__text-input;
 	border: 1px solid $color__border-input;
 	border-radius: $border-radius;
-	font-family: $font__main;
 	line-height: $font__line-height-body;
 
 	&:focus {
@@ -180,7 +187,6 @@ input[type="search"] {
 
 select {
 	color: $color__select-text;
-	font-family: $font__main;
 	font-size: $font__base-font-size;
 	line-height: $font__line-height-body;
 }
