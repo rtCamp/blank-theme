@@ -16,10 +16,9 @@ const WebpackAssetsManifest = require( 'webpack-assets-manifest' );
 
 // JS Directory path.
 const JSDir = path.resolve( __dirname, 'js' );
-
-const outputFile = '[name].[ext]';
-const outputImages = `img/${outputFile}`;
-const outputFonts = `fonts/${outputFile}`;
+const IMG_DIR = path.resolve( __dirname, 'img' );
+const FONTS_DIR = path.resolve( __dirname, 'fonts' );
+const BUILD_DIR = path.resolve( __dirname, 'build' );
 
 const entry = {
 	main: JSDir + '/main.js',
@@ -29,7 +28,7 @@ const entry = {
 };
 
 const output = {
-	path: __dirname + '/build',
+	path: BUILD_DIR,
 	filename: DEV ? 'js/[name].js' : 'js/[name].[contenthash].js'
 };
 
@@ -37,7 +36,7 @@ const output = {
  * Note: argv.mode will return 'development' or 'production'.
  */
 const plugins = ( argv ) => [
-	new CleanWebpackPlugin( [ 'build' ] ),
+	new CleanWebpackPlugin( [ BUILD_DIR ] ),
 
 	new MiniCssExtractPlugin( {
 		filename: DEV ? 'css/[name].css' : 'css/[name].[contenthash].css'
@@ -80,14 +79,26 @@ const rules = [
 		]
 	},
 	{
-		test: /\.(png|jpg|jpeg|gif|ico)$/,
-		exclude: [ /fonts/, /node_modules/ ],
-		use: `file-loader?name=${outputImages}`
+		test: /\.(png|jpg|svg|jpeg|gif|ico)$/,
+		exclude: [ FONTS_DIR, /node_modules/ ],
+		use: {
+			loader: 'file-loader',
+			options: {
+				name: '[path][name].[ext]',
+				publicPath: '../'
+			}
+		}
 	},
 	{
 		test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-		exclude: [ /img/, /node_modules/ ],
-		use: `file-loader?name=${outputFonts}`
+		exclude: [ IMG_DIR, /node_modules/ ],
+		use: {
+			loader: 'file-loader',
+			options: {
+				name: '[path][name].[ext]',
+				publicPath: '../'
+			}
+		}
 	}
 ];
 
