@@ -33,7 +33,7 @@
 				?>
 			</span>
 			<span class="sep">&nbsp;|&nbsp;</span>
-			<a class="blank-theme-author-footer" href="<?php echo esc_url( 'https://rtcamp.com/' ); ?>" target="_blank"><?php esc_html_e( 'Blank Theme', 'blank-theme' ); ?></a>
+			<a class="blank-theme-author-footer" href="<?php echo esc_url( 'https://rtcamp.com/' ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Blank Theme', 'blank-theme' ); ?></a>
 		</div>
 	</div><!-- .site-info -->
 </footer><!-- #colophon -->
