@@ -17,6 +17,12 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
+	<?php
+	if ( ! is_single() && ! is_page() ) {
+		the_post_thumbnail();
+	}
+	?>
+
 	<div class="entry-content clearfix">
 		<?php
 		the_content(

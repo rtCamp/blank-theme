@@ -130,3 +130,42 @@
 .round {
 	border-radius: 50%;
 }
+
+.blank-theme-overlay {
+	background: $white;
+	bottom: 0;
+	display: none;
+	height: 100%;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: 100%;
+	z-index: 100000;
+
+	.wf-loading & {
+		display: block;
+	}
+
+	.blank-theme-loader {
+		display: block;
+		height: 46px;
+		left: 50%;
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		width: 46px;
+
+		&::after {
+			animation: blank-theme-loader 1.2s linear infinite;
+			border-radius: 50%;
+			border: 5px solid $color__theme;
+			border-color: $color__theme transparent $color__theme transparent;
+			content: " ";
+			display: block;
+			height: 46px;
+			margin: 1px;
+			width: 46px;
+		}
+	}
+}

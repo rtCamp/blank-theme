@@ -112,6 +112,10 @@ class Blank_Theme extends Base {
 				'primary' => esc_html__( 'Primary Menu', 'blank-theme' ),
 			)
 		);
+
+		if ( ! isset( $content_width ) ) {
+			$content_width = 900;
+		}
 	}
 
 	/**

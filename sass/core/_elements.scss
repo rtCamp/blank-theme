@@ -46,15 +46,6 @@ body {
 	}
 }
 
-// Fix font flash issue. Basically we are showing content once font loaded successfully.
-.wf-loading {
-	opacity: 0;
-}
-
-.wf-active {
-	opacity: 1;
-}
-
 blockquote, q {
 	quotes: "" "";
 
