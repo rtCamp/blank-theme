@@ -19,10 +19,6 @@
 
 <body <?php body_class(); ?>>
 
-<div class="blank-theme-overlay">
-	<div class="blank-theme-loader"></div>
-</div>
-
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'blank-theme' ); ?></a>
 
