@@ -27,7 +27,8 @@ $color__background-screen: #f1f1f1;
 $color__background-hr: $light-gray;
 
 // Default Button Background - Used for all button types.
-$color__background-button: #e6e6e6;
+$color__background-button: #eff3f6;
+$color__background-button-hover: #e6ebf1;
 
 // pre tag background - Used for `<pre>` tag.
 $color__background-pre: #eee;
@@ -53,10 +54,10 @@ $color__link-hover: $color__theme;
 $color__select-text: #404040;
 
 // Button Border Color - Used for `button, input[type="button"], input[type="reset"], input[type="submit"]`
-$color__border-button: $light-gray $light-gray #bbb;
+$color__border-button: rgba(27, 31, 35, 0.2);
 
 // Button Hover State Border Color - Used for `button, input[type="button"], input[type="reset"], input[type="submit"]`
-$color__border-button-hover: $light-gray #bbb #aaa;
+$color__border-button-hover: rgba(27, 31, 35, 0.35);
 
 // Button Focus State Border Color - Used for `button, input[type="button"], input[type="reset"], input[type="submit"]`
 $color__border-button-focus: #aaa #bbb #bbb;

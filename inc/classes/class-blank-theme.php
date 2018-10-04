@@ -107,6 +107,10 @@ class Blank_Theme extends Base {
 
 		add_editor_style( array( 'editor-style.css', blank_theme_main_font_url() ) );
 
+		// Gutenberg theme support.
+		add_theme_support( 'wp-block-styles' );
+		add_theme_support( 'align-wide' );
+
 		register_nav_menus(
 			array(
 				'primary' => esc_html__( 'Primary Menu', 'blank-theme' ),
