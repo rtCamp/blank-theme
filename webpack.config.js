@@ -62,9 +62,7 @@ const rules = [
 	},
 	{
 		test: /\.js$/,
-		include: [
-			path.resolve( __dirname, 'js' )
-		],
+		include: [ JSDir ],
 		exclude: /node_modules/,
 		use: 'babel-loader'
 	},
