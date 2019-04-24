@@ -23,7 +23,7 @@ const common = {
 	 * @return {void}
 	 */
 	bindEvents() {
-		this.backToTopButton.addEventListener( 'click', () => this.goBackToTop );
+		this.backToTopButton.addEventListener( 'click', () => this.goBackToTop() );
 	},
 
 	/**
