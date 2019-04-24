@@ -11,7 +11,9 @@ const common = {
 	 * @return {void}
 	 */
 	init() {
-		this.setProps();
+		this.backToTopButton = document.getElementById( 'blank-theme-back-to-top' );
+		this.bodyHtml = $( 'body, html' );
+
 		this.bindEvents();
 	},
 
@@ -21,17 +23,7 @@ const common = {
 	 * @return {void}
 	 */
 	bindEvents() {
-		this.backToTopButton.on( 'click', this.goBackToTop );
-	},
-
-	/**
-	 * Set properties and selectors.
-	 *
-	 * @return {void}
-	 */
-	setProps() {
-		this.backToTopButton = $( '#blank-theme-back-to-top' );
-		this.bodyHtml = $( 'body, html' );
+		this.backToTopButton.addEventListener( 'click', () => this.goBackToTop() );
 	},
 
 	/**

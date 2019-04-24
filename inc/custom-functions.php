@@ -85,19 +85,24 @@ function blank_theme_pagination() {
 }
 
 /**
- * Its an extension to WordPress get_template_part function.
- * It can be used when you need to call a template and all pass variables to it. and they will be available in your template part.
+ * An extension to get_template_part function to allow variables to be passed to the template.
  *
- * @param  string $slug file slug like you use in get_template_part.
- * @param  array  $params pass an array of variables you want to use in array keys.
+ * @param  string $slug file slug like you use in get_template_part without php extension.
+ * @param  array  $variables pass an array of variables you want to use in array keys.
  *
  * @return void
  */
-function blank_theme_get_template_part( $slug, $params = array() ) {
-	if ( ! empty( $params ) ) {
-		foreach ( $params as $k => $param ) {
-			set_query_var( $k, $param );
-		}
+function blank_theme_get_template_part( $slug, $variables = array() ) {
+	$template         = sprintf( '%s.php', $slug );
+	$located_template = locate_template( $template, false, false );
+
+	if ( '' === $located_template ) {
+		return;
 	}
-	get_template_part( $slug );
+
+	if ( ! empty( $variables ) && is_array( $variables ) ) {
+		extract( $variables, EXTR_SKIP ); // @codingStandardsIgnoreLine - Used as an exception as there is no better alternative.
+	}
+
+	include $located_template;
 }
