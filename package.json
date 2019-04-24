@@ -6,19 +6,17 @@
 	"license": "MIT",
 	"private": true,
 	"scripts": {
-		"clean": "rm -rf build/*",
-		"dev": "cross-env NODE_ENV=development webpack --watch --mode development --progress",
+	  	"prod": "cross-env NODE_ENV=production webpack --mode production --progress",
+	  	"dev": "cross-env NODE_ENV=development webpack --watch --mode development --progress",
+	  	"clean": "rm -rf build/*",
 		"init": "npm install && ./bin/rename.js && npm run update-deps && npm run pot && rm -rf .git .github ./bin/ languages/blank-theme.pot",
 		"lint-css": "stylelint sass/**/*.scss --syntax scss",
 		"lint-js": "eslint js/",
 		"pot": "wp-pot --src '**/*.php' --dest-file 'languages/blank-theme.pot' --domain 'blank-theme' --package 'Blank Theme' ",
 		"precommit": "npm run lint-css && npm run lint-js && npm run pot",
-		"prod": "cross-env NODE_ENV=production webpack --mode production --progress",
 		"update-deps": "rm -rf node_modules && rm package-lock.json && npm install"
 	},
 	"dependencies": {
-		"prompt-sync": "^4.1.6",
-		"replace-in-file": "^3.4.2",
 		"webfontloader": "^1.6.28"
 	},
 	"devDependencies": {
@@ -59,7 +57,9 @@
 		"webpack": "^4.20.2",
 		"webpack-assets-manifest": "^3.1.0",
 		"webpack-cli": "^3.1.2",
-		"wp-pot-cli": "^1.2.1"
+		"wp-pot-cli": "^1.2.1",
+		"prompt-sync": "^4.1.6",
+		"replace-in-file": "^3.4.2"
 	},
 	"browserslist": [
 		"defaults"
