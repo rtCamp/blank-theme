@@ -5,12 +5,38 @@
  * @package Blank-Theme
  */
 
-namespace Blank_Theme;
+namespace Blank_Theme\Inc;
+
+use Blank_Theme\Inc\Traits\Singleton;
 
 /**
  * Class Customizer
  */
-class Customizer extends Base {
+class Customizer {
+
+	use Singleton;
+
+	/**
+	 * Construct method.
+	 */
+	protected function __construct() {
+		$this->_setup_hooks();
+	}
+
+	/**
+	 * To register action/filter.
+	 *
+	 * @return void
+	 */
+	protected function _setup_hooks() {
+
+		/**
+		 * Actions
+		 */
+		add_action( 'customize_register', [ $this, 'customize_register' ] );
+		add_action( 'customize_preview_init', [ $this, 'customize_preview_init' ] );
+
+	}
 
 	/**
 	 * Customize register.
@@ -29,17 +55,17 @@ class Customizer extends Base {
 
 			$wp_customize->selective_refresh->add_partial(
 				'blogname',
-				array(
+				[
 					'selector'        => '.site-title a',
-					'render_callback' => array( $this, 'customize_partial_blog_name' ),
-				)
+					'render_callback' => [ $this, 'customize_partial_blog_name' ],
+				]
 			);
 			$wp_customize->selective_refresh->add_partial(
 				'blogdescription',
-				array(
+				[
 					'selector'        => '.site-description',
-					'render_callback' => array( $this, 'customize_partial_blog_description' ),
-				)
+					'render_callback' => [ $this, 'customize_partial_blog_description' ],
+				]
 			);
 
 		}
@@ -72,9 +98,9 @@ class Customizer extends Base {
 	public function enqueue_customizer_scripts() {
 		wp_enqueue_script(
 			'blank-theme-customizer',
-			Assets::asset_path( 'admin/customizer.js' ),
-			array( 'customize-preview' ),
-			Assets::asset_version( 'admin/customizer.js' ),
+			get_template_directory_uri() . '/assets/build/js/admin/customizer.js',
+			[ 'customize-preview' ],
+			false,
 			true
 		);
 	}

@@ -5,45 +5,50 @@
  * @package Blank-Theme
  */
 
-namespace Blank_Theme;
+namespace BLANK_THEME\Inc;
+
+use BLANK_THEME\Inc\Traits\Singleton;
 
 /**
  * Main theme bootstrap file.
  */
-class Blank_Theme extends Base {
+class BLANK_THEME {
+
+	use Singleton;
 
 	/**
-	 * Assets class instance.
-	 *
-	 * @var Assets
+	 * Construct method.
 	 */
-	public $assets;
+	protected function __construct() {
+
+		// Load classes.
+		Assets::get_instance();
+		Customizer::get_instance();
+		Widgets::get_instance();
+
+		$this->_setup_hooks();
+		$this->_setup_theme();
+
+	}
 
 	/**
-	 * Customizer class instance.
+	 * To setup action/filter.
 	 *
-	 * @var Customizer
+	 * @return void
 	 */
-	public $customizer;
+	protected function _setup_hooks() {
 
-	/**
-	 * Widgets
-	 *
-	 * @var Widgets
-	 */
-	public $widgets;
+		/**
+		 * Filters
+		 */
+		add_filter( 'excerpt_more', [ $this, 'add_read_more_link' ] );
+		add_filter( 'body_class', [ $this, 'filter_body_classes' ] );
 
-	/**
-	 * Initiate the theme resources.
-	 *
-	 * @action after_setup_theme, 9
-	 */
-	public function init() {
-		$this->setup_theme();
+		/**
+		 * Actions
+		 */
+		add_action( 'wp_head', [ $this, 'add_pingback_link' ] );
 
-		$this->assets     = new Assets();
-		$this->customizer = new Customizer();
-		$this->widgets    = new Widgets();
 	}
 
 	/**
@@ -51,7 +56,7 @@ class Blank_Theme extends Base {
 	 *
 	 * @return void
 	 */
-	public function setup_theme() {
+	protected function _setup_theme() {
 
 		load_theme_textdomain( 'blank-theme', BLANK_THEME_TEMP_DIR . '/languages' );
 
@@ -63,18 +68,18 @@ class Blank_Theme extends Base {
 
 		add_theme_support(
 			'html5',
-			array(
+			[
 				'search-form',
 				'comment-form',
 				'comment-list',
 				'gallery',
 				'caption',
-			)
+			]
 		);
 
 		add_theme_support(
 			'post-formats',
-			array(
+			[
 				'aside',
 				'image',
 				'video',
@@ -84,37 +89,37 @@ class Blank_Theme extends Base {
 				'status',
 				'audio',
 				'chat',
-			)
+			]
 		);
 
 		add_theme_support(
 			'custom-background',
-			array(
+			[
 				'default-color' => 'ffffff',
 				'default-image' => '',
-			)
+			]
 		);
 
 		add_theme_support(
 			'custom-logo',
-			array(
-				'header-text' => array(
+			[
+				'header-text' => [
 					'site-title',
 					'site-description',
-				),
-			)
+				],
+			]
 		);
 
-		add_editor_style( array( 'editor-style.css', blank_theme_main_font_url() ) );
+		add_editor_style();
 
 		// Gutenberg theme support.
 		add_theme_support( 'wp-block-styles' );
 		add_theme_support( 'align-wide' );
 
 		register_nav_menus(
-			array(
+			[
 				'primary' => esc_html__( 'Primary Menu', 'blank-theme' ),
-			)
+			]
 		);
 
 		if ( ! isset( $content_width ) ) {
@@ -141,6 +146,7 @@ class Blank_Theme extends Base {
 	 * @param array $classes Classes for the body element.
 	 *
 	 * @filter body_class
+	 *
 	 * @return array
 	 */
 	public function filter_body_classes( $classes ) {

@@ -46,24 +46,15 @@ function blank_theme_secondary_classes( $more_classes = false, $override_foundat
 	echo esc_html( "blank-theme-secondary widget-area {$foundation_classes} {$more_classes} clearfix" );
 }
 
-
 /**
- * Returns the main font url of the theme, we are returning it from a function to handle two things
- * one is to handle the http problems and the other is so that we can also load it to post editor.
+ * Get font url.
  *
- * @return string font url
+ * @param string $path Font path after fonts folder.
+ *
+ * @return void
  */
-function blank_theme_main_font_url() {
-
-	/**
-	 * Use font url without http://, we do this because google font without https have
-	 * problem loading on websites with https.
-	 *
-	 * @var string
-	 */
-	$font_url = 'fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700';
-
-	return ( 'https://' === substr( site_url(), 0, 8 ) ) ? 'https://' . $font_url : 'http://' . $font_url;
+function blank_theme_get_font_url( $path ) {
+	echo esc_url( get_template_directory_uri() . '/assets/fonts' . $path );
 }
 
 /**
@@ -71,15 +62,15 @@ function blank_theme_main_font_url() {
  */
 function blank_theme_pagination() {
 
-	$allowed_tags = array(
-		'span' => array(
-			'class' => array(),
-		),
-		'a'    => array(
-			'class' => array(),
-			'href'  => array(),
-		),
-	);
+	$allowed_tags = [
+		'span' => [
+			'class' => [],
+		],
+		'a'    => [
+			'class' => [],
+			'href'  => [],
+		],
+	];
 
 	printf( '<nav class="blank-theme-pagination clearfix">%s</nav>', wp_kses( paginate_links(), $allowed_tags ) );
 }
