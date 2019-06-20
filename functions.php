@@ -20,7 +20,7 @@ require_once BLANK_THEME_TEMP_DIR . '/inc/helpers/custom-functions.php';
 require_once BLANK_THEME_TEMP_DIR . '/inc/helpers/template-tags.php';
 
 /**
- * Get ozy instance.
+ * Get blank theme instance.
  *
  * @return \Blank_Theme\Inc\Blank_Theme
  */
