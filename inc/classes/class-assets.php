@@ -45,9 +45,9 @@ class Assets {
 	 */
 	public function register_scripts() {
 
-		wp_register_script( 'blank-theme-main', BLANK_THEME_BUILD_URI . '/js/main.js', array( 'jquery' ), false, true );
-		wp_register_script( 'blank-theme-home', BLANK_THEME_BUILD_URI . '/js/home.js', array( 'jquery' ), false, true );
-		wp_register_script( 'blank-theme-single', BLANK_THEME_BUILD_URI . '/js/single.js', array( 'jquery' ), false, true );
+		wp_register_script( 'blank-theme-main', BLANK_THEME_BUILD_URI . '/js/main.js', [ 'jquery' ], false, true );
+		wp_register_script( 'blank-theme-home', BLANK_THEME_BUILD_URI . '/js/home.js', [ 'jquery' ], false, true );
+		wp_register_script( 'blank-theme-single', BLANK_THEME_BUILD_URI . '/js/single.js', [ 'jquery' ], false, true );
 
 		wp_enqueue_script( 'blank-theme-main' );
 
@@ -72,9 +72,9 @@ class Assets {
 	 */
 	public function register_styles() {
 
-		wp_register_style( 'blank-theme-main', BLANK_THEME_BUILD_URI . '/css/main.css', array() );
-		wp_register_style( 'blank-theme-home', BLANK_THEME_BUILD_URI . '/css/home.css', array( 'blank-theme-main' ) );
-		wp_register_style( 'blank-theme-single', BLANK_THEME_BUILD_URI . '/css/single.css', array( 'blank-theme-main' ) );
+		wp_register_style( 'blank-theme-main', BLANK_THEME_BUILD_URI . '/css/main.css', [] );
+		wp_register_style( 'blank-theme-home', BLANK_THEME_BUILD_URI . '/css/home.css', [ 'blank-theme-main' ] );
+		wp_register_style( 'blank-theme-single', BLANK_THEME_BUILD_URI . '/css/single.css', [ 'blank-theme-main' ] );
 
 		wp_enqueue_style( 'blank-theme-main' );
 

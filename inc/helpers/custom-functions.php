@@ -83,7 +83,7 @@ function blank_theme_pagination() {
  *
  * @return void
  */
-function blank_theme_get_template_part( $slug, $variables = array() ) {
+function blank_theme_get_template_part( $slug, $variables = [] ) {
 	$template         = sprintf( '%s.php', $slug );
 	$located_template = locate_template( $template, false, false );
 

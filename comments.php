@@ -75,10 +75,10 @@ if ( post_password_required() ) {
 			wp_list_comments(
 				apply_filters(
 					'blank_theme_list_comments_args',
-					array(
+					[
 						'style'      => 'ol',
 						'short_ping' => true,
-					)
+					]
 				)
 			);
 			?>
