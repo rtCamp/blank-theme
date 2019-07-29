@@ -21,11 +21,11 @@ class Infinite_Scroll extends Base {
 
 		add_theme_support(
 			'infinite-scroll',
-			array(
+			[
 				'container' => 'main',
-				'render'    => array( $this, 'render_callback' ),
+				'render'    => [ $this, 'render_callback' ],
 				'footer'    => 'page',
-			)
+			]
 		);
 
 	}

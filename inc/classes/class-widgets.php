@@ -5,12 +5,37 @@
  * @package Blank-Theme
  */
 
-namespace Blank_Theme;
+namespace BLANK_THEME\Inc;
+
+use Blank_Theme\Inc\Traits\Singleton;
 
 /**
- * Class Widgets
+ * Class Assets
  */
-class Widgets extends Base {
+class Widgets {
+
+	use Singleton;
+
+	/**
+	 * Construct method.
+	 */
+	protected function __construct() {
+		$this->_setup_hooks();
+	}
+
+	/**
+	 * To register action/filter.
+	 *
+	 * @return void
+	 */
+	protected function _setup_hooks() {
+
+		/**
+		 * Actions
+		 */
+		add_action( 'widgets_init', [ $this, 'register_widgets' ] );
+
+	}
 
 	/**
 	 * Register widgets.
@@ -20,7 +45,7 @@ class Widgets extends Base {
 	public function register_widgets() {
 
 		register_sidebar(
-			array(
+			[
 				'name'          => esc_html__( 'Sidebar', 'blank-theme' ),
 				'id'            => 'sidebar-1',
 				'description'   => '',
@@ -28,11 +53,11 @@ class Widgets extends Base {
 				'after_widget'  => '</div>',
 				'before_title'  => '<h3 class="widget-title">',
 				'after_title'   => '</h3>',
-			)
+			]
 		);
 
 		register_sidebar(
-			array(
+			[
 				'name'          => esc_html__( 'Footer', 'blank-theme' ),
 				'id'            => 'sidebar-2',
 				'description'   => '',
@@ -40,7 +65,7 @@ class Widgets extends Base {
 				'after_widget'  => '</div>',
 				'before_title'  => '<h4 class="widget-title">',
 				'after_title'   => '</h4>',
-			)
+			]
 		);
 
 	}

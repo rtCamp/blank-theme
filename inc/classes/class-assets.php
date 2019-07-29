@@ -5,83 +5,37 @@
  * @package Blank-Theme
  */
 
-namespace Blank_Theme;
+namespace BLANK_THEME\Inc;
+
+use Blank_Theme\Inc\Traits\Singleton;
 
 /**
  * Class Assets
  */
-class Assets extends Base {
+class Assets {
+
+	use Singleton;
 
 	/**
-	 * Hold asset path.
-	 *
-	 * @var array
+	 * Construct method.
 	 */
-	public static $asset_paths = array();
-
-	/**
-	 * Get asset path.
-	 *
-	 * @return array
-	 */
-	public static function get_asset_path() {
-		if ( ! empty( self::$asset_paths ) ) {
-			return self::$asset_paths;
-		}
-
-		$json_data   = BLANK_THEME_TEMP_DIR . '/build/manifest.json';
-		$asset_array = file_get_contents( $json_data ); // phpcs:ignore
-
-		self::$asset_paths = ( $asset_array ) ? json_decode( $asset_array, true ) : [];
-
-		return self::$asset_paths;
+	protected function __construct() {
+		$this->_setup_hooks();
 	}
 
 	/**
-	 * Retrive asset path.
+	 * To register action/filter.
 	 *
-	 * @param string $filename File name of which hash path retrive.
-	 *
-	 * @return bool|string
+	 * @return void
 	 */
-	public static function asset_path( $filename ) {
+	protected function _setup_hooks() {
 
-		if ( ! $filename ) {
-			return false;
-		}
+		/**
+		 * Actions
+		 */
+		add_action( 'wp_enqueue_scripts', [ $this, 'register_scripts' ] );
+		add_action( 'wp_enqueue_scripts', [ $this, 'register_styles' ] );
 
-		$asset_paths = self::get_asset_path();
-
-		if ( ! empty( $asset_paths[ $filename ] ) ) {
-			return sprintf( '%1$s/%2$s', BLANK_THEME_BUILD_URI, $asset_paths[ $filename ] );
-		}
-
-		return false;
-
-	}
-
-	/**
-	 * Return timestamp when file is changes.
-	 * This is used for cache busting assets.
-	 *
-	 * @param string $filename File name you want to get timestamp from.
-	 *
-	 * @return bool|int Timestamp.
-	 */
-	public static function asset_version( $filename = null ) {
-
-		if ( ! $filename ) {
-			return false;
-		}
-
-		$file_location = null;
-		$asset_paths   = self::get_asset_path();
-
-		if ( ! empty( $asset_paths[ $filename ] ) ) {
-			$file_location = sprintf( '%1$s/build/%2$s', BLANK_THEME_TEMP_DIR, $asset_paths[ $filename ] );
-		}
-
-		return filemtime( $file_location );
 	}
 
 	/**
@@ -91,9 +45,9 @@ class Assets extends Base {
 	 */
 	public function register_scripts() {
 
-		wp_register_script( 'blank-theme-main', self::asset_path( 'main.js' ), array( 'jquery' ), self::asset_version( 'main.js' ), true );
-		wp_register_script( 'blank-theme-home', self::asset_path( 'home.js' ), array( 'jquery' ), self::asset_version( 'home.js' ), true );
-		wp_register_script( 'blank-theme-single', self::asset_path( 'single.js' ), array( 'jquery' ), self::asset_version( 'single.js' ), true );
+		wp_register_script( 'blank-theme-main', BLANK_THEME_BUILD_URI . '/js/main.js', [ 'jquery' ], false, true );
+		wp_register_script( 'blank-theme-home', BLANK_THEME_BUILD_URI . '/js/home.js', [ 'jquery' ], false, true );
+		wp_register_script( 'blank-theme-single', BLANK_THEME_BUILD_URI . '/js/single.js', [ 'jquery' ], false, true );
 
 		wp_enqueue_script( 'blank-theme-main' );
 
@@ -118,9 +72,9 @@ class Assets extends Base {
 	 */
 	public function register_styles() {
 
-		wp_register_style( 'blank-theme-main', self::asset_path( 'main.css' ), array(), self::asset_version( 'main.css' ) );
-		wp_register_style( 'blank-theme-home', self::asset_path( 'home.css' ), array( 'blank-theme-main' ), self::asset_version( 'home.css' ) );
-		wp_register_style( 'blank-theme-single', self::asset_path( 'single.css' ), array( 'blank-theme-main' ), self::asset_version( 'single.css' ) );
+		wp_register_style( 'blank-theme-main', BLANK_THEME_BUILD_URI . '/css/main.css', [] );
+		wp_register_style( 'blank-theme-home', BLANK_THEME_BUILD_URI . '/css/home.css', [ 'blank-theme-main' ] );
+		wp_register_style( 'blank-theme-single', BLANK_THEME_BUILD_URI . '/css/single.css', [ 'blank-theme-main' ] );
 
 		wp_enqueue_style( 'blank-theme-main' );
 

@@ -68,12 +68,12 @@
 			<nav id="site-navigation" class="blank-theme-main-navigation auto cell column" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'blank-theme' ); ?>">
 				<?php
 				wp_nav_menu(
-					array(
+					[
 						'theme_location' => 'primary',
 						'menu_id'        => 'primary-menu',
 						'menu_class'     => 'primary-menu menu',
 						'depth'          => 3,
-					)
+					]
 				);
 				?>
 			</nav><!-- #site-navigation -->
