@@ -23,8 +23,8 @@
 	"devDependencies": {
 		"@babel/core": "^7.1.2",
 		"@babel/preset-env": "^7.1.0",
-		"babel-loader": "^8.0.4",
 		"autoprefixer": "^9.1.5",
+		"babel-loader": "^8.0.4",
 		"clean-webpack-plugin": "^0.1.19",
 		"cross-env": "^5.2.0",
 		"css-loader": "^1.0.0",
@@ -50,6 +50,7 @@
 		"replace-in-file": "^3.4.2",
 		"sass-loader": "^7.1.0",
 		"sass-mq": "^5.0.0",
+		"serialize-javascript": "^2.1.2",
 		"slick-carousel": "^1.8.1",
 		"style-loader": "^0.23.1",
 		"stylelint": "^9.6.0",
