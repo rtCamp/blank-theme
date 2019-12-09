@@ -69,7 +69,9 @@
 			"<rootDir>/node_modules/"
 		],
 		"coverageDirectory": "<rootDir>/.jest-coverage/",
-	  	"setupFilesAfterEnv": [ "<rootDir>/test.setup.js" ],
+		"setupFilesAfterEnv": [
+			"<rootDir>/test.setup.js"
+		],
 		"automock": false
 	}
 }
