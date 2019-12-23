@@ -15,9 +15,9 @@ const FriendlyErrorsPlugin = require( 'friendly-errors-webpack-plugin' );
 const WebpackAssetsManifest = require( 'webpack-assets-manifest' );
 
 // JS Directory path.
-const JSDir = path.resolve( __dirname, 'js' );
-const IMG_DIR = path.resolve( __dirname, 'img' );
-const FONTS_DIR = path.resolve( __dirname, 'fonts' );
+const JSDir = path.resolve( __dirname, 'src/js' );
+const IMG_DIR = path.resolve( __dirname, 'src/img' );
+const FONTS_DIR = path.resolve( __dirname, 'src/fonts' );
 const BUILD_DIR = path.resolve( __dirname, 'build' );
 
 const entry = {
