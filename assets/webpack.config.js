@@ -42,7 +42,12 @@ const plugins = ( argv ) => [
 		filename: DEV ? 'css/[name].css' : 'css/[name].[contenthash].css'
 	} ),
 
-	new WebpackAssetsManifest(),
+	new WebpackAssetsManifest( {
+		done( manifest, stats ) {
+			console.log( '\x1b[35m', `\n\nThe manifest has been written to ${manifest.getOutputPath()}` );
+			console.log( '\x1b[32m', `\n${manifest}\n\n` );
+		}
+	} ),
 
 	new StyleLintPlugin( {
 		'extends': 'stylelint-config-wordpress/scss'
