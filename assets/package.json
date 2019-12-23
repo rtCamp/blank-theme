@@ -9,10 +9,10 @@
 		"prod": "cross-env NODE_ENV=production webpack --mode production --progress",
 		"dev": "cross-env NODE_ENV=development webpack --watch --mode development --progress",
 		"clean": "rm -rf build/*",
-		"init": "npm install && ./bin/rename.js && npm run update-deps && npm run pot && rm -rf .git .github ./bin/ languages/blank-theme.pot",
+		"init": "npm install && ./bin/rename.js && npm run update-deps && npm run pot && rm -rf ../.git ../.github ./bin/ ../languages/blank-theme.pot",
 		"lint-css": "stylelint sass/**/*.scss --syntax scss",
 		"lint-js": "eslint js/",
-		"pot": "wp-pot --src '**/*.php' --dest-file 'languages/blank-theme.pot' --domain 'blank-theme' --package 'Blank Theme' ",
+		"pot": "wp-pot --src '../**/*.php' --dest-file '../languages/blank-theme.pot' --domain 'blank-theme' --package 'Blank Theme' ",
 		"precommit": "npm run lint-css && npm run lint-js && npm run pot",
 		"update-deps": "rm -rf node_modules && rm package-lock.json && npm install",
 		"test": "jest  --verbose"

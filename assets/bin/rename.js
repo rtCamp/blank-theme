@@ -94,7 +94,7 @@ consoleOutput( fgGreen, 'Theme details will be:' );
 consoleOutput( fgMagenta, `Theme name: ${themeName}` );
 consoleOutput( fgMagenta, `Theme version: ${themeVersion}` );
 consoleOutput( fgMagenta, `Text domain: ${lowerWithHyphen}` );
-consoleOutput( fgMagenta, `Package: ${camelCaseWithHyphen}` );
+consoleOutput( fgMagenta, `Package: ${themeName}` );
 consoleOutput( fgMagenta, `Namespace: ${camelCaseWithUnderscore}` );
 consoleOutput( fgMagenta, `Function prefix: ${lowerPrefixWithunderscore}` );
 consoleOutput( fgMagenta, `CSS class prefix: ${lowerPrefixWithHyphen}` );
