@@ -14,6 +14,9 @@ if ( ! defined( 'BLANK_THEME_TEMP_DIR' ) ) {
 if ( ! defined( 'BLANK_THEME_BUILD_URI' ) ) {
 	define( 'BLANK_THEME_BUILD_URI', untrailingslashit( get_template_directory_uri() ) . '/assets/build' );
 }
+if ( ! defined( 'BLANK_THEME_BUILD_DIR' ) ) {
+	define( 'BLANK_THEME_BUILD_DIR', untrailingslashit( get_template_directory() ) . '/assets/build' );
+}
 
 require_once BLANK_THEME_TEMP_DIR . '/inc/helpers/autoloader.php';
 require_once BLANK_THEME_TEMP_DIR . '/inc/helpers/custom-functions.php';
