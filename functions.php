@@ -12,7 +12,7 @@ if ( ! defined( 'BLANK_THEME_TEMP_DIR' ) ) {
 	define( 'BLANK_THEME_TEMP_DIR', untrailingslashit( get_template_directory() ) );
 }
 if ( ! defined( 'BLANK_THEME_BUILD_URI' ) ) {
-	define( 'BLANK_THEME_BUILD_URI', untrailingslashit( get_template_directory_uri() ) . '/build' );
+	define( 'BLANK_THEME_BUILD_URI', untrailingslashit( get_template_directory_uri() ) . '/assets/build' );
 }
 
 require_once BLANK_THEME_TEMP_DIR . '/inc/helpers/autoloader.php';

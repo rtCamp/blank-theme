@@ -15,9 +15,9 @@ const FriendlyErrorsPlugin = require( 'friendly-errors-webpack-plugin' );
 const WebpackAssetsManifest = require( 'webpack-assets-manifest' );
 
 // JS Directory path.
-const JSDir = path.resolve( __dirname, 'js' );
-const IMG_DIR = path.resolve( __dirname, 'img' );
-const FONTS_DIR = path.resolve( __dirname, 'fonts' );
+const JSDir = path.resolve( __dirname, 'src/js' );
+const IMG_DIR = path.resolve( __dirname, 'src/img' );
+const FONTS_DIR = path.resolve( __dirname, 'src/fonts' );
 const BUILD_DIR = path.resolve( __dirname, 'build' );
 
 const entry = {
@@ -42,7 +42,12 @@ const plugins = ( argv ) => [
 		filename: DEV ? 'css/[name].css' : 'css/[name].[contenthash].css'
 	} ),
 
-	new WebpackAssetsManifest(),
+	new WebpackAssetsManifest( {
+		done( manifest, stats ) {
+			console.log( '\x1b[35m', `\n\nThe manifest has been written to ${manifest.getOutputPath()}` );
+			console.log( '\x1b[32m', `\n${manifest}\n\n` );
+		}
+	} ),
 
 	new StyleLintPlugin( {
 		'extends': 'stylelint-config-wordpress/scss'
