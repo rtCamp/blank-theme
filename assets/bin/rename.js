@@ -4,7 +4,7 @@ const path    = require( 'path' );
 const fs      = require( 'fs' );
 const prompt  = require( 'prompt-sync' )();
 const replace = require( 'replace-in-file' );
-const rootDir = path.join( __dirname, '..' );
+const rootDir = path.join( __dirname, '../..' );
 
 // Helpers
 const fgRed     = '\x1b[31m';
@@ -25,11 +25,11 @@ const findReplace = ( findString, replaceString ) => {
 		from: regex,
 		to: replaceString,
 		ignore: [
-			`${rootDir}/node_modules/**/*`,
+			`${rootDir}/**/node_modules/**/*`,
 			`${rootDir}/.git/**/*`,
 			`${rootDir}/.github/**/*`,
-			`${rootDir}/vendor/**/*`,
-			`${rootDir}/bin/rename.js`
+			`${rootDir}/**/vendor/**/*`,
+			`${rootDir}/**/bin/rename.js`
 		]
 	};
 
@@ -84,9 +84,10 @@ const upperPrefixWithHyphen = upperWithHyphen + '-';
 const upperPrefixWithUnderscore = upperWithUnderscore + '_';
 
 // Theme Constants.
-const themeVersionConst  = `${upperWithUnderscore}_VERSION`;
-const themeDirConst      = `${upperWithUnderscore}_TEMP_DIR`;
-const themeBuildDirConst = `${upperWithUnderscore}_BUILD_URI`;
+const themeVersionConst = `${upperWithUnderscore}_VERSION`;
+const themeDirConst = `${upperWithUnderscore}_TEMP_DIR`;
+const themeBuildDirConst = `${upperWithUnderscore}_BUILD_DIR`;
+const themeBuildDirURIConst = `${upperWithUnderscore}_BUILD_URI`;
 
 consoleOutput( fgCyan, '----------------------------------------------------' );
 consoleOutput( fgGreen, 'Theme details will be:' );
@@ -101,7 +102,8 @@ consoleOutput( fgMagenta, `CSS class prefix: ${lowerPrefixWithHyphen}` );
 consoleOutput( fgMagenta, `PHP variable: ${lowerPrefixWithunderscore}` );
 consoleOutput( fgMagenta, `Version constant: ${themeVersionConst}` );
 consoleOutput( fgMagenta, `Directory constant: ${themeDirConst}` );
-consoleOutput( fgMagenta, `Build directory constant: ${themeBuildDirConst}` );
+consoleOutput( fgMagenta, `Build directory Path constant: ${themeBuildDirConst}` );
+consoleOutput( fgMagenta, `Build directory URI constant: ${themeBuildDirURIConst}` );
 
 const confirm = prompt( 'Confirm? (y/n) ' ).trim();
 
@@ -122,7 +124,8 @@ if ( 'y' === confirm ) {
 
 	findReplace( 'BLANK_THEME_VERSION', themeVersionConst );
 	findReplace( 'BLANK_THEME_TEMP_DIR', themeDirConst );
-	findReplace( 'BLANK_THEME_BUILD_URI', themeBuildDirConst );
+	findReplace( 'BLANK_THEME_BUILD_DIR', themeBuildDirConst );
+	findReplace( 'BLANK_THEME_BUILD_URI', themeBuildDirURIConst );
 
 	findReplace( 'BLANK-THEME-', upperPrefixWithHyphen );
 	findReplace( 'BLANK_THEME_', upperPrefixWithUnderscore );
