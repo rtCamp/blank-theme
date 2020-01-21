@@ -2,6 +2,7 @@
 /**
  * Blank Theme file includes and definitions
  *
+ * @package Blank-Theme
  */
 
 if ( ! defined( 'BLANK_THEME_VERSION' ) ) {
