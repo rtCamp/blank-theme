@@ -7,7 +7,7 @@
 
 
 
-if ( ! defined( 'BLANK_THEME_VERSION' ) ) {
+if ( ! defined( 'BLANK_THEME_VERSION') ) {
 	define( 'BLANK_THEME_VERSION', 1.0 );
 }
 if ( ! defined( 'BLANK_THEME_TEMP_DIR' ) ) {
