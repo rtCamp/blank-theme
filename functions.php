@@ -2,8 +2,10 @@
 /**
  * Blank Theme file includes and definitions
  *
- * @package Blank-Theme
+ *
  */
+
+
 
 if ( ! defined( 'BLANK_THEME_VERSION' ) ) {
 	define( 'BLANK_THEME_VERSION', 1.0 );
