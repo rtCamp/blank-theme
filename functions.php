@@ -5,6 +5,8 @@
  *
  */
 
+
+
 if ( ! defined( 'BLANK_THEME_VERSION' ) ) {
 	define( 'BLANK_THEME_VERSION', 1.0 );
 }
