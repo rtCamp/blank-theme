@@ -9,12 +9,12 @@ namespace BLANK_THEME\Inc;
 
 use Blank_Theme\Inc\Traits\Singleton;
 
+//require dirname(__DIR__).'/inc/traits/trait-singleton.php';
+
 /**
  * Class Assets
  */
 class Assets {
-
-	use Singleton;
 
 	/**
 	 * Holds generated hashed asset paths.

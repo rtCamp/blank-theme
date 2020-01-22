@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<phpunit
+	bootstrap="tests/bootstrap.php"
+	backupGlobals="false"
+	colors="true"
+	convertErrorsToExceptions="true"
+	convertNoticesToExceptions="true"
+	convertWarningsToExceptions="true"
+	>
+	<testsuites>
+		<testsuite name="blank_theme">
+			<directory prefix="test-" suffix=".php">./tests/</directory>
+<!--			<exclude>./tests/test-blankTheme.php</exclude>-->
+			<exclude>./tests/test-custom-functions.php</exclude>
+			<exclude>./tests/test-template-tags.php</exclude>
+			<exclude>./tests/test-assets.php</exclude>
+			<exclude>./tests/test-widgets.php</exclude>
+		</testsuite>
+	</testsuites>
+</phpunit>
