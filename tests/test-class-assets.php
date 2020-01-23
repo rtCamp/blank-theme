@@ -52,6 +52,8 @@ class Test_Assets extends \WP_UnitTestCase {
 
 	/**
 	 * Function to test hooks setup.
+	 *
+	 * @covers ::_setup_hooks
 	 */
 	public function test_setup_hooks() {
 		$this->assertEquals( 10, has_action( 'wp_enqueue_scripts', array( $this->instance, 'register_scripts' ) ) );
@@ -60,20 +62,11 @@ class Test_Assets extends \WP_UnitTestCase {
 
 	/**
 	 * Function to test scripts registration.
+	 *
+	 * @covers ::register_scripts
+	 * @covers ::register_styles
 	 */
 	public function test_register_scripts() {
-
-		$this->assertFalse( wp_script_is( 'blank-theme-main' ) );
-		$this->assertFalse( wp_style_is( 'blank-theme-main' ) );
-
-		$this->assertFalse( wp_script_is( 'blank-theme-home' ) );
-		$this->assertFalse( wp_style_is( 'blank-theme-home' ) );
-
-		$this->assertFalse( wp_script_is( 'blank-theme-single' ) );
-		$this->assertFalse( wp_style_is( 'blank-theme-single' ) );
-
-		$this->assertFalse( wp_script_is( 'comment-reply' ) );
-		$this->assertFalse( wp_style_is( 'comment-reply' ) );
 
 		do_action( 'wp_enqueue_scripts' );
 
