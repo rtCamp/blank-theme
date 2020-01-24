@@ -60,7 +60,7 @@ class Test_Blank_Theme extends \WP_UnitTestCase {
 	/**
 	 * Test function setup theme
 	 *
-	 * @covers ::_setup_theme
+	 * @covers ::setup_theme
 	 */
 	public function test_setup_theme() {
 
@@ -74,8 +74,7 @@ class Test_Blank_Theme extends \WP_UnitTestCase {
 		$this->assertTrue( get_theme_support( 'wp-block-styles' ) );
 		$this->assertTrue( get_theme_support( 'align-wide' ) );
 
-		// @TODO: check why tests are failing for html5.
-		//$this->assertIsArray( get_theme_support( 'html5' ) );
+		$this->assertIsArray( get_theme_support( 'html5' ) );
 		$this->assertIsArray( get_theme_support( 'post-formats' ) );
 		$this->assertIsArray( get_theme_support( 'custom-background' ) );
 		$this->assertIsArray( get_theme_support( 'custom-logo' ) );
