@@ -27,7 +27,6 @@ class BLANK_THEME {
 		Widgets::get_instance();
 
 		$this->_setup_hooks();
-		$this->_setup_theme();
 
 	}
 
@@ -48,6 +47,7 @@ class BLANK_THEME {
 		 * Actions
 		 */
 		add_action( 'wp_head', [ $this, 'add_pingback_link' ] );
+		add_action( 'after_setup_theme', [ $this, 'setup_theme' ] );
 
 	}
 
@@ -56,7 +56,7 @@ class BLANK_THEME {
 	 *
 	 * @return void
 	 */
-	protected function _setup_theme() {
+	public function setup_theme() {
 
 		load_theme_textdomain( 'blank-theme', BLANK_THEME_TEMP_DIR . '/languages' );
 
@@ -122,9 +122,6 @@ class BLANK_THEME {
 			]
 		);
 
-		if ( ! isset( $content_width ) ) {
-			$content_width = 900;
-		}
 	}
 
 	/**
@@ -172,7 +169,7 @@ class BLANK_THEME {
 	 */
 	public function add_pingback_link() {
 		if ( is_singular() && pings_open() ) {
-			echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
+			echo '<link rel="pingback" href="' . esc_url( get_bloginfo( 'pingback_url' ) ) . '">';
 		}
 	}
 
