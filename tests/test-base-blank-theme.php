@@ -13,15 +13,17 @@ require_once './functions.php';
  */
 class Test_Base_Blank_Theme extends WP_UnitTestCase {
 
-	public function setUp() {
+	/**
+	 * Setup theme for test.
+	 */
+	public function setUp() : void {
 		parent::setUp();
 		switch_theme( 'blank-theme' );
 	}
 
-	public function tearDown() {
-		parent::tearDown();
-	}
-
+	/**
+	 * Test if jQuery is loaded.
+	 */
 	public function test_jquery_is_loaded() {
 
 		$this->assertFalse( wp_script_is( 'jquery' ) );
@@ -31,15 +33,17 @@ class Test_Base_Blank_Theme extends WP_UnitTestCase {
 
 	} // end testjQueryIsLoaded
 
+	/**
+	 * Test if theme is active.
+	 */
 	public function test_active_theme() {
-
-
-		$this->assertTrue( wp_get_theme() == 'blank-theme' );
+		$this->assertTrue( wp_get_theme()->get( 'Name' ) === 'blank-theme' );
 	} // end testThemeInitialization
 
+	/**
+	 * Test random bundled theme is inactive.
+	 */
 	public function test_inactive_theme() {
-
-		$this->assertFalse( wp_get_theme() == 'Twenty Eleven' );
-
+		$this->assertFalse( wp_get_theme()->get( 'Name' ) === 'twentytwenty' );
 	} // end testInactiveTheme
 }
