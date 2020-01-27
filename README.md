@@ -72,6 +72,15 @@ npm run precommit
 - Sync complete `build` directory on server. 
 - Before code push to repository, make sure you lint your code using `npm run precommit` command.
 
+### Unit testing
+
+- Setup local unit test environment by running script from terminal
+
+```./bin/install-wp-tests.sh <db-name> <db-user> <db-pass> [db-host] [wp-version] [skip-database-creation]```
+- Execute `phpunit` in terminal from repository to run all test cases.
+- Execute `phpunit ./tests/inc/test-class.php` in terminal with file path to run specific tests.
+
+
 Good luck!
 
 Does this interest you?
