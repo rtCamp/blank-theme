@@ -18,12 +18,19 @@ require_once './inc/helpers/custom-functions.php';
  * Class Test_Customizer.
  */
 class Test_Custom_Functions extends \WP_UnitTestCase {
-	
+	/**
+	 * Setup theme for test.
+	 */
 	public function setUp() : void {
 		parent::setUp();
 		switch_theme( 'blank-theme' );
 	}
 
+	/**
+	 * Test blank theme primary classes
+	 *
+	 * @covers ::blank_theme_primary_classes
+	 */
 	public function test_blank_theme_primary_classes() {
 
 		do_action( 'after_setup_theme' );
@@ -42,7 +49,12 @@ class Test_Custom_Functions extends \WP_UnitTestCase {
 		$this->expectOutputString( esc_html( "blank-theme-primary {$foundation_classes} test-classes clearfix" ) );
 		blank_theme_primary_classes( 'test-classes', $foundation_classes );
 	}
-	
+
+	/**
+	 * Test blank theme secondary classes.
+	 *
+	 * @covers ::blank_theme_secondary_classes
+	 */
 	public function test_blank_theme_secondary_classes() {
 		$sidebar_position    = get_theme_mod( 'blank_theme_sidebar_position' );
 		$foundation_classes  = 'large-4 medium-4 small-12 cell column';
@@ -51,12 +63,22 @@ class Test_Custom_Functions extends \WP_UnitTestCase {
 		$this->expectOutputString( esc_html( "blank-theme-secondary widget-area {$foundation_classes} test-classes clearfix" ) );
 		blank_theme_secondary_classes( 'test-classes', $foundation_classes );
 	}
-	
+
+	/**
+	 * Test blank theme get font url.
+	 *
+	 * @covers ::blank_theme_get_font_url
+	 */
 	public function test_blank_theme_get_font_url() {
 		$this->expectOutputString( esc_url( get_template_directory_uri() . '/assets/fonts/test' ) );
 		blank_theme_get_font_url( '/test' );
 	}
-	
+
+	/**
+	 * Test blank theme pagination.
+	 *
+	 * @covers ::blank_theme_pagination
+	 */
 	public function test_blank_theme_pagination() {
 		$allowed_tags = [
 			'span' => [
