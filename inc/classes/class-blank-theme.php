@@ -178,7 +178,7 @@ class BLANK_THEME {
 	 */
 	public function add_pingback_link() {
 		if ( is_singular() && pings_open() ) {
-			echo '<link rel="pingback" href="' . esc_url( get_bloginfo( 'pingback_url' ) ) . '">';
+			printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
 		}
 	}
 
