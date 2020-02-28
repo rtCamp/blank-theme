@@ -23,37 +23,32 @@
 
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'blank-theme' ); ?></a>
 
-	<header id="masthead" class="site-header grid-container grid-container-padded" role="banner">
-		<div class="row grid-x grid-margin-x">
+	<header id="masthead" class="site-header" role="banner">
+		<div class="site-branding">
+			<?php
+			if ( get_theme_mod( 'custom_logo' ) ) {
+				the_custom_logo();
+				blank_theme_site_title( 'screen-reader-text' );
+			} else {
+				blank_theme_site_title();
+			}
 
-			<div class="site-branding shrink cell column">
-				<?php
-					if ( get_theme_mod( 'custom_logo' ) ) {
-						the_custom_logo();
-						blank_theme_site_title( 'screen-reader-text' );
-					} else {
-						blank_theme_site_title();
-					}
+			blank_theme_site_description();
+			?>
+		</div><!-- .site-branding -->
 
-					blank_theme_site_description();
-				?>
-			</div><!-- .site-branding -->
-
-			<nav id="site-navigation" class="blank-theme-main-navigation auto cell column" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'blank-theme' ); ?>">
-				<?php
-				wp_nav_menu(
-					[
-						'theme_location' => 'primary',
-						'menu_id'        => 'primary-menu',
-						'menu_class'     => 'primary-menu menu',
-						'depth'          => 3,
-					]
-				);
-				?>
-			</nav><!-- #site-navigation -->
-
-		</div>
+		<nav id="site-navigation" class="blank-theme-main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'blank-theme' ); ?>">
+			<?php
+			wp_nav_menu(
+				[
+					'theme_location' => 'primary',
+					'menu_id'        => 'primary-menu',
+					'menu_class'     => 'primary-menu menu',
+					'depth'          => 3,
+				]
+			);
+			?>
+		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
-	<div class="grid-container grid-container-padded">
-		<div id="content" class="site-content row grid-x grid-margin-x">
+	<div id="content" class="site-content">

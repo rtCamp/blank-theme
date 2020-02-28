@@ -175,3 +175,21 @@ function blank_theme_pagination() {
 
 	printf( '<nav class="blank-theme-pagination clearfix">%s</nav>', wp_kses( paginate_links(), $allowed_tags ) );
 }
+
+/**
+ * Copyright text.
+ */
+function blank_theme_copyright_text() {
+	$theme_uri = 'https://rtcamp.com/';
+
+	/* translators: 1: Theme name, 2: Theme author. */
+	$default = sprintf(
+		esc_html__( '%1$s by %2$s', 'blank-theme' ),
+		esc_html__( 'Blank Theme', 'blank-theme' ),
+		'<a href="' . esc_url( $theme_uri ) . '" rel="designer">' . esc_html__( 'rtCamp', 'blank-theme' ) . '</a>'
+	);
+
+	$copyright_text = get_theme_mod( 'blank_theme_copyright_text', $default );
+
+	echo $copyright_text; /* WPCS: xss ok. */
+}
