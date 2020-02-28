@@ -121,4 +121,25 @@ class Utility {
 
 	}
 
+	/**
+	 * Utility method to mock global wp query.
+	 *
+	 * @param array $args WP query arguments.
+	 * @param array $conditions wp query conditions.
+	 */
+	public static function mock_wp_query( $args, $conditions ) {
+
+		$wp_query = new \WP_Query( $args );
+
+		foreach ( $conditions as $key => $value ) {
+			$wp_query->{$key} = $value;
+		}
+
+		// phpcs:disable
+		$GLOBALS['wp_query']     = $wp_query;
+		$GLOBALS['wp_the_query'] = $GLOBALS['wp_query'];
+		do_action_ref_array( 'pre_get_posts', [ &$GLOBALS['wp_query'] ] );
+		// phpcs:enable
+	}
+
 }
