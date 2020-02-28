@@ -9,7 +9,6 @@
 
 namespace BLANK_THEME\Tests;
 
-use Exception;
 use BLANK_THEME\Inc\Widgets;
 
 /**

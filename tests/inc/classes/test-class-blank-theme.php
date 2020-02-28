@@ -74,10 +74,10 @@ class Test_Blank_Theme extends \WP_UnitTestCase {
 		$this->assertTrue( get_theme_support( 'wp-block-styles' ) );
 		$this->assertTrue( get_theme_support( 'align-wide' ) );
 
-		$this->assertIsArray( get_theme_support( 'html5' ) );
-		$this->assertIsArray( get_theme_support( 'post-formats' ) );
-		$this->assertIsArray( get_theme_support( 'custom-background' ) );
-		$this->assertIsArray( get_theme_support( 'custom-logo' ) );
+		$this->assertTrue( is_array( get_theme_support( 'html5' ) ) );
+		$this->assertTrue( is_array( get_theme_support( 'post-formats' ) ) );
+		$this->assertTrue( is_array( get_theme_support( 'custom-background' ) ) );
+		$this->assertTrue( is_array( get_theme_support( 'custom-logo' ) ) );
 
 		$this->assertArrayHasKey( 'primary', get_registered_nav_menus(), 'Primary menu registered' );
 
