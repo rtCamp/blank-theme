@@ -40,17 +40,27 @@ class Test_Widgets extends \WP_UnitTestCase {
 	 * Test constructor function.
 	 *
 	 * @covers ::__construct
-	 */
-	public function test_construct() {
-		$this->assertInstanceOf( 'BLANK_THEME\Inc\Widgets', $this->instance );
-	}
-
-	/**
-	 * Function to test hooks setup.
-	 *
 	 * @covers ::_setup_hooks
 	 */
-	public function test_setup_hooks() {
+	public function test_construct() {
+
+		Utility::invoke_method( $this->instance, '__construct' );
+
+		$this->assertInstanceOf( 'BLANK_THEME\Inc\Widgets', $this->instance );
+
 		$this->assertEquals( 10, has_action( 'widgets_init', array( $this->instance, 'register_widgets' ) ) );
+
 	}
+
+	public function test_register_widgets() {
+
+		$this->instance->register_widgets();
+
+		$sidebars = wp_get_sidebars_widgets();
+
+		$this->assertArrayHasKey( 'sidebar-1', $sidebars );
+		$this->assertArrayHasKey( 'sidebar-2', $sidebars );
+
+	}
+
 }
