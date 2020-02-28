@@ -9,6 +9,12 @@
  * Ex: @include body-text( xl );
  * This will add font-size and line-height with different breakpoints.
  */
+/*-----------
+	Colors
+-------------*/
+/*---------------------------------
+		Site Color Variables
+-----------------------------------*/
 /* stylelint-disable indentation */
 /* stylelint-enable */
 

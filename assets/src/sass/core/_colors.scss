@@ -1,48 +1,62 @@
-// Default Black Color
-$black: #000000;
 
-// Default White Color
+/*-----------
+	Colors
+-------------*/
+
+// Black and white.
+$black: #000000;
 $white: #ffffff;
 
-// Default Yellow Color
-$yellow: #ffeb3b;
+// Gray
+$gray-200: #cccccc;
+$gray-100: #eff3f6;
 
-// Light Gray
-$light-gray: #c2c2c2;
+// Dark Gray
+$dark-gray-100: #424242;
+$dark-gray-200: #333;
+
+// Red
+$red-100: #d32f2f;
+
+// Blue
+$blue-100: #0336ff;
+
+/*---------------------------------
+		Site Color Variables
+-----------------------------------*/
 
 // Primary Color - Color for content and links.
-$color__primary: #424242;
+$color__primary: $dark-gray-100;
 
 // Secondary Color
-$color__secondary: #0336ff;
+$color__secondary: $blue-100;
 
 // Theme Color - Used for link hover color
-$color__theme: #d32f2f;
+$color__theme: $red-100;
 
 // Body background color - Used for `<body>` tag
-$color__background-body: #fff9c4;
-$color__background-screen: #f1f1f1;
+$color__background-body: $white;
+$color__background-screen: $gray-100;
 
 // Horizontal line color - Used for `<hr />` tag.
-$color__background-hr: $light-gray;
+$color__background-hr: $gray-100;
 
 // Default Button Background - Used for all button types.
-$color__background-button: #eff3f6;
-$color__background-button-hover: #e6ebf1;
+$color__background-button: $gray-100;
+$color__background-button-hover: $gray-100;
 
 // pre tag background - Used for `<pre>` tag.
-$color__background-pre: #eee;
+$color__background-pre: $gray-200;
 
 // textarea background - Used for `<textarea>` tag.
-$color__background-textarea: #fafafa;
-
-$color__text-screen: #21759b;
+$color__background-textarea: $white;
+$color__text-screen: $blue-100;
 
 // Input fields color - Used for `input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="tel"], textarea` types
-$color__text-input: #666;
+$color__text-input: $dark-gray-200;
 
 // Input fields focus state color - Used for `input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="tel"], textarea` types
-$color__text-input-focus: #111;
+$color__text-input-focus: $black;
 
 // Link color - Used for all links
 $color__link: $color__primary;
@@ -51,25 +65,22 @@ $color__link: $color__primary;
 $color__link-hover: $color__theme;
 
 // Select tag text color - Used for all `<select>` tags
-$color__select-text: #404040;
+$color__select-text: $dark-gray-200;
 
 // Button Border Color - Used for `button, input[type="button"], input[type="reset"], input[type="submit"]`
-$color__border-button: rgba(27, 31, 35, 0.2);
+$color__border-button: $dark-gray-200;
 
 // Button Hover State Border Color - Used for `button, input[type="button"], input[type="reset"], input[type="submit"]`
-$color__border-button-hover: rgba(27, 31, 35, 0.35);
+$color__border-button-hover: $black;
 
 // Button Focus State Border Color - Used for `button, input[type="button"], input[type="reset"], input[type="submit"]`
-$color__border-button-focus: #aaa #bbb #bbb;
+$color__border-button-focus: $gray-200 $gray-100 $gray-100;
 
 // Input Field Border Color - Used for `input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="tel"], textarea`
-$color__border-input: $light-gray;
+$color__border-input: $gray-100;
 
 // Light Border Color
-$color__border-light: #ddd;
-
-$color__fieldset-border: #c0c0c0;
-
-$color__table-border: #e1e1e1;
-
-$color__blockquote: #999999;
+$color__border-light: $gray-100;
+$color__fieldset-border: $gray-200;
+$color__table-border: $gray-200;
+$color__blockquote: $black;

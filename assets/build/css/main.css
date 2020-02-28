@@ -9,6 +9,12 @@
  * Ex: @include body-text( xl );
  * This will add font-size and line-height with different breakpoints.
  */
+/*-----------
+	Colors
+-------------*/
+/*---------------------------------
+		Site Color Variables
+-----------------------------------*/
 /* stylelint-disable indentation */
 /* stylelint-enable */
 /* normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
@@ -88,7 +94,7 @@ dfn {
  * Address styling not present in IE 8/9.
  */
 mark {
-  background: #ffeb3b;
+  background: #cccccc;
   color: #000000; }
 
 /**
@@ -252,7 +258,7 @@ input[type="search"]::-webkit-search-decoration {
  * Define consistent border, margin, and padding.
  */
 fieldset {
-  border: 1px solid #c0c0c0;
+  border: 1px solid #cccccc;
   margin: 0 0.125rem;
   padding: 0.375rem 0.625rem 0.75rem; }
 
@@ -304,7 +310,7 @@ html {
  *    base font size.
  */
 body {
-  background: #fff9c4;
+  background: #ffffff;
   margin: 0;
   font-family: sans-serif;
   font-size: 0.75rem;
@@ -378,7 +384,7 @@ input[type="submit"] {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#fafbfc), color-stop(90%, #eff3f6));
   background-image: linear-gradient(-180deg, #fafbfc 0%, #eff3f6 90%);
   border-radius: 0.1875rem;
-  border: 1px solid rgba(27, 31, 35, 0.2);
+  border: 1px solid #333;
   color: #424242;
   display: inline-block;
   font-size: 0.875rem;
@@ -391,10 +397,10 @@ input[type="submit"] {
   input[type="button"]:hover,
   input[type="reset"]:hover,
   input[type="submit"]:hover {
-    background: #e6ebf1;
+    background: #eff3f6;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#f0f3f6), color-stop(90%, #e6ebf1));
     background-image: linear-gradient(-180deg, #f0f3f6 0%, #e6ebf1 90%);
-    border-color: rgba(27, 31, 35, 0.35); }
+    border-color: #000000; }
   button:active, button:focus,
   input[type="button"]:active,
   input[type="button"]:focus,
@@ -402,10 +408,10 @@ input[type="submit"] {
   input[type="reset"]:focus,
   input[type="submit"]:active,
   input[type="submit"]:focus {
-    background: #e6ebf1;
+    background: #eff3f6;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#f0f3f6), color-stop(90%, #e6ebf1));
     background-image: linear-gradient(-180deg, #f0f3f6 0%, #e6ebf1 90%);
-    border-color: rgba(27, 31, 35, 0.35); }
+    border-color: #000000; }
 
 /*---------------------------
 		Fields
@@ -417,8 +423,8 @@ input[type="password"],
 input[type="search"],
 input[type="tel"],
 textarea {
-  color: #666;
-  border: 1px solid #c2c2c2;
+  color: #333;
+  border: 1px solid #eff3f6;
   border-radius: 0.1875rem;
   line-height: 1.5; }
   input[type="text"]:focus,
@@ -428,7 +434,7 @@ textarea {
   input[type="search"]:focus,
   input[type="tel"]:focus,
   textarea:focus {
-    color: #111; }
+    color: #000000; }
 
 input[type="text"],
 input[type="email"],
@@ -438,7 +444,7 @@ input[type="search"] {
   padding: 0.1875rem; }
 
 select {
-  color: #404040;
+  color: #333;
   font-size: 1rem;
   line-height: 1.5; }
 
@@ -446,7 +452,7 @@ select {
  * 1. Remove the default vertical scrollbar in IE 10+.
  */
 textarea {
-  background: #fafafa;
+  background: #ffffff;
   box-shadow: 1px 1px 0.3125rem rgba(0, 0, 0, 0.1) inset;
   line-height: 1.5;
   max-width: 100%;
@@ -505,7 +511,7 @@ table {
 
 th,
 td {
-  border-bottom: 1px solid #e1e1e1;
+  border-bottom: 1px solid #cccccc;
   padding: 0.9375rem;
   text-align: left; }
   th:first-child,
@@ -516,8 +522,8 @@ td {
     padding-right: 0; }
 
 pre {
-  background: #eee;
-  border: 1px solid #ddd;
+  background: #cccccc;
+  border: 1px solid #eff3f6;
   max-width: 100%;
   overflow: auto;
   padding: 1rem;
@@ -536,9 +542,9 @@ code {
   font-size: 80%;
   margin: 0 0.1875rem;
   padding: 0.125rem 0.375rem;
-  background: #eee;
+  background: #cccccc;
   border-radius: 0.1875rem;
-  border: 1px solid #ddd; }
+  border: 1px solid #eff3f6; }
 
 /**
  * 1. Fix an odd quirk whereby, without this, code blocks are rendered at a
@@ -552,14 +558,14 @@ samp {
 
 q,
 blockquote {
-  border-left: 0.25rem solid #c2c2c2;
-  color: #999999;
+  border-left: 0.25rem solid #e6e6e6;
+  color: #000000;
   font-style: italic;
   margin: 0 0 1.875rem 1.875rem;
   padding-left: 1rem; }
 
 hr {
-  background-color: #c2c2c2;
+  background-color: #eff3f6;
   border: 0;
   box-sizing: content-box;
   /* Address differences between Firefox and other browsers. Source- normalize.css */
@@ -972,13 +978,13 @@ hr {
   width: 1px;
   word-wrap: normal; }
   .screen-reader-text:focus {
-    background-color: #f1f1f1;
+    background-color: #eff3f6;
     border-radius: 0.1875rem;
     box-shadow: 0 0 0.125rem 0.125rem rgba(0, 0, 0, 0.6);
     clip: auto;
     -webkit-clip-path: none;
             clip-path: none;
-    color: #21759b;
+    color: #0336ff;
     display: block;
     font-size: 1em;
     height: auto;
@@ -1069,9 +1075,9 @@ hr {
 .archive .format-aside .entry-title {
   display: none; }
 
-/*--------------------------------------------------------------
-## Media
---------------------------------------------------------------*/
+/*-----------
+	Media
+-------------*/
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
 .comment-content .wp-smiley {
@@ -1321,7 +1327,7 @@ object {
   text-transform: capitalize; }
 
 .comments-area li.comment {
-  border-bottom: 1px solid #c2c2c2;
+  border-bottom: 1px solid #eff3f6;
   overflow: hidden;
   margin-bottom: 1.5625rem; }
 
@@ -2001,7 +2007,7 @@ object {
       margin-bottom: 0.9375rem;
       overflow-y: hidden;
       -ms-overflow-style: -ms-autohiding-scrollbar;
-      border: 1px solid #ddd; }
+      border: 1px solid #eff3f6; }
       .table-responsive > table {
         margin-bottom: 0; }
       .table-responsive > table > thead > tr > th,
