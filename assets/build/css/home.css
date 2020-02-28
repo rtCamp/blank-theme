@@ -1,1 +1,14 @@
+/**
+ * Foundation for Sites by ZURB
+ * Version 6.6.1
+ * foundation.zurb.com
+ * Licensed under MIT Open Source
+ */
+/**
+ * Add font scale with media query as per configuration on $body-text
+ * Ex: @include body-text( xl );
+ * This will add font-size and line-height with different breakpoints.
+ */
+/* stylelint-disable indentation */
+/* stylelint-enable */
 

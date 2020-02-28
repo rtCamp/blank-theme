@@ -1,4 +1,9 @@
 // Essentials
+
+// Foundation essentials.
+@import "~foundation-sites/scss/global";
+@import "~foundation-sites/scss/foundation";
+
 @import "mixins";
 @import "colors";
 @import '~sass-mq/mq';
