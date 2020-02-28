@@ -1,22 +1,21 @@
-// Essentials.
-@import "core/essentials";
+// Essentials for setup.
+@import "01-tools/setup";
 
-// Core
-@import "core/normalize";
-@import "core/elements";
-@import "core/zurb-foundation";
-@import "core/blocks";
-@import "core/common-classes";
-@import "core/wp-css";
+// Generic
+@import "02-generic/normalize";
+@import "02-generic/elements";
+@import "02-generic/zurb-foundation";
+@import "02-generic/common-classes";
+@import "02-generic/wp-css";
 
 // Utils
-@import "utils/animations";
+@import "03-utilities/animations";
 
 // Layouts
-@import "layouts/site_layout";
-@import "layouts/footer";
-@import "layouts/header";
-@import "layouts/posts-and-pages";
+@import "04-layout/site_layout";
+@import "04-layout/footer";
+@import "04-layout/header";
+@import "04-layout/posts-and-pages";
 
 // Components
 @import "components/menus";
