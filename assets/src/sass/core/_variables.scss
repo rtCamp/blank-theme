@@ -19,14 +19,6 @@ $breakpoints: (
 	xlarge : $g-breakpoint-large-desktop
 );
 
-// Media query breakpoints (sass-mq)
-$mq-breakpoints: (
-	mobile: $g-breakpoint-mobile,
-	tablet: $g-breakpoint-tablet,
-	desktop: $g-breakpoint-desktop,
-	wide: $g-breakpoint-large-desktop
-);
-
 $grid-column-gutter: (
 	small  : 30px,
 	medium : 30px,

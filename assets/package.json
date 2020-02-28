@@ -49,7 +49,6 @@
 		"prompt-sync": "^4.1.6",
 		"replace-in-file": "^3.4.4",
 		"sass-loader": "^7.1.0",
-		"sass-mq": "^5.0.0",
 		"serialize-javascript": "^2.1.2",
 		"style-loader": "^0.23.1",
 		"stylelint": "^9.6.0",

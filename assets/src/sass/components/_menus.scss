@@ -13,10 +13,6 @@
 		margin: 0;
 		padding-left: 0;
 
-		@include mq(false, desktop) {
-			display: none;
-		}
-
 		ul {
 			float: left;
 			position: absolute;
@@ -73,15 +69,6 @@
 	.current-menu-item > a,
 	.current_page_ancestor > a {
 		color: $color__link-hover;
-	}
-}
-
-/* Small menu. */
-.menu-toggle {
-	display: none;
-
-	@include mq(false, desktop) {
-		display: block;
 	}
 }
 

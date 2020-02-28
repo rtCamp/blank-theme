@@ -1359,10 +1359,6 @@ object {
   .blank-theme-main-navigation .current_page_ancestor > a {
     color: #d32f2f; }
 
-/* Small menu. */
-.menu-toggle {
-  display: none; }
-
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
 .post-navigation {
@@ -2085,7 +2081,7 @@ object {
   .show-for-large {
     display: none !important; } }
 
-@media (max-width: 63.99em) {
+@media print, screen and (max-width: 63.99875em) {
     .table-responsive {
       width: 100%;
       margin-bottom: 0.9375rem;
@@ -2100,11 +2096,7 @@ object {
       .table-responsive > table > tbody > tr > td,
       .table-responsive > table > tfoot > tr > th,
       .table-responsive > table > tfoot > tr > td {
-        white-space: nowrap; }
-      .blank-theme-main-navigation ul {
-        display: none; }
-    .menu-toggle {
-      display: block; } }
+        white-space: nowrap; } }
 
 @media print, screen and (max-width: 47.99875em) {
   .hide-for-small-only {

@@ -258,7 +258,7 @@ table {
 	min-height: 0.01%;
 	overflow-x: auto;
 
-	@include mq(false, desktop) {
+	@include breakpoint( medium down ) {
 		width: 100%;
 		margin-bottom: 15px;
 		overflow-y: hidden;
