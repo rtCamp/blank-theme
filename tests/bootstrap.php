@@ -40,6 +40,8 @@ function _register_theme() {
 	add_filter( 'pre_option_stylesheet', function() use ( $current_theme ) {
 		return $current_theme;
 	});
+
+	require_once dirname( __FILE__ ) . '/helpers/class-utility.php';
 }
 tests_add_filter( 'muplugins_loaded', '_register_theme' );
 
