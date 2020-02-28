@@ -36,7 +36,7 @@ if ( post_password_required() ) {
 					'<span>' . get_the_title() . '</span>'
 				);
 			} else {
-				printf( // WPCS: XSS OK.
+				printf( // phpcs:ignore
 					esc_html(
 						/* translators: 1: number of comments, 2: post title */
 						_nx(
