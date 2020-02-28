@@ -155,3 +155,23 @@ function blank_theme_site_description() {
 		);
 	}
 }
+
+/**
+ * Blank Theme Pagination.
+ *
+ * @return void
+ */
+function blank_theme_pagination() {
+
+	$allowed_tags = [
+		'span' => [
+			'class' => [],
+		],
+		'a'    => [
+			'class' => [],
+			'href'  => [],
+		],
+	];
+
+	printf( '<nav class="blank-theme-pagination clearfix">%s</nav>', wp_kses( paginate_links(), $allowed_tags ) );
+}
