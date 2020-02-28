@@ -51,7 +51,6 @@
 		"sass-loader": "^7.1.0",
 		"sass-mq": "^5.0.0",
 		"serialize-javascript": "^2.1.2",
-		"slick-carousel": "^1.8.1",
 		"style-loader": "^0.23.1",
 		"stylelint": "^9.6.0",
 		"stylelint-config-wordpress": "^13.1.0",
