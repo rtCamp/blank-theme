@@ -1,23 +1,24 @@
-// Essentials for setup.
-@import "01-tools/setup";
+// Essentials.
+@import "essentials";
 
 // Generic
-@import "02-generic/normalize";
-@import "02-generic/elements";
-@import "02-generic/zurb-foundation";
-@import "02-generic/common-classes";
-@import "02-generic/wp-css";
+@import "2-generic/generic";
+
+// Import Zurb Foundation Grid
+@include foundation-flex-grid;
+@include foundation-flex-classes;
+@include foundation-visibility-classes;
 
 // Utils
-@import "03-utilities/animations";
+@import "3-utilities/utilies";
 
 // Layouts
-@import "04-layout/site_layout";
-@import "04-layout/footer";
-@import "04-layout/header";
-@import "04-layout/posts-and-pages";
+@import "4-layouts/site_layout";
+@import "4-layouts/header";
+@import "4-layouts/footer";
+@import "4-layouts/posts-and-pages";
 
 // Components
-@import "components/menus";
-@import "components/comments";
-@import "components/widgets";
+@import "5-components/menus";
+@import "5-components/comments";
+@import "5-components/widgets";

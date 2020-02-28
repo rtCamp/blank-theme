@@ -4,11 +4,6 @@
  * foundation.zurb.com
  * Licensed under MIT Open Source
  */
-/**
- * Add font scale with media query as per configuration on $body-text
- * Ex: @include body-text( xl );
- * This will add font-size and line-height with different breakpoints.
- */
 /*-----------
 	Colors
 -------------*/
@@ -17,6 +12,11 @@
 -----------------------------------*/
 /* stylelint-disable indentation */
 /* stylelint-enable */
+/**
+ * Add font scale with media query as per configuration on $body-text
+ * Ex: @include body-text( xl );
+ * This will add font-size and line-height with different breakpoints.
+ */
 /* normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 /* HTML5 display definitions
    ========================================================================== */
@@ -283,6 +283,116 @@ optgroup {
 figure {
   margin: 0;
   max-width: 100%; }
+
+/*---------------------------
+		Accessiblity
+---------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  height: 1px;
+  left: -999em;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal; }
+  .screen-reader-text:focus {
+    background-color: #eff3f6;
+    border-radius: 0.1875rem;
+    box-shadow: 0 0 0.125rem 0.125rem rgba(0, 0, 0, 0.6);
+    clip: auto;
+    -webkit-clip-path: none;
+            clip-path: none;
+    color: #0336ff;
+    display: block;
+    font-size: 1em;
+    height: auto;
+    left: 0.3125rem;
+    line-height: normal;
+    padding: 0.9375rem 1.4375rem 0.875rem;
+    text-decoration: none;
+    top: 0.3125rem;
+    width: auto;
+    z-index: 100000;
+    /* Above WP toolbar. */ }
+
+/*---------------------------
+		Alignments
+---------------------------*/
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+.text-left {
+  text-align: left; }
+
+.text-right {
+  text-align: right; }
+
+.text-center {
+  text-align: center; }
+
+.text-justify {
+  text-align: justify; }
+
+/*---------------------------
+		Clearing
+---------------------------*/
+.clearfix::before, .clearfix::after {
+  display: table;
+  content: ' ';
+  flex-basis: 0;
+  -webkit-box-ordinal-group: 2;
+          order: 1; }
+
+.clearfix::after {
+  clear: both; }
+
+.clear-both {
+  clear: both; }
+
+.clear-left {
+  clear: left; }
+
+.clear-right {
+  clear: right; }
+
+.clear-none {
+  clear: none; }
+
+.float-left {
+  float: left; }
+
+.float-right {
+  float: right; }
+
+.float-none {
+  float: none; }
+
+/*---------------------------
+		Others
+---------------------------*/
+.hide {
+  display: none; }
+
+.hidden {
+  visibility: hidden; }
+
+.visible {
+  visibility: visible; }
+
+.radius {
+  border-radius: 0.1875rem; }
+
+.round {
+  border-radius: 50%; }
 
 html {
   box-sizing: border-box;
@@ -570,6 +680,31 @@ hr {
   box-sizing: content-box;
   /* Address differences between Firefox and other browsers. Source- normalize.css */
   height: 1px; }
+
+/* Aside */
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title {
+  display: none; }
+
+/*-----------
+	Media
+-------------*/
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+  border: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0; }
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+  max-width: 100%; }
+
+.site-content {
+  word-wrap: break-word; }
 
 .row {
   max-width: 91.875rem;
@@ -959,141 +1094,6 @@ hr {
 .hide-for-landscape,
 .show-for-portrait {
   display: none !important; }
-
-/*---------------------------
-		Accessiblity
----------------------------*/
-/* Text meant only for screen readers. */
-.screen-reader-text {
-  border: 0;
-  clip: rect(1px, 1px, 1px, 1px);
-  -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
-  height: 1px;
-  left: -999em;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-  word-wrap: normal; }
-  .screen-reader-text:focus {
-    background-color: #eff3f6;
-    border-radius: 0.1875rem;
-    box-shadow: 0 0 0.125rem 0.125rem rgba(0, 0, 0, 0.6);
-    clip: auto;
-    -webkit-clip-path: none;
-            clip-path: none;
-    color: #0336ff;
-    display: block;
-    font-size: 1em;
-    height: auto;
-    left: 0.3125rem;
-    line-height: normal;
-    padding: 0.9375rem 1.4375rem 0.875rem;
-    text-decoration: none;
-    top: 0.3125rem;
-    width: auto;
-    z-index: 100000;
-    /* Above WP toolbar. */ }
-
-/*---------------------------
-		Alignments
----------------------------*/
-.left {
-  float: left; }
-
-.right {
-  float: right; }
-
-.text-left {
-  text-align: left; }
-
-.text-right {
-  text-align: right; }
-
-.text-center {
-  text-align: center; }
-
-.text-justify {
-  text-align: justify; }
-
-/*---------------------------
-		Clearing
----------------------------*/
-.clearfix::before, .clearfix::after {
-  display: table;
-  content: ' ';
-  flex-basis: 0;
-  -webkit-box-ordinal-group: 2;
-          order: 1; }
-
-.clearfix::after {
-  clear: both; }
-
-.clear-both {
-  clear: both; }
-
-.clear-left {
-  clear: left; }
-
-.clear-right {
-  clear: right; }
-
-.clear-none {
-  clear: none; }
-
-.float-left {
-  float: left; }
-
-.float-right {
-  float: right; }
-
-.float-none {
-  float: none; }
-
-/*---------------------------
-		Others
----------------------------*/
-.hide {
-  display: none; }
-
-.hidden {
-  visibility: hidden; }
-
-.visible {
-  visibility: visible; }
-
-.radius {
-  border-radius: 0.1875rem; }
-
-.round {
-  border-radius: 50%; }
-
-/* Aside */
-.blog .format-aside .entry-title,
-.archive .format-aside .entry-title {
-  display: none; }
-
-/*-----------
-	Media
--------------*/
-.page-content .wp-smiley,
-.entry-content .wp-smiley,
-.comment-content .wp-smiley {
-  border: none;
-  margin-bottom: 0;
-  margin-top: 0;
-  padding: 0; }
-
-/* Make sure embeds and iframes fit their containers. */
-embed,
-iframe,
-object {
-  max-width: 100%; }
-
-.site-content {
-  word-wrap: break-word; }
 
 .animated {
   -webkit-animation-duration: 1s;
