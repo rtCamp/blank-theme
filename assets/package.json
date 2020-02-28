@@ -47,7 +47,7 @@
 		"postcss-pxtorem": "^4.0.1",
 		"postcss-scss": "^2.0.0",
 		"prompt-sync": "^4.1.6",
-		"replace-in-file": "^3.4.2",
+		"replace-in-file": "^3.4.4",
 		"sass-loader": "^7.1.0",
 		"sass-mq": "^5.0.0",
 		"serialize-javascript": "^2.1.2",

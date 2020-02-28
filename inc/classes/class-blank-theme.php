@@ -26,8 +26,8 @@ class BLANK_THEME {
 		Customizer::get_instance();
 		Widgets::get_instance();
 
-		$this->_setup_hooks();
-		$this->_setup_theme();
+		$this->setup_hooks();
+		$this->setup_theme();
 
 	}
 
@@ -36,7 +36,7 @@ class BLANK_THEME {
 	 *
 	 * @return void
 	 */
-	protected function _setup_hooks() {
+	protected function setup_hooks() {
 
 		/**
 		 * Filters
@@ -56,7 +56,7 @@ class BLANK_THEME {
 	 *
 	 * @return void
 	 */
-	protected function _setup_theme() {
+	protected function setup_theme() {
 
 		load_theme_textdomain( 'blank-theme', BLANK_THEME_TEMP_DIR . '/languages' );
 
