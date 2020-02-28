@@ -112,3 +112,46 @@ function blank_theme_entry_footer() {
 	);
 
 }
+
+/**
+ * Get site title.
+ *
+ * @param string $title_class Show or hide title.
+ *
+ * @return void
+ */
+function blank_theme_site_title( $title_class = '' ) {
+	$title_format = '<h2 class="site-title %s"><a href="%s" rel="home">%s</a></h2>';
+
+	if ( is_front_page() && is_home() ) {
+		$title_format = '<h1 class="site-title %s"><a href="%s" rel="home">%s</a></h1>';
+	}
+
+	printf(
+		$title_format,
+		esc_attr( $title_class ),
+		esc_url( home_url( '/' ) ),
+		get_bloginfo( 'name', 'display' ) /* WPCS: xss ok. */
+	);
+}
+
+/**
+ * Get site description.
+ *
+ * @return void
+ */
+function blank_theme_site_description() {
+	$description = get_bloginfo( 'description', 'display' );
+
+	if ( $description || is_customize_preview() ) {
+
+		$hide_tag_line = get_theme_mod( 'blank_theme_hide_tagline' );
+		$desc_class    = $hide_tag_line ? 'screen-reader-text' : false;
+
+		printf(
+			'<p class="site-description %s">%s</p>',
+			esc_attr( $desc_class ),
+			$description /* WPCS: xss ok. */
+		);
+	}
+}
