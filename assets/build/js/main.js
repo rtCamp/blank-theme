@@ -3157,34 +3157,7 @@ var common = {
    * @return {void}
    */
   init: function init() {
-    this.backToTopButton = document.getElementById('blank-theme-back-to-top');
-    this.bodyHtml = $('body, html');
-    this.bindEvents();
-  },
-
-  /**
-   * Bind events.
-   *
-   * @return {void}
-   */
-  bindEvents: function bindEvents() {
-    var _this = this;
-
-    this.backToTopButton.addEventListener('click', function () {
-      return _this.goBackToTop();
-    });
-  },
-
-  /**
-   * Handles back to top.
-   *
-   * @return {void}
-   */
-  goBackToTop: function goBackToTop() {
-    var animationDuration = 600;
-    this.bodyHtml.animate({
-      scrollTop: 0
-    }, animationDuration);
+    return true;
   }
 };
 /* harmony default export */ __webpack_exports__["default"] = (common);
