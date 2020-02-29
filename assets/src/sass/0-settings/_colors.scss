@@ -12,75 +12,11 @@ $gray-200: #cccccc;
 $gray-100: #eff3f6;
 
 // Dark Gray
-$dark-gray-100: #424242;
 $dark-gray-200: #333;
+$dark-gray-100: #424242;
 
 // Red
 $red-100: #d32f2f;
 
 // Blue
 $blue-100: #0336ff;
-
-/*---------------------------------
-		Site Color Variables
------------------------------------*/
-
-// Primary Color - Color for content and links.
-$color__primary: $dark-gray-100;
-
-// Secondary Color
-$color__secondary: $blue-100;
-
-// Theme Color - Used for link hover color
-$color__theme: $red-100;
-
-// Body background color - Used for `<body>` tag
-$color__background-body: $white;
-$color__background-screen: $gray-100;
-
-// Horizontal line color - Used for `<hr />` tag.
-$color__background-hr: $gray-100;
-
-// Default Button Background - Used for all button types.
-$color__background-button: $gray-100;
-$color__background-button-hover: $gray-100;
-
-// pre tag background - Used for `<pre>` tag.
-$color__background-pre: $gray-200;
-
-// textarea background - Used for `<textarea>` tag.
-$color__background-textarea: $white;
-$color__text-screen: $blue-100;
-
-// Input fields color - Used for `input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="tel"], textarea` types
-$color__text-input: $dark-gray-200;
-
-// Input fields focus state color - Used for `input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="tel"], textarea` types
-$color__text-input-focus: $black;
-
-// Link color - Used for all links
-$color__link: $color__primary;
-
-// Link hover color - Used for all links on hover state
-$color__link-hover: $color__theme;
-
-// Select tag text color - Used for all `<select>` tags
-$color__select-text: $dark-gray-200;
-
-// Button Border Color - Used for `button, input[type="button"], input[type="reset"], input[type="submit"]`
-$color__border-button: $dark-gray-200;
-
-// Button Hover State Border Color - Used for `button, input[type="button"], input[type="reset"], input[type="submit"]`
-$color__border-button-hover: $black;
-
-// Button Focus State Border Color - Used for `button, input[type="button"], input[type="reset"], input[type="submit"]`
-$color__border-button-focus: $gray-200 $gray-100 $gray-100;
-
-// Input Field Border Color - Used for `input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="tel"], textarea`
-$color__border-input: $gray-100;
-
-// Light Border Color
-$color__border-light: $gray-100;
-$color__fieldset-border: $gray-200;
-$color__table-border: $gray-200;
-$color__blockquote: $black;

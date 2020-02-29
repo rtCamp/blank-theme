@@ -1,0 +1,43 @@
+/*---------------------------------
+		Theme Variables
+-----------------------------------*/
+
+// <body>
+$color__body-text: $dark-gray-100;
+$color__background-body: $white;
+
+// <a>
+$color__link: $dark-gray-100;
+$color__link-hover: $red-100;
+
+// <select>
+$color__select-text: $dark-gray-200;
+
+// <button>, input[type="button"], input[type="reset"], input[type="submit"]
+$color__background-button: $gray-100;
+$color__background-button-hover: $gray-100;
+$color__border-button: $dark-gray-200;
+$color__border-button-hover: $black;
+$color__border-button-focus: $gray-200 $gray-100 $gray-100;
+
+// input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="tel"], textarea
+$color__border-input: $gray-100;
+$color__text-input: $dark-gray-200;
+$color__text-input-focus: $black;
+$color__background-textarea: $white;
+
+// Light Border Colors
+$color__border-light: $gray-100;
+$color__fieldset-border: $gray-200;
+$color__table-border: $gray-200;
+$color__blockquote: $black;
+
+// <pre>
+$color__background-pre: $gray-200;
+
+// <hr>
+$color__background-hr: $gray-100;
+
+// .screen-reader-text
+$color__background-screen: $gray-100;
+$color__text-screen: $blue-100;

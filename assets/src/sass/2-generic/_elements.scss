@@ -8,7 +8,7 @@ html {
 	-webkit-text-size-adjust: 100%;
 
 	/* [5] */
-	color: $color__primary;
+	color: $color__body-text;
 
 	/* [additional] */
 
@@ -131,7 +131,7 @@ input[type="submit"] {
 	background-image: linear-gradient(-180deg, #fafbfc 0%, #eff3f6 90%);
 	border-radius: $border-radius;
 	border: 1px solid $color__border-button;
-	color: $color__primary;
+	color: $color__body-text;
 	display: inline-block;
 	font-size: 14px;
 	font-weight: 600;
