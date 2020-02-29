@@ -4,11 +4,14 @@
  * foundation.zurb.com
  * Licensed under MIT Open Source
  */
-/*-----------
-	Colors
--------------*/
 /*---------------------------------
-		Theme Variables
+		Colors Variables
+-----------------------------------*/
+/*---------------------------------
+		Element Colors
+-----------------------------------*/
+/*---------------------------------
+		Border Colors
 -----------------------------------*/
 /* stylelint-disable indentation */
 /* stylelint-enable */
@@ -302,13 +305,11 @@ figure {
   width: 1px;
   word-wrap: normal; }
   .screen-reader-text:focus {
-    background-color: #eff3f6;
     border-radius: 0.1875rem;
     box-shadow: 0 0 0.125rem 0.125rem rgba(0, 0, 0, 0.6);
     clip: auto;
     -webkit-clip-path: none;
             clip-path: none;
-    color: #0336ff;
     display: block;
     font-size: 1em;
     height: auto;
@@ -431,7 +432,12 @@ body {
     margin: 0.9375rem; }
 
 blockquote, q {
-  quotes: "" ""; }
+  quotes: "" "";
+  border-left: 0.25rem solid #e6e6e6;
+  color: #000000;
+  font-style: italic;
+  margin: 0 0 1.875rem 1.875rem;
+  padding-left: 1rem; }
   blockquote::before, blockquote::after, q::before, q::after {
     content: ""; }
 
@@ -549,7 +555,6 @@ input[type="search"] {
   padding: 0.1875rem; }
 
 select {
-  color: #333;
   font-size: 1rem;
   line-height: 1.5; }
 
@@ -557,7 +562,6 @@ select {
  * 1. Remove the default vertical scrollbar in IE 10+.
  */
 textarea {
-  background: #ffffff;
   box-shadow: 1px 1px 0.3125rem rgba(0, 0, 0, 0.1) inset;
   line-height: 1.5;
   max-width: 100%;
@@ -660,14 +664,6 @@ kbd,
 pre,
 samp {
   font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace; }
-
-q,
-blockquote {
-  border-left: 0.25rem solid #e6e6e6;
-  color: #000000;
-  font-style: italic;
-  margin: 0 0 1.875rem 1.875rem;
-  padding-left: 1rem; }
 
 hr {
   background-color: #eff3f6;

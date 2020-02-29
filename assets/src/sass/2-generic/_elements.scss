@@ -50,6 +50,12 @@ body {
 blockquote, q {
 	quotes: "" "";
 
+	border-left: 4px solid $light-gray;
+	color: $color__border-blockquote;
+	font-style: italic;
+	margin: 0 0 $font__base-line-height $font__base-line-height;
+	padding-left: 16px;
+
 	&::before,
 	&::after {
 		content: "";
@@ -184,7 +190,6 @@ input[type="search"] {
 }
 
 select {
-	color: $color__select-text;
 	font-size: $font__base-font-size;
 	line-height: $font__line-height-body;
 }
@@ -193,7 +198,6 @@ select {
  * 1. Remove the default vertical scrollbar in IE 10+.
  */
 textarea {
-	background: $color__background-textarea;
 	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1) inset;
 	line-height: $font__line-height-body;
 	max-width: 100%;
@@ -286,7 +290,7 @@ table {
 
 th,
 td {
-	border-bottom: 1px solid $color__table-border;
+	border-bottom: 1px solid $color__border-table;
 	padding: $font__base-line-height / 2;
 	text-align: left;
 
@@ -340,15 +344,6 @@ kbd,
 pre,
 samp {
 	font-family: $font__code;
-}
-
-q,
-blockquote {
-	border-left: 4px solid $light-gray;
-	color: $color__blockquote;
-	font-style: italic;
-	margin: 0 0 $font__base-line-height $font__base-line-height;
-	padding-left: 16px;
 }
 
 hr {
