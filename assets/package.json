@@ -9,7 +9,7 @@
 		"prod": "cross-env NODE_ENV=production webpack --mode production --progress && npm run pot",
 		"dev": "cross-env NODE_ENV=development webpack --watch --mode development --progress",
 		"clean": "rm -rf build/*",
-		"init": "rm package-lock.json && npm install && ./bin/init.js && npm run pot && rm -rf ../.git ../.github ./bin/ ../languages/blank-theme.pot && npm uninstall replace-in-file prompt-sync && echo 'All done! please change the theme folder name' ",
+		"init": "./bin/init.js && npm run pot && rm -rf ../.git ../.github ./bin/ ../languages/blank-theme.pot && npm uninstall replace-in-file prompt-sync",
 		"lint-css": "stylelint src/sass/**/*.scss --syntax scss",
 		"lint-js": "eslint src/js/",
 		"pot": "wp-pot --src '../**/*.php' --dest-file '../languages/blank-theme.pot' --domain 'blank-theme' --package 'Blank Theme' ",

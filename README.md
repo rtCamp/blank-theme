@@ -11,10 +11,14 @@ Getting Started
 After cloning repo, `cd` into `assets` folder and run
 
 ```bash
-npm run init
+npm install
 ```
 
-After installing packages, it will prompt for the theme name, start renaming and do cleanup.
+and then run the following command which will prompt for the theme name, start renaming and do cleanup.
+
+```bash
+npm run init
+```
 
 
 
