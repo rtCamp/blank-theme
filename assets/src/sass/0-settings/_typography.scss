@@ -1,7 +1,7 @@
 
-/*---------------------------------
-		Font Family
------------------------------------*/
+/*----------------
+		Font
+------------------*/
 
 // Global theme font.
 $font__main: 'Open Sans', sans-serif;
@@ -12,17 +12,7 @@ $font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 // Fallback font when font is not loaded via WebFonts JS.
 $font__fallback: sans-serif;
 
-/*---------------------------------
-		Line Height
------------------------------------*/
-
-$font__line-height-body: 1.5;
-$font__line-height-pre: 1.6;
-
-/*---------------------------------
-		Base Line Height
------------------------------------*/
-
+// Base line height.
 $font__base-line-height: 30px;
 
 /*---------------------------------

@@ -13,15 +13,9 @@
 /*---------------------------------
 		Border Colors
 -----------------------------------*/
-/*---------------------------------
-		Font Family
------------------------------------*/
-/*---------------------------------
-		Line Height
------------------------------------*/
-/*---------------------------------
-		Base Line Height
------------------------------------*/
+/*----------------
+		Font
+------------------*/
 /*---------------------------------
 		Body Text Font Sizes
 -----------------------------------*/
@@ -534,8 +528,7 @@ input[type="tel"],
 textarea {
   color: #333;
   border: 1px solid #eff3f6;
-  border-radius: 0.1875rem;
-  line-height: 1.5; }
+  border-radius: 0.1875rem; }
   input[type="text"]:focus,
   input[type="email"]:focus,
   input[type="url"]:focus,
@@ -552,12 +545,8 @@ input[type="password"],
 input[type="search"] {
   padding: 0.1875rem; }
 
-select {
-  line-height: 1.5; }
-
 textarea {
   box-shadow: 1px 1px 0.3125rem rgba(0, 0, 0, 0.1) inset;
-  line-height: 1.5;
   max-width: 100%;
   outline: none;
   overflow: auto; }
@@ -624,7 +613,7 @@ td {
     padding-right: 0; }
 
 pre {
-  background: #cccccc;
+  background: #eff3f6;
   border: 1px solid #eff3f6;
   max-width: 100%;
   overflow: auto;
@@ -644,7 +633,7 @@ code {
   font-size: 80%;
   margin: 0 0.1875rem;
   padding: 0.125rem 0.375rem;
-  background: #cccccc;
+  background: #eff3f6;
   border-radius: 0.1875rem;
   border: 1px solid #eff3f6; }
 

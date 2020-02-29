@@ -159,7 +159,6 @@ textarea {
 	color: $color__text-input;
 	border: 1px solid $color__border-input;
 	border-radius: $border-radius;
-	line-height: $font__line-height-body;
 
 	&:focus {
 		color: $color__text-input-focus;
@@ -174,13 +173,8 @@ input[type="search"] {
 	padding: 3px;
 }
 
-select {
-	line-height: $font__line-height-body;
-}
-
 textarea {
 	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1) inset;
-	line-height: $font__line-height-body;
 	max-width: 100%;
 	outline: none;
 	overflow: auto; // Remove the default vertical scrollbar in IE 10+.
