@@ -1,0 +1,29 @@
+.sg-colors {
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.sg-color-box {
+	flex-basis: 150px;
+	height: 150px;
+	margin-bottom: 50px;
+	margin-right: 20px;
+}
+
+.sg-color-box div {
+	border: 1px solid #CCCCCC;
+	width: 100%;
+	height: 100%;
+}
+
+.sg-color-box input {
+	text-align: center;
+	display: block;
+	padding: 5px;
+	background: black;
+	color: white;
+	width: 100%;
+}
