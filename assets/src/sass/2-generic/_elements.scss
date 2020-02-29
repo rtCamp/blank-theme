@@ -1,20 +1,10 @@
-// Elements.
+// View applied styles by going to https://your-site.com/wp-content/themes/blank-theme/assets/style-guide/elements.html
 
 html {
 	box-sizing: border-box;
 	-ms-text-size-adjust: 100%;
-
-	/* [5] */
 	-webkit-text-size-adjust: 100%;
-
-	/* [5] */
 	color: $color__body-text;
-
-	/* [additional] */
-
-	@if $font-smoothing == true {
-		@include font-smoothing();
-	}
 }
 
 /* stylelint-disable */
@@ -64,19 +54,14 @@ blockquote, q {
 
 img {
 	height: auto;
-
-	/* Make sure images are scaled correctly. */
 	max-width: 100%;
 	vertical-align: middle;
-
-	/* Adhere to container width. */
 }
 
 figure {
 	max-width: 100%;
 }
 
-/* Default Links */
 a {
 	// Self, Active & Visited
 	& {
@@ -194,15 +179,12 @@ select {
 	line-height: $font__line-height-body;
 }
 
-/**
- * 1. Remove the default vertical scrollbar in IE 10+.
- */
 textarea {
 	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1) inset;
 	line-height: $font__line-height-body;
 	max-width: 100%;
 	outline: none;
-	overflow: auto; /* 1 */
+	overflow: auto; // Remove the default vertical scrollbar in IE 10+.
 }
 
 p {
@@ -239,7 +221,6 @@ h6 {
 	@include body-text( h6 )
 }
 
-// Lists
 dd {
 	margin-left: $font__base-line-height;
 }
@@ -328,17 +309,11 @@ code {
 	font-size: 80%;
 	margin: 0 3px;
 	padding: 2px 6px;
-
-	//white-space: nowrap;
 	background: $color__background-pre;
 	border-radius: $border-radius;
 	border: 1px solid $color__border-light;
 }
 
-/**
- * 1. Fix an odd quirk whereby, without this, code blocks are rendered at a
- *    font-size smaller than 1em.
- */
 code,
 kbd,
 pre,
@@ -350,7 +325,5 @@ hr {
 	background-color: $color__background-hr;
 	border: 0;
 	box-sizing: content-box;
-
-	/* Address differences between Firefox and other browsers. Source- normalize.css */
-	height: 1px;
+	height: 1px; // Address differences between Firefox and other browsers.
 }

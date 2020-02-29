@@ -13,8 +13,21 @@
 /*---------------------------------
 		Border Colors
 -----------------------------------*/
-/* stylelint-disable indentation */
-/* stylelint-enable */
+/*---------------------------------
+		Font Family
+-----------------------------------*/
+/*---------------------------------
+		Line Height
+-----------------------------------*/
+/*---------------------------------
+		Base Font Size
+-----------------------------------*/
+/*---------------------------------
+		Base Line Height
+-----------------------------------*/
+/*---------------------------------
+		Body Text Font Sizes
+-----------------------------------*/
 /**
  * Add font scale with media query as per configuration on $body-text
  * Ex: @include body-text( xl );
@@ -388,20 +401,11 @@ figure {
 .visible {
   visibility: visible; }
 
-.radius {
-  border-radius: 0.1875rem; }
-
-.round {
-  border-radius: 50%; }
-
 html {
   box-sizing: border-box;
   -ms-text-size-adjust: 100%;
-  /* [5] */
   -webkit-text-size-adjust: 100%;
-  /* [5] */
-  color: #424242;
-  /* [additional] */ }
+  color: #424242; }
 
 /* stylelint-disable */
 *,
@@ -443,15 +447,12 @@ blockquote, q {
 
 img {
   height: auto;
-  /* Make sure images are scaled correctly. */
   max-width: 100%;
-  vertical-align: middle;
-  /* Adhere to container width. */ }
+  vertical-align: middle; }
 
 figure {
   max-width: 100%; }
 
-/* Default Links */
 a {
   transition: 0.3s; }
   a {
@@ -558,16 +559,12 @@ select {
   font-size: 1rem;
   line-height: 1.5; }
 
-/**
- * 1. Remove the default vertical scrollbar in IE 10+.
- */
 textarea {
   box-shadow: 1px 1px 0.3125rem rgba(0, 0, 0, 0.1) inset;
   line-height: 1.5;
   max-width: 100%;
   outline: none;
-  overflow: auto;
-  /* 1 */ }
+  overflow: auto; }
 
 p:empty {
   display: none; }
@@ -576,7 +573,7 @@ p:empty {
     #HEADINGS
 \*------------------------------------*/
 h1 {
-  font-size: 5rem;
+  font-size: 1.5rem;
   line-height: 1; }
 
 h2 {
@@ -655,10 +652,6 @@ code {
   border-radius: 0.1875rem;
   border: 1px solid #eff3f6; }
 
-/**
- * 1. Fix an odd quirk whereby, without this, code blocks are rendered at a
- *    font-size smaller than 1em.
- */
 code,
 kbd,
 pre,
@@ -669,7 +662,6 @@ hr {
   background-color: #eff3f6;
   border: 0;
   box-sizing: content-box;
-  /* Address differences between Firefox and other browsers. Source- normalize.css */
   height: 1px; }
 
 /* Aside */
