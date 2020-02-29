@@ -8,11 +8,13 @@ Blank Theme is a custom blank theme created with underscore theme, which include
 Getting Started
 ---------------
 
-Setup theme and install packages. After install packages, it will prompt for theme name. Once theme setup is complete for development, it will remove git directory.
+After cloning repo, `cd` into `assets` folder and run
 
 ```bash
 npm run init
 ```
+
+After installing packages, it will prompt for the theme name, start renaming and do cleanup.
 
 
 

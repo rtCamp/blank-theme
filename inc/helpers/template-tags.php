@@ -128,7 +128,7 @@ function blank_theme_site_title( $title_class = '' ) {
 	}
 
 	printf(
-		$title_format, // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		$title_format, // phpcs:ignore
 		esc_attr( $title_class ),
 		esc_url( home_url( '/' ) ),
 		get_bloginfo( 'name', 'display' ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
