@@ -155,8 +155,8 @@ if ( 'y' === confirm ) {
 
 	}
 
-	consoleOutput( fgGreen, 'Finished! Success! Now run `npm run update-deps` to begin package update.' );
+	consoleOutput( fgGreen, 'Renaming Successful!' );
 
 } else {
-	consoleOutput( fgRed, 'Cancelled.' );
+	consoleOutput( fgRed, 'There was error renaming.' );
 }
