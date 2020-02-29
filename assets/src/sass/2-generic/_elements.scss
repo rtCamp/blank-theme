@@ -28,7 +28,7 @@ body {
 	background: $color__background-body;
 	margin: 0;
 	@include font-family();
-	@include body-text( p );
+	@include body-text( body );
 
 	// WP Editor
 	&.mce-content-body {
@@ -175,7 +175,6 @@ input[type="search"] {
 }
 
 select {
-	font-size: $font__base-font-size;
 	line-height: $font__line-height-body;
 }
 

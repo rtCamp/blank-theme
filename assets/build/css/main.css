@@ -20,9 +20,6 @@
 		Line Height
 -----------------------------------*/
 /*---------------------------------
-		Base Font Size
------------------------------------*/
-/*---------------------------------
 		Base Line Height
 -----------------------------------*/
 /*---------------------------------
@@ -30,7 +27,7 @@
 -----------------------------------*/
 /**
  * Add font scale with media query as per configuration on $body-text
- * Ex: @include body-text( xl );
+ * Ex: @include body-text( h1 );
  * This will add font-size and line-height with different breakpoints.
  */
 /* normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
@@ -427,7 +424,7 @@ body {
   background: #ffffff;
   margin: 0;
   font-family: sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   line-height: 1.5; }
   .wf-active body {
     font-family: "Open Sans", sans-serif; }
@@ -556,7 +553,6 @@ input[type="search"] {
   padding: 0.1875rem; }
 
 select {
-  font-size: 1rem;
   line-height: 1.5; }
 
 textarea {
@@ -585,15 +581,15 @@ h3 {
   line-height: 1.62; }
 
 h4 {
-  font-size: 1rem;
+  font-size: 0.875rem;
   line-height: 1.62; }
 
 h5 {
-  font-size: 1rem;
+  font-size: 0.625rem;
   line-height: 1.62; }
 
 h6 {
-  font-size: 1rem;
+  font-size: 0.625rem;
   line-height: 1.62; }
 
 dd {
@@ -1277,7 +1273,7 @@ object {
 
 @media print, screen and (min-width: 48em) {
     body {
-      font-size: 0.875rem;
+      font-size: 1rem;
       line-height: 1.5; }
     h1 {
       font-size: 1.625rem;

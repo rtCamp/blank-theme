@@ -20,7 +20,7 @@
 
 /**
  * Add font scale with media query as per configuration on $body-text
- * Ex: @include body-text( xl );
+ * Ex: @include body-text( h1 );
  * This will add font-size and line-height with different breakpoints.
  */
 @mixin body-text( $level: normal, $body-text: $body-text, $device-size: false ) {

@@ -20,21 +20,10 @@ $font__line-height-body: 1.5;
 $font__line-height-pre: 1.6;
 
 /*---------------------------------
-		Base Font Size
------------------------------------*/
-
-// Defines the base font size of the page, which is the value `1rem` is equal to.
-$font__rem-base: 16px !default;
-
-// Global Base Font size. Assigned to `<body>` tag
-$font__base-font-size: 16px !default;
-
-/*---------------------------------
 		Base Line Height
 -----------------------------------*/
 
-// Global Base Line Height
-$font__base-line-height: 30px !default;
+$font__base-line-height: 30px;
 
 /*---------------------------------
 		Body Text Font Sizes
@@ -77,7 +66,7 @@ $body-text: (
 			line-height: 1.5,
 		),
 		'small': (
-			font-size: 16px,
+			font-size: 14px,
 			line-height: 1.62,
 		),
 	),
@@ -87,7 +76,7 @@ $body-text: (
 			line-height: 1.5,
 		),
 		'small': (
-			font-size: 16px,
+			font-size: 10px,
 			line-height: 1.62,
 		),
 	),
@@ -97,17 +86,17 @@ $body-text: (
 			line-height: 1.5,
 		),
 		'small': (
-			font-size: 16px,
+			font-size: 10px,
 			line-height: 1.62,
 		),
 	),
-	'p': (
+	'body': (
 		'medium': (
-			font-size: 14px,
+			font-size: 16px,
 			line-height: 1.5,
 		),
 		'small': (
-			font-size: 12px,
+			font-size: 14px,
 			line-height: 1.5,
 		),
 	),
