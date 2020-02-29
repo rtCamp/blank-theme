@@ -27,7 +27,6 @@ class BLANK_THEME {
 		Widgets::get_instance();
 
 		$this->setup_hooks();
-		$this->setup_theme();
 
 	}
 
@@ -48,6 +47,7 @@ class BLANK_THEME {
 		 * Actions
 		 */
 		add_action( 'wp_head', [ $this, 'add_pingback_link' ] );
+		add_action( 'after_setup_theme', [ $this, 'setup_theme' ] );
 
 	}
 
@@ -172,7 +172,7 @@ class BLANK_THEME {
 	 */
 	public function add_pingback_link() {
 		if ( is_singular() && pings_open() ) {
-			echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
+			printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
 		}
 	}
 
