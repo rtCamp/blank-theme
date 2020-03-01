@@ -56,7 +56,7 @@ class BLANK_THEME {
 	 *
 	 * @return void
 	 */
-	protected function setup_theme() {
+	public function setup_theme() {
 
 		load_theme_textdomain( 'blank-theme', BLANK_THEME_TEMP_DIR . '/languages' );
 
