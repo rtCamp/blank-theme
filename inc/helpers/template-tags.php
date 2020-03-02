@@ -177,8 +177,8 @@ function blank_theme_pagination() {
 function blank_theme_copyright_text() {
 	$theme_uri = 'https://rtcamp.com/';
 
-	/* translators: 1: Theme name, 2: Theme copyright date, 3: Theme author. */
 	$default = sprintf(
+		/* translators: 1: Theme name, 2: Theme copyright date, 3: Theme author. */
 		esc_html__( '&copy; %1$s %2$s by %3$s', 'blank-theme' ),
 		date_i18n(
 			/* translators: Copyright date format, see https://secure.php.net/date */
