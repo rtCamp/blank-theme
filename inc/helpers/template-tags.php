@@ -144,13 +144,8 @@ function blank_theme_site_description() {
 	$description = get_bloginfo( 'description', 'display' );
 
 	if ( $description || is_customize_preview() ) {
-
-		$hide_tag_line = get_theme_mod( 'blank_theme_hide_tagline' );
-		$desc_class    = $hide_tag_line ? 'screen-reader-text' : false;
-
 		printf(
-			'<p class="site-description %s">%s</p>',
-			esc_attr( $desc_class ),
+			'<p class="site-description">%s</p>',
 			$description // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		);
 	}
@@ -182,14 +177,16 @@ function blank_theme_pagination() {
 function blank_theme_copyright_text() {
 	$theme_uri = 'https://rtcamp.com/';
 
-	/* translators: 1: Theme name, 2: Theme author. */
+	/* translators: 1: Theme name, 2: Theme copyright date, 3: Theme author. */
 	$default = sprintf(
-		esc_html__( '%1$s by %2$s', 'blank-theme' ),
+		esc_html__( '&copy; %1$s %2$s by %3$s', 'blank-theme' ),
+		date_i18n(
+			/* translators: Copyright date format, see https://secure.php.net/date */
+			_x( 'Y', 'copyright date format', 'blank-theme' )
+		),
 		esc_html__( 'Blank Theme', 'blank-theme' ),
 		'<a href="' . esc_url( $theme_uri ) . '" rel="designer">' . esc_html__( 'rtCamp', 'blank-theme' ) . '</a>'
 	);
 
-	$copyright_text = get_theme_mod( 'blank_theme_copyright_text', $default );
-
-	echo $copyright_text; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	echo $default; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
