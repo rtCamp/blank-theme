@@ -35,23 +35,74 @@ class Test_Blank_Theme extends \WP_UnitTestCase {
 		parent::setUp();
 		switch_theme( 'blank-theme' );
 		$this->instance = BLANK_THEME::get_instance();
+		$this->mock_post = $this->factory()->post->create_and_get();
+		$GLOBALS['post'] = $this->mock_post;
+		add_filter( 'is_active_sidebar', [ $this, 'deactivate_sidebar' ], 10, 2 );
+	}
+
+	public function tearDown() {
+		unset( $GLOBALS['post'] );
 	}
 
 	/**
 	 * Test constructor function.
 	 *
 	 * @covers ::__construct
-	 */
-	public function test_construct() {
-		$this->assertInstanceOf( 'BLANK_THEME\Inc\BLANK_THEME', $this->instance );
-	}
-
-	/**
-	 * Function to test hooks setup.
-	 *
 	 * @covers ::_setup_hooks
 	 */
-	public function test_setup_hooks() {
+	public function test_construct() {
+
+		Utility::invoke_method( $this->instance, '__construct' );
+		$this->assertInstanceOf( 'BLANK_THEME\Inc\BLANK_THEME', $this->instance );
+		$hooks = [
+			[
+				'type'     => 'filter',
+				'name'     => 'excerpt_more',
+				'priority' => 10,
+				'function' => 'add_read_more_link',
+			],
+			[
+				'type'     => 'filter',
+				'name'     => 'body_class',
+				'priority' => 10,
+				'function' => 'filter_body_classes',
+			],
+			[
+				'type'     => 'action',
+				'name'     => 'wp_head',
+				'priority' => 10,
+				'function' => 'add_pingback_link',
+			],
+			[
+				'type'     => 'action',
+				'name'     => 'after_setup_theme',
+				'priority' => 10,
+				'function' => 'setup_theme',
+			],
+			[
+				'type'     => 'action',
+				'name'     => 'init',
+				'priority' => 10,
+				'function' => 'add_title_tag_support',
+			],
+		];
+
+		// Check if hooks loaded.
+		foreach ( $hooks as $hook ) {
+
+			$this->assertEquals(
+				$hook['priority'],
+				call_user_func(
+					sprintf( 'has_%s', $hook['type'] ),
+					$hook['name'],
+					[
+						$this->instance,
+						$hook['function'],
+					]
+				),
+				sprintf( 'BLANK_THEME::__construct() failed to register %1$s "%2$s" to %3$s()', $hook['type'], $hook['name'], $hook['function'] )
+			);
+		}
 		$this->assertEquals( 10, has_filter( 'excerpt_more', array( $this->instance, 'add_read_more_link' ) ) );
 		$this->assertEquals( 10, has_filter( 'body_class', array( $this->instance, 'filter_body_classes' ) ) );
 		$this->assertEquals( 10, has_action( 'wp_head', array( $this->instance, 'add_pingback_link' ) ) );
@@ -64,7 +115,7 @@ class Test_Blank_Theme extends \WP_UnitTestCase {
 	 */
 	public function test_setup_theme() {
 
-		do_action( 'after_setup_theme' );
+		$this->instance->setup_theme();
 
 		$this->assertTrue( get_theme_support( 'automatic-feed-links' ) );
 		$this->assertTrue( get_theme_support( 'title-tag' ) );
@@ -105,7 +156,18 @@ class Test_Blank_Theme extends \WP_UnitTestCase {
 	 * @covers ::filter_body_classes
 	 */
 	public function test_filter_body_classes() {
+		//error_log( var_export( is_active_sidebar( 'sidebar-1' ), true ) );
 		$this->assertContains( 'test-class', $this->instance->filter_body_classes( array( 'test-class' ) ) );
+		$this->assertContains( 'hfeed', $this->instance->filter_body_classes( array( 'test-class' ) ) );
+		$this->assertContains( 'no-sidebar', $this->instance->filter_body_classes( array( 'test-class' ) ) );
+		Utility::mock_wp_query(
+			[],
+			[
+				'is_singular' => true,
+			]
+		);
+
+		$this->assertNotContains( 'hfeed', $this->instance->filter_body_classes( array( 'test-class' ) ) );
 	}
 
 	/**
@@ -114,13 +176,25 @@ class Test_Blank_Theme extends \WP_UnitTestCase {
 	 * @covers ::add_pingback_link
 	 */
 	public function test_add_pingback_link() {
-		$expected = '';
 
-		if ( is_singular() && pings_open() ) {
-			$expected = '<link rel="pingback" href="' . esc_url( get_bloginfo( 'pingback_url' ) ) . '">';
+		add_filter( 'pings_open', '__return_true' );
+		$expected = '<link rel="pingback" href="' . esc_url( get_bloginfo( 'pingback_url' ) ) . '">';
+
+		Utility::mock_wp_query(
+			[],
+			[
+				'is_singular' => true,
+			]
+		);
+		$actual = Utility::buffer_and_return( [ $this->instance, 'add_pingback_link' ] );
+		$this->assertEquals( $expected, $actual );
+	}
+
+	public function deactivate_sidebar( $is_active, $index ) {
+
+		if ( 'sidebar-1' === $index ) {
+			return false;
 		}
-
-		$this->expectOutputString( $expected );
-		$this->instance->add_pingback_link();
+		return $is_active;
 	}
 }

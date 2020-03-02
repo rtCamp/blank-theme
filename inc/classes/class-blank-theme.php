@@ -128,6 +128,9 @@ class BLANK_THEME {
 	 * Function to add Title theme support.
 	 *
 	 * @action init.
+	 *
+	 * @codeCoverageIgnore Not able to test this as it throws unexpected incorrect usgae error
+	 * when called in unit test case.
 	 */
 	public function add_title_tag_support() {
 		add_theme_support( 'title-tag' );
