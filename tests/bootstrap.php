@@ -42,6 +42,7 @@ function _register_theme() {
 	});
 
 	require_once dirname( __FILE__ ) . '/helpers/class-utility.php';
+	require_once ABSPATH . WPINC . '/class-wp-customize-manager.php';
 }
 tests_add_filter( 'muplugins_loaded', '_register_theme' );
 

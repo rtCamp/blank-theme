@@ -9,7 +9,6 @@
 
 namespace BLANK_THEME\Tests;
 
-use Exception;
 use BLANK_THEME\Inc\Customizer;
 
 /**
@@ -41,19 +40,45 @@ class Test_Customizer extends \WP_UnitTestCase {
 	 * Test constructor function.
 	 *
 	 * @covers ::__construct
-	 */
-	public function test_construct() {
-		$this->assertInstanceOf( 'BLANK_THEME\Inc\Customizer', $this->instance );
-	}
-
-	/**
-	 * Function to test hooks setup.
-	 *
 	 * @covers ::_setup_hooks
 	 */
-	public function test_setup_hooks() {
-		$this->assertEquals( 10, has_action( 'customize_register', array( $this->instance, 'customize_register' ) ) );
-		$this->assertEquals( 10, has_action( 'customize_preview_init', array( $this->instance, 'customize_preview_init' ) ) );
+	public function test_construct() {
+		Utility::invoke_method( $this->instance, '__construct' );
+
+		$this->assertInstanceOf( 'BLANK_THEME\Inc\Customizer', $this->instance );
+
+
+		$hooks = [
+			[
+				'type'     => 'action',
+				'name'     => 'customize_register',
+				'priority' => 10,
+				'function' => 'customize_register',
+			],
+			[
+				'type'     => 'action',
+				'name'     => 'customize_preview_init',
+				'priority' => 10,
+				'function' => 'customize_preview_init',
+			],
+		];
+
+		// Check if hooks loaded.
+		foreach ( $hooks as $hook ) {
+
+			$this->assertEquals(
+				$hook['priority'],
+				call_user_func(
+					sprintf( 'has_%s', $hook['type'] ),
+					$hook['name'],
+					[
+						$this->instance,
+						$hook['function'],
+					]
+				),
+				sprintf( 'Customizer::__construct() failed to register %1$s "%2$s" to %3$s()', $hook['type'], $hook['name'], $hook['function'] )
+			);
+		}
 	}
 
 	/**
@@ -62,10 +87,11 @@ class Test_Customizer extends \WP_UnitTestCase {
 	 * @covers ::customize_partial_blog_name
 	 */
 	public function test_customize_partial_blog_name() {
-		$bloginfo = get_bloginfo( 'name' );
+		$expected = get_bloginfo( 'name' );
 
-		$this->expectOutputString( $bloginfo );
-		$this->instance->customize_partial_blog_name();
+		$actual = Utility::buffer_and_return( [ $this->instance, 'customize_partial_blog_name' ] );
+		$this->assertEquals( $expected, $actual );
+
 	}
 
 	/**
@@ -74,10 +100,10 @@ class Test_Customizer extends \WP_UnitTestCase {
 	 * @covers ::customize_partial_blog_description
 	 */
 	public function test_partial_blog_description() {
-		$blogdescription = get_bloginfo( 'description' );
+		$expected = get_bloginfo( 'description' );
 
-		$this->expectOutputString( $blogdescription );
-		$this->instance->customize_partial_blog_description();
+		$actual = Utility::buffer_and_return( [ $this->instance, 'customize_partial_blog_description' ] );
+		$this->assertEquals( $expected, $actual );
 	}
 
 	/**
@@ -88,8 +114,21 @@ class Test_Customizer extends \WP_UnitTestCase {
 	public function test_enqueue_customizer_scripts() {
 		$this->assertFalse( wp_script_is( 'blank-theme-customizer' ) );
 
-		do_action( 'wp_enqueue_scripts' );
+		$this->instance->enqueue_customizer_scripts();
 
 		$this->assertTrue( wp_script_is( 'blank-theme-main' ) );
+	}
+
+	public function test_customize_register() {
+
+		wp_set_current_user(
+			$this->factory->user->create( [ 'role' => 'administrator' ] )
+		);
+
+		$wp_customize = new \WP_Customize_Manager();
+
+		do_action( 'customize_register', $wp_customize );
+
+		$this->assertEquals( $wp_customize->get_setting( 'blogname' )->transport, 'postMessage' );
 	}
 }
