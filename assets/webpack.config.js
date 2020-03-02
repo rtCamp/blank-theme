@@ -6,7 +6,7 @@ const path = require( 'path' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 const OptimizeCssAssetsPlugin = require( 'optimize-css-assets-webpack-plugin' );
 const cssnano = require( 'cssnano' );
-const CleanWebpackPlugin = require( 'clean-webpack-plugin' );
+const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' );
 const UglifyJsPlugin = require( 'uglifyjs-webpack-plugin' );
 const StyleLintPlugin = require( 'stylelint-webpack-plugin' );
 
@@ -63,7 +63,7 @@ module.exports = {
 					loader: 'file-loader',
 					options: {
 						name: '[path][name].[ext]',
-						publicPath: '../'
+						publicPath: 'production' === process.env.NODE_ENV ? '../' : '../../'
 					}
 				}
 			},
@@ -74,7 +74,7 @@ module.exports = {
 					loader: 'file-loader',
 					options: {
 						name: '[path][name].[ext]',
-						publicPath: '../'
+						publicPath: 'production' === process.env.NODE_ENV ? '../' : '../../'
 					}
 				}
 			}
@@ -96,7 +96,7 @@ module.exports = {
 	},
 
 	plugins: [
-		new CleanWebpackPlugin( [ BUILD_DIR ] ),
+		new CleanWebpackPlugin(),
 
 		new MiniCssExtractPlugin( {
 			filename: 'css/[name].css'
@@ -104,7 +104,7 @@ module.exports = {
 
 		new StyleLintPlugin( {
 			'extends': 'stylelint-config-wordpress/scss'
-		} ),
+		} )
 	],
 
 	externals: {

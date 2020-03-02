@@ -1443,10 +1443,6 @@ object {
   .hide-for-medium-only {
     display: none !important; } }
 
-@media print, screen and (min-width: 64em) and (min-width: 64em) {
-  .large-expand {
-    flex: 1 1 0px; } }
-
 @media print, screen and (min-width: 64em) {
       .row .row {
         margin-right: -0.9375rem;
@@ -1596,6 +1592,10 @@ object {
     flex-direction: column-reverse; }
   .hide-for-large {
     display: none !important; } }
+
+@media print, screen and (min-width: 64em) and (min-width: 64em) {
+  .large-expand {
+    flex: 1 1 0px; } }
 
 @media screen and (max-width: 47.99875em), screen and (min-width: 64em) {
   .show-for-medium-only {
@@ -1757,24 +1757,12 @@ object {
   .hide-for-xlarge-only {
     display: none !important; } }
 
-@media screen and (max-width: 63.99875em), screen and (min-width: 80em) {
-  .show-for-large-only {
-    display: none !important; } }
-
 @media screen and (min-width: 80em) and (min-width: 80em) {
   .xlarge-expand {
     flex: 1 1 0px; } }
 
-@media screen and (orientation: portrait) {
-    .show-for-landscape,
-    .hide-for-portrait {
-      display: none !important; }
-    .hide-for-landscape,
-    .show-for-portrait {
-      display: block !important; } }
-
-@media screen and (max-width: 63.99875em) {
-  .show-for-large {
+@media screen and (max-width: 63.99875em), screen and (min-width: 80em) {
+  .show-for-large-only {
     display: none !important; } }
 
 @media print, screen and (max-width: 63.99875em) {
@@ -1798,6 +1786,14 @@ object {
   .hide-for-small-only {
     display: none !important; } }
 
+@media screen and (max-width: 47.99875em) {
+  .show-for-medium {
+    display: none !important; } }
+
+@media screen and (max-width: 63.99875em) {
+  .show-for-large {
+    display: none !important; } }
+
 @media screen and (max-width: 79.99875em) {
   .show-for-xlarge {
     display: none !important; }
@@ -1812,7 +1808,11 @@ object {
     .show-for-portrait {
       display: none !important; } }
 
-@media screen and (max-width: 47.99875em) {
-  .show-for-medium {
-    display: none !important; } }
+@media screen and (orientation: portrait) {
+    .show-for-landscape,
+    .hide-for-portrait {
+      display: none !important; }
+    .hide-for-landscape,
+    .show-for-portrait {
+      display: block !important; } }
 

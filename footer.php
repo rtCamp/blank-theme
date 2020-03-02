@@ -18,7 +18,7 @@
 		</aside>
 	<?php } ?>
 
-	<div class="site-info">
+	<div class="site-info text-center">
 		<span><?php blank_theme_copyright_text(); ?></span>
 	</div><!-- .site-info -->
 
