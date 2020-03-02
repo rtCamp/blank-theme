@@ -37,6 +37,12 @@ class Test_Assets extends \WP_UnitTestCase {
 		switch_theme( 'blank-theme' );
 		update_option( 'thread_comments', 1 );
 		add_filter( 'comments_open', '__return_true' );
+		$this->mock_post = $this->factory()->post->create_and_get();
+		$GLOBALS['post'] = $this->mock_post;
+	}
+
+	public function tearDown() {
+		unset( $GLOBALS['post'] );
 	}
 
 	/**
@@ -63,17 +69,8 @@ class Test_Assets extends \WP_UnitTestCase {
 	public function test_register_scripts() {
 
 		do_action( 'wp_enqueue_scripts' );
-
-		Utility::mock_wp_query(
-			[],
-			[
-				'is_singular' => true,
-			]
-		);
-
 		$this->assertTrue( wp_script_is( 'blank-theme-main' ) );
 		$this->assertTrue( wp_style_is( 'blank-theme-main' ) );
-		$this->assertTrue( wp_script_is( 'comment-reply' ) );
 	}
 
 	/**
@@ -83,7 +80,7 @@ class Test_Assets extends \WP_UnitTestCase {
 	 * @covers ::register_styles
 	 */
 	public function test_register_scripts_is_home() {
-
+		$old_wp_query = $GLOBALS['wp_query'];
 		Utility::mock_wp_query(
 			[],
 			[
@@ -94,6 +91,7 @@ class Test_Assets extends \WP_UnitTestCase {
 
 		$this->assertTrue( wp_script_is( 'blank-theme-home' ) );
 		$this->assertTrue( wp_style_is( 'blank-theme-home' ) );
+		$GLOBALS['wp_query'] = $old_wp_query;
 	}
 
 	/**
@@ -103,7 +101,7 @@ class Test_Assets extends \WP_UnitTestCase {
 	 * @covers ::register_styles
 	 */
 	public function test_register_scripts_is_single() {
-
+		$old_wp_query = $GLOBALS['wp_query'];
 		Utility::mock_wp_query(
 			[],
 			[
@@ -114,6 +112,7 @@ class Test_Assets extends \WP_UnitTestCase {
 
 		$this->assertTrue( wp_script_is( 'blank-theme-single' ) );
 		$this->assertTrue( wp_style_is( 'blank-theme-single' ) );
+		$GLOBALS['wp_query'] = $old_wp_query;
 	}
 
 	/**
