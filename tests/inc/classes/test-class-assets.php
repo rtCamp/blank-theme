@@ -9,8 +9,8 @@
 
 namespace BLANK_THEME\Tests;
 
-use Exception;
 use BLANK_THEME\Inc\Assets;
+use WP_Error;
 
 /**
  * Class Test_Assets
@@ -82,10 +82,10 @@ class Test_Assets extends \WP_UnitTestCase {
 	public function test_register_scripts_is_home() {
 		$old_wp_query = $GLOBALS['wp_query'];
 		Utility::mock_wp_query(
-			[],
-			[
+			array(),
+			array(
 				'is_home' => true,
-			]
+			)
 		);
 		do_action( 'wp_enqueue_scripts' );
 
@@ -103,10 +103,10 @@ class Test_Assets extends \WP_UnitTestCase {
 	public function test_register_scripts_is_single() {
 		$old_wp_query = $GLOBALS['wp_query'];
 		Utility::mock_wp_query(
-			[],
-			[
+			array(),
+			array(
 				'is_single' => true,
-			]
+			)
 		);
 		do_action( 'wp_enqueue_scripts' );
 
@@ -119,9 +119,9 @@ class Test_Assets extends \WP_UnitTestCase {
 	 * @covers ::get_asset_file_path
 	 */
 	public function test_get_asset_file_path() {
-		$asset_path = [
+		$asset_path = array(
 			'test' => 'test1',
-		];
+		);
 
 		Utility::set_and_get_property( $this->instance, 'asset_paths', $asset_path );
 
@@ -134,13 +134,53 @@ class Test_Assets extends \WP_UnitTestCase {
 	 */
 	public function test_get_asset_file_uri() {
 
-		$asset_path = [
+		$asset_path = array(
 			'test' => 'test1',
-		];
+		);
 
 		Utility::set_and_get_property( $this->instance, 'asset_paths', $asset_path );
 
 		$expected_path = untrailingslashit( get_template_directory_uri() ) . '/assets/build/test1';
 		$this->assertEquals( $expected_path, $this->instance->get_asset_file_uri( 'test' ) );
+	}
+
+	/**
+	 * @covers ::get_asset_paths
+	 */
+	public function test_get_asset_paths() {
+		$http_response = [
+			'body' => wp_json_encode(
+				[
+					'test1' => 'Test 1',
+					'test2' => 'Test 2',
+				]
+			),
+		];
+
+		$this->mock_http_response( $http_response );
+
+		$expected_data = [
+			'test1' => 'Test 1',
+			'test2' => 'Test 2',
+		];
+
+		$this->assertEquals( $expected_data, $this->instance->get_asset_paths() );
+
+		$http_response = new \WP_Error();
+
+		$this->mock_http_response( $http_response );
+
+		$this->assertFalse( $this->instance->get_asset_paths() );
+	}
+
+	public function mock_http_response( $mocked_response ) {
+		add_filter(
+			'pre_http_request',
+			function( $response, $args, $url ) use ( $mocked_response ) {
+				return $mocked_response;
+			},
+			10,
+			3
+		);
 	}
 }
