@@ -127,6 +127,12 @@ class Test_Customizer extends \WP_UnitTestCase {
 
 		$wp_customize = new \WP_Customize_Manager();
 
+		$wp_customize->add_setting( 'blogname' , array(
+			'default'   => 'Test',
+			'transport' => 'refresh',
+		) );
+
+
 		do_action( 'customize_register', $wp_customize );
 
 		$this->assertEquals( $wp_customize->get_setting( 'blogname' )->transport, 'postMessage' );
