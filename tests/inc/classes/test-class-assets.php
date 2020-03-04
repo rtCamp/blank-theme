@@ -35,8 +35,7 @@ class Test_Assets extends \WP_UnitTestCase {
 		parent::setUp();
 		$this->instance = Assets::get_instance();
 		switch_theme( 'blank-theme' );
-		update_option( 'thread_comments', 1 );
-		add_filter( 'comments_open', '__return_true' );
+
 		$this->mock_post = $this->factory()->post->create_and_get();
 		$GLOBALS['post'] = $this->mock_post;
 	}
