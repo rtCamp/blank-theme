@@ -70,8 +70,9 @@ class Assets {
 			wp_enqueue_script( 'blank-theme-single' );
 		}
 
+		// Ignoring this block becuase trying to mock comments_open() throws error.
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-			wp_enqueue_script( 'comment-reply' ); // @codeCoverageIgnore Ignoring becuase trying to mock comments_open() throws error.
+			wp_enqueue_script( 'comment-reply' ); // @codeCoverageIgnore
 		}
 
 	}

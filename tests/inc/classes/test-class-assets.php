@@ -148,21 +148,21 @@ class Test_Assets extends \WP_UnitTestCase {
 	 * @covers ::get_asset_paths
 	 */
 	public function test_get_asset_paths() {
-		$http_response = [
+		$http_response = array(
 			'body' => wp_json_encode(
-				[
+				array(
 					'test1' => 'Test 1',
 					'test2' => 'Test 2',
-				]
+				)
 			),
-		];
+		);
 
 		$this->mock_http_response( $http_response );
 
-		$expected_data = [
+		$expected_data = array(
 			'test1' => 'Test 1',
 			'test2' => 'Test 2',
-		];
+		);
 
 		$this->assertEquals( $expected_data, $this->instance->get_asset_paths() );
 

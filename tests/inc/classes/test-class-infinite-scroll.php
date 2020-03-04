@@ -58,30 +58,30 @@ class Test_Infinite_Scroll extends \WP_UnitTestCase {
 
 		$post_ids = $this->factory->post->create_many(
 			10,
-			[
+			array(
 				'post_type' => 'post',
-			]
+			)
 		);
 
 		Utility::mock_wp_query(
-			[ 'post_type' => 'post' ],
-			[]
+			array( 'post_type' => 'post' ),
+			array()
 		);
-		$output = Utility::buffer_and_return( [ $this->instance, 'render_callback' ] );
+		$output = Utility::buffer_and_return( array( $this->instance, 'render_callback' ) );
 
 		$this->assertNotEmpty( $output );
 		$this->assertContains( '<article', $output );
 
 		Utility::mock_wp_query(
-			[
+			array(
 				'post_type' => 'post',
-			],
-			[
+			),
+			array(
 				'is_search' => true,
-			]
+			)
 		);
 
-		$output = Utility::buffer_and_return( [ $this->instance, 'render_callback' ] );
+		$output = Utility::buffer_and_return( array( $this->instance, 'render_callback' ) );
 
 		$this->assertNotEmpty( $output );
 		$this->assertContains( '<article', $output );

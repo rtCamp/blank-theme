@@ -34,10 +34,10 @@ class Test_Blank_Theme extends \WP_UnitTestCase {
 
 		parent::setUp();
 		switch_theme( 'blank-theme' );
-		$this->instance = BLANK_THEME::get_instance();
+		$this->instance  = BLANK_THEME::get_instance();
 		$this->mock_post = $this->factory()->post->create_and_get();
 		$GLOBALS['post'] = $this->mock_post;
-		add_filter( 'is_active_sidebar', [ $this, 'deactivate_sidebar' ], 10, 2 );
+		add_filter( 'is_active_sidebar', array( $this, 'deactivate_sidebar' ), 10, 2 );
 	}
 
 	public function tearDown() {
@@ -54,38 +54,38 @@ class Test_Blank_Theme extends \WP_UnitTestCase {
 
 		Utility::invoke_method( $this->instance, '__construct' );
 		$this->assertInstanceOf( 'BLANK_THEME\Inc\BLANK_THEME', $this->instance );
-		$hooks = [
-			[
+		$hooks = array(
+			array(
 				'type'     => 'filter',
 				'name'     => 'excerpt_more',
 				'priority' => 10,
 				'function' => 'add_read_more_link',
-			],
-			[
+			),
+			array(
 				'type'     => 'filter',
 				'name'     => 'body_class',
 				'priority' => 10,
 				'function' => 'filter_body_classes',
-			],
-			[
+			),
+			array(
 				'type'     => 'action',
 				'name'     => 'wp_head',
 				'priority' => 10,
 				'function' => 'add_pingback_link',
-			],
-			[
+			),
+			array(
 				'type'     => 'action',
 				'name'     => 'after_setup_theme',
 				'priority' => 10,
 				'function' => 'setup_theme',
-			],
-			[
+			),
+			array(
 				'type'     => 'action',
 				'name'     => 'init',
 				'priority' => 10,
 				'function' => 'add_title_tag_support',
-			],
-		];
+			),
+		);
 
 		// Check if hooks loaded.
 		foreach ( $hooks as $hook ) {
@@ -95,10 +95,10 @@ class Test_Blank_Theme extends \WP_UnitTestCase {
 				call_user_func(
 					sprintf( 'has_%s', $hook['type'] ),
 					$hook['name'],
-					[
+					array(
 						$this->instance,
 						$hook['function'],
-					]
+					)
 				),
 				sprintf( 'BLANK_THEME::__construct() failed to register %1$s "%2$s" to %3$s()', $hook['type'], $hook['name'], $hook['function'] )
 			);
@@ -156,15 +156,15 @@ class Test_Blank_Theme extends \WP_UnitTestCase {
 	 * @covers ::filter_body_classes
 	 */
 	public function test_filter_body_classes() {
-		//error_log( var_export( is_active_sidebar( 'sidebar-1' ), true ) );
+		// error_log( var_export( is_active_sidebar( 'sidebar-1' ), true ) );
 		$this->assertContains( 'test-class', $this->instance->filter_body_classes( array( 'test-class' ) ) );
 		$this->assertContains( 'hfeed', $this->instance->filter_body_classes( array( 'test-class' ) ) );
 		$this->assertContains( 'no-sidebar', $this->instance->filter_body_classes( array( 'test-class' ) ) );
 		Utility::mock_wp_query(
-			[],
-			[
+			array(),
+			array(
 				'is_singular' => true,
-			]
+			)
 		);
 
 		$this->assertNotContains( 'hfeed', $this->instance->filter_body_classes( array( 'test-class' ) ) );
@@ -181,12 +181,12 @@ class Test_Blank_Theme extends \WP_UnitTestCase {
 		$expected = '<link rel="pingback" href="' . esc_url( get_bloginfo( 'pingback_url' ) ) . '">';
 
 		Utility::mock_wp_query(
-			[],
-			[
+			array(),
+			array(
 				'is_singular' => true,
-			]
+			)
 		);
-		$actual = Utility::buffer_and_return( [ $this->instance, 'add_pingback_link' ] );
+		$actual = Utility::buffer_and_return( array( $this->instance, 'add_pingback_link' ) );
 		$this->assertEquals( $expected, $actual );
 	}
 

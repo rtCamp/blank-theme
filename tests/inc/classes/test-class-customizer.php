@@ -47,21 +47,20 @@ class Test_Customizer extends \WP_UnitTestCase {
 
 		$this->assertInstanceOf( 'BLANK_THEME\Inc\Customizer', $this->instance );
 
-
-		$hooks = [
-			[
+		$hooks = array(
+			array(
 				'type'     => 'action',
 				'name'     => 'customize_register',
 				'priority' => 10,
 				'function' => 'customize_register',
-			],
-			[
+			),
+			array(
 				'type'     => 'action',
 				'name'     => 'customize_preview_init',
 				'priority' => 10,
 				'function' => 'customize_preview_init',
-			],
-		];
+			),
+		);
 
 		// Check if hooks loaded.
 		foreach ( $hooks as $hook ) {
@@ -71,10 +70,10 @@ class Test_Customizer extends \WP_UnitTestCase {
 				call_user_func(
 					sprintf( 'has_%s', $hook['type'] ),
 					$hook['name'],
-					[
+					array(
 						$this->instance,
 						$hook['function'],
-					]
+					)
 				),
 				sprintf( 'Customizer::__construct() failed to register %1$s "%2$s" to %3$s()', $hook['type'], $hook['name'], $hook['function'] )
 			);
@@ -89,7 +88,7 @@ class Test_Customizer extends \WP_UnitTestCase {
 	public function test_customize_partial_blog_name() {
 		$expected = get_bloginfo( 'name' );
 
-		$actual = Utility::buffer_and_return( [ $this->instance, 'customize_partial_blog_name' ] );
+		$actual = Utility::buffer_and_return( array( $this->instance, 'customize_partial_blog_name' ) );
 		$this->assertEquals( $expected, $actual );
 
 	}
@@ -102,7 +101,7 @@ class Test_Customizer extends \WP_UnitTestCase {
 	public function test_partial_blog_description() {
 		$expected = get_bloginfo( 'description' );
 
-		$actual = Utility::buffer_and_return( [ $this->instance, 'customize_partial_blog_description' ] );
+		$actual = Utility::buffer_and_return( array( $this->instance, 'customize_partial_blog_description' ) );
 		$this->assertEquals( $expected, $actual );
 	}
 
@@ -122,19 +121,42 @@ class Test_Customizer extends \WP_UnitTestCase {
 	public function test_customize_register() {
 
 		wp_set_current_user(
-			$this->factory->user->create( [ 'role' => 'administrator' ] )
+			$this->factory->user->create( array( 'role' => 'administrator' ) )
 		);
 
 		$wp_customize = new \WP_Customize_Manager();
 
-		$wp_customize->add_setting( 'blogname' , array(
-			'default'   => 'Test',
-			'transport' => 'refresh',
-		) );
+		$wp_customize->add_setting(
+			'blogname',
+			array(
+				'default'   => 'Test',
+				'transport' => 'postName',
+			)
+		);
 
+		$wp_customize->add_setting(
+			'blogdescription',
+			array(
+				'default'   => 'Test',
+				'transport' => 'postName',
+			)
+		);
 
-		do_action( 'customize_register', $wp_customize );
+		$wp_customize->add_setting(
+			'header_textcolor',
+			array(
+				'default'   => 'Test',
+				'transport' => 'postName',
+			)
+		);
+
+		$this->instance->customize_register( $wp_customize );
 
 		$this->assertEquals( $wp_customize->get_setting( 'blogname' )->transport, 'postMessage' );
+
+		$this->assertEquals( $wp_customize->get_setting( 'blogdescription' )->transport, 'postMessage' );
+
+		$this->assertEquals( $wp_customize->get_setting( 'header_textcolor' )->transport, 'postMessage' );
+
 	}
 }
