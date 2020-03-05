@@ -105,19 +105,6 @@ class Test_Customizer extends \WP_UnitTestCase {
 		$this->assertEquals( $expected, $actual );
 	}
 
-	/**
-	 * Test customizer scripts.
-	 *
-	 * @covers ::enqueue_customizer_scripts
-	 */
-	public function test_enqueue_customizer_scripts() {
-		$this->assertFalse( wp_script_is( 'blank-theme-customizer' ) );
-
-		$this->instance->enqueue_customizer_scripts();
-
-		$this->assertTrue( wp_script_is( 'blank-theme-main' ) );
-	}
-
 	public function test_customize_register() {
 
 		wp_set_current_user(

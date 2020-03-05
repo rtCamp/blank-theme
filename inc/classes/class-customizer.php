@@ -102,6 +102,9 @@ class Customizer {
 	 * Enqueue customizer scripts.
 	 *
 	 * @action customize_preview_init
+	 *
+	 * Ignoring this because the asset file names are generated dynamically and fetched from manifest so getting issues with mocking.
+	 * @codeCoverageIgnore
 	 */
 	public function enqueue_customizer_scripts() {
 		wp_enqueue_script(

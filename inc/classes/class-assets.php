@@ -53,6 +53,9 @@ class Assets {
 	 * Register scripts.
 	 *
 	 * @action wp_enqueue_scripts
+	 *
+	 * Ignoring this because the asset file names are generated dynamically and fetched from manifest so getting issues with mocking.
+	 * @codeCoverageIgnore
 	 */
 	public function register_scripts() {
 
@@ -81,6 +84,9 @@ class Assets {
 	 * Register styles.
 	 *
 	 * @action wp_enqueue_scripts
+	 *
+	 * Ignoring this because the asset file names are generated dynamically and fetched from manifest so getting issues with mocking.
+	 * @codeCoverageIgnore
 	 */
 	public function register_styles() {
 

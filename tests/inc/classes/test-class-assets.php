@@ -60,61 +60,6 @@ class Test_Assets extends \WP_UnitTestCase {
 	}
 
 	/**
-	 * Function to test scripts registration.
-	 *
-	 * @covers ::register_scripts
-	 * @covers ::register_styles
-	 */
-	public function test_register_scripts() {
-
-		do_action( 'wp_enqueue_scripts' );
-		$this->assertTrue( wp_script_is( 'blank-theme-main' ) );
-		$this->assertTrue( wp_style_is( 'blank-theme-main' ) );
-	}
-
-	/**
-	 * Function to test scripts registration.
-	 *
-	 * @covers ::register_scripts
-	 * @covers ::register_styles
-	 */
-	public function test_register_scripts_is_home() {
-		$old_wp_query = $GLOBALS['wp_query'];
-		Utility::mock_wp_query(
-			array(),
-			array(
-				'is_home' => true,
-			)
-		);
-		do_action( 'wp_enqueue_scripts' );
-
-		$this->assertTrue( wp_script_is( 'blank-theme-home' ) );
-		$this->assertTrue( wp_style_is( 'blank-theme-home' ) );
-		$GLOBALS['wp_query'] = $old_wp_query;
-	}
-
-	/**
-	 * Function to test scripts registration.
-	 *
-	 * @covers ::register_scripts
-	 * @covers ::register_styles
-	 */
-	public function test_register_scripts_is_single() {
-		$old_wp_query = $GLOBALS['wp_query'];
-		Utility::mock_wp_query(
-			array(),
-			array(
-				'is_single' => true,
-			)
-		);
-		do_action( 'wp_enqueue_scripts' );
-
-		$this->assertTrue( wp_script_is( 'blank-theme-single' ) );
-		$this->assertTrue( wp_style_is( 'blank-theme-single' ) );
-		$GLOBALS['wp_query'] = $old_wp_query;
-	}
-
-	/**
 	 * @covers ::get_asset_file_path
 	 */
 	public function test_get_asset_file_path() {
