@@ -48,11 +48,11 @@ class Customizer {
 	public function customize_register( \WP_Customize_Manager $wp_customize ) {
 
 		if ( ! empty( $wp_customize->get_setting( 'blogname' ) ) ) {
-			$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
+			$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
 		}
 
 		if ( ! empty( $wp_customize->get_setting( 'blogdescription' ) ) ) {
-			$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
+			$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 		}
 
 		if ( ! empty( $wp_customize->get_setting( 'header_textcolor' ) ) ) {
@@ -111,7 +111,7 @@ class Customizer {
 			'blank-theme-customizer',
 			get_template_directory_uri() . '/assets/build/js/admin/customizer.js',
 			[ 'customize-preview' ],
-			false,
+			false, // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.NoExplicitVersion
 			true
 		);
 	}
