@@ -107,11 +107,11 @@ class Customizer {
 	 * @codeCoverageIgnore
 	 */
 	public function enqueue_customizer_scripts() {
-		wp_enqueue_script(
+		wp_enqueue_script( // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.NoExplicitVersion
 			'blank-theme-customizer',
 			get_template_directory_uri() . '/assets/build/js/admin/customizer.js',
 			[ 'customize-preview' ],
-			false, // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.NoExplicitVersion
+			false,
 			true
 		);
 	}
