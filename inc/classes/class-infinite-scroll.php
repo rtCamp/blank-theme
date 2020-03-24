@@ -5,12 +5,14 @@
  * @package Blank-Theme
  */
 
-namespace Blank_Theme;
+namespace BLANK_THEME\Inc;
+
+use Blank_Theme\Inc\Traits\Singleton;
 
 /**
  * Class Infinite_Scroll
  */
-class Infinite_Scroll extends Base {
+class Infinite_Scroll {
 
 	/**
 	 * Setup Jetpack for infinite theme support.
