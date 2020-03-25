@@ -103,9 +103,6 @@ class Test_Blank_Theme extends \WP_UnitTestCase {
 				sprintf( 'BLANK_THEME::__construct() failed to register %1$s "%2$s" to %3$s()', $hook['type'], $hook['name'], $hook['function'] )
 			);
 		}
-		$this->assertEquals( 10, has_filter( 'excerpt_more', array( $this->instance, 'add_read_more_link' ) ) );
-		$this->assertEquals( 10, has_filter( 'body_class', array( $this->instance, 'filter_body_classes' ) ) );
-		$this->assertEquals( 10, has_action( 'wp_head', array( $this->instance, 'add_pingback_link' ) ) );
 	}
 
 	/**
