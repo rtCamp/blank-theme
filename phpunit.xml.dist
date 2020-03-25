@@ -16,6 +16,8 @@
 		<whitelist processUncoveredFilesFromWhitelist="true">
 			<directory suffix=".php">./inc/</directory>
 			<exclude>
+				<file>./inc/helpers/template-tags.php</file>
+				<file>./inc/helpers/autoloader.php</file>
 				<directory suffix=".php">./inc/traits</directory>
 			</exclude>
 		</whitelist>
