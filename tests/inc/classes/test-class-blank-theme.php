@@ -40,6 +40,11 @@ class Test_Blank_Theme extends \WP_UnitTestCase {
 		add_filter( 'is_active_sidebar', array( $this, 'deactivate_sidebar' ), 10, 2 );
 	}
 
+	/**
+	 * Reset global post after every test case.
+	 *
+	 * @return void
+	 */
 	public function tearDown() {
 		unset( $GLOBALS['post'] );
 	}
@@ -49,6 +54,8 @@ class Test_Blank_Theme extends \WP_UnitTestCase {
 	 *
 	 * @covers ::__construct
 	 * @covers ::_setup_hooks
+	 *
+	 * @return void
 	 */
 	public function test_construct() {
 
@@ -109,6 +116,8 @@ class Test_Blank_Theme extends \WP_UnitTestCase {
 	 * Test function setup theme
 	 *
 	 * @covers ::setup_theme
+	 *
+	 * @return void
 	 */
 	public function test_setup_theme() {
 
@@ -135,6 +144,8 @@ class Test_Blank_Theme extends \WP_UnitTestCase {
 	 * Test add read more link.
 	 *
 	 * @covers ::add_read_more_link
+	 *
+	 * @return void
 	 */
 	public function test_add_read_more_link() {
 		global $post;
@@ -151,6 +162,8 @@ class Test_Blank_Theme extends \WP_UnitTestCase {
 	 * Test function to add custom body classes.
 	 *
 	 * @covers ::filter_body_classes
+	 *
+	 * @return void
 	 */
 	public function test_filter_body_classes() {
 		// error_log( var_export( is_active_sidebar( 'sidebar-1' ), true ) );
@@ -171,6 +184,8 @@ class Test_Blank_Theme extends \WP_UnitTestCase {
 	 * Test function to add pingback link.
 	 *
 	 * @covers ::add_pingback_link
+	 *
+	 * @return void
 	 */
 	public function test_add_pingback_link() {
 
@@ -187,6 +202,14 @@ class Test_Blank_Theme extends \WP_UnitTestCase {
 		$this->assertEquals( $expected, $actual );
 	}
 
+	/**
+	 * Helper function to disabled sidebar.
+	 *
+	 * @param boolean    $is_active Whether the sidebar is active.
+	 * @param int|string $index     Index, name, or ID of the dynamic sidebar.
+	 *
+	 * @return boolean
+	 */
 	public function deactivate_sidebar( $is_active, $index ) {
 
 		if ( 'sidebar-1' === $index ) {

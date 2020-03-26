@@ -35,7 +35,11 @@ class Test_Infinite_Scroll extends \WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests `setup_jetpack` function.
+	 * 
 	 * @covers ::setup_jetpack
+	 *
+	 * @return void
 	 */
 	public function test_setup_jetpack() {
 		$this->instance->setup_jetpack();
@@ -52,7 +56,11 @@ class Test_Infinite_Scroll extends \WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests `render_callback` function.
+	 *
 	 * @covers ::render_callback
+	 *
+	 * @return void
 	 */
 	public function test_render_callback() {
 

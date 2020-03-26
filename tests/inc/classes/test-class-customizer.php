@@ -37,10 +37,12 @@ class Test_Customizer extends \WP_UnitTestCase {
 	}
 
 	/**
-	 * Test constructor function.
+	 * Tests class construct.
 	 *
 	 * @covers ::__construct
 	 * @covers ::_setup_hooks
+	 *
+	 * @return void
 	 */
 	public function test_construct() {
 		Utility::invoke_method( $this->instance, '__construct' );
@@ -81,9 +83,11 @@ class Test_Customizer extends \WP_UnitTestCase {
 	}
 
 	/**
-	 * Test customize partial blog name.
+	 * Tests customize partial blog name.
 	 *
 	 * @covers ::customize_partial_blog_name
+	 *
+	 * @return void
 	 */
 	public function test_customize_partial_blog_name() {
 		$expected = get_bloginfo( 'name' );
@@ -94,9 +98,11 @@ class Test_Customizer extends \WP_UnitTestCase {
 	}
 
 	/**
-	 * Test customize partial blog decription.
+	 * Tests customize partial blog description.
 	 *
 	 * @covers ::customize_partial_blog_description
+	 *
+	 * @return void
 	 */
 	public function test_partial_blog_description() {
 		$expected = get_bloginfo( 'description' );
@@ -105,6 +111,13 @@ class Test_Customizer extends \WP_UnitTestCase {
 		$this->assertEquals( $expected, $actual );
 	}
 
+	/**
+	 * Tests `customize_register` function.
+	 *
+	 * @covers ::customize_register
+	 *
+	 * @return void
+	 */
 	public function test_customize_register() {
 
 		wp_set_current_user(

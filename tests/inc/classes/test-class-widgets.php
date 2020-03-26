@@ -37,10 +37,12 @@ class Test_Widgets extends \WP_UnitTestCase {
 	}
 
 	/**
-	 * Test constructor function.
+	 * Tests class construct.
 	 *
 	 * @covers ::__construct
 	 * @covers ::_setup_hooks
+	 *
+	 * @return void
 	 */
 	public function test_construct() {
 
@@ -52,6 +54,13 @@ class Test_Widgets extends \WP_UnitTestCase {
 
 	}
 
+	/**
+	 * Tests `register_widgets` function.
+	 *
+	 * @covers ::register_widgets
+	 * 
+	 * @return void
+	 */
 	public function test_register_widgets() {
 
 		$this->instance->register_widgets();
