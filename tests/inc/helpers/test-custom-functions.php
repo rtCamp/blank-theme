@@ -39,7 +39,7 @@ class Test_Custom_functions extends \WP_UnitTestCase {
 	/**
 	 * Tests `blank_theme_primary_classes` function.
 	 *
-	 * @covers blank_theme_primary_classes()
+	 * @covers ::blank_theme_primary_classes
 	 *
 	 * @return void
 	 */
@@ -66,7 +66,7 @@ class Test_Custom_functions extends \WP_UnitTestCase {
 	/**
 	 * Tests `blank_theme_secondary_classes` function.
 	 *
-	 * @covers blank_theme_secondary_classes()
+	 * @covers ::blank_theme_secondary_classes
 	 *
 	 * @return void
 	 */
@@ -85,7 +85,7 @@ class Test_Custom_functions extends \WP_UnitTestCase {
 	/**
 	 * Tests `blank_theme_get_font_url` function.
 	 *
-	 * @covers blank_theme_get_font_url()
+	 * @covers ::blank_theme_get_font_url
 	 *
 	 * @return void
 	 */
@@ -98,7 +98,7 @@ class Test_Custom_functions extends \WP_UnitTestCase {
 	/**
 	 * Tests `blank_theme_pagination()` function.
 	 * 
-	 * @covers blank_theme_pagination()
+	 * @covers ::blank_theme_pagination
 	 *
 	 * @return void
 	 */
