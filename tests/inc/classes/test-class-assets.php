@@ -49,6 +49,8 @@ class Test_Assets extends \WP_UnitTestCase {
 	 *
 	 * @covers ::_setup_hooks
 	 * @covers ::__construct
+	 *
+	 * @return void
 	 */
 	public function test_setup_hooks() {
 
@@ -60,7 +62,11 @@ class Test_Assets extends \WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests `get_asset_file_path` function.
+	 *
 	 * @covers ::get_asset_file_path
+	 *
+	 * @return void
 	 */
 	public function test_get_asset_file_path() {
 		$asset_path = array(
@@ -74,7 +80,11 @@ class Test_Assets extends \WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests `get_asset_file_uri` function.
+	 *
 	 * @covers ::get_asset_file_uri
+	 *
+	 * @return void
 	 */
 	public function test_get_asset_file_uri() {
 
@@ -89,7 +99,11 @@ class Test_Assets extends \WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests `get_asset_paths` function.
+	 *
 	 * @covers ::get_asset_paths
+	 *
+	 * @return void
 	 */
 	public function test_get_asset_paths() {
 		$http_response = array(
@@ -117,6 +131,13 @@ class Test_Assets extends \WP_UnitTestCase {
 		$this->assertFalse( $this->instance->get_asset_paths() );
 	}
 
+	/**
+	 * Helper function to mock http response.
+	 *
+	 * @param array $mocked_response An array of mocked response data.
+	 *
+	 * @return void
+	 */
 	public function mock_http_response( $mocked_response ) {
 		add_filter(
 			'pre_http_request',
