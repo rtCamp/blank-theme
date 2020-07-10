@@ -34,7 +34,7 @@ class Customizer {
 		 * Actions
 		 */
 		add_action( 'customize_register', [ $this, 'customize_register' ] );
-		add_action( 'customize_preview_init', [ $this, 'customize_preview_init' ] );
+		add_action( 'customize_preview_init', [ $this, 'enqueue_customizer_scripts' ] );
 
 	}
 

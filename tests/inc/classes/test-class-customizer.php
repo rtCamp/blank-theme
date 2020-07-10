@@ -60,7 +60,7 @@ class Test_Customizer extends \WP_UnitTestCase {
 				'type'     => 'action',
 				'name'     => 'customize_preview_init',
 				'priority' => 10,
-				'function' => 'customize_preview_init',
+				'function' => 'enqueue_customizer_scripts',
 			),
 		);
 
