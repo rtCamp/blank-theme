@@ -26,7 +26,7 @@ class BLANK_THEME {
 		Customizer::get_instance();
 		Widgets::get_instance();
 
-		$this->_setup_hooks();
+		$this->setup_hooks();
 
 	}
 
@@ -35,7 +35,7 @@ class BLANK_THEME {
 	 *
 	 * @return void
 	 */
-	protected function _setup_hooks() {
+	protected function setup_hooks() {
 
 		/**
 		 * Filters
@@ -181,7 +181,7 @@ class BLANK_THEME {
 	 */
 	public function add_pingback_link() {
 		if ( is_singular() && pings_open() ) {
-			echo '<link rel="pingback" href="' . esc_url( get_bloginfo( 'pingback_url' ) ) . '">';
+			printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
 		}
 	}
 

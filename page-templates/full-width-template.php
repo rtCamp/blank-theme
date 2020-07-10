@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-<div id="primary" class="<?php blank_theme_primary_classes( 'blank-theme-full-page', 'cell column' ); ?>">
+<div id="primary">
 	<main id="main" class="site-main" role="main">
 		<?php
 		while ( have_posts() ) :

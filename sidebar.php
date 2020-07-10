@@ -7,6 +7,6 @@
 
 ?>
 
-<aside id="secondary" class="<?php blank_theme_secondary_classes(); ?>" role="complementary">
+<aside id="secondary" role="complementary">
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>
 </aside><!-- #secondary -->

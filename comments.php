@@ -33,10 +33,10 @@ if ( post_password_required() ) {
 				printf(
 					/* translators: %s: post title */
 					esc_html_x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'blank-theme' ),
-					'<span>' . get_the_title() . '</span>'
+					'<span>' . esc_html( get_the_title() ) . '</span>'
 				);
 			} else {
-				printf( // WPCS: XSS OK.
+				printf(
 					esc_html(
 						/* translators: 1: number of comments, 2: post title */
 						_nx(
@@ -47,8 +47,8 @@ if ( post_password_required() ) {
 							'blank-theme'
 						)
 					),
-					number_format_i18n( $comments_number ),
-					'<span>' . get_the_title() . '</span>'
+					esc_html( number_format_i18n( $comments_number ) ),
+					'<span>' . esc_html( get_the_title() ) . '</span>'
 				);
 			}
 			?>
