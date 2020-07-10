@@ -1,0 +1,59 @@
+.comment-content {
+	@include clearfix();
+
+	a {
+		word-wrap: break-word;
+	}
+}
+
+.bypostauthor {
+	display: block;
+}
+
+//Basic Styling
+.comments-area {
+	.comment-list {
+		padding: 0;
+		margin: 0;
+	}
+
+	.comment-author {
+		img {
+			float: left;
+			margin-right: 15px;
+		}
+
+		.url {
+			color: $color__body-text;
+			text-transform: capitalize;
+		}
+	}
+
+	li.comment {
+		border-bottom: 1px solid $color__background-hr;
+		overflow: hidden;
+		margin-bottom: 25px;
+	}
+
+	li.comment:last-child {
+		border-bottom: none;
+	}
+
+	.comment-body {
+		margin-bottom: 20px;
+
+		p {
+			margin-bottom: 5px;
+		}
+	}
+
+	ol.children {
+		margin-bottom: 0;
+	}
+}
+
+.comment-form-comment {
+	textarea {
+		width: 100%;
+	}
+}

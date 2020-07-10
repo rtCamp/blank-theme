@@ -8,7 +8,7 @@
 get_header();
 ?>
 
-<section id="primary" class="<?php blank_theme_primary_classes(); ?>">
+<section id="primary">
 	<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>

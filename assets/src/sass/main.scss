@@ -1,28 +1,24 @@
 // Essentials.
-@import "core/essentials";
+@import "essentials";
 
-// Core
-@import "core/normalize";
-@import "core/elements";
-@import "core/zurb-foundation";
-@import "core/blocks";
-@import "core/common-classes";
-@import "core/wp-css";
+// Generic
+@import "2-generic/generic";
+
+// Import Zurb Foundation Grid
+@include foundation-flex-grid;
+@include foundation-flex-classes;
+@include foundation-visibility-classes;
 
 // Utils
-@import "utils/animations";
-
-// Vendor
-@import "vendor/slick";
+@import "3-utilities/utilies";
 
 // Layouts
-@import "layouts/site_layout";
-@import "layouts/footer";
-@import "layouts/header";
-@import "layouts/posts-and-pages";
+@import "4-layouts/site_layout";
+@import "4-layouts/header";
+@import "4-layouts/footer";
+@import "4-layouts/posts-and-pages";
 
 // Components
-@import "components/menus";
-@import "components/banner";
-@import "components/comments";
-@import "components/widgets";
+@import "5-components/menus";
+@import "5-components/comments";
+@import "5-components/widgets";
