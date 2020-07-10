@@ -20,7 +20,7 @@ class Widgets {
 	 * Construct method.
 	 */
 	protected function __construct() {
-		$this->_setup_hooks();
+		$this->setup_hooks();
 	}
 
 	/**
@@ -28,7 +28,7 @@ class Widgets {
 	 *
 	 * @return void
 	 */
-	protected function _setup_hooks() {
+	protected function setup_hooks() {
 
 		/**
 		 * Actions

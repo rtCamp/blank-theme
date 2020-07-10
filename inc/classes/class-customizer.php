@@ -20,7 +20,7 @@ class Customizer {
 	 * Construct method.
 	 */
 	protected function __construct() {
-		$this->_setup_hooks();
+		$this->setup_hooks();
 	}
 
 	/**
@@ -28,13 +28,13 @@ class Customizer {
 	 *
 	 * @return void
 	 */
-	protected function _setup_hooks() {
+	protected function setup_hooks() {
 
 		/**
 		 * Actions
 		 */
 		add_action( 'customize_register', [ $this, 'customize_register' ] );
-		add_action( 'customize_preview_init', [ $this, 'customize_preview_init' ] );
+		add_action( 'customize_preview_init', [ $this, 'enqueue_customizer_scripts' ] );
 
 	}
 
@@ -107,13 +107,10 @@ class Customizer {
 	 * @codeCoverageIgnore
 	 */
 	public function enqueue_customizer_scripts() {
-		wp_enqueue_script( // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.NoExplicitVersion
-			'blank-theme-customizer',
-			get_template_directory_uri() . '/assets/build/js/admin/customizer.js',
-			[ 'customize-preview' ],
-			false,
-			true
-		);
+
+		Assets::get_instance()->register_script( 'blank-theme-customizer', 'js/admin/customizer.js', [ 'customize-preview' ] );
+
+		wp_enqueue_script( 'blank-theme-customizer' );
 	}
 
 }
