@@ -53,7 +53,7 @@ class Test_Blank_Theme extends \WP_UnitTestCase {
 	 * Test constructor function.
 	 *
 	 * @covers ::__construct
-	 * @covers ::_setup_hooks
+	 * @covers ::setup_hooks
 	 *
 	 * @return void
 	 */

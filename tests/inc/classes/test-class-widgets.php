@@ -40,7 +40,7 @@ class Test_Widgets extends \WP_UnitTestCase {
 	 * Tests class construct.
 	 *
 	 * @covers ::__construct
-	 * @covers ::_setup_hooks
+	 * @covers ::setup_hooks
 	 *
 	 * @return void
 	 */
