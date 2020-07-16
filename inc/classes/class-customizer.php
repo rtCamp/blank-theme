@@ -47,9 +47,17 @@ class Customizer {
 	 */
 	public function customize_register( \WP_Customize_Manager $wp_customize ) {
 
-		$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-		$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-		$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+		if ( ! empty( $wp_customize->get_setting( 'blogname' ) ) ) {
+			$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
+		}
+
+		if ( ! empty( $wp_customize->get_setting( 'blogdescription' ) ) ) {
+			$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+		}
+
+		if ( ! empty( $wp_customize->get_setting( 'header_textcolor' ) ) ) {
+			$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+		}
 
 		if ( isset( $wp_customize->selective_refresh ) ) {
 
@@ -94,6 +102,9 @@ class Customizer {
 	 * Enqueue customizer scripts.
 	 *
 	 * @action customize_preview_init
+	 *
+	 * Ignoring this because the asset file names are generated dynamically and fetched from manifest so getting issues with mocking.
+	 * @codeCoverageIgnore
 	 */
 	public function enqueue_customizer_scripts() {
 

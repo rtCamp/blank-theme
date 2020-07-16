@@ -45,6 +45,7 @@
 			<property name="text_domain" type="array" value="blank-theme"/>
 		</properties>
 	</rule>
+	
 
 	<!-- Allow for theme specific exceptions to the file name rules based
 		 on the theme hierarchy. -->
@@ -52,6 +53,10 @@
 		<properties>
 			<property name="is_theme" value="true"/>
 		</properties>
+	</rule>
+	<rule ref="WordPress">
+		<exclude name="WordPress.Files.FileName.NotHyphenatedLowercase" />
+		<exclude name="WordPress.Files.FileName.InvalidClassFileName" />
 	</rule>
 
 	<!-- Set the minimum supported WP version. This is used by several sniffs.
@@ -89,4 +94,10 @@
 	<config name="testVersion" value="5.6-"/>
 	<rule ref="PHPCompatibilityWP"/>
 
+	<rule ref="PHPCompatibility">
+		<exclude name="Generic.Arrays.DisallowShortArraySyntax.Found"/>
+	</rule>
+
+	<!-- Exclude from inspections -->
+	<exclude-pattern>tests/*</exclude-pattern>
 </ruleset>

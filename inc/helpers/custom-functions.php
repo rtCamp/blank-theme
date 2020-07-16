@@ -11,6 +11,8 @@
  * @param  string $slug file slug like you use in get_template_part without php extension.
  * @param  array  $variables pass an array of variables you want to use in array keys.
  *
+ * @codeCoverageIgnore Ignoring becuase not able to mock output for locate_template
+ *
  * @return void
  */
 function blank_theme_get_template_part( $slug, $variables = [] ) {
