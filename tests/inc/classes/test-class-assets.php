@@ -35,19 +35,12 @@ class Test_Assets extends \WP_UnitTestCase {
 		parent::setUp();
 		$this->instance = Assets::get_instance();
 		switch_theme( 'blank-theme' );
-
-		$this->mock_post = $this->factory()->post->create_and_get();
-		$GLOBALS['post'] = $this->mock_post;
-	}
-
-	public function tearDown() {
-		unset( $GLOBALS['post'] );
 	}
 
 	/**
 	 * Function to test hooks setup.
 	 *
-	 * @covers ::_setup_hooks
+	 * @covers ::setup_hooks
 	 * @covers ::__construct
 	 *
 	 * @return void
@@ -62,90 +55,91 @@ class Test_Assets extends \WP_UnitTestCase {
 	}
 
 	/**
-	 * Tests `get_asset_file_path` function.
+	 * Tests script registration.
 	 *
-	 * @covers ::get_asset_file_path
-	 *
-	 * @return void
+	 * @covers ::register_scripts
+	 * @covers ::register_script
 	 */
-	public function test_get_asset_file_path() {
-		$asset_path = array(
-			'test' => 'test1',
+	public function test_register_scripts() {
+
+		$this->instance->register_scripts();
+
+		$this->assertTrue( wp_script_is( 'blank-theme-main' ) );
+
+		Utility::mock_wp_query(
+			array(),
+			array(
+				'is_front_page' => true,
+				'is_home'       => true,
+			)
 		);
 
-		Utility::set_and_get_property( $this->instance, 'asset_paths', $asset_path );
+		$this->instance->register_scripts();
 
-		$expected_path = untrailingslashit( get_template_directory() ) . '/assets/build/test1';
-		$this->assertEquals( $expected_path, $this->instance->get_asset_file_path( 'test' ) );
+		$this->assertTrue( wp_script_is( 'blank-theme-home' ) );
+
+		Utility::mock_wp_query(
+			array(),
+			array(
+				'is_single' => true,
+			)
+		);
+
+		$this->instance->register_scripts();
+
+		$this->assertTrue( wp_script_is( 'blank-theme-single' ) );
 	}
 
 	/**
-	 * Tests `get_asset_file_uri` function.
+	 * Tests styles registration.
 	 *
-	 * @covers ::get_asset_file_uri
-	 *
-	 * @return void
+	 * @covers ::register_styles
+	 * @covers ::register_style
 	 */
-	public function test_get_asset_file_uri() {
+	public function test_register_styles() {
 
-		$asset_path = array(
-			'test' => 'test1',
+		$this->instance->register_styles();
+
+		$this->assertTrue( wp_style_is( 'blank-theme-main' ) );
+
+		Utility::mock_wp_query(
+			array(),
+			array(
+				'is_front_page' => true,
+				'is_home'       => true,
+			)
 		);
 
-		Utility::set_and_get_property( $this->instance, 'asset_paths', $asset_path );
+		$this->instance->register_styles();
 
-		$expected_path = untrailingslashit( get_template_directory_uri() ) . '/assets/build/test1';
-		$this->assertEquals( $expected_path, $this->instance->get_asset_file_uri( 'test' ) );
+		$this->assertTrue( wp_style_is( 'blank-theme-home' ) );
+
+		Utility::mock_wp_query(
+			array(),
+			array(
+				'is_single' => true,
+			)
+		);
+
+		$this->instance->register_styles();
+
+		$this->assertTrue( wp_style_is( 'blank-theme-single' ) );
 	}
 
 	/**
-	 * Tests `get_asset_paths` function.
+	 * Tests get_file_version function.
 	 *
-	 * @covers ::get_asset_paths
-	 *
-	 * @return void
+	 * @covers ::get_file_version
 	 */
-	public function test_get_asset_paths() {
-		$http_response = array(
-			'body' => wp_json_encode(
-				array(
-					'test1' => 'Test 1',
-					'test2' => 'Test 2',
-				)
-			),
-		);
+	public function test_get_file_version() {
 
-		$this->mock_http_response( $http_response );
+		$this->assertEquals( '1.0' , $this->instance->get_file_version( 'non-existent.css', '1.0' ) );
 
-		$expected_data = array(
-			'test1' => 'Test 1',
-			'test2' => 'Test 2',
-		);
+		$this->assertFalse( $this->instance->get_file_version( 'non-existent.css', false ) );
 
-		$this->assertEquals( $expected_data, $this->instance->get_asset_paths() );
-
-		$http_response = new \WP_Error();
-
-		$this->mock_http_response( $http_response );
-
-		$this->assertFalse( $this->instance->get_asset_paths() );
+		$file_path = sprintf( '%s/%s', BLANK_THEME_BUILD_DIR, 'css/main.css' );
+		$expected  = filemtime( $file_path );
+		$this->assertEquals( $expected, $this->instance->get_file_version( 'css/main.css', false ) );
 	}
 
-	/**
-	 * Helper function to mock http response.
-	 *
-	 * @param array $mocked_response An array of mocked response data.
-	 *
-	 * @return void
-	 */
-	public function mock_http_response( $mocked_response ) {
-		add_filter(
-			'pre_http_request',
-			function( $response, $args, $url ) use ( $mocked_response ) {
-				return $mocked_response;
-			},
-			10,
-			3
-		);
-	}
 }
