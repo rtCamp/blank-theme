@@ -19,6 +19,16 @@
 
 <body <?php body_class(); ?>>
 
+<?php
+if ( ! function_exists( 'wp_body_open' ) ) {
+	function wp_body_open() {
+		do_action( 'wp_body_open' );
+	}
+} else {
+	wp_body_open();
+}
+?>
+
 <div id="page" class="hfeed site">
 
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'blank-theme' ); ?></a>
