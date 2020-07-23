@@ -190,3 +190,14 @@ function blank_theme_copyright_text() {
 
 	echo $default; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
+
+if ( ! function_exists( 'wp_body_open' ) ) :
+	/**
+	 * Support for sites older than 5.2.
+	 *
+	 * @link https://core.trac.wordpress.org/ticket/12563
+	 */
+	function wp_body_open() {
+		do_action( 'wp_body_open' );
+	}
+endif;
