@@ -1,71 +1,83 @@
 {
-	"name": "blank-theme",
-	"version": "2.0.0",
-	"description": "Blank Theme Packages",
-	"author": "rtCamp",
-	"license": "MIT",
-	"private": true,
-	"scripts": {
-		"prod": "cross-env NODE_ENV=production webpack --mode production --progress && npm run pot",
-		"dev": "cross-env NODE_ENV=development webpack --watch --mode development --progress",
-		"clean": "rm -rf build/*",
-		"init": "./bin/init.js && npm run pot && rm -rf ../.git ../.github ./bin/ ../languages/blank-theme.pot && npm uninstall replace-in-file prompt-sync",
-		"lint-css": "stylelint src/sass/**/*.scss --syntax scss",
-		"lint-js": "eslint src/js/",
-		"pot": "wp-pot --src '../**/*.php' --dest-file '../languages/blank-theme.pot' --domain 'blank-theme' --package 'Blank Theme' ",
-		"precommit": "npm run lint-css && npm run lint-js && npm run pot",
-		"test": "jest  --verbose"
-	},
-	"dependencies": {
-		"webfontloader": "^1.6.28"
-	},
-	"devDependencies": {
-		"@babel/core": "^7.8.6",
-		"@babel/preset-env": "^7.8.6",
-		"autoprefixer": "^9.7.4",
-		"babel-loader": "^8.0.6",
-		"clean-webpack-plugin": "^3.0.0",
-		"cross-env": "^7.0.0",
-		"css-loader": "^3.4.2",
-		"css-mqpacker": "^7.0.0",
-		"cssnano": "^4.1.10",
-		"eslint": "^6.8.0",
-		"eslint-config-wordpress": "^2.0.0",
-		"eslint-loader": "^3.0.3",
-		"file-loader": "^5.1.0",
-		"foundation-sites": "^6.6.1",
-		"jest": "^25.1.0",
-		"mini-css-extract-plugin": "^0.9.0",
-		"node-sass": "^4.13.1",
-		"optimize-css-assets-webpack-plugin": "^5.0.3",
-		"postcss-assets": "^5.0.0",
-		"postcss-loader": "^3.0.0",
-		"postcss-pxtorem": "^5.0.0",
-		"postcss-scss": "^2.0.0",
-		"prompt-sync": "^4.2.0",
-		"replace-in-file": "^5.0.2",
-		"sass-loader": "^8.0.2",
-		"serialize-javascript": "^3.0.0",
-		"style-loader": "^1.1.3",
-		"stylelint": "^13.2.0",
-		"stylelint-config-wordpress": "^16.0.0",
-		"stylelint-webpack-plugin": "^1.2.3",
-		"uglifyjs-webpack-plugin": "^2.2.0",
-		"webpack": "^4.41.6",
-		"webpack-cli": "^3.3.11",
-		"wp-pot-cli": "^1.3.0"
-	},
-	"browserslist": [
-		"defaults"
-	],
-	"jest": {
-		"testPathIgnorePatterns": [
-			"<rootDir>/node_modules/"
-		],
-		"coverageDirectory": "<rootDir>/.jest-coverage/",
-		"setupFilesAfterEnv": [
-			"<rootDir>/test.setup.js"
-		],
-		"automock": false
-	}
+  "name": "theme-assignment",
+  "version": "0.0.1",
+  "description": "Blank Theme Packages",
+  "author": "rtCamp",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "prod": "cross-env NODE_ENV=production webpack --mode production --progress && npm run pot",
+    "dev": "cross-env NODE_ENV=development webpack --watch --mode development --progress",
+    "clean": "rm -rf build/*",
+    "init": "./bin/init.js && npm run pot && rm -rf ../.git ../.github ./bin/ ../languages/blank-theme.pot && npm uninstall replace-in-file prompt-sync",
+    "lint-css": "stylelint src/sass/**/*.scss --syntax scss",
+    "lint-js": "eslint src/js/",
+    "pot": "wp-pot --src '../**/*.php' --dest-file '../languages/blank-theme.pot' --domain 'blank-theme' --package 'Blank Theme' ",
+    "precommit": "npm run lint-css && npm run lint-js && npm run pot",
+    "test": "jest  --verbose"
+  },
+  "dependencies": {
+    "webfontloader": "^1.6.28"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.6",
+    "@babel/preset-env": "^7.8.6",
+    "autoprefixer": "^9.7.4",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "cross-env": "^7.0.0",
+    "css-loader": "^3.4.2",
+    "css-mqpacker": "^7.0.0",
+    "cssnano": "^4.1.10",
+    "eslint": "^6.8.0",
+    "eslint-config-wordpress": "^2.0.0",
+    "eslint-loader": "^3.0.3",
+    "file-loader": "^5.1.0",
+    "foundation-sites": "^6.6.1",
+    "jest": "^25.1.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.13.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-assets": "^5.0.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-pxtorem": "^5.0.0",
+    "postcss-scss": "^2.0.0",
+    "prompt-sync": "^4.2.0",
+    "replace-in-file": "^5.0.2",
+    "sass-loader": "^8.0.2",
+    "serialize-javascript": "^3.0.0",
+    "style-loader": "^1.1.3",
+    "stylelint": "^13.2.0",
+    "stylelint-config-wordpress": "^16.0.0",
+    "stylelint-webpack-plugin": "^1.2.3",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11",
+    "wp-pot-cli": "^1.3.0"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "jest": {
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/"
+    ],
+    "coverageDirectory": "<rootDir>/.jest-coverage/",
+    "setupFilesAfterEnv": [
+      "<rootDir>/test.setup.js"
+    ],
+    "automock": false
+  },
+  "main": "postcss.config.js",
+  "bin": {
+    "theme-assignment": "init.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/NicestRudeGuy/theme-assignment.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NicestRudeGuy/theme-assignment/issues"
+  },
+  "homepage": "https://github.com/NicestRudeGuy/theme-assignment#readme"
 }
