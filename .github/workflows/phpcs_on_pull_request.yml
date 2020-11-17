@@ -3,8 +3,8 @@ name: Inspections
 jobs:
   runPHPCSInspection:
     name: Run PHPCS inspection
-    # Change below line to: `runs-on: ubuntu-latest` if not using self-hosted runners or if it is a public repo.
-    runs-on: self-hosted
+    # Change below line to: `runs-on: self-hosted` if running on private repo under rtCamp org.
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
       with:
