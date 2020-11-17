@@ -26,12 +26,6 @@ msgstr ""
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
-#. translators: %s: post title
-#: ../comments.php:35
-msgctxt "comments title"
-msgid "One thought on &ldquo;%s&rdquo;"
-msgstr ""
-
 #. translators: 1: number of comments, 2: post title
 #: ../comments.php:42
 msgctxt "comments title"
@@ -39,6 +33,11 @@ msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
+
+#: ../comments.php:35
+msgctxt "comments title"
+msgid "One thought on &ldquo;%s&rdquo;"
+msgstr ""
 
 #: ../comments.php:61, ../comments.php:91
 msgid "Comment navigation"
@@ -93,17 +92,16 @@ msgstr ""
 msgid "Nothing Found"
 msgstr ""
 
-#. translators: 1. is add new post url
-#: ../template-parts/content-none.php:26
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+#: ../template-parts/content-none.php:45
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
 #: ../template-parts/content-none.php:40
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
-#: ../template-parts/content-none.php:45
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+#: ../template-parts/content-none.php:26
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
 #: ../template-parts/content-page.php:20, ../template-parts/content-single.php:24, ../template-parts/content.php:47
@@ -175,20 +173,20 @@ msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
 #. translators: 1: Theme name, 2: Theme copyright date, 3: Theme author.
-#: ../inc/helpers/template-tags.php:187
+#: ../inc/helpers/template-tags.php:182
 msgid "&copy; %1$s %2$s by %3$s"
 msgstr ""
 
 #. translators: Copyright date format, see https://secure.php.net/date
-#: ../inc/helpers/template-tags.php:190
+#: ../inc/helpers/template-tags.php:185
 msgctxt "copyright date format"
 msgid "Y"
 msgstr ""
 
-#: ../inc/helpers/template-tags.php:192
+#: ../inc/helpers/template-tags.php:187
 msgid "Blank Theme"
 msgstr ""
 
-#: ../inc/helpers/template-tags.php:193
+#: ../inc/helpers/template-tags.php:188
 msgid "rtCamp"
 msgstr ""

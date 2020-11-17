@@ -10,8 +10,12 @@ module.exports = {
 	plugins: {
 		'autoprefixer': {},
 
+		'postcss-sort-media-queries': {
+			sort: 'mobile-first'
+		},
+
 		'postcss-assets': {
-			loadPaths: [ 'img/', 'fonts/' ],
+			loadPaths: [ 'src/img/', 'src/fonts/' ],
 			relative: true
 		},
 
@@ -24,10 +28,6 @@ module.exports = {
 			mediaQuery: false,
 			minPixelValue: 2
 		},
-
-		'css-mqpacker': {
-			sort: true
-		}
 
 	}
 };
