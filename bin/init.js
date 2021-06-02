@@ -1,17 +1,17 @@
 #!/usr/bin/env node
 
-const path    = require( 'path' );
-const fs      = require( 'fs' );
-const prompt  = require( 'prompt-sync' )();
+const path = require( 'path' );
+const fs = require( 'fs' );
+const prompt = require( 'prompt-sync' )();
 const replace = require( 'replace-in-file' );
-const rootDir = path.join( __dirname, '../..' );
+const rootDir = path.resolve( __dirname );
 
 // Helpers
-const fgRed     = '\x1b[31m';
-const fgGreen   = '\x1b[32m';
-const fgBlue    = '\x1b[34m';
+const fgRed = '\x1b[31m';
+const fgGreen = '\x1b[32m';
+const fgBlue = '\x1b[34m';
 const fgMagenta = '\x1b[35m';
-const fgCyan    = '\x1b[36m';
+const fgCyan = '\x1b[36m';
 
 // Functions
 const consoleOutput = ( color, text ) => {
@@ -21,21 +21,26 @@ const consoleOutput = ( color, text ) => {
 const findReplace = ( findString, replaceString ) => {
 	const regex = new RegExp( findString, 'g' );
 	const options = {
-		files: `${rootDir}/**/*`,
+		files: `${ rootDir }/**/*`,
 		from: regex,
 		to: replaceString,
 		ignore: [
-			`${rootDir}/**/node_modules/**/*`,
-			`${rootDir}/.git/**/*`,
-			`${rootDir}/.github/**/*`,
-			`${rootDir}/**/vendor/**/*`,
-			`${rootDir}/**/bin/rename.js`
-		]
+			`${ rootDir }/**/node_modules/**/*`,
+			`${ rootDir }/.git/**/*`,
+			`${ rootDir }/.github/**/*`,
+			`${ rootDir }/**/vendor/**/*`,
+			`${ rootDir }/**/bin/rename.js`,
+		],
 	};
 
 	try {
 		const changes = replace.sync( options );
-		consoleOutput( fgGreen, `${findString}-> ${replaceString}. Modified files: ${changes.join( ', ' )}` );
+		consoleOutput(
+			fgGreen,
+			`${ findString }-> ${ replaceString }. Modified files: ${ changes.join(
+				', '
+			) }`
+		);
 	} catch ( error ) {
 		console.error( 'Error occurred:', error );
 	}
@@ -46,7 +51,10 @@ consoleOutput( fgGreen, 'The script will uniquely set up your theme.' );
 consoleOutput( fgGreen, '* - required' );
 
 // Theme name
-consoleOutput( fgGreen, 'Please enter your theme name (shown in WordPress admin)*:' );
+consoleOutput(
+	fgGreen,
+	'Please enter your theme name (shown in WordPress admin)*:'
+);
 
 let themeName;
 do {
@@ -56,7 +64,10 @@ do {
 	if ( null !== themeName && themeName.length ) {
 		themeName = themeName.trim();
 	} else {
-		consoleOutput( fgRed, 'Theme name field is required and cannot be empty.' );
+		consoleOutput(
+			fgRed,
+			'Theme name field is required and cannot be empty.'
+		);
 	}
 } while ( 0 >= themeName.length );
 
@@ -73,7 +84,9 @@ const camelCaseThemeName = themeName.replace( /\w\S*/g, function ( txt ) {
 	return txt.charAt( 0 ).toUpperCase() + txt.substr( 1 ).toLowerCase();
 } );
 const camelCaseWithHyphen = camelCaseThemeName.replace( /\W+/g, '-' ).trim();
-const camelCaseWithUnderscore = camelCaseThemeName.replace( /\W+/g, '_' ).trim();
+const camelCaseWithUnderscore = camelCaseThemeName
+	.replace( /\W+/g, '_' )
+	.trim();
 const camelCasePrefixWithHyphen = camelCaseWithHyphen + '-';
 const camelCasePrefixWithUnderscore = camelCaseWithUnderscore + '_';
 
@@ -84,26 +97,32 @@ const upperPrefixWithHyphen = upperWithHyphen + '-';
 const upperPrefixWithUnderscore = upperWithUnderscore + '_';
 
 // Theme Constants.
-const themeVersionConst = `${upperWithUnderscore}_VERSION`;
-const themeDirConst = `${upperWithUnderscore}_TEMP_DIR`;
-const themeBuildDirConst = `${upperWithUnderscore}_BUILD_DIR`;
-const themeBuildDirURIConst = `${upperWithUnderscore}_BUILD_URI`;
+const themeVersionConst = `${ upperWithUnderscore }_VERSION`;
+const themeDirConst = `${ upperWithUnderscore }_TEMP_DIR`;
+const themeBuildDirConst = `${ upperWithUnderscore }_BUILD_DIR`;
+const themeBuildDirURIConst = `${ upperWithUnderscore }_BUILD_URI`;
 
 consoleOutput( fgCyan, '----------------------------------------------------' );
 consoleOutput( fgGreen, 'Theme details will be:' );
 
-consoleOutput( fgMagenta, `Theme name: ${themeName}` );
-consoleOutput( fgMagenta, `Theme version: ${themeVersion}` );
-consoleOutput( fgMagenta, `Text domain: ${lowerWithHyphen}` );
-consoleOutput( fgMagenta, `Package: ${themeName}` );
-consoleOutput( fgMagenta, `Namespace: ${camelCaseWithUnderscore}` );
-consoleOutput( fgMagenta, `Function prefix: ${lowerPrefixWithunderscore}` );
-consoleOutput( fgMagenta, `CSS class prefix: ${lowerPrefixWithHyphen}` );
-consoleOutput( fgMagenta, `PHP variable: ${lowerPrefixWithunderscore}` );
-consoleOutput( fgMagenta, `Version constant: ${themeVersionConst}` );
-consoleOutput( fgMagenta, `Directory constant: ${themeDirConst}` );
-consoleOutput( fgMagenta, `Build directory Path constant: ${themeBuildDirConst}` );
-consoleOutput( fgMagenta, `Build directory URI constant: ${themeBuildDirURIConst}` );
+consoleOutput( fgMagenta, `Theme name: ${ themeName }` );
+consoleOutput( fgMagenta, `Theme version: ${ themeVersion }` );
+consoleOutput( fgMagenta, `Text domain: ${ lowerWithHyphen }` );
+consoleOutput( fgMagenta, `Package: ${ themeName }` );
+consoleOutput( fgMagenta, `Namespace: ${ camelCaseWithUnderscore }` );
+consoleOutput( fgMagenta, `Function prefix: ${ lowerPrefixWithunderscore }` );
+consoleOutput( fgMagenta, `CSS class prefix: ${ lowerPrefixWithHyphen }` );
+consoleOutput( fgMagenta, `PHP variable: ${ lowerPrefixWithunderscore }` );
+consoleOutput( fgMagenta, `Version constant: ${ themeVersionConst }` );
+consoleOutput( fgMagenta, `Directory constant: ${ themeDirConst }` );
+consoleOutput(
+	fgMagenta,
+	`Build directory Path constant: ${ themeBuildDirConst }`
+);
+consoleOutput(
+	fgMagenta,
+	`Build directory URI constant: ${ themeBuildDirURIConst }`
+);
 
 const confirm = prompt( 'Confirm? (y/n) ' ).trim();
 
@@ -139,24 +158,31 @@ if ( 'y' === confirm ) {
 	findReplace( 'blank-theme', lowerWithHyphen );
 	findReplace( 'blank_theme', lowerWithUnderscore );
 
-	if ( fs.existsSync( `${rootDir}/inc/classes/class-blank-theme.php` ) ) {
-
-		fs.renameSync( `${rootDir}/inc/classes/class-blank-theme.php`, `${rootDir}/inc/classes/class-${lowerWithHyphen}.php`, ( err ) => {
-			if ( err ) {
-				throw err;
-			}
-			fs.statSync( `${rootDir}/inc/classes/class-${lowerWithHyphen}.php`, ( error, stats ) => {
-				if ( error ) {
-					throw error;
+	if ( fs.existsSync( `${ rootDir }/inc/classes/class-blank-theme.php` ) ) {
+		fs.renameSync(
+			`${ rootDir }/inc/classes/class-blank-theme.php`,
+			`${ rootDir }/inc/classes/class-${ lowerWithHyphen }.php`,
+			( err ) => {
+				if ( err ) {
+					throw err;
 				}
-				consoleOutput( fgBlue, `stats: ${JSON.stringify( stats )}` );
-			} );
-		} );
-
+				fs.statSync(
+					`${ rootDir }/inc/classes/class-${ lowerWithHyphen }.php`,
+					( error, stats ) => {
+						if ( error ) {
+							throw error;
+						}
+						consoleOutput(
+							fgBlue,
+							`stats: ${ JSON.stringify( stats ) }`
+						);
+					}
+				);
+			}
+		);
 	}
 
 	consoleOutput( fgGreen, 'Renaming Successful!' );
-
 } else {
 	consoleOutput( fgRed, 'There was error renaming.' );
 }
