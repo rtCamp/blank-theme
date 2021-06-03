@@ -74,7 +74,7 @@
 		 Multiple valid prefixes can be provided as a comma-delimited list. -->
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<properties>
-			<property name="prefixes" type="array" value="blank-theme, BLANK_THEME" />
+			<property name="prefixes" type="array" value="blank_theme, BLANK_THEME" />
 		</properties>
 	</rule>
 
@@ -88,5 +88,7 @@
 
 	<config name="testVersion" value="5.6-"/>
 	<rule ref="PHPCompatibilityWP"/>
+
+	<exclude-pattern>**/build/**</exclude-pattern>
 
 </ruleset>

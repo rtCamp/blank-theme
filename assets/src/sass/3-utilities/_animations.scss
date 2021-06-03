@@ -10,7 +10,8 @@
 	animation-timing-function: ease-out;
 }
 
-@keyframes fadeInLeft {
+@keyframes fade-in-left {
+
 	0% {
 		opacity: 0;
 		transform: translateX(-20px);
@@ -22,11 +23,12 @@
 	}
 }
 
-.fadeInLeft {
-	animation-name: fadeInLeft;
+.fade-in-left {
+	animation-name: fade-in-left;
 }
 
-@keyframes fadeInUp {
+@keyframes fade-in-up {
+
 	0% {
 		opacity: 0;
 		transform: translateY(20px);
@@ -38,11 +40,12 @@
 	}
 }
 
-.fadeInUp {
-	animation-name: fadeInUp;
+.fade-in-up {
+	animation-name: fade-in-up;
 }
 
-@keyframes fadeIn {
+@keyframes fade-in {
+
 	0% {
 		opacity: 0;
 	}
@@ -52,14 +55,16 @@
 	}
 }
 
-.fadeIn {
-	animation-name: fadeIn;
+.fade-in {
+	animation-name: fade-in;
 }
 
 @keyframes blank-theme-loader {
+
 	0% {
 		transform: rotate(0deg);
 	}
+
 	100% {
 		transform: rotate(360deg);
 	}

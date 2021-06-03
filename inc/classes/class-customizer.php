@@ -97,7 +97,7 @@ class Customizer {
 	 */
 	public function enqueue_customizer_scripts() {
 
-		Assets::get_instance()->register_script( 'blank-theme-customizer', 'js/admin/customizer.js', [ 'customize-preview' ] );
+		Assets::get_instance()->register_script( 'blank-theme-customizer', 'js/customizer.js', array( 'customize-preview', 'jquery' ) );
 
 		wp_enqueue_script( 'blank-theme-customizer' );
 	}

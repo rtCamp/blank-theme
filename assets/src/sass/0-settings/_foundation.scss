@@ -28,7 +28,8 @@ $breakpoint-classes: small medium large xlarge;
 // Global width of your site. Used by the grid to determine row width.
 $grid-row-width: 1470px;
 
-// The default column count of a grid. Changing this value affects the logic of the grid mixins, and the number of CSS classes output.
+// The default column count of a grid. Changing this value affects the
+// logic of the grid mixins, and the number of CSS classes output.
 $grid-column-count: 12;
 
 // Global spacing between columns.

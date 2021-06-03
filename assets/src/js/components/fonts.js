@@ -1,3 +1,6 @@
+/**
+ * External dependencies
+ */
 import WebFontLoader from 'webfontloader';
 
 /**
@@ -6,7 +9,6 @@ import WebFontLoader from 'webfontloader';
  * @type {Object}
  */
 const WebFont = {
-
 	/**
 	 * Initialize.
 	 *
@@ -22,18 +24,14 @@ const WebFont = {
 	 * @return {void}
 	 */
 	loadWebFonts() {
-
 		const WebFontConfig = {
 			google: {
-				families: [
-					'Open Sans:300,400,700'
-				]
-			}
+				families: [ 'Open Sans:300,400,700' ],
+			},
 		};
 
 		WebFontLoader.load( WebFontConfig );
-
-	}
+	},
 };
 
 export default WebFont;

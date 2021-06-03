@@ -3,10 +3,10 @@
 		Colors Variables
 -----------------------------------*/
 
-$black: #000000;
-$white: #ffffff;
+$black: #000;
+$white: #fff;
 
-$gray-200: #cccccc;
+$gray-200: #ccc;
 $gray-100: #eff3f6;
 
 $dark-gray-200: #333;
@@ -32,7 +32,8 @@ $color__background-button-hover: $gray-100;
 $color__border-button: $dark-gray-200;
 $color__border-button-hover: $black;
 
-// input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="tel"], textarea
+// input[type="text"], input[type="email"], input[type="url"],
+// input[type="password"], input[type="search"], input[type="tel"], textarea
 $color__border-input: $gray-100;
 $color__text-input: $dark-gray-200;
 $color__text-input-focus: $black;

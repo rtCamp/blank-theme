@@ -27,6 +27,7 @@ html {
 body {
 	background: $color__background-body;
 	margin: 0;
+
 	@include font-family();
 	@include body-text( body );
 
@@ -37,7 +38,8 @@ body {
 	}
 }
 
-blockquote, q {
+blockquote,
+q {
 	quotes: "" "";
 
 	border-left: 4px solid $light-gray;
@@ -64,10 +66,8 @@ figure {
 
 a {
 	// Self, Active & Visited
-	& {
-		color: $color__link;
-		text-decoration: none;
-	}
+	color: $color__link;
+	text-decoration: none;
 
 	transition: 0.3s;
 
@@ -80,12 +80,23 @@ a {
 /*---------------------------
 		Lists & Tables
 ---------------------------*/
-
 ul,
 ol {
 	margin: 0 0 18px 0;
 
+	@at-root {
+
+		li {
+
+			> & {
+				margin-bottom: 0;
+				margin-left: 18px;
+			}
+		}
+	}
+
 	&.no-bullet {
+
 		&,
 		ul,
 		ol {
@@ -94,12 +105,6 @@ ol {
 			list-style: none;
 		}
 	}
-}
-
-li > ul,
-li > ol {
-	margin-bottom: 0;
-	margin-left: 18px;
 }
 
 dt {
@@ -153,6 +158,21 @@ input[type="text"],
 input[type="email"],
 input[type="url"],
 input[type="password"],
+input[type="search"] {
+	padding: 3px;
+}
+
+textarea {
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1) inset;
+	max-width: 100%;
+	outline: none;
+	overflow: auto; // Remove the default vertical scrollbar in IE 10+.
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
 input[type="search"],
 input[type="tel"],
 textarea {
@@ -165,22 +185,8 @@ textarea {
 	}
 }
 
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"] {
-	padding: 3px;
-}
-
-textarea {
-	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1) inset;
-	max-width: 100%;
-	outline: none;
-	overflow: auto; // Remove the default vertical scrollbar in IE 10+.
-}
-
 p {
+
 	&:empty {
 		display: none;
 	}
@@ -191,36 +197,33 @@ p {
 \*------------------------------------*/
 
 h1 {
-	@include body-text( h1 )
+
+	@include body-text( h1 );
 }
 
 h2 {
-	@include body-text( h2 )
+
+	@include body-text( h2 );
 }
 
 h3 {
-	@include body-text( h3 )
+
+	@include body-text( h3 );
 }
 
 h4 {
-	@include body-text( h4 )
+
+	@include body-text( h4 );
 }
 
 h5 {
-	@include body-text( h5 )
+
+	@include body-text( h5 );
 }
 
 h6 {
-	@include body-text( h6 )
-}
 
-dd {
-	margin-left: $font__base-line-height;
-}
-
-li > ul,
-li > ol {
-	margin-bottom: 0;
+	@include body-text( h6 );
 }
 
 /**
@@ -243,22 +246,23 @@ table {
 		-ms-overflow-style: -ms-autohiding-scrollbar;
 		border: 1px solid $color__border-light;
 
-		& > table {
+		> table {
 			margin-bottom: 0;
-		}
 
-		& > table {
-			& > thead,
-			& > tbody,
-			& > tfoot {
-				& > tr {
-					& > th,
-					& > td {
+			> thead,
+			> tbody,
+			> tfoot {
+
+				> tr {
+
+					> th,
+					> td {
 						white-space: nowrap;
 					}
 				}
 			}
 		}
+
 	}
 }
 
@@ -277,27 +281,6 @@ td {
 	}
 }
 
-pre {
-	background: $color__background-pre;
-	border: 1px solid $color__border-light;
-	max-width: 100%;
-	overflow: auto;
-	padding: 16px; /* Contain overflow in all browsers. */
-
-	code.bash,
-	& > code {
-		background: transparent;
-		border: 0;
-		display: block;
-		margin: 0;
-		padding: 0;
-	}
-
-	code code.bash {
-		font-size: inherit;
-	}
-}
-
 code {
 	font-size: 80%;
 	margin: 0 3px;
@@ -312,6 +295,27 @@ kbd,
 pre,
 samp {
 	font-family: $font__code;
+}
+
+pre {
+	background: $color__background-pre;
+	border: 1px solid $color__border-light;
+	max-width: 100%;
+	overflow: auto;
+	padding: 16px; /* Contain overflow in all browsers. */
+
+	code.bash,
+	> code {
+		background: transparent;
+		border: 0;
+		display: block;
+		margin: 0;
+		padding: 0;
+	}
+
+	code code.bash {
+		font-size: inherit;
+	}
 }
 
 hr {

@@ -10,7 +10,13 @@ module.exports = {
 	mode: isProductionMode ? 'production' : 'development',
 
 	entry: {
+		home: path.resolve( __dirname, 'assets/src/js/home.js' ),
 		main: path.resolve( __dirname, 'assets/src/js/main.js' ),
+		single: path.resolve( __dirname, 'assets/src/js/single.js' ),
+		customizer: path.resolve(
+			__dirname,
+			'assets/src/js/admin/customizer.js'
+		),
 	},
 
 	output: {
@@ -36,6 +42,14 @@ module.exports = {
 					'postcss-loader',
 					'sass-loader',
 				],
+			},
+			{
+				test: /\.(png|svg|jpg|jpeg|gif)$/i,
+				type: 'asset/resource',
+			},
+			{
+				test: /\.(woff|woff2|eot|ttf|otf)$/i,
+				type: 'asset/resource',
 			},
 		],
 	},

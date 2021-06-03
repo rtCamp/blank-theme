@@ -1,4 +1,5 @@
 .comment-content {
+
 	@include clearfix();
 
 	a {
@@ -12,12 +13,14 @@
 
 //Basic Styling
 .comments-area {
+
 	.comment-list {
 		padding: 0;
 		margin: 0;
 	}
 
 	.comment-author {
+
 		img {
 			float: left;
 			margin-right: 15px;
@@ -53,6 +56,7 @@
 }
 
 .comment-form-comment {
+
 	textarea {
 		width: 100%;
 	}

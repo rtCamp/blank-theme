@@ -47,6 +47,7 @@
 }
 
 .text {
+
 	&-left {
 		text-align: left;
 	}
@@ -68,11 +69,13 @@
 		Clearing
 ---------------------------*/
 .clearfix {
+
 	@include clearfix();
 }
 
 // Clear
 .clear {
+
 	&-both {
 		clear: both;
 	}
@@ -92,6 +95,7 @@
 
 // Float
 .float {
+
 	&-left {
 		float: left;
 	}
