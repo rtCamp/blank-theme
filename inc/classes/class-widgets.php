@@ -7,7 +7,7 @@
 
 namespace BLANK_THEME\Inc;
 
-use Blank_Theme\Inc\Traits\Singleton;
+use BLANK_THEME\Inc\Traits\Singleton;
 
 /**
  * Class Assets

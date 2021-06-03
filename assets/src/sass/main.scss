@@ -4,11 +4,6 @@
 // Generic
 @import "2-generic/generic";
 
-// Import Zurb Foundation Grid
-@include foundation-flex-grid;
-@include foundation-flex-classes;
-@include foundation-visibility-classes;
-
 // Utils
 @import "3-utilities/utilies";
 
