@@ -29,6 +29,8 @@
 		"css-loader": "^5.2.6",
 		"eslint": "^7.27.0",
 		"eslint-webpack-plugin": "^2.5.4",
+		"husky": "^6.0.0",
+		"lint-staged": "^11.0.0",
 		"mini-css-extract-plugin": "^1.6.0",
 		"postcss": "^8.3.0",
 		"postcss-loader": "^5.3.0",
@@ -43,6 +45,21 @@
 		"webpack-cli": "^4.7.0",
 		"wp-pot-cli": "^1.5.0"
 	},
+	"husky": {
+		"hooks": {
+		  "pre-commit": "lint-staged --relative"
+		}
+	  },
+	  "lint-staged": {
+		"*.js": [
+		  "eslint --fix",
+		  "stylelint --fix --allow-empty-input --syntax \"css-in-js\""
+		],
+		"*.css": "stylelint --fix --allow-empty-input --syntax \"css\"",
+		"*.md": [
+		  "eslint --fix"
+		]
+	  },
 	"browserslist": [
 		"extends @wordpress/browserslist-config"
 	]
