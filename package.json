@@ -13,7 +13,8 @@
 		"lint:css": "stylelint assets/src/sass/**/*.scss --syntax scss",
 		"lint:js": "eslint assets/src/js/",
 		"pot": "wp-pot --src './**/*.php' --dest-file './languages/blank-theme.pot' --domain 'blank-theme' --package 'Blank Theme' ",
-		"precommit": "npm run lint-css && npm run lint-js && npm run pot"
+		"precommit": "lint-staged --relative && npm run pot",
+		"prepare": "husky install"
 	},
 	"dependencies": {
 		"foundation-sites": "^6.6.3",
@@ -47,19 +48,19 @@
 	},
 	"husky": {
 		"hooks": {
-		  "pre-commit": "lint-staged --relative"
+			"pre-commit": "lint-staged --relative"
 		}
-	  },
-	  "lint-staged": {
+	},
+	"lint-staged": {
 		"*.js": [
-		  "eslint --fix",
-		  "stylelint --fix --allow-empty-input --syntax \"css-in-js\""
+			"eslint --fix",
+			"stylelint --fix --allow-empty-input --syntax \"css-in-js\""
 		],
 		"*.css": "stylelint --fix --allow-empty-input --syntax \"css\"",
 		"*.md": [
-		  "eslint --fix"
+			"eslint --fix"
 		]
-	  },
+	},
 	"browserslist": [
 		"extends @wordpress/browserslist-config"
 	]
