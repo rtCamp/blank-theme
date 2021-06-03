@@ -3,8 +3,8 @@
  */
 
 import '../sass/main.scss';
-import * as components from './components';
+import { WebFont, common as BlankThemeCommons } from './components';
 
 // Initialize common scripts.
-components.WebFont.init();
-components.common.init();
+WebFont.init();
+BlankThemeCommons.init();

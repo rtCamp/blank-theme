@@ -1,6 +1,20 @@
 // Essentials.
 @import "essentials";
 
+// Import Zurb Foundation Grid
+@include foundation-flex-classes;
+@include foundation-visibility-classes;
+@include foundation-xy-grid-classes(
+	$base-grid: true,
+	$margin-grid: true,
+	$padding-grid: fasle,
+	$block-grid: false,
+	$collapse: false,
+	$offset: false,
+	$vertical-grid: false,
+	$frame-grid: false
+);
+
 // Generic
 @import "2-generic/generic";
 

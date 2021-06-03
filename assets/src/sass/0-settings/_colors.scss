@@ -14,6 +14,16 @@ $dark-gray-100: #424242;
 
 $red-100: #d32f2f;
 
+$colors: (
+	"black": $black,
+	"white": $white,
+	"gray-200": $gray-200,
+	"gray-100": $gray-100,
+	"dark-gray-200": $dark-gray-200,
+	"dark-gray-100": $dark-gray-100,
+	"red-100": $red-100,
+);
+
 /*---------------------------------
 		Element Colors
 -----------------------------------*/

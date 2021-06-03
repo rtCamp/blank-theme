@@ -5,8 +5,3 @@
 @import "~foundation-sites/scss/foundation";
 @import "0-settings/settings";
 @import "1-tools/tools";
-
-// Import Zurb Foundation Grid
-@include foundation-flex-grid;
-@include foundation-flex-classes;
-@include foundation-visibility-classes;
