@@ -3,8 +3,13 @@
  */
 
 import '../sass/main.scss';
-import { WebFont, common as BlankThemeCommons } from './components';
+import { common as BlankThemeCommons } from './components';
 
 // Initialize common scripts.
-WebFont.init();
+
+/**
+ * Removing WebFont loader temporarily, to test self-hosted fonts.
+ * Keeping the webfontloader script to properly test it later on dev site.
+ */
+// WebFont.init();
 BlankThemeCommons.init();

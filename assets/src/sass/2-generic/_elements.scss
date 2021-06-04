@@ -27,8 +27,13 @@ html {
 body {
 	background: $color__background-body;
 	margin: 0;
+	font-family: $font__main;
 
-	@include font-family();
+	/**
+	 * Removing WebFont loader temporarily, to test self-hosted fonts.
+	 * Keeping the webfontloader script to properly test it later on dev site.
+	 */
+	// @include font-family();
 	@include body-text( body );
 
 	// WP Editor
