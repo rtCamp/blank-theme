@@ -1,29 +1,13 @@
-.phpintel
-.sass-cache
-.scss-cache
-scss/.sass-cache/
-bower_components
-.bower-cache
-.bower-registry
-.bower-tmp
+# IDE or OS
 .idea/
-_book
-nbproject
-nbproject/private/
-nbbuild/
-dist/
-nbdist/
-nbactions.xml
-nb-configuration.xml
-.nb-gradle/
-*.log
-npm-debug.log
-node_modules
 .DS_Store
-**/.DS_Store
-*.map
-.greyhr
-Thumbs.db
-sftp-config.json
-*.sublime-project
-*.sublime-workspace
+
+# Log files
+*.log
+
+# Build artifact
+.grunt
+
+# local
+node_modules/
+vendor

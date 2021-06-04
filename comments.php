@@ -28,7 +28,7 @@ if ( post_password_required() ) {
 		?>
 		<h2 class="comments-title">
 			<?php
-			$comments_number = get_comments_number();
+			$blank_theme_comments_number = get_comments_number();
 			if ( 1 === $comments_number ) {
 				printf(
 					/* translators: %s: post title */

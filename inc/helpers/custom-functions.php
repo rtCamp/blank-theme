@@ -4,3 +4,5 @@
  *
  * @package Blank-Theme
  */
+
+// Your custom functions here.

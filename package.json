@@ -6,14 +6,16 @@
 	"license": "MIT",
 	"private": true,
 	"scripts": {
-		"prod": "NODE_ENV=production webpack --progress",
+		"prod": "NODE_ENV=production webpack --progress && npm run pot",
 		"dev": "webpack --watch --progress",
 		"clean": "rm -rf assets/build/*",
 		"init": "./bin/init.js && npm run pot && rm -rf .git .github ./bin/ ./languages/blank-theme.pot && npm uninstall replace-in-file prompt-sync",
 		"lint:css": "stylelint assets/src/sass/**/*.scss --syntax scss",
 		"lint:js": "eslint assets/src/js/",
+		"lint:php": "composer phpcs",
+    	"lint:php:fix": "composer phpcbf",
 		"pot": "wp-pot --src './**/*.php' --dest-file './languages/blank-theme.pot' --domain 'blank-theme' --package 'Blank Theme' ",
-		"precommit": "lint-staged --relative && npm run pot",
+		"precommit": "lint-staged --relative",
 		"prepare": "husky install"
 	},
 	"dependencies": {
@@ -59,6 +61,9 @@
 		"*.css": "stylelint --fix --allow-empty-input --syntax \"css\"",
 		"*.md": [
 			"eslint --fix"
+		],
+		"*.php": [
+			"npm run lint:php"
 		]
 	},
 	"browserslist": [

@@ -55,11 +55,11 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: ../header.php:32
+#: ../header.php:30
 msgid "Skip to content"
 msgstr ""
 
-#: ../header.php:48, ../inc/classes/class-blank-theme.php:121
+#: ../header.php:46, ../inc/classes/class-blank-theme.php:121
 msgid "Primary Menu"
 msgstr ""
 
