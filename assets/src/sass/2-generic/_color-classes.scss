@@ -1,0 +1,38 @@
+// Color Palette. $colors is defined in '0-settings/_colors.scss'
+@each $slug, $color in $colors {
+	.has-#{$slug}-background-color {
+		background-color: $color;
+		color: set-text-color($color);
+	}
+
+	.has-#{$slug}-color {
+		color: $color;
+	}
+
+	.has-text-color.has-#{$slug}-color {
+		color: $color;
+	}
+
+	.wp-block-button__link.has-#{$slug}-background-color {
+		background-color: $color;
+		color: set-text-color($color);
+
+		&:hover,
+		&:focus {
+			background-color: darken($color, 10%);
+			color: set-text-color($color);
+			border: 0;
+		}
+	}
+
+	.wp-block-button__link.has-#{$slug}-color {
+		color: $color;
+		border: 1px solid currentColor;
+
+		&:hover,
+		&:focus {
+			color: darken($color, 10%);
+			border: 1px solid currentColor;
+		}
+	}
+}

@@ -8,7 +8,7 @@ Blank Theme is a custom blank theme created with underscore theme, which include
 Getting Started
 ---------------
 
-After cloning repo, `cd` into `assets` folder and run
+After cloning repo run
 
 ```bash
 npm install
@@ -37,16 +37,18 @@ npm run prod      # When ready for production
 # Generate pot files
 npm run pot
 
-# Lint css and JS
-npm run lint-css 
-npm run lint-js
+# Lint CSS, JS and PHP
+npm run lint:css
+npm run lint:js
+npm run lint:php
+npm run lint:php:fix
 ```
 
 
 
 #### Before commit
 
-This `precommit` script will lint your scss, js files and also generate pot file.
+This `precommit` script will lint your scss, js, php files and also generate pot file.
 
 ```bash
 npm run precommit

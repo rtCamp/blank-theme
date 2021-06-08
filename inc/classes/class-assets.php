@@ -88,6 +88,28 @@ class Assets {
 	}
 
 	/**
+	 * Get asset dependencies and version info from {handle}.asset.php if exists.
+	 *
+	 * @param string $file File name.
+	 * @param array  $deps Script dependencies to merge with.
+	 *
+	 * @return array
+	 */
+	public function get_asset_meta( $file, $deps = array() ) {
+		$asset_meta_file = sprintf( '%s/js/%s.asset.php', untrailingslashit( BLANK_THEME_BUILD_DIR ), basename( $file, '.' . pathinfo( $file )['extension'] ) );
+		$asset_meta      = is_readable( $asset_meta_file )
+			? require $asset_meta_file
+			: array(
+				'dependencies' => array(),
+				'version'      => $this->get_file_version( $file, $ver ),
+			);
+
+		$asset_meta['dependencies'] = array_merge( $deps, $asset_meta['dependencies'] );
+
+		return $asset_meta;
+	}
+
+	/**
 	 * Register a new script.
 	 *
 	 * @param string           $handle    Name of the script. Should be unique.
@@ -98,11 +120,12 @@ class Assets {
 	 *                                    Default 'false'.
 	 * @return bool Whether the script has been registered. True on success, false on failure.
 	 */
-	public function register_script( $handle, $file, $deps = [], $ver = false, $in_footer = true ) {
-		$src     = sprintf( BLANK_THEME_BUILD_URI . '/%s', $file );
-		$version = $this->get_file_version( $file, $ver );
+	public function register_script( $handle, $file, $deps = array(), $ver = false, $in_footer = true ) {
 
-		return wp_register_script( $handle, $src, $deps, $version, $in_footer );
+		$src        = sprintf( BLANK_THEME_BUILD_URI . '/%s', $file );
+		$asset_meta = $this->get_asset_meta( $file, $deps );
+
+		return wp_register_script( $handle, $src, $asset_meta['dependencies'], $asset_meta['version'], $in_footer );
 	}
 
 	/**
@@ -118,11 +141,12 @@ class Assets {
 	 *
 	 * @return bool Whether the style has been registered. True on success, false on failure.
 	 */
-	public function register_style( $handle, $file, $deps = [], $ver = false, $media = 'all' ) {
-		$src     = sprintf( BLANK_THEME_BUILD_URI . '/%s', $file );
-		$version = $this->get_file_version( $file, $ver );
+	public function register_style( $handle, $file, $deps = array(), $ver = false, $media = 'all' ) {
 
-		return wp_register_style( $handle, $src, $deps, $version, $media );
+		$src        = sprintf( BLANK_THEME_BUILD_URI . '/%s', $file );
+		$asset_meta = $this->get_asset_meta( $file, $deps );
+
+		return wp_register_style( $handle, $src, $asset_meta['dependencies'], $asset_meta['version'], $media );
 	}
 
 	/**

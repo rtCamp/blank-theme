@@ -12,16 +12,13 @@ section {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 0 20px 500px;
-}
-
-.sg-wrap {
 	outline-width: 0;
 }
 
 .sg-section-title {
 	padding: 10px;
-	background: grey;
-	color: white;
+	background: #808080;
+	color: #fff;
 	font-weight: 400;
 	font-size: 18px;
 }

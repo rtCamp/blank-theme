@@ -1,14 +1,15 @@
 /**
  * Main scripts, loaded on all pages.
- *
- * @package Blank-Theme
  */
 
 import '../sass/main.scss';
-import * as components from './components';
-
-window.$ = window.$ || jQuery;
+import { common as BlankThemeCommons } from './components';
 
 // Initialize common scripts.
-components.WebFont.init();
-components.common.init();
+
+/**
+ * Removing WebFont loader temporarily, to test self-hosted fonts.
+ * Keeping the webfontloader script to properly test it later on dev site.
+ */
+// WebFont.init();
+BlankThemeCommons.init();

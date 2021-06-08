@@ -10,39 +10,8 @@
 	animation-timing-function: ease-out;
 }
 
-@keyframes fadeInLeft {
-	0% {
-		opacity: 0;
-		transform: translateX(-20px);
-	}
+@keyframes fade-in {
 
-	100% {
-		opacity: 1;
-		transform: translateX(0);
-	}
-}
-
-.fadeInLeft {
-	animation-name: fadeInLeft;
-}
-
-@keyframes fadeInUp {
-	0% {
-		opacity: 0;
-		transform: translateY(20px);
-	}
-
-	100% {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
-
-.fadeInUp {
-	animation-name: fadeInUp;
-}
-
-@keyframes fadeIn {
 	0% {
 		opacity: 0;
 	}
@@ -52,15 +21,6 @@
 	}
 }
 
-.fadeIn {
-	animation-name: fadeIn;
-}
-
-@keyframes blank-theme-loader {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
+.fade-in {
+	animation-name: fade-in;
 }

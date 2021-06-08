@@ -1,0 +1,20 @@
+/**
+ * Custom Sass Functions.
+ */
+
+// Retrieve color from $colors map ie. `color(blue)`
+@function color($color-name, $color-variant: null) {
+
+	// Color variant is optional
+	@if ($color-variant != null) {
+
+		// Map inception, $colors is defined in '_colors.scss'
+		@return map-get(map-get($colors, $color-name), $color-variant);
+
+	} @else {
+
+		@return map-get($colors, $color-name);
+
+	}
+
+}

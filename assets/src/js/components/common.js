@@ -4,7 +4,6 @@
  * @type {Object}
  */
 const common = {
-
 	/**
 	 * Initialize.
 	 *
@@ -12,7 +11,7 @@ const common = {
 	 */
 	init() {
 		return true;
-	}
+	},
 };
 
 export default common;

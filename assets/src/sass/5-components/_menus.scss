@@ -1,3 +1,4 @@
+/* stylelint-disable -- Remove this as you update the menu styles. */
 /*==============================
           Main Menu
 ===============================*/
@@ -27,6 +28,7 @@
 			}
 
 			li {
+
 				&:hover > ul,
 				&.focus > ul {
 					left: 100%;
@@ -65,16 +67,19 @@
 		padding: 10px;
 	}
 
-	.current_page_item > a,
-	.current-menu-item > a,
-	.current_page_ancestor > a {
-		color: $color__link-hover;
+	.current_page_item,
+	.current-menu-item,
+	.current_page_ancestor {
+		> a {
+			color: $color__link-hover;
+		}
 	}
 }
 
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
+
 	.site-main & {
 		margin: 0 0 24px;
 		overflow: hidden;
@@ -91,3 +96,4 @@
 		width: 50%;
 	}
 }
+/* stylelint-enable */

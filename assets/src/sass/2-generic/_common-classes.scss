@@ -38,15 +38,8 @@
 		Alignments
 ---------------------------*/
 
-.left {
-	float: left;
-}
-
-.right {
-	float: right;
-}
-
 .text {
+
 	&-left {
 		text-align: left;
 	}
@@ -68,11 +61,13 @@
 		Clearing
 ---------------------------*/
 .clearfix {
+
 	@include clearfix();
 }
 
 // Clear
 .clear {
+
 	&-both {
 		clear: both;
 	}
@@ -92,6 +87,7 @@
 
 // Float
 .float {
+
 	&-left {
 		float: left;
 	}
@@ -103,20 +99,4 @@
 	&-none {
 		float: none;
 	}
-}
-
-/*---------------------------
-		Others
----------------------------*/
-
-.hide {
-	display: none;
-}
-
-.hidden {
-	visibility: hidden;
-}
-
-.visible {
-	visibility: visible;
 }

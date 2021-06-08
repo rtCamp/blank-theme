@@ -17,11 +17,16 @@
 	-->
 
 	<!-- Only check the PHP, CSS and SCSS files. JS files are checked separately with JSCS and JSHint. -->
-	<arg name="extensions" value="php,css,scss/css"/>
+	<arg name="extensions" value="php"/>
 
 	<!-- Check all files in this directory and the directories below it. -->
 	<file>.</file>
 
+	<!-- Strip the filepaths down to the relevant bit. -->
+	<arg name="basepath" value="./" />
+
+	<!-- Check up to 20 files simultaneously. -->
+	<arg name="parallel" value="20" />
 
 	<!--
 	#############################################################################
@@ -74,7 +79,7 @@
 		 Multiple valid prefixes can be provided as a comma-delimited list. -->
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<properties>
-			<property name="prefixes" type="array" value="blank-theme, BLANK_THEME" />
+			<property name="prefixes" type="array" value="blank_theme, BLANK_THEME" />
 		</properties>
 	</rule>
 
@@ -87,6 +92,21 @@
 
 
 	<config name="testVersion" value="5.6-"/>
-	<rule ref="PHPCompatibilityWP"/>
+	<rule ref="PHPCompatibilityWP">
+		<exclude name="Generic.Arrays.DisallowShortArraySyntax.Found"/>
+	</rule>
+
+	<!-- Third-party or auto-generated code -->
+	<exclude-pattern>*/build/*</exclude-pattern>
+	<exclude-pattern>*/data/*</exclude-pattern>
+	<exclude-pattern>packages/e2e-tests/src/plugins/*</exclude-pattern>
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/third-party/*</exclude-pattern>
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<exclude-pattern>assets/js/*.asset.php</exclude-pattern>
+	<exclude-pattern>assets/js/*.chunks.php</exclude-pattern>
+	<exclude-pattern>includes/polyfills/mbstring.php</exclude-pattern>
+	<exclude-pattern>tests/phpstan/*</exclude-pattern>
+	<exclude-pattern>tests/phpunit/includes/MarkupComparison.php</exclude-pattern>
 
 </ruleset>

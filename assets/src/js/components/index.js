@@ -1,7 +1,5 @@
 /**
  * Blank Theme component.
- *
- * @package Blank-Theme
  */
 
 export { default as WebFont } from './fonts';

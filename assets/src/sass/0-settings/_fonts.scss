@@ -1,0 +1,30 @@
+/**
+ * Define self-hosted font families.
+ *
+ */
+@font-face {
+	font-family: "Open Sans";
+	src: url(../../fonts/Open_Sans/OpenSans-Regular.ttf) format("truetype");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: montserrat;
+	src: url(../../fonts/Montserrat/Montserrat-Light.ttf) format("truetype");
+	font-display: swap;
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: montserrat;
+	src: url(../../fonts/Montserrat/Montserrat-Regular.ttf) format("truetype");
+	font-display: swap;
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: montserrat;
+	src: url(../../fonts/Montserrat/Montserrat-Medium.ttf) format("truetype");
+	font-display: swap;
+	font-weight: 500;
+}
