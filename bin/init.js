@@ -4,7 +4,7 @@ const path = require( 'path' );
 const fs = require( 'fs' );
 const prompt = require( 'prompt-sync' )();
 const replace = require( 'replace-in-file' );
-const rootDir = path.resolve( __dirname );
+const rootDir = path.join( __dirname, '..' );
 
 // Helpers
 const fgRed = '\x1b[31m';
@@ -25,11 +25,11 @@ const findReplace = ( findString, replaceString ) => {
 		from: regex,
 		to: replaceString,
 		ignore: [
-			`${ rootDir }/**/node_modules/**/*`,
+			`${ rootDir }/node_modules/**/*`,
 			`${ rootDir }/.git/**/*`,
 			`${ rootDir }/.github/**/*`,
-			`${ rootDir }/**/vendor/**/*`,
-			`${ rootDir }/**/bin/rename.js`,
+			`${ rootDir }/vendor/**/*`,
+			`${ rootDir }/bin/init.js`,
 		],
 	};
 
