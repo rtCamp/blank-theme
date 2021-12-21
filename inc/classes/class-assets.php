@@ -92,10 +92,11 @@ class Assets {
 	 *
 	 * @param string $file File name.
 	 * @param array  $deps Script dependencies to merge with.
+	 * @param string $ver  Asset version string.
 	 *
 	 * @return array
 	 */
-	public function get_asset_meta( $file, $deps = array() ) {
+	public function get_asset_meta( $file, $deps = array(), $ver = false ) {
 		$asset_meta_file = sprintf( '%s/js/%s.asset.php', untrailingslashit( BLANK_THEME_BUILD_DIR ), basename( $file, '.' . pathinfo( $file )['extension'] ) );
 		$asset_meta      = is_readable( $asset_meta_file )
 			? require $asset_meta_file

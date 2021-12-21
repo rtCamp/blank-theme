@@ -26,11 +26,11 @@ const WebFont = {
 	loadWebFonts() {
 		const WebFontConfig = {
 			google: {
-				families: [ 'Open Sans:300,400,700', 'Roboto:500' ],
+				families: ['Open Sans:300,400,700', 'Roboto:500'],
 			},
 		};
 
-		WebFontLoader.load( WebFontConfig );
+		WebFontLoader.load(WebFontConfig);
 	},
 };
 
