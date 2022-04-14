@@ -9,13 +9,14 @@
 		"prod": "NODE_ENV=production webpack --progress && npm run pot",
 		"dev": "webpack --watch --progress",
 		"clean": "rm -rf assets/build/*",
-		"init": "./bin/init.js && npm run pot && rm -rf .git .github ./bin/ ./languages/blank-theme.pot && npm uninstall replace-in-file prompt-sync",
+		"init": "./bin/init.js && npm run pot && rm -rf .git .github ./bin/ ./languages/blank-theme.pot",
 		"lint:css": "stylelint assets/src/sass/**/*.scss --syntax scss",
 		"lint:js": "eslint assets/src/js/",
 		"lint:php": "composer phpcs",
 		"lint:php:fix": "composer phpcbf",
 		"pot": "wp-pot --src './**/*.php' --dest-file './languages/blank-theme.pot' --domain 'blank-theme' --package 'Blank Theme' ",
-		"precommit": "npm-run-all lint:* pot"
+		"precommit": "npm-run-all lint:* pot",
+		"prepare": "npm run init"
 	},
 	"dependencies": {
 		"foundation-sites": "^6.6.3",
