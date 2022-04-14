@@ -147,7 +147,7 @@ const initTheme = (themeInfo) => {
 	});
 
 	// Replace files contents.
-	console.log(info.success('\nUpdating theme details in files...'));
+	console.log(info.success('\nUpdating theme details in file(s)...'));
 	Object.keys(chunksToReplace).forEach((key) => {
 		replaceFileContent(files, key, chunksToReplace[key]);
 	});
@@ -156,7 +156,7 @@ const initTheme = (themeInfo) => {
 	}
 
 	// Replace file names
-	console.log(info.success('\nUpdating theme bootstrap file name...'));
+	console.log(info.success('\nUpdating theme file name(s)...'));
 	Object.keys(fileNameToReplace).forEach((key) => {
 		replaceFileName(files, key, fileNameToReplace[key]);
 	});
