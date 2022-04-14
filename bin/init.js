@@ -1,188 +1,322 @@
-#!/usr/bin/env node
+#! /usr/bin/env node
 
-const path = require( 'path' );
-const fs = require( 'fs' );
-const prompt = require( 'prompt-sync' )();
-const replace = require( 'replace-in-file' );
-const rootDir = path.join( __dirname, '..' );
+/* eslint no-console: 0 */
 
-// Helpers
-const fgRed = '\x1b[31m';
-const fgGreen = '\x1b[32m';
-const fgBlue = '\x1b[34m';
-const fgMagenta = '\x1b[35m';
-const fgCyan = '\x1b[36m';
+/**
+ * External dependencies
+ */
+const fs = require('fs');
+const path = require('path');
+const readline = require('readline');
 
-// Functions
-const consoleOutput = ( color, text ) => {
-	console.log( color, text );
+/**
+ * Define Constants
+ */
+const rl = readline.createInterface({
+	input: process.stdin,
+	output: process.stdout,
+});
+const info = {
+	error: (message) => {
+		return `\x1b[31m${ message }\x1b[0m`;
+	},
+	success: (message) => {
+		return `\x1b[32m${ message }\x1b[0m`;
+	},
+	warning: (message) => {
+		return `\x1b[33m${ message }\x1b[0m`;
+	},
+	message: (message) => {
+		return `\x1b[34m${ message }\x1b[0m`;
+	},
 };
+let fileContentUpdated = false;
+let fileNameUpdated = false;
 
-const findReplace = ( findString, replaceString ) => {
-	const regex = new RegExp( findString, 'g' );
-	const options = {
-		files: `${ rootDir }/**/*`,
-		from: regex,
-		to: replaceString,
-		ignore: [
-			`${ rootDir }/node_modules/**/*`,
-			`${ rootDir }/.git/**/*`,
-			`${ rootDir }/.github/**/*`,
-			`${ rootDir }/vendor/**/*`,
-			`${ rootDir }/bin/init.js`,
-		],
+// Start with a prompt.
+rl.question('Would you like to setup the theme? (Y/n) ', (answer) => {
+	if ('n' === answer.toLowerCase()) {
+		console.log(info.warning('\nTheme Setup Cancelled.\n'));
+		process.exit(0);
+	}
+	rl.question('Enter theme name (shown in WordPress admin)*: ', (themeName) => {
+		const themeInfo = setupTheme(themeName);
+		rl.question('Confirm the Theme Details (Y/n) ', (confirm) => {
+			if ('n' === confirm.toLowerCase()) {
+				console.log(info.warning('\nTheme Setup Cancelled.\n'));
+				process.exit(0);
+			}
+			initTheme(themeInfo);
+			rl.close();
+		});
+	});
+});
+
+rl.on('close', () => {
+	process.exit(0);
+});
+
+/**
+ * Theme Setup
+ *
+ * @param {string} themeName
+ *
+ * @return {Object} themeInfo
+ */
+const setupTheme = (themeName) => {
+	console.log(info.success('\nFiring up the theme setup...'));
+
+	// Ask theme name.
+	if (!themeName) {
+		console.log(info.error('\nTheme name is required.\n'));
+		process.exit(0);
+	}
+
+	// Generate theme info.
+	const themeInfo = generateThemeInfo(themeName);
+
+	const themeDetails = {
+		'Theme Name: ': `${ themeInfo.themeName }`,
+		'Theme Version: ': `1.0.0`,
+		'Text Domain: ': `${ themeInfo.kebabCase }`,
+		'Package: ': `${ themeInfo.trainCase }`,
+		'Namespace: ': `${ themeInfo.pascalSnakeCase }`,
+		'Function Prefix: ': `${ themeInfo.snakeCaseWithUnderscoreSuffix }`,
+		'CSS Class Prefix: ': `${ themeInfo.kebabCaseWithHyphenSuffix }`,
+		'PHP Variable Prefix: ': `${ themeInfo.snakeCaseWithUnderscoreSuffix }`,
+		'Version Constant: ': `${ themeInfo.macroCase }_VERSION`,
+		'Theme Directory Constant: ': `${ themeInfo.macroCase }_TEMP_DIR`,
+		'Theme Build Directory Constant: ': `${ themeInfo.macroCase }_BUILD_DIR`,
+		'Theme Build Directory URI Constant: ': `${ themeInfo.macroCase }_BUILD_URI`,
 	};
 
-	try {
-		const changes = replace.sync( options );
-		consoleOutput(
-			fgGreen,
-			`${ findString }-> ${ replaceString }. Modified files: ${ changes.join(
-				', '
-			) }`
+	const biggestStringLength = themeDetails['Theme Build Directory URI Constant: '].length + 'Theme Build Directory URI Constant: '.length;
+
+	console.log(info.success('\nTheme Details:'));
+	console.log(
+		info.warning('┌' + '─'.repeat(biggestStringLength + 2) + '┐'),
+	);
+	Object.keys(themeDetails).forEach((key) => {
+		console.log(
+			info.warning('│' + ' ' + info.success(key) + info.message(themeDetails[key]) + ' ' + ' '.repeat(biggestStringLength - (themeDetails[key].length + key.length)) + info.warning('│')),
 		);
-	} catch ( error ) {
-		console.error( 'Error occurred:', error );
+	});
+	console.log(
+		info.warning('└' + '─'.repeat(biggestStringLength + 2) + '┘'),
+	);
+
+	return themeInfo;
+};
+
+/**
+ * Initialize new theme
+ *
+ * @param {Object} themeInfo
+ */
+const initTheme = (themeInfo) => {
+	const chunksToReplace = {
+		'blank theme': themeInfo.themeNameLowerCase,
+		'Blank Theme': themeInfo.themeName,
+		BlankTheme: themeInfo.pascalCase,
+		'BLANK THEME': themeInfo.themeNameCobolCase,
+		'blank-theme': themeInfo.kebabCase,
+		'Blank-Theme': themeInfo.trainCase,
+		'BLANK-THEME': themeInfo.cobolCase,
+		blank_theme: themeInfo.snakeCase,
+		Blank_Theme: themeInfo.pascalSnakeCase,
+		BLANK_THEME: themeInfo.macroCase,
+		'blank-theme-': themeInfo.kebabCaseWithHyphenSuffix,
+		'Blank-Theme-': themeInfo.trainCaseWithHyphenSuffix,
+		'BLANK-THEME-': themeInfo.cobolCaseWithHyphenSuffix,
+		blank_theme_: themeInfo.snakeCaseWithUnderscoreSuffix,
+		Blank_Theme_: themeInfo.pascalSnakeCaseWithUnderscoreSuffix,
+		BLANK_THEME_: themeInfo.macroCaseWithUnderscoreSuffix,
+	};
+
+	const files = getAllFiles(getRoot());
+
+	// File name to replace in.
+	const fileNameToReplace = {};
+	files.forEach((file) => {
+		const fileName = path.basename(file);
+		Object.keys(chunksToReplace).forEach((key) => {
+			if (fileName.includes(key)) {
+				fileNameToReplace[fileName] = fileName.replace(key, chunksToReplace[key]);
+			}
+		});
+	});
+
+	// Replace files contents.
+	console.log(info.success('\nUpdating theme details in files...'));
+	Object.keys(chunksToReplace).forEach((key) => {
+		replaceFileContent(files, key, chunksToReplace[key]);
+	});
+	if (!fileContentUpdated) {
+		console.log(info.error('No file content updated.\n'));
+	}
+
+	// Replace file names
+	console.log(info.success('\nUpdating theme bootstrap file name...'));
+	Object.keys(fileNameToReplace).forEach((key) => {
+		replaceFileName(files, key, fileNameToReplace[key]);
+	});
+	if (!fileNameUpdated) {
+		console.log(info.error('No file name updated.\n'));
+	}
+
+	if (fileContentUpdated || fileNameUpdated) {
+		console.log(info.success('\nYour new theme is ready to go!'), '✨');
+		// Docs link
+		console.log(info.success('\nFor more information on how to use this theme, please visit the following link: ' + info.warning('https://github.com/rtCamp/blank-theme/blob/master/README.md')));
+	} else {
+		console.log(info.warning('\nNo changes were made to your theme.\n'));
 	}
 };
 
-// Main script
-consoleOutput( fgGreen, 'The script will uniquely set up your theme.' );
-consoleOutput( fgGreen, '* - required' );
+/**
+ * Get all files in a directory
+ *
+ * @param {Array} dir - Directory to search
+ */
+const getAllFiles = (dir) => {
 
-// Theme name
-consoleOutput(
-	fgGreen,
-	'Please enter your theme name (shown in WordPress admin)*:'
-);
+	const dirIgnore = [
+		'.git',
+		'.github',
+		'node_modules',
+		'vendor',
+		'bin',
+	];
 
-let themeName;
-do {
-	consoleOutput( fgGreen, '' );
-	themeName = prompt( 'Theme name: ' );
+	try {
+		const files = fs.readdirSync(dir);
 
-	if ( null !== themeName && themeName.length ) {
-		themeName = themeName.trim();
-	} else {
-		consoleOutput(
-			fgRed,
-			'Theme name field is required and cannot be empty.'
-		);
-	}
-} while ( 0 >= themeName.length );
-
-// Theme Version.
-const themeVersion = '1.0.0';
-
-const lowerThemeName = themeName.toLowerCase().trim();
-const lowerWithHyphen = lowerThemeName.replace( /\W+/g, '-' ).trim();
-const lowerWithUnderscore = lowerThemeName.replace( /\W+/g, '_' ).trim();
-const lowerPrefixWithHyphen = lowerWithHyphen + '-';
-const lowerPrefixWithunderscore = lowerWithUnderscore + '_';
-
-const camelCaseThemeName = themeName.replace( /\w\S*/g, function ( txt ) {
-	return txt.charAt( 0 ).toUpperCase() + txt.substr( 1 ).toLowerCase();
-} );
-const camelCaseWithHyphen = camelCaseThemeName.replace( /\W+/g, '-' ).trim();
-const camelCaseWithUnderscore = camelCaseThemeName
-	.replace( /\W+/g, '_' )
-	.trim();
-const camelCasePrefixWithHyphen = camelCaseWithHyphen + '-';
-const camelCasePrefixWithUnderscore = camelCaseWithUnderscore + '_';
-
-const upperThemeName = themeName.toUpperCase().trim();
-const upperWithHyphen = upperThemeName.replace( /\W+/g, '-' ).trim();
-const upperWithUnderscore = upperThemeName.replace( /\W+/g, '_' ).trim();
-const upperPrefixWithHyphen = upperWithHyphen + '-';
-const upperPrefixWithUnderscore = upperWithUnderscore + '_';
-
-// Theme Constants.
-const themeVersionConst = `${ upperWithUnderscore }_VERSION`;
-const themeDirConst = `${ upperWithUnderscore }_TEMP_DIR`;
-const themeBuildDirConst = `${ upperWithUnderscore }_BUILD_DIR`;
-const themeBuildDirURIConst = `${ upperWithUnderscore }_BUILD_URI`;
-
-consoleOutput( fgCyan, '----------------------------------------------------' );
-consoleOutput( fgGreen, 'Theme details will be:' );
-
-consoleOutput( fgMagenta, `Theme name: ${ themeName }` );
-consoleOutput( fgMagenta, `Theme version: ${ themeVersion }` );
-consoleOutput( fgMagenta, `Text domain: ${ lowerWithHyphen }` );
-consoleOutput( fgMagenta, `Package: ${ themeName }` );
-consoleOutput( fgMagenta, `Namespace: ${ camelCaseWithUnderscore }` );
-consoleOutput( fgMagenta, `Function prefix: ${ lowerPrefixWithunderscore }` );
-consoleOutput( fgMagenta, `CSS class prefix: ${ lowerPrefixWithHyphen }` );
-consoleOutput( fgMagenta, `PHP variable: ${ lowerPrefixWithunderscore }` );
-consoleOutput( fgMagenta, `Version constant: ${ themeVersionConst }` );
-consoleOutput( fgMagenta, `Directory constant: ${ themeDirConst }` );
-consoleOutput(
-	fgMagenta,
-	`Build directory Path constant: ${ themeBuildDirConst }`
-);
-consoleOutput(
-	fgMagenta,
-	`Build directory URI constant: ${ themeBuildDirURIConst }`
-);
-
-const confirm = prompt( 'Confirm? (y/n) ' ).trim();
-
-if ( 'y' === confirm ) {
-	consoleOutput( fgGreen, 'This might take some time...' );
-
-	findReplace( 'Blank Theme', themeName );
-	findReplace( 'blank theme', lowerThemeName );
-
-	findReplace( 'Version: 2.0.0', 'Version: ' + themeVersion );
-	findReplace( '"version": "2.0.0"', '"version": "' + themeVersion + '"' );
-
-	findReplace( 'Blank-Theme-', camelCasePrefixWithHyphen );
-	findReplace( 'Blank_Theme_', camelCasePrefixWithUnderscore );
-
-	findReplace( 'blank-theme-', lowerPrefixWithHyphen );
-	findReplace( 'blank_theme_', lowerPrefixWithunderscore );
-
-	findReplace( 'BLANK_THEME_VERSION', themeVersionConst );
-	findReplace( 'BLANK_THEME_TEMP_DIR', themeDirConst );
-	findReplace( 'BLANK_THEME_BUILD_DIR', themeBuildDirConst );
-	findReplace( 'BLANK_THEME_BUILD_URI', themeBuildDirURIConst );
-
-	findReplace( 'BLANK-THEME-', upperPrefixWithHyphen );
-	findReplace( 'BLANK_THEME_', upperPrefixWithUnderscore );
-
-	findReplace( 'BLANK-THEME', upperWithHyphen );
-	findReplace( 'BLANK_THEME', upperWithUnderscore );
-
-	findReplace( 'Blank-Theme', camelCaseWithHyphen );
-	findReplace( 'Blank_Theme', camelCaseWithUnderscore );
-
-	findReplace( 'blank-theme', lowerWithHyphen );
-	findReplace( 'blank_theme', lowerWithUnderscore );
-
-	if ( fs.existsSync( `${ rootDir }/inc/classes/class-blank-theme.php` ) ) {
-		fs.renameSync(
-			`${ rootDir }/inc/classes/class-blank-theme.php`,
-			`${ rootDir }/inc/classes/class-${ lowerWithHyphen }.php`,
-			( err ) => {
-				if ( err ) {
-					throw err;
-				}
-				fs.statSync(
-					`${ rootDir }/inc/classes/class-${ lowerWithHyphen }.php`,
-					( error, stats ) => {
-						if ( error ) {
-							throw error;
-						}
-						consoleOutput(
-							fgBlue,
-							`stats: ${ JSON.stringify( stats ) }`
-						);
-					}
-				);
+		files.forEach((file, index) => {
+			if (dirIgnore.indexOf(file) !== -1) {
+				files.splice(index, 1);
 			}
-		);
-	}
+		});
 
-	consoleOutput( fgGreen, 'Renaming Successful!' );
-} else {
-	consoleOutput( fgRed, 'There was error renaming.' );
-}
+		const allFiles = [];
+		files.forEach((file) => {
+			const filePath = path.join(dir, file);
+			const stat = fs.statSync(filePath);
+			if (stat.isDirectory()) {
+				allFiles.push(...getAllFiles(filePath));
+			} else {
+				allFiles.push(filePath);
+			}
+		});
+		return allFiles;
+	} catch (err) {
+		console.log(info.error(err));
+	}
+};
+
+/**
+ * Replace content in file
+ *
+ * @param {Array}  files           Files to search
+ * @param {string} chunksToReplace String to replace
+ * @param {string} newChunk        New string to replace with
+ */
+const replaceFileContent = (files, chunksToReplace, newChunk) => {
+	files.forEach((file) => {
+		const filePath = path.resolve(getRoot(), file);
+
+		try {
+			let content = fs.readFileSync(filePath, 'utf8');
+			const regex = new RegExp(chunksToReplace, 'g');
+			content = content.replace(regex, newChunk);
+			if (content !== fs.readFileSync(filePath, 'utf8')) {
+				fs.writeFileSync(filePath, content, 'utf8');
+				console.log(info.success(`Updated [${ info.message( chunksToReplace ) }] ${ info.success( 'to' ) } [${ info.message( newChunk ) }] ${ info.success( 'in file' ) } [${ info.message( path.basename( file ) ) }]`));
+				fileContentUpdated = true;
+			}
+		} catch (err) {
+			console.log(info.error(`\nError: ${ err }`));
+		}
+	});
+};
+
+/**
+ * Change File Name
+ *
+ * @param {Array}  files       Files to search
+ * @param {string} oldFileName Old file name
+ * @param {string} newFileName New file name
+ */
+const replaceFileName = (files, oldFileName, newFileName) => {
+	files.forEach((file) => {
+		if (oldFileName !== path.basename(file)) {
+			return;
+		}
+		const filePath = path.resolve(getRoot(), file);
+		const newFilePath = path.resolve(getRoot(), file.replace(oldFileName, newFileName));
+		try {
+			fs.renameSync(filePath, newFilePath);
+			console.log(info.success(`Updated file [${ info.message( path.basename( filePath ) ) }] ${ info.success( 'to' ) } [${ info.message( path.basename( newFilePath ) ) }]`));
+			fileNameUpdated = true;
+		} catch (err) {
+			console.log(info.error(`\nError: ${ err }`));
+		}
+	});
+};
+
+/**
+ * Generate Theme Info from Theme Name
+ *
+ * @param {string} themeName
+ */
+const generateThemeInfo = (themeName) => {
+	const themeNameLowerCase = themeName.toLowerCase();
+
+	const kebabCase = themeName.replace(/\s+/g, '-').toLowerCase();
+	const snakeCase = kebabCase.replace(/\-/g, '_');
+	const kebabCaseWithHyphenSuffix = kebabCase + '-';
+	const snakeCaseWithUnderscoreSuffix = snakeCase + '_';
+
+	const trainCase = kebabCase.replace(/\b\w/g, (l) => {
+		return l.toUpperCase();
+	});
+	const pascalCase = trainCase.replace(/-/g, '');
+	const themeNameTrainCase = trainCase.replace(/\-/g, ' ');
+	const pascalSnakeCase = trainCase.replace(/\-/g, '_');
+	const trainCaseWithHyphenSuffix = trainCase + '-';
+	const pascalSnakeCaseWithUnderscoreSuffix = pascalSnakeCase + '_';
+
+	const cobolCase = kebabCase.toUpperCase();
+	const themeNameCobolCase = themeNameTrainCase.toUpperCase();
+	const macroCase = snakeCase.toUpperCase();
+	const cobolCaseWithHyphenSuffix = cobolCase + '-';
+	const macroCaseWithUnderscoreSuffix = macroCase + '_';
+
+	return {
+		themeName,
+		themeNameLowerCase,
+		kebabCase,
+		snakeCase,
+		kebabCaseWithHyphenSuffix,
+		snakeCaseWithUnderscoreSuffix,
+		trainCase,
+		pascalCase,
+		themeNameTrainCase,
+		pascalSnakeCase,
+		trainCaseWithHyphenSuffix,
+		pascalSnakeCaseWithUnderscoreSuffix,
+		cobolCase,
+		themeNameCobolCase,
+		macroCase,
+		cobolCaseWithHyphenSuffix,
+		macroCaseWithUnderscoreSuffix,
+	};
+};
+
+/**
+ * Return root directory
+ *
+ * @return {string} root directory
+ */
+const getRoot = () => {
+	return path.resolve(__dirname, '../');
+};
