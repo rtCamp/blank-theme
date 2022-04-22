@@ -185,7 +185,6 @@ const getAllFiles = (dir) => {
 		'.github',
 		'node_modules',
 		'vendor',
-		'init.js',
 	];
 
 	try {
