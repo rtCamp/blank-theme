@@ -190,7 +190,7 @@ const initTheme = (themeInfo) => {
 	if (fileContentUpdated || fileNameUpdated) {
 		console.log(info.success('\nYour new theme is ready to go!'), '✨');
 		// Docs link
-		console.log(info.success('\nFor more information on how to use this theme, please visit the following link: ' + info.warning('https://github.com/rtCamp/blank-theme/blob/master/README.md')));
+		console.log(info.success('\nFor more information on how to use this theme, please visit the following link: ' + info.warning('https://github.com/rtCamp/blank-theme/blob/master/README.md\n')));
 	} else {
 		console.log(info.warning('\nNo changes were made to your theme.\n'));
 	}
@@ -371,7 +371,7 @@ const runThemeCleanup = () => {
 	});
 
 	if (themeCleanup) {
-		console.log(info.success('\nTheme cleanup completed!'));
+		console.log(info.success('\nTheme cleanup completed!'), '✨');
 	} else {
 		console.log(info.warning('\nNo theme cleanup required!\n'));
 	}
