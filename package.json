@@ -9,7 +9,7 @@
 		"prod": "NODE_ENV=production webpack --progress && npm run pot",
 		"dev": "webpack --watch --progress",
 		"clean": "rm -rf assets/build/*",
-		"init": "./bin/init.js && npm run pot && rm -rf .git .github ./bin/ ./languages/blank-theme.pot",
+		"init": "./bin/init.js && npm run pot",
 		"lint:css": "stylelint assets/src/sass/**/*.scss --syntax scss",
 		"lint:js": "eslint assets/src/js/",
 		"lint:php": "composer phpcs",
