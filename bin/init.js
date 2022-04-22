@@ -40,7 +40,7 @@ rl.question('Would you like to setup the theme? (Y/n) ', (answer) => {
 		process.exit(0);
 	}
 	rl.question('Enter theme name (shown in WordPress admin)*: ', (themeName) => {
-		const themeInfo = setupTheme(themeName);
+		const themeInfo = renderThemeDetails(themeName);
 		rl.question('Confirm the Theme Details (Y/n) ', (confirm) => {
 			if ('n' === confirm.toLowerCase()) {
 				console.log(info.warning('\nTheme Setup Cancelled.\n'));
@@ -57,16 +57,16 @@ rl.on('close', () => {
 });
 
 /**
- * Theme Setup
+ * Renders the theme setup modal with all necessary information related to the search-replace.
  *
  * @param {string} themeName
  *
  * @return {Object} themeInfo
  */
-const setupTheme = (themeName) => {
+const renderThemeDetails = (themeName) => {
 	console.log(info.success('\nFiring up the theme setup...'));
 
-	// Ask theme name.
+	// Bail out if theme name isn't provided.
 	if (!themeName) {
 		console.log(info.error('\nTheme name is required.\n'));
 		process.exit(0);
@@ -76,14 +76,14 @@ const setupTheme = (themeName) => {
 	const themeInfo = generateThemeInfo(themeName);
 
 	const themeDetails = {
-		'Theme Name: ': `${ themeInfo.themeName }`,
-		'Theme Version: ': `1.0.0`,
-		'Text Domain: ': `${ themeInfo.kebabCase }`,
-		'Package: ': `${ themeInfo.trainCase }`,
-		'Namespace: ': `${ themeInfo.pascalSnakeCase }`,
-		'Function Prefix: ': `${ themeInfo.snakeCaseWithUnderscoreSuffix }`,
-		'CSS Class Prefix: ': `${ themeInfo.kebabCaseWithHyphenSuffix }`,
-		'PHP Variable Prefix: ': `${ themeInfo.snakeCaseWithUnderscoreSuffix }`,
+		'Theme Name: ': themeInfo.themeName,
+		'Theme Version: ': '1.0.0',
+		'Text Domain: ': themeInfo.kebabCase,
+		'Package: ': themeInfo.trainCase,
+		'Namespace: ': themeInfo.pascalSnakeCase,
+		'Function Prefix: ': themeInfo.snakeCaseWithUnderscoreSuffix,
+		'CSS Class Prefix: ': themeInfo.kebabCaseWithHyphenSuffix,
+		'PHP Variable Prefix: ': themeInfo.snakeCaseWithUnderscoreSuffix,
 		'Version Constant: ': `${ themeInfo.macroCase }_VERSION`,
 		'Theme Directory Constant: ': `${ themeInfo.macroCase }_TEMP_DIR`,
 		'Theme Build Directory Constant: ': `${ themeInfo.macroCase }_BUILD_DIR`,
