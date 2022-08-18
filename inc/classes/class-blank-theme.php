@@ -5,14 +5,14 @@
  * @package Blank-Theme
  */
 
-namespace BLANK_THEME\Inc;
+namespace Blank_Theme\Inc;
 
-use BLANK_THEME\Inc\Traits\Singleton;
+use Blank_Theme\Inc\Traits\Singleton;
 
 /**
  * Main theme bootstrap file.
  */
-class BLANK_THEME {
+class Blank_Theme {
 
 	use Singleton;
 

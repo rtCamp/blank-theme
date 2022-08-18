@@ -5,7 +5,7 @@
  * @package Blank-Theme
  */
 
-namespace BLANK_THEME\Inc;
+namespace Blank_Theme\Inc;
 
 use Blank_Theme\Inc\Traits\Singleton;
 

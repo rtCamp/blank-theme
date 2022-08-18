@@ -5,7 +5,7 @@
  * @package Blank-Theme
  */
 
-namespace BLANK_THEME\Inc\Helpers;
+namespace Blank_Theme\Inc\Helpers;
 
 /**
  * Auto loader function.
@@ -16,7 +16,7 @@ namespace BLANK_THEME\Inc\Helpers;
  */
 function autoloader( $resource = '' ) {
 	$resource_path  = false;
-	$namespace_root = 'BLANK_THEME\\';
+	$namespace_root = 'Blank_Theme\\';
 	$resource       = trim( $resource, '\\' );
 
 	if ( empty( $resource ) || strpos( $resource, '\\' ) === false || strpos( $resource, $namespace_root ) !== 0 ) {
@@ -81,4 +81,4 @@ function autoloader( $resource = '' ) {
 
 }
 
-spl_autoload_register( '\BLANK_THEME\Inc\Helpers\autoloader' );
+spl_autoload_register( '\Blank_Theme\Inc\Helpers\autoloader' );

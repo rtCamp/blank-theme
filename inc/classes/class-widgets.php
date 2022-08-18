@@ -5,9 +5,9 @@
  * @package Blank-Theme
  */
 
-namespace BLANK_THEME\Inc;
+namespace Blank_Theme\Inc;
 
-use BLANK_THEME\Inc\Traits\Singleton;
+use Blank_Theme\Inc\Traits\Singleton;
 
 /**
  * Class Assets

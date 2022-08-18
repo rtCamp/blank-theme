@@ -25,7 +25,7 @@
  * @package Blank-Theme
  */
 
-namespace BLANK_THEME\Inc\Traits;
+namespace Blank_Theme\Inc\Traits;
 
 trait Singleton {
 
