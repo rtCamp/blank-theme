@@ -1,4 +1,4 @@
-# Copyright (C) 2021 Blank Theme
+# Copyright (C) 2022 Blank Theme
 # This file is distributed under the same license as the Blank Theme package.
 msgid ""
 msgstr ""

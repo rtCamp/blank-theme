@@ -1,17 +1,32 @@
 Blank Theme
 ===
 
-Blank Theme is a custom blank theme created with underscore theme, which includes foundation basic grid system and some basic customizer settings which are required in almost all projects.
+Blank Theme is a custom blank theme created with underscore theme, which includes foundation basic grid system and some basic customizer settings which are required in almost all projects. Here are some of the other more interesting things you'll find here:
+
+* A modern workflow with a pre-made command-line interface to turn your project into a more pleasant experience.
+* A just right amount of lean, well-commented, modern, HTML5 templates.
+* class-assets that enqueue all you require css and js files.
+
 
 
 
 Getting Started
 ---------------
 
-After cloning repo run
+### Requirements
+
+`Blank Theme` requires the following dependencies:
+
+- [Node.js](https://nodejs.org/)
+- [Composer](https://getcomposer.org/)
+
+### Setup
+
+After cloning/downloading repository, you need to install the necessary Node.js and Composer dependencies :
 
 ```bash
-npm install
+$ composer install
+$ npm install
 ```
 
 and then run the following command which will prompt for the theme name, start renaming and do cleanup.
@@ -31,7 +46,7 @@ npm run prod      # When ready for production
 
 
 
-#### Other Commands
+#### Available CLI commands
 
 ```bash
 # Generate pot files
