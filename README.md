@@ -5,8 +5,12 @@ Blank Theme is a custom blank theme created with underscore theme, which include
 
 * A modern workflow with a pre-made command-line interface to turn your project into a more pleasant experience.
 * A just right amount of lean, well-commented, modern, HTML5 templates.
-* class-assets that enqueue all you require css and js files.
-
+* `class-assets.php` that enqueue all your require css and js files.
+* `class-blank-theme.php` file in inc/classes is where the theme is setup. This file add all the require theme supports. 
+* Customizer registration and settings added in `inc/classes/class-customizer.php` file.
+* 2 widgets ( Sidebar & Footer ) added in `inc/classes/class-widgets.php` file.
+* `inc/helpers/custom-functions.php` where you can add your custom functions.
+* Custom template tags in `inc/helpers/template-tags.php` that keep your templates clean and neat and prevent code duplication.
 
 
 
