@@ -16,7 +16,6 @@ Blank Theme is a custom blank theme created with underscore theme, which include
 * You can add styles in `assets/src/sass` folder.
 
 
-
 Getting Started
 ---------------
 
