@@ -11,6 +11,9 @@ Blank Theme is a custom blank theme created with underscore theme, which include
 * 2 widgets ( Sidebar & Footer ) added in `inc/classes/class-widgets.php` file.
 * `inc/helpers/custom-functions.php` where you can add your custom functions.
 * Custom template tags in `inc/helpers/template-tags.php` that keep your templates clean and neat and prevent code duplication.
+* In `assets/src/js/admin/customizer.js` file, Theme Customizer enhancements added for a better user experience.
+* `assets/src/js/components` where you can add the common components for the theme.
+* You can add styles in `assets/src/sass` folder.
 
 
 
