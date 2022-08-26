@@ -62,35 +62,7 @@ class BLANK_THEME {
 
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'title-tag' );
-		add_theme_support( 'post-thumbnails' );
-		add_theme_support( 'customize-selective-refresh-widgets' );
 		add_theme_support( 'jetpack-responsive-videos' );
-
-		add_theme_support(
-			'html5',
-			[
-				'search-form',
-				'comment-form',
-				'comment-list',
-				'gallery',
-				'caption',
-			]
-		);
-
-		add_theme_support(
-			'post-formats',
-			[
-				'aside',
-				'image',
-				'video',
-				'quote',
-				'link',
-				'gallery',
-				'status',
-				'audio',
-				'chat',
-			]
-		);
 
 		add_theme_support(
 			'custom-background',
@@ -114,7 +86,6 @@ class BLANK_THEME {
 
 		// Gutenberg theme support.
 		add_theme_support( 'wp-block-styles' );
-		add_theme_support( 'align-wide' );
 
 		register_nav_menus(
 			[
