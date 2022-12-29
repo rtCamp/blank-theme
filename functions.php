@@ -25,10 +25,10 @@ require_once BLANK_THEME_TEMP_DIR . '/inc/helpers/template-tags.php';
 /**
  * Get blank theme instance.
  *
- * @return object \BLANK_THEME\Inc\BLANK_THEME
+ * @return object \Blank_Theme\Inc\Blank_Theme
  */
 function blank_theme_get_theme_instance() {
-	return BLANK_THEME\Inc\BLANK_THEME::get_instance();
+	return Blank_Theme\Inc\Blank_Theme::get_instance();
 }
 
 blank_theme_get_theme_instance();
