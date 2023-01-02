@@ -1,7 +1,7 @@
 Blank Theme
 ===
 
-Blank Theme is a custom blank theme created with underscore theme, which includes foundation basic grid system and some basic customizer settings which are required in almost all projects. Here are some of the other more interesting things you'll find here:
+Blank Theme is a custom Blank theme created with underscore theme, which includes foundation basic grid system and some basic customizer settings which are required in almost all projects. Here are some of the other more interesting things you'll find here:
 
 * A modern workflow with a pre-made command-line interface to turn your project into a more pleasant experience.
 * A just right amount of lean, well-commented, modern, HTML5 templates.
