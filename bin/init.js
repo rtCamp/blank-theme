@@ -154,6 +154,9 @@ const initTheme = (themeInfo) => {
 		blank_theme_: themeInfo.snakeCaseWithUnderscoreSuffix,
 		Blank_Theme_: themeInfo.pascalSnakeCaseWithUnderscoreSuffix,
 		BLANK_THEME_: themeInfo.macroCaseWithUnderscoreSuffix,
+		'Blank theme': 'Blank Theme',
+		'underscore theme': 'Blank Theme',
+		blankTheme: 'blank-theme',
 	};
 
 	const files = getAllFiles(getRoot());
@@ -239,6 +242,11 @@ const getAllFiles = (dir) => {
  */
 const replaceFileContent = (files, chunksToReplace, newChunk) => {
 	files.forEach((file) => {
+
+		if(path.basename(file) === 'init.js' && (chunksToReplace === 'Blank theme' || chunksToReplace === 'underscore theme' || chunksToReplace === 'blankTheme')) {
+			return;
+		}
+
 		const filePath = path.resolve(getRoot(), file);
 
 		try {
