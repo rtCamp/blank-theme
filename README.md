@@ -1,17 +1,38 @@
 Blank Theme
 ===
 
-Blank Theme is a custom blank theme created with underscore theme, which includes foundation basic grid system and some basic customizer settings which are required in almost all projects.
+Blank Theme is a custom theme created with underscore theme, which includes foundation basic grid system and some basic customizer settings which are required in almost all projects. Here are some of the other more interesting things you'll find here:
 
+* A modern workflow with a pre-made command-line interface to turn your project into a more pleasant experience.
+* A just right amount of lean, well-commented, modern, HTML5 templates.
+* `class-assets.php` that enqueue all your require css and js files.
+* `class-blank-theme.php` file in inc/classes is where the theme is setup. This file add all the require theme supports. 
+* Customizer registration and settings added in `inc/classes/class-customizer.php` file.
+* 2 widgets ( Sidebar & Footer ) added in `inc/classes/class-widgets.php` file.
+* `inc/helpers/custom-functions.php` where you can add your custom functions.
+* Custom template tags in `inc/helpers/template-tags.php` that keep your templates clean and neat and prevent code duplication.
+* In `assets/src/js/admin/customizer.js` file, Theme Customizer enhancements added for a better user experience.
+* `assets/src/js/components` where you can add the common components for the theme.
+* You can add styles in `assets/src/sass` folder.
 
 
 Getting Started
 ---------------
 
-After cloning repo run
+### Requirements
+
+`Blank Theme` requires the following dependencies:
+
+- [Node.js](https://nodejs.org/)
+- [Composer](https://getcomposer.org/)
+
+### Setup
+
+After cloning/downloading repository, you need to install the necessary Node.js and Composer dependencies :
 
 ```bash
-npm install
+$ composer install
+$ npm install
 ```
 
 and then run the following command which will prompt for the theme name, start renaming and do cleanup.
@@ -31,7 +52,7 @@ npm run prod      # When ready for production
 
 
 
-#### Other Commands
+#### Available CLI commands
 
 ```bash
 # Generate pot files
