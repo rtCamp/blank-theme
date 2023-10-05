@@ -6,7 +6,7 @@
 	"license": "MIT",
 	"private": true,
 	"scripts": {
-		"prod": "NODE_ENV=production webpack --progress && npm run pot",
+		"prod": "cross-env NODE_ENV=production webpack --progress && npm run pot",
 		"dev": "webpack --watch --progress",
 		"clean": "rm -rf assets/build/*",
 		"init": "./bin/init.js && npm run pot",
@@ -30,6 +30,7 @@
 		"@wordpress/eslint-plugin": "^9.0.6",
 		"@wordpress/stylelint-config": "^19.0.5",
 		"babel-loader": "^8.2.2",
+		"cross-env": "^7.0.3",
 		"css-loader": "^5.2.6",
 		"eslint": "^7.27.0",
 		"eslint-webpack-plugin": "^2.5.4",
