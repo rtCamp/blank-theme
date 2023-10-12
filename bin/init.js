@@ -352,7 +352,6 @@ const runThemeCleanup = () => {
 		'.git',
 		'.github',
 		'bin',
-		'languages',
 	];
 
 	deleteDirs.forEach((dir) => {
