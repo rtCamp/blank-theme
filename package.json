@@ -11,9 +11,10 @@
 		"clean": "rm -rf assets/build/*",
 		"init": "node ./bin/init.js && npm run pot",
 		"lint:css": "stylelint assets/src/sass/**/*.scss --syntax scss",
+		"lint:js:fix": "eslint assets/src/js/ --fix",
 		"lint:js": "eslint assets/src/js/",
-		"lint:php": "./vendor/bin/phpcs",
-		"lint:php:fix": "./bin/phpcbf.sh",
+		"lint:php": "php ./vendor/bin/phpcs",
+		"lint:php:fix": "node ./bin/phpcbf.js",
 		"lint:staged": "lint-staged",
 		"pot": "wp-pot --src './**/*.php' --dest-file './languages/blank-theme.pot' --domain 'blank-theme' --package 'Blank Theme' ",
 		"precommit": "npm-run-all lint:* pot",
@@ -24,6 +25,7 @@
 		"webfontloader": "^1.6.28"
 	},
 	"devDependencies": {
+		"cross-spawn": "^7.0.3",
 		"@wordpress/babel-preset-default": "^6.2.0",
 		"@wordpress/browserslist-config": "^4.0.1",
 		"@wordpress/dependency-extraction-webpack-plugin": "^3.1.4",
