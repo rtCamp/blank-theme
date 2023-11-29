@@ -35,7 +35,6 @@ function blank_theme_posted_on() {
 	);
 
 	printf( '<span class="posted-on">%s</span>', $posted_on ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-
 }
 
 /**
@@ -50,7 +49,6 @@ function blank_theme_posted_by() {
 	);
 
 	printf( '<span class="byline"> %s</span>', $byline ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-
 }
 
 /**
@@ -110,7 +108,6 @@ function blank_theme_entry_footer() {
 		'<span class="edit-link">',
 		'</span>'
 	);
-
 }
 
 /**

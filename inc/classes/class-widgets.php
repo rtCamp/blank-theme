@@ -34,7 +34,6 @@ class Widgets {
 		 * Actions
 		 */
 		add_action( 'widgets_init', [ $this, 'register_widgets' ] );
-
 	}
 
 	/**
@@ -67,7 +66,5 @@ class Widgets {
 				'after_title'   => '</h4>',
 			]
 		);
-
 	}
-
 }

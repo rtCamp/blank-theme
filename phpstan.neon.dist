@@ -1,0 +1,25 @@
+parameters:
+		level: 8
+		checkMissingIterableValueType: false
+		treatPhpDocTypesAsCertain: false
+		bootstrapFiles:
+			- phpstan/constants.php
+		paths:
+			- inc/
+			- page-templates/
+			- template-parts/
+			# top level files
+			- 404.php
+			- archive.php
+			- comments.php
+			- footer.php
+			- functions.php
+			- header.php
+			- index.php
+			- page.php
+			- search.php
+			- sidebar.php
+			- single.php
+		scanDirectories:
+			# Reference the plugins we actually use.
+			- ../../plugins/

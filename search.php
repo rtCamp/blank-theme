@@ -25,7 +25,6 @@ get_header();
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
-
 				the_post();
 
 				/**
@@ -34,13 +33,9 @@ get_header();
 				 * called content-search.php and that will be used instead.
 				 */
 				get_template_part( 'template-parts/content', 'search' );
-
 			endwhile;
-
 		else :
-
 			get_template_part( 'template-parts/content', 'none' );
-
 		endif;
 		?>
 

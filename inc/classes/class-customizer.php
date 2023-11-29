@@ -35,7 +35,6 @@ class Customizer {
 		 */
 		add_action( 'customize_register', [ $this, 'customize_register' ] );
 		add_action( 'customize_preview_init', [ $this, 'enqueue_customizer_scripts' ] );
-
 	}
 
 	/**
@@ -52,7 +51,6 @@ class Customizer {
 		$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
 		if ( isset( $wp_customize->selective_refresh ) ) {
-
 			$wp_customize->selective_refresh->add_partial(
 				'blogname',
 				[
@@ -67,9 +65,7 @@ class Customizer {
 					'render_callback' => [ $this, 'customize_partial_blog_description' ],
 				]
 			);
-
 		}
-
 	}
 
 	/**
@@ -101,5 +97,4 @@ class Customizer {
 
 		wp_enqueue_script( 'blank-theme-customizer' );
 	}
-
 }

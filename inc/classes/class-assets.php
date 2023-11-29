@@ -36,7 +36,6 @@ class Assets {
 		 */
 		add_action( 'wp_enqueue_scripts', [ $this, 'register_scripts' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'register_styles' ] );
-
 	}
 
 	/**
@@ -167,5 +166,4 @@ class Assets {
 
 		return file_exists( $file_path ) ? filemtime( $file_path ) : false;
 	}
-
 }

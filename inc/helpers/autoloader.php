@@ -10,14 +10,14 @@ namespace Blank_Theme\Inc\Helpers;
 /**
  * Auto loader function.
  *
- * @param string $resource Source namespace.
+ * @param string $source_namespace Source namespace.
  *
  * @return void
  */
-function autoloader( $resource = '' ) {
+function autoloader( $source_namespace = '' ) {
 	$resource_path  = false;
 	$namespace_root = 'Blank_Theme\\';
-	$resource       = trim( $resource, '\\' );
+	$resource       = trim( $source_namespace, '\\' );
 
 	if ( empty( $resource ) || strpos( $resource, '\\' ) === false || strpos( $resource, $namespace_root ) !== 0 ) {
 		// Not our namespace, bail out.
@@ -44,7 +44,6 @@ function autoloader( $resource = '' ) {
 	$file_name = '';
 
 	if ( 'inc' === $path[0] ) {
-
 		switch ( $path[1] ) {
 			case 'traits':
 				$directory = 'traits';
@@ -69,7 +68,6 @@ function autoloader( $resource = '' ) {
 		}
 
 		$resource_path = sprintf( '%s/inc/%s/%s.php', untrailingslashit( BLANK_THEME_TEMP_DIR ), $directory, $file_name );
-
 	}
 
 	$resource_path_valid = validate_file( $resource_path );
@@ -78,7 +76,6 @@ function autoloader( $resource = '' ) {
 		// We are already making sure that the file exists and it's valid.
 		require_once $resource_path; // phpcs:ignore WordPressVIPMinimum.Files.IncludingFile.UsingVariable
 	}
-
 }
 
 spl_autoload_register( '\Blank_Theme\Inc\Helpers\autoloader' );

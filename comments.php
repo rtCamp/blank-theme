@@ -98,7 +98,6 @@ if ( post_password_required() ) {
 			</nav><!-- #comment-nav-below -->
 			<?php
 		} // Check for comment navigation.
-
 	} // Check for have_comments().
 
 	// If comments are closed and there are comments, let's leave a little note, shall we?

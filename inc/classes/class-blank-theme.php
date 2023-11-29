@@ -27,7 +27,6 @@ class Blank_Theme {
 		Widgets::get_instance();
 
 		$this->setup_hooks();
-
 	}
 
 	/**
@@ -48,7 +47,6 @@ class Blank_Theme {
 		 */
 		add_action( 'wp_head', [ $this, 'add_pingback_link' ] );
 		add_action( 'after_setup_theme', [ $this, 'setup_theme' ] );
-
 	}
 
 	/**
@@ -146,5 +144,4 @@ class Blank_Theme {
 			printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
 		}
 	}
-
 }
