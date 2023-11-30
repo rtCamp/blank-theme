@@ -8,11 +8,12 @@
 	  "php": ">=7.4"
 	},
 	"require-dev": {
-	  "automattic/vipwpcs": "^2.3",
-	  "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
-	  "phpcompatibility/phpcompatibility-wp": "^2.1",
-	  "sirbrillig/phpcs-variable-analysis": "^2.8",
-	  "wp-coding-standards/wpcs": "^2.3"
+		"automattic/vipwpcs": "^2.3",
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.7",
+		"phpcompatibility/phpcompatibility-wp": "^2.1",
+		"sirbrillig/phpcs-variable-analysis": "^2.8",
+		"wp-cli/i18n-command": "^2.4",
+		"wp-coding-standards/wpcs": "^2.3"
 	},
 	"config": {
 	  "discard-changes": true,
