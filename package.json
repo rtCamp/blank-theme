@@ -16,7 +16,8 @@
 		"lint:php:fix": "./bin/phpcbf.sh",
 		"lint:staged": "lint-staged",
 		"precommit": "npm-run-all lint:* pot",
-		"prepare": "husky install && npm run init"
+		"prepare": "husky install && npm run init",
+		"pot": "composer run pot"
 	},
 	"dependencies": {
 		"foundation-sites": "^6.6.3",
