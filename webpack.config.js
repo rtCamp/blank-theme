@@ -1,72 +1,101 @@
+/**
+ * External dependencies
+ */
+const fs = require( 'fs' );
 const path = require( 'path' );
-const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
-const ESLintPlugin = require( 'eslint-webpack-plugin' );
-const StyleLintPlugin = require( 'stylelint-webpack-plugin' );
-const DependencyExtractionWebpackPlugin = require( '@wordpress/dependency-extraction-webpack-plugin' );
+const CssMinimizerPlugin = require( 'css-minimizer-webpack-plugin' );
+const RemoveEmptyScriptsPlugin = require( 'webpack-remove-empty-scripts' );
 
-const isProductionMode = process.env.NODE_ENV === 'production';
+/**
+ * WordPress dependencies
+ */
+const [ scriptConfig, moduleConfig ] = require( '@wordpress/scripts/config/webpack.config' );
 
-module.exports = {
-	mode: isProductionMode ? 'production' : 'development',
+/**
+ * Read all file entries in a directory.
+ * @param {string} dir Directory to read.
+ * @return {Object} Object with file entries.
+ */
+const readAllFileEntries = ( dir ) => {
+	const entries = {};
 
-	entry: {
-		home: path.resolve( __dirname, 'assets/src/js/home.js' ),
-		main: path.resolve( __dirname, 'assets/src/js/main.js' ),
-		single: path.resolve( __dirname, 'assets/src/js/single.js' ),
-		customizer: path.resolve(
-			__dirname,
-			'assets/src/js/admin/customizer.js'
-		),
-	},
+	if ( ! fs.existsSync( dir ) ) {
+		return entries;
+	}
 
-	output: {
-		filename: 'js/[name].js',
-		path: path.resolve( __dirname, 'assets/build' ),
-		publicPath: '../',
-		clean: true,
-	},
+	if ( fs.readdirSync( dir ).length === 0 ) {
+		return entries;
+	}
 
-	module: {
-		rules: [
-			{
-				test: /\.js$/,
-				exclude: /(node_modules|bower_components)/,
-				use: {
-					loader: 'babel-loader',
-				},
-			},
-			{
-				test: /\.s[ac]ss$/i,
-				use: [
-					MiniCssExtractPlugin.loader,
-					'css-loader',
-					'postcss-loader',
-					'sass-loader',
-				],
-			},
-			{
-				test: /\.(png|svg|jpg|jpeg|gif)$/i,
-				type: 'asset/resource',
-				generator: {
-					filename: 'images/[name][ext]',
-				},
-			},
-			{
-				test: /\.(woff|woff2|eot|ttf|otf)$/i,
-				type: 'asset/resource',
-				generator: {
-					filename: 'fonts/[name][ext]',
-				},
-			},
-		],
-	},
+	fs.readdirSync( dir ).forEach( ( fileName ) => {
+		const fullPath = `${ dir }/${ fileName }`;
+		if ( ! fs.lstatSync( fullPath ).isDirectory() && ! fileName.startsWith( '_' ) ) {
+			entries[ fileName.replace( /\.[^/.]+$/, '' ) ] = fullPath;
+		}
+	} );
 
-	plugins: [
-		new DependencyExtractionWebpackPlugin(),
-		new MiniCssExtractPlugin( {
-			filename: 'css/[name].css',
-		} ),
-		new ESLintPlugin(),
-		new StyleLintPlugin(),
-	],
+	return entries;
 };
+
+// Extend the default config.
+const sharedConfig = {
+	...scriptConfig,
+	output: {
+		path: path.resolve( process.cwd(), 'assets', 'build', 'js' ),
+		filename: '[name].js',
+		chunkFilename: '[name].js',
+	},
+	plugins: [
+		...scriptConfig.plugins
+			.map(
+				( plugin ) => {
+					if ( plugin.constructor.name === 'MiniCssExtractPlugin' ) {
+						plugin.options.filename = '../css/[name].css';
+					}
+					return plugin;
+				},
+			),
+		new RemoveEmptyScriptsPlugin(),
+	],
+	optimization: {
+		...scriptConfig.optimization,
+		splitChunks: {
+			...scriptConfig.optimization.splitChunks,
+		},
+		minimizer: scriptConfig.optimization.minimizer.concat( [ new CssMinimizerPlugin() ] ),
+	},
+};
+
+// Generate a webpack config which includes setup for CSS extraction.
+// Look for css/scss files and extract them into a build/css directory.
+const styles = {
+	...sharedConfig,
+	entry: () => readAllFileEntries( './assets/src/css' ),
+	module: {
+		...sharedConfig.module,
+	},
+	plugins: [
+		...sharedConfig.plugins.filter(
+			( plugin ) => plugin.constructor.name !== 'DependencyExtractionWebpackPlugin',
+		),
+	],
+
+};
+
+const scripts = {
+	...sharedConfig,
+	entry: () => readAllFileEntries( './assets/src/js' ),
+};
+
+const moduleScripts = {
+	...moduleConfig,
+	entry: () => readAllFileEntries( './assets/src/js/modules' ),
+	output: {
+		...moduleConfig.output,
+		path: path.resolve( process.cwd(), 'assets', 'build', 'js', 'modules' ),
+		filename: '[name].js',
+		chunkFilename: '[name].js',
+	},
+};
+
+module.exports = [ scripts, styles, moduleScripts ];
