@@ -11,3 +11,6 @@
 # local
 node_modules/
 vendor
+
+# Build files
+assets/build/
