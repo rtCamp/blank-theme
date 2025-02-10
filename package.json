@@ -15,7 +15,7 @@
 		"lint:php": "./vendor/bin/phpcs",
 		"lint:php:fix": "./bin/phpcbf.sh",
 		"lint:staged": "lint-staged",
-		"pot": "npx @wp-blocks/make-pot './' './languages' --domain 'blank-theme' --package-name 'Blank Theme'",
+		"pot": "wp-pot --src './**/*.php' --dest-file './languages/blank-theme.pot' --domain 'blank-theme' --package 'Blank Theme' ",
 		"precommit": "npm-run-all lint:* pot",
 		"prepare": "husky install && npm run init"
 	},
@@ -29,7 +29,6 @@
 		"@wordpress/dependency-extraction-webpack-plugin": "^6.17.0",
 		"@wordpress/eslint-plugin": "22.1.1",
 		"@wordpress/stylelint-config": "^23.9.0",
-		"@wp-blocks/make-pot": "^1.4.0",
 		"babel-loader": "^9.2.1",
 		"css-loader": "^7.1.2",
 		"eslint": "8.56.0",
@@ -46,7 +45,8 @@
 		"stylelint": "^16.14.1",
 		"stylelint-webpack-plugin": "^5.0.1",
 		"webpack": "^5.97.1",
-		"webpack-cli": "^6.0.1"
+		"webpack-cli": "^6.0.1",
+		"wp-pot-cli": "^1.5.0"
 	},
 	"browserslist": [
 		"extends @wordpress/browserslist-config"
