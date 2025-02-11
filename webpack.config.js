@@ -70,7 +70,7 @@ const sharedConfig = {
 // Look for css/scss files and extract them into a build/css directory.
 const styles = {
 	...sharedConfig,
-	entry: () => readAllFileEntries( './assets/src/css' ),
+	entry: () => readAllFileEntries( './assets/src/sass' ),
 	module: {
 		...sharedConfig.module,
 	},
