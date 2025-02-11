@@ -1,0 +1,75 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: '/'
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 10
+    reviwers: 
+      - "divyarajmasani"
+
+  - package-ecosystem: npm
+    directory: '/'
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 10
+    versioning-strategy: increase
+    reviwers: 
+      - "divyarajmasani"
+    groups:
+      production-version:
+        dependency-type: "production"
+        applies-to: version-updates
+        update-types:
+          - "minor"
+          - "patch"
+      production-security:
+        dependency-type: "production"
+        applies-to: security-updates
+      development-version:
+        dependency-type: "development"
+        applies-to: version-updates
+        update-types:
+          - "minor"
+          - "patch"
+      development-security:
+        dependency-type: "development"
+        applies-to: security-updates
+      major-version:
+        applies-to: version-updates
+        dependency-type: "all"
+        update-types:
+          - "major"
+
+  - package-ecosystem: composer
+    directory: '/'
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 10
+    versioning-strategy: increase
+    reviwers: 
+      - "divyarajmasani"
+    groups:
+      production-version:
+        dependency-type: "production"
+        applies-to: version-updates
+        update-types:
+          - "minor"
+          - "patch"
+      production-security:
+        dependency-type: "production"
+        applies-to: security-updates
+      development-version:
+        dependency-type: "development"
+        applies-to: version-updates
+        update-types:
+          - "minor"
+          - "patch"
+      development-security:
+        dependency-type: "development"
+        applies-to: security-updates
+      major-version:
+        applies-to: version-updates
+        dependency-type: "all"
+        update-types:
+          - "major"
