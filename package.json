@@ -15,7 +15,7 @@
 		"lint:php": "./vendor/bin/phpcs",
 		"lint:php:fix": "./bin/phpcbf.sh",
 		"lint:staged": "lint-staged",
-		"pot": "wp-pot --src './**/*.php' --dest-file './languages/blank-theme.pot' --domain 'blank-theme' --package 'Blank Theme' ",
+		"pot": "composer run pot",
 		"precommit": "npm-run-all lint:* pot",
 		"prepare": "husky install && npm run init"
 	},
