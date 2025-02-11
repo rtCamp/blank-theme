@@ -50,8 +50,7 @@
 		"stylelint-webpack-plugin": "^5.0.1",
 		"webpack": "^5.97.1",
 		"webpack-cli": "^6.0.1",
-		"webpack-remove-empty-scripts": "^1.0.4",
-		"wp-pot-cli": "^1.5.0"
+		"webpack-remove-empty-scripts": "^1.0.4"
 	},
 	"scripts": {
 		"build:dev": "cross-env NODE_ENV=development npm-run-all 'build:!(dev|prod)'",
@@ -70,7 +69,7 @@
 		"lint:php:fix": "node ./bin/phpcbf.js",
 		"lint:package-json": "wp-scripts lint-pkg-json --ignorePath .gitignore",
 		"lint:staged": "lint-staged",
-		"build:pot": "wp-pot --src './**/*.php' --dest-file './languages/blank-theme.pot' --domain 'blank-theme' --package 'Blank Theme' ",
+		"build:pot": "composer run pot",
 		"precommit": "npm-run-all lint:* pot",
 		"prepare": "husky install && npm run init",
 		"wp-env": "wp-env"

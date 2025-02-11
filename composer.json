@@ -12,7 +12,8 @@
 	  "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
 	  "phpcompatibility/phpcompatibility-wp": "^2.1",
 	  "sirbrillig/phpcs-variable-analysis": "^2.8",
-	  "wp-coding-standards/wpcs": "^2.3"
+	  "wp-coding-standards/wpcs": "^2.3",
+	  "wp-cli/i18n-command": "^2.6"
 	},
 	"config": {
 	  "discard-changes": true,
@@ -25,6 +26,7 @@
 	"prefer-stable": true,
 	"scripts": {
 	  "phpcbf": "phpcbf",
-	  "phpcs": "phpcs"
+	  "phpcs": "phpcs",
+	  "pot": "wp i18n make-pot . ./languages/blank-theme.pot --domain=blank-theme --package-name=\"Blank Theme\" --skip-theme-json"
 	}
   }
