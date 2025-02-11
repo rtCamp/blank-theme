@@ -17,29 +17,18 @@ updates:
     reviwers: 
       - "divyarajmasani"
     groups:
-      production-version:
+      production:
         dependency-type: "production"
         applies-to: version-updates
         update-types:
           - "minor"
           - "patch"
-      production-security:
-        dependency-type: "production"
-        applies-to: security-updates
-      development-version:
+      development:
         dependency-type: "development"
         applies-to: version-updates
         update-types:
           - "minor"
           - "patch"
-      development-security:
-        dependency-type: "development"
-        applies-to: security-updates
-      major-version:
-        applies-to: version-updates
-        dependency-type: "all"
-        update-types:
-          - "major"
 
   - package-ecosystem: composer
     directory: '/'
@@ -50,26 +39,15 @@ updates:
     reviwers: 
       - "divyarajmasani"
     groups:
-      production-version:
+      production:
         dependency-type: "production"
         applies-to: version-updates
         update-types:
           - "minor"
           - "patch"
-      production-security:
-        dependency-type: "production"
-        applies-to: security-updates
-      development-version:
+      development:
         dependency-type: "development"
         applies-to: version-updates
         update-types:
           - "minor"
           - "patch"
-      development-security:
-        dependency-type: "development"
-        applies-to: security-updates
-      major-version:
-        applies-to: version-updates
-        dependency-type: "all"
-        update-types:
-          - "major"
