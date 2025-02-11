@@ -5,7 +5,7 @@ updates:
     schedule:
       interval: monthly
     open-pull-requests-limit: 10
-    reviwers: 
+    reviwers:
       - "divyarajmasani"
 
   - package-ecosystem: npm
@@ -14,7 +14,7 @@ updates:
       interval: monthly
     open-pull-requests-limit: 10
     versioning-strategy: increase
-    reviwers: 
+    reviwers:
       - "divyarajmasani"
     groups:
       production:
@@ -36,7 +36,7 @@ updates:
       interval: monthly
     open-pull-requests-limit: 10
     versioning-strategy: increase
-    reviwers: 
+    reviwers:
       - "divyarajmasani"
     groups:
       production:
