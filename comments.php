@@ -29,7 +29,7 @@ if ( post_password_required() ) {
 		<h2 class="comments-title">
 			<?php
 			$blank_theme_comments_number = get_comments_number();
-			if ( 1 === $comments_number ) {
+			if ( 1 === $blank_theme_comments_number ) {
 				printf(
 					/* translators: %s: post title */
 					esc_html_x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'blank-theme' ),
@@ -42,12 +42,12 @@ if ( post_password_required() ) {
 						_nx(
 							'%1$s thought on &ldquo;%2$s&rdquo;',
 							'%1$s thoughts on &ldquo;%2$s&rdquo;',
-							$comments_number,
+							$blank_theme_comments_number,
 							'comments title',
 							'blank-theme'
 						)
 					),
-					esc_html( number_format_i18n( $comments_number ) ),
+					esc_html( number_format_i18n( $blank_theme_comments_number ) ),
 					'<span>' . esc_html( get_the_title() ) . '</span>'
 				);
 			}

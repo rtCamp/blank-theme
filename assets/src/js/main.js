@@ -2,6 +2,9 @@
  * Main scripts, loaded on all pages.
  */
 
+/**
+ * Internal dependencies
+ */
 import '../sass/main.scss';
 import { common as BlankThemeCommons } from './components';
 
