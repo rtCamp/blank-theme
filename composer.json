@@ -27,6 +27,9 @@
 	"scripts": {
 	  "phpcbf": "phpcbf",
 	  "phpcs": "phpcs",
+	  "post-install-cmd": [
+			"npm i"
+		],
 	  "pot": "wp i18n make-pot . ./languages/blank-theme.pot --domain=blank-theme --package-name=\"Blank Theme\" --skip-theme-json"
 	}
   }
