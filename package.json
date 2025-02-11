@@ -10,7 +10,7 @@
 		"dev": "webpack --watch --progress",
 		"clean": "rm -rf assets/build/*",
 		"init": "./bin/init.js && npm run pot",
-		"lint:css": "stylelint assets/src/sass/**/*.scss --syntax scss",
+		"lint:css": "stylelint assets/src/sass/**/*.scss --config ./.stylelintrc",
 		"lint:js": "eslint assets/src/js/",
 		"lint:php": "./vendor/bin/phpcs",
 		"lint:php:fix": "./bin/phpcbf.sh",
