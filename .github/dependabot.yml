@@ -1,0 +1,53 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: '/'
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 10
+    reviewers:
+      - "divyarajmasani"
+
+  - package-ecosystem: npm
+    directory: '/'
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 10
+    versioning-strategy: increase
+    reviewers:
+      - "divyarajmasani"
+    groups:
+      production:
+        dependency-type: "production"
+        applies-to: version-updates
+        update-types:
+          - "minor"
+          - "patch"
+      development:
+        dependency-type: "development"
+        applies-to: version-updates
+        update-types:
+          - "minor"
+          - "patch"
+
+  - package-ecosystem: composer
+    directory: '/'
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 10
+    versioning-strategy: increase
+    reviewers:
+      - "divyarajmasani"
+    groups:
+      production:
+        dependency-type: "production"
+        applies-to: version-updates
+        update-types:
+          - "minor"
+          - "patch"
+      development:
+        dependency-type: "development"
+        applies-to: version-updates
+        update-types:
+          - "minor"
+          - "patch"
