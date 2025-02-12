@@ -3,49 +3,60 @@
 	"version": "2.0.0",
 	"description": "Blank Theme Packages",
 	"author": "rtCamp",
-	"license": "MIT",
+	"license": "GPL-2.0-or-later",
 	"private": true,
-	"scripts": {
-		"prod": "NODE_ENV=production webpack --progress && npm run pot",
-		"dev": "webpack --watch --progress",
-		"clean": "rm -rf assets/build/*",
-		"init": "./bin/init.js && npm run pot",
-		"lint:css": "stylelint assets/src/sass/**/*.scss --config ./.stylelintrc",
-		"lint:js": "eslint assets/src/js/",
-		"lint:php": "./vendor/bin/phpcs",
-		"lint:php:fix": "./bin/phpcbf.sh",
-		"lint:staged": "lint-staged",
-		"pot": "composer run pot",
-		"precommit": "npm-run-all lint:* pot",
-		"prepare": "husky install && npm run init"
+	"keywords": [
+		"rtcamp",
+		"wp-theme",
+		"blank-theme"
+	],
+	"homepage": "https://github.com/rtCamp/blank-theme#readme",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/rtCamp/blank-theme.git"
+	},
+	"bugs": {
+		"url": "https://github.com/rtCamp/blank-theme/issues"
 	},
 	"dependencies": {
 		"foundation-sites": "^6.6.3",
 		"webfontloader": "^1.6.28"
 	},
 	"devDependencies": {
-		"@wordpress/babel-preset-default": "^8.17.0",
-		"@wordpress/browserslist-config": "^6.17.0",
-		"@wordpress/dependency-extraction-webpack-plugin": "^6.17.0",
-		"@wordpress/eslint-plugin": "22.3.0",
-		"@wordpress/stylelint-config": "^23.9.0",
-		"babel-loader": "^9.2.1",
-		"css-loader": "^7.1.2",
-		"eslint": "8.56.0",
+		"@wordpress/scripts": "^30.8.1",
+		"cross-env": "^7.0.3",
+		"css-minimizer-webpack-plugin": "^7.0.0",
+		"eslint-plugin-eslint-comments": "^3.2.0",
 		"eslint-webpack-plugin": "^4.2.0",
 		"husky": "^9.1.7",
+		"jest-silent-reporter": "^0.6.0",
 		"lint-staged": "^15.4.3",
-		"mini-css-extract-plugin": "^2.9.2",
 		"npm-run-all": "^4.1.5",
-		"postcss": "^8.5.2",
-		"postcss-loader": "^8.1.1",
 		"postcss-preset-env": "^10.1.3",
-		"sass": "^1.84.0",
-		"sass-loader": "^16.0.4",
-		"stylelint": "^16.14.1",
 		"stylelint-webpack-plugin": "^5.0.1",
-		"webpack": "^5.97.1",
-		"webpack-cli": "^6.0.1"
+		"webpack-remove-empty-scripts": "^1.0.4"
+	},
+	"scripts": {
+		"build:dev": "cross-env NODE_ENV=development npm-run-all 'build:!(dev|prod)'",
+		"build:prod": "cross-env NODE_ENV=production npm-run-all 'build:!(dev|prod)'",
+		"build:js": "wp-scripts build --experimental-modules",
+		"start": "wp-scripts start --experimental-modules",
+		"clean": "rm -rf assets/build/*",
+		"init": "./bin/init.js && npm run build:pot",
+		"lint:all": "npm-run-all --parallel lint:*",
+		"lint:css": "wp-scripts lint-style ./assets/src",
+		"lint:css:fix": "npm run lint:css -- --fix ./assets/src",
+		"lint:js": "wp-scripts lint-js ./assets/src",
+		"lint:js:fix": "npm run lint:js -- --fix ./assets/src",
+		"lint:js:report": "npm run lint:js -- --output-file lint-js-report.json --format json .",
+		"lint:php": "php vendor/bin/phpcs",
+		"lint:php:fix": "node ./bin/phpcbf.js",
+		"lint:package-json": "wp-scripts lint-pkg-json --ignorePath .gitignore",
+		"lint:staged": "lint-staged",
+		"build:pot": "composer run pot",
+		"precommit": "npm-run-all lint:* pot",
+		"prepare": "husky install && npm run init",
+		"wp-env": "wp-env"
 	},
 	"browserslist": [
 		"extends @wordpress/browserslist-config"
